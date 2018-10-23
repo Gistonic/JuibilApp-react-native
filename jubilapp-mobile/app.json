@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "jubilapp-mobile",
+    "name": "JubilApp",
     "description": "This project is really great.",
-    "slug": "jubilapp-mobile",
+    "slug": "JubilApp",
     "privacy": "public",
     "sdkVersion": "30.0.0",
     "platforms": ["ios", "android"],
