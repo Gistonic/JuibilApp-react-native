@@ -8,6 +8,7 @@ import RegistreNomCogScreen from './screens/RegistreNomCogScreen';
 import RegistreCorreoScreen from './screens/RegistreCorreoScreen';
 import RegistrePsswScreen from './screens/RegistrePsswScreen';
 import RegistreTelfScreen from './screens/RegistreTelfScreen';
+import KilometreScreen from './screens/KilometreScreen';
 
 export default class Routes extends React.Component {
 	render() {
@@ -21,6 +22,7 @@ export default class Routes extends React.Component {
 				  <Scene key="r2" component={RegistreCorreoScreen}/>
 				  <Scene key="r3" component={RegistrePsswScreen}/>
 				  <Scene key="r4" component={RegistreTelfScreen}/>
+				  <Scene key="km" component={KilometreScreen}/>
 			    </Scene>
 			 </Router>
 		)

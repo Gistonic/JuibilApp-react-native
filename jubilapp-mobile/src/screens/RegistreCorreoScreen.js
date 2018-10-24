@@ -10,7 +10,6 @@ export default class RegistreCorreoScreen extends React.Component {
     render() {
         const {viewStyle, vista1Style, container} = styles;
         return (
-            
             <View style = {viewStyle}>
               <Header headerText = {'JubilApp'}/>
               <View style = {vista1Style}></View>
