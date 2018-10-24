@@ -20,15 +20,15 @@ const styles ={
         alignItems: 'center'
     },
     textStyle:{
-        fontSize:20,
         color: '#A537FD',
         fontFamily: 'sans-serif-condensed',
-        fontSize: 35,
+        fontSize: 55,
         fontWeight: 'bold',
         textAlign: 'center'
     },
     textInputStyle:{
-        height: 40, 
+        height: 40,
+        fontSize: 35,
         width: 200
     }
 }

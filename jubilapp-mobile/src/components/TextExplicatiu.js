@@ -10,7 +10,7 @@ const TextExplicatiu = (props) => {
 };
 const styles ={
     textStyle:{
-        fontSize:20,
+
         color: '#A537FD',
         fontFamily: 'sans-serif-condensed',
         fontSize: 35,

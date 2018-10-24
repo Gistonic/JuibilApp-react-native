@@ -20,14 +20,14 @@ export default class RegLogScreen extends React.Component {
               <TextExplicatiu textExpl = {'No tienes cuenta? Regístrate!'}/>
               <View style = {vista1Style}></View>
               <BotoRegLog buttonText = {'Regístrate'}
-              path = {() => Actions.r1()}/>
+                          path = {() => Actions.r1()}/>
             </View>   
         );
     }
   }
   const styles ={
     viewStyle: {
-        backgroundColor: '#FFE5EE',
+        backgroundColor: '#FFF',
         width: '100%', 
         height: '100%'
     },

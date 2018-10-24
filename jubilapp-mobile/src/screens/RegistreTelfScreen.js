@@ -28,7 +28,7 @@ export default class RegistreTelfScreen extends React.Component {
   }
   const styles ={
     viewStyle: {
-        backgroundColor: '#FFE5EE',
+        backgroundColor: '#FFF',
         width: '100%', 
         height: '100%',
         alignContent: 'center'
