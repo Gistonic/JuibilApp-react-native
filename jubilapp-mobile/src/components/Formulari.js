@@ -4,11 +4,12 @@ import TextExplicatiu from './TextExplicatiu';
 
 const Formulari = (props) => {
     const {viewStyle, textStyle, textInputStyle} = styles;
+    const { value, onChangeText } = props
     return (
         <View style = {viewStyle}>
             <TextExplicatiu textExpl = {props.textExplicatiu}/>
             <TextInput placeholder = {props.textPlaceHolder} keyboardType= {props.tipusTeclat}
-            style = {textInputStyle}/>
+            style = {textInputStyle} value={value} onChangeText={onChangeText}/>
         </View>
     );
 

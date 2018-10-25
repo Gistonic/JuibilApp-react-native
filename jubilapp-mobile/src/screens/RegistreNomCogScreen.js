@@ -1,21 +1,31 @@
 import React from 'react';
-import {View} from 'react-native';
+import {View, Text} from 'react-native';
+import {connect} from 'react-redux'
 import Formulari from '../components/Formulari';
 import Header from '../components/Header';
 import BotoSiguiente from '../components/BotoSiguiente';
 import BotoAtras from '../components/BotoAtras';
 import { Actions } from 'react-native-router-flux';
+import {changeRegisterFormProperty} from "../actions";
 
-export default class RegistreNomCogScreen extends React.Component {
+class RegistreNomCogScreen extends React.Component {
     render() {
         const {viewStyle, vista1Style, container} = styles;
+        const{name, surname, changeFormName, changeFormSurname}=this.props
+        console.log("Render: " + name + " " + surname);
         return (
-            
             <View style = {viewStyle}>
               <Header headerText = {'JubilApp'}/>
               <View style = {vista1Style}></View>
-              <Formulari textExplicatiu = {'Introduce nombre y apellidos'} textPlaceHolder = {'Nombre'} tipusTeclat = {'default'}/>
-              <Formulari textPlaceHolder = {'Apellidos'} tipusTeclat = {'default'}/>
+              <Formulari textExplicatiu = {'Introduce nombre y apellidos'}
+                         textPlaceHolder = {'Nombre'}
+                         tipusTeclat = {'default'}
+                         value = {name}
+                         onChangeText={(text) => changeFormName(text)}/>
+              <Formulari textPlaceHolder = {'Apellidos'}
+                         tipusTeclat = {'default'}
+                         value = {surname}
+                         onChangeText={(text) => changeFormSurname(text)}/>
               <View style = {container}>
                 <BotoAtras buttonText = {'Atrás'}
                 path = {() => Actions.login()}/>
@@ -25,8 +35,9 @@ export default class RegistreNomCogScreen extends React.Component {
             </View>   
         );
     }
-  }
-  const styles ={
+}
+
+const styles ={
     viewStyle: {
         backgroundColor: '#FFF',
         width: '100%', 
@@ -41,4 +52,19 @@ export default class RegistreNomCogScreen extends React.Component {
         flex:1,
         flexDirection: 'row'
     }
-  }
+}
+const mapStateToProps = (state) => {
+    return {
+        name: state.registerForm.name,
+        surname: state.registerForm.surname
+    }
+}
+
+const  mapDispatchToProps = (dispatch)=>{
+    return {
+        changeFormName: (value)=>dispatch(changeRegisterFormProperty("name", value)),
+        changeFormSurname: (value)=>dispatch(changeRegisterFormProperty("surname", value))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(RegistreNomCogScreen)
