@@ -21,7 +21,7 @@ const styles ={
 
     },
     textStyle:{
-        color: APP_COLORS.color_back,
+        color: APP_COLORS.color_neutral,
         fontFamily: 'sans-serif-condensed',
         fontSize: 35,
         fontWeight: 'bold'

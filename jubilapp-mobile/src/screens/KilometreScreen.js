@@ -2,7 +2,7 @@ import React from 'react';
 import {TouchableOpacity, View} from 'react-native';
 import Header from '../components/Header';
 import Desctription from '../components/Desctription';
-import BotoSiguiente from '../components/BotoSiguiente';
+import NextButton from '../components/NextButton';
 import BotoAtras from '../components/BotoAtras';
 import Numbers from '../components/Numbers';
 
@@ -127,7 +127,7 @@ export default class KilometreScreen extends React.Component {
               <View style = {container}>
                 <BotoAtras buttonText = {'Atrás'}
                 path = {() => Actions.welcome()}/>
-                <BotoSiguiente buttonText = {'Siguiente'}/>
+                <NextButton buttonText = {'Siguiente'}/>
               </View>
             </View>   
         );

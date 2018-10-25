@@ -1,7 +1,8 @@
 import React from 'react';
 import {TouchableOpacity, Text, View} from 'react-native'
+import {APP_COLORS} from "../constants/colors"
 
-const BotoSiguiente = (props) => {
+const NextButton = (props) => {
     return (
         <View style = {styles.container}>
            <TouchableOpacity onPress= {props.path}>
@@ -21,10 +22,12 @@ const BotoSiguiente = (props) => {
      button: {
         borderWidth: 3,
         padding: 8,
-        borderColor: '#864EE8',
-        color: '#864EE8',
-        borderRadius: 30,
-        fontSize: 30
+        borderColor: APP_COLORS.color_back,
+        color: APP_COLORS.color_neutral,
+        borderRadius: 10,
+        fontSize: 30,
+         height: 60,
+         width: 200,
      }
   }
-export default BotoSiguiente;
+export default NextButton;

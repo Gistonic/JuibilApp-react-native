@@ -3,7 +3,7 @@ import {View, Text} from 'react-native';
 import {connect} from 'react-redux'
 import Formulari from '../components/Formulari';
 import Header from '../components/Header';
-import BotoSiguiente from '../components/BotoSiguiente';
+import NextButton from '../components/NextButton';
 import BotoAtras from '../components/BotoAtras';
 import { Actions } from 'react-native-router-flux';
 import {changeRegisterFormProperty} from "../actions";
@@ -29,8 +29,8 @@ class RegistreNomCogScreen extends React.Component {
               <View style = {container}>
                 <BotoAtras buttonText = {'Atrás'}
                 path = {() => Actions.login()}/>
-                <BotoSiguiente buttonText = {'Siguiente'}
-                path = {() => Actions.r2()}/>
+                <NextButton buttonText = {'Siguiente'}
+                            path = {() => Actions.r2()}/>
               </View>
             </View>   
         );

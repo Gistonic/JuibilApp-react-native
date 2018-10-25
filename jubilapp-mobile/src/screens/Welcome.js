@@ -1,7 +1,7 @@
 import React from 'react';
 import {View} from 'react-native';
 import Desctription from '../components/Desctription';
-import BotoSiguiente from '../components/BotoSiguiente';
+import NextButton from '../components/NextButton';
 
 import { Actions } from 'react-native-router-flux';
 
@@ -14,8 +14,8 @@ export default class Welcome extends React.Component {
                 <Desctription textExpl = {'¡Bienvenido a JubilApp!'}/>
                 </View>   
                 <View style = {viewStyle}>
-                    <BotoSiguiente buttonText = {'Continuar'}
-                    path = {() => Actions.km()}/>
+                    <NextButton buttonText = {'Continuar'}
+                                path = {() => Actions.km()}/>
                 </View> 
             </View>
         );

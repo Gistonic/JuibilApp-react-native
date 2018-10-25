@@ -27,7 +27,7 @@ export default class LoginScreen extends React.Component {
   }
   const styles ={
     viewStyle: {
-        backgroundColor: APP_COLORS.color_back,
+        backgroundColor: APP_COLORS.color_neutral,
         width: '100%', 
         height: '100%'
     }

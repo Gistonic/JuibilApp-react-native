@@ -2,7 +2,7 @@ import React from 'react';
 import {View} from 'react-native';
 import Formulari from '../components/Formulari';
 import Header from '../components/Header';
-import BotoSiguiente from '../components/BotoSiguiente';
+import NextButton from '../components/NextButton';
 import BotoAtras from '../components/BotoAtras';
 import { Actions } from 'react-native-router-flux';
 import {changeRegisterFormProperty} from "../actions";
@@ -43,8 +43,8 @@ class RegistrePsswScreen extends React.Component {
               <View style = {container}>
                 <BotoAtras buttonText = {'Atrás'}
                 path = {() => Actions.r2()}/>
-                <BotoSiguiente buttonText = {'Siguiente'}
-                path = {() => this.nextScreen()}/>
+                <NextButton buttonText = {'Siguiente'}
+                            path = {() => this.nextScreen()}/>
               </View>
             </View>   
         );
