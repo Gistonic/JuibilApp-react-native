@@ -4,11 +4,12 @@ import TextExplicatiu from './TextExplicatiu';
 
 const Formulari = (props) => {
     const {viewStyle, textStyle, textInputStyle} = styles;
+    const { value, onChangeText } = props
     return (
         <View style = {viewStyle}>
             <TextExplicatiu textExpl = {props.textExplicatiu}/>
             <TextInput placeholder = {props.textPlaceHolder} keyboardType= {props.tipusTeclat}
-            style = {textInputStyle}/>
+            style = {textInputStyle} value={value} onChangeText={onChangeText}/>
         </View>
     );
 
@@ -20,15 +21,15 @@ const styles ={
         alignItems: 'center'
     },
     textStyle:{
-        fontSize:20,
         color: '#A537FD',
         fontFamily: 'sans-serif-condensed',
-        fontSize: 35,
+        fontSize: 55,
         fontWeight: 'bold',
         textAlign: 'center'
     },
     textInputStyle:{
-        height: 40, 
+        height: 40,
+        fontSize: 35,
         width: 200
     }
 }

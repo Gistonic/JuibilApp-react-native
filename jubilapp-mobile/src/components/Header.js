@@ -20,7 +20,6 @@ const styles ={
 
     },
     textStyle:{
-        fontSize:20,
         color: '#FFE5EE',
         fontFamily: 'sans-serif-condensed',
         fontSize: 35,

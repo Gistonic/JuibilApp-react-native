@@ -5,15 +5,21 @@ import Header from '../components/Header';
 import BotoSiguiente from '../components/BotoSiguiente';
 import BotoAtras from '../components/BotoAtras';
 import { Actions } from 'react-native-router-flux';
+import {changeRegisterFormProperty} from "../actions";
+import connect from "react-redux/es/connect/connect";
 
-export default class RegistreCorreoScreen extends React.Component {
+class RegistreCorreoScreen extends React.Component {
     render() {
         const {viewStyle, vista1Style, container} = styles;
         return (
             <View style = {viewStyle}>
               <Header headerText = {'JubilApp'}/>
               <View style = {vista1Style}></View>
-              <Formulari textExplicatiu = {'Introduce correo electrónico'} textPlaceHolder = {'Correo'} tipusTeclat = {'email-address'}/>
+              <Formulari textExplicatiu = {'Introduce correo electrónico'}
+                         textPlaceHolder = {'Correo'}
+                         tipusTeclat = {'email-address'}
+                         value = {email}
+                         onChangeText={(text) => changeFormEmail(text)}/>
               <View style = {vista1Style}></View>
               <View style = {container}>
                 <BotoAtras buttonText = {'Atrás'}
@@ -27,7 +33,7 @@ export default class RegistreCorreoScreen extends React.Component {
   }
   const styles ={
     viewStyle: {
-        backgroundColor: '#FFE5EE',
+        backgroundColor: '#FFF',
         width: '100%', 
         height: '100%',
         alignContent: 'center'
@@ -41,3 +47,16 @@ export default class RegistreCorreoScreen extends React.Component {
         flexDirection: 'row'
     }
   }
+const mapStateToProps = (state) => {
+    return {
+        name: state.registerForm.email,
+    }
+}
+
+const  mapDispatchToProps = (dispatch)=>{
+    return {
+        changeFormEmail: (value)=>dispatch(changeRegisterFormProperty("email", value))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(RegistreCorreoScreen)
