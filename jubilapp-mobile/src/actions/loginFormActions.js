@@ -1,9 +1,9 @@
-import {REGISTER_FORM_ACTIONS} from "../constants/actions";
+import {LOGIN_FORM_ACTIONS} from "../constants/actions";
 import {Actions} from "react-native-router-flux";
 
-export const changeRegisterFormProperty=(propertyName, value) =>{
+export const changeLoginFormProperty=(propertyName, value) =>{
     return {
-        type:REGISTER_FORM_ACTIONS.ChangeProperty,
+        type:LOGIN_FORM_ACTIONS.ChangeProperty,
         payload:{
             propertyName,
             value
@@ -11,17 +11,17 @@ export const changeRegisterFormProperty=(propertyName, value) =>{
     }
 };
 
-const receiveRegister = (token) => {
+const receiveLogin = (token) => {
     Actions.welcome();
     return {
-        type: REGISTER_FORM_ACTIONS.ReceiveRegister,
+        type: LOGIN_FORM_ACTIONS.ReceiveLogin,
         payload: token
     }
 };
 
-export const register = (userInfo) => {
+export const login = (userInfo) => {
     return (dispatch) => {
-        fetch('URL_REGISTER', {
+        fetch('URL_LOGIN', {
             method: 'POST',
             body: userInfo
         }).then(response => {
@@ -38,7 +38,9 @@ export const register = (userInfo) => {
                 console.error('Error sending register')
             }
         }).then(json => {
-            dispatch(receiveRegister(json.token))
+            dispatch(receiveLogin(json.token))
+        }).catch(err => {
+            console.log(err)
         })
     }
 }

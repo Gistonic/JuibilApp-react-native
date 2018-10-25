@@ -23,6 +23,7 @@ class RegistrePsswScreen extends React.Component {
     }
     render() {
         const {viewStyle, vista1Style, container} = styles;
+        const{password, confirmPassword, changePassword, changeConfirmPassword}=this.props
         return (
             
             <View style = {viewStyle}>
@@ -37,7 +38,7 @@ class RegistrePsswScreen extends React.Component {
                          textPlaceHolder = {'Contraseña repetida'}
                          tipusTeclat = {'default'}
                          value = {confirmPassword}
-                         onChangeText={(text) => changePassword(text)}/>
+                         onChangeText={(text) => changeConfirmPassword(text)}/>
               <View style = {vista1Style}></View>
               <View style = {container}>
                 <BotoAtras buttonText = {'Atrás'}
