@@ -23,9 +23,10 @@ export const register = (userInfo) => {
     return (dispatch) => {
         fetch('URL_REGISTER', {
             method: 'POST',
-            body: userInfo
+            body: JSON.stringify(userInfo)
         }).then(response => {
             if (response.ok) {
+
                 return response.json()
 
                 /*
@@ -39,6 +40,8 @@ export const register = (userInfo) => {
             }
         }).then(json => {
             dispatch(receiveRegister(json.token))
+        }).catch(err => {
+            console.log(err)
         })
     }
 }

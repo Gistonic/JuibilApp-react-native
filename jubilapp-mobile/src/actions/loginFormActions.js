@@ -23,8 +23,9 @@ export const login = (userInfo) => {
     return (dispatch) => {
         fetch('URL_LOGIN', {
             method: 'POST',
-            body: userInfo
+            body: JSON.stringify(userInfo)
         }).then(response => {
+            console.log(userInfo)
             if (response.ok) {
                 return response.json()
 

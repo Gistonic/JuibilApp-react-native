@@ -3,17 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="5495091f-ad95-448f-800e-39442fbfebef" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jubilapp-mobile/src/components/BotoSiguiente.js" beforeDir="false" afterPath="$PROJECT_DIR$/jubilapp-mobile/src/components/NextButton.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jubilapp-mobile/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/jubilapp-mobile/src/components/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jubilapp-mobile/src/components/StartButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/jubilapp-mobile/src/components/StartButton.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jubilapp-mobile/src/constants/colors.js" beforeDir="false" afterPath="$PROJECT_DIR$/jubilapp-mobile/src/constants/colors.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jubilapp-mobile/src/screens/KilometreScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/jubilapp-mobile/src/screens/KilometreScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jubilapp-mobile/src/actions/loginFormActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/jubilapp-mobile/src/actions/loginFormActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jubilapp-mobile/src/actions/registerFormActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/jubilapp-mobile/src/actions/registerFormActions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jubilapp-mobile/src/screens/LoginScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/jubilapp-mobile/src/screens/LoginScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jubilapp-mobile/src/screens/RegistreCorreoScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/jubilapp-mobile/src/screens/RegistreCorreoScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jubilapp-mobile/src/screens/RegistreNomCogScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/jubilapp-mobile/src/screens/RegistreNomCogScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jubilapp-mobile/src/screens/RegistrePsswScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/jubilapp-mobile/src/screens/RegistrePsswScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jubilapp-mobile/src/screens/RegistreTelfScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/jubilapp-mobile/src/screens/RegistreTelfScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jubilapp-mobile/src/screens/Welcome.js" beforeDir="false" afterPath="$PROJECT_DIR$/jubilapp-mobile/src/screens/Welcome.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,83 +18,75 @@
     <session id="-1033259412">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitignore" value="1" />
-          <entry key="js" value="112" />
+          <entry key="js" value="119" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JavaScript" value="112" />
+          <entry key="JavaScript" value="119" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="4425" />
-          <entry key="txt" value="101" />
+          <entry key="js" value="4720" />
+          <entry key="txt" value="106" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="4425" />
-          <entry key="PLAIN_TEXT" value="101" />
+          <entry key="JavaScript" value="4720" />
+          <entry key="PLAIN_TEXT" value="106" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.42976588">
+    <splitter split-orientation="horizontal" split-proportion="0.47224593">
       <split-first>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/components/NextButton.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="419">
-                  <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
-                  <folding>
-                    <element signature="e#0#26#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/constants/colors.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="85">
-                  <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/components/StartButton.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="416">
-                  <caret line="28" column="47" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
-                  <folding>
-                    <element signature="e#0#26#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/screens/LoginScreen.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="409">
-                  <caret line="29" column="36" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
+                <state relative-caret-position="306">
+                  <caret line="28" column="33" lean-forward="true" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/actions/registerFormActions.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="620">
+                  <caret line="44" column="10" selection-start-line="44" selection-start-column="10" selection-end-line="44" selection-end-column="10" />
+                  <folding>
+                    <element signature="e#0#59#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/actions/loginFormActions.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="595">
+                  <caret line="44" column="10" lean-forward="true" selection-start-line="42" selection-start-column="10" selection-end-line="44" selection-end-column="10" />
+                  <folding>
+                    <element signature="e#0#56#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -110,47 +95,21 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/components/StartButton.js">
+            <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/screens/RegistrePsswScreen.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="442">
-                  <caret line="26" column="51" selection-start-line="26" selection-start-column="51" selection-end-line="26" selection-end-column="51" />
-                  <folding>
-                    <element signature="e#0#26#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/screens/RegistreTelfScreen.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-726">
-                  <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="16" selection-end-column="5" />
-                  <folding>
-                    <element signature="e#0#26#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/screens/Welcome.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <folding>
-                    <element signature="e#0#26#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="330">
+                  <caret line="65" column="17" lean-forward="true" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/screens/RegistreCorreoScreen.js">
+            <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/screens/RegistreTelfScreen.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="173">
-                  <caret line="14" column="48" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="48" />
+                <state relative-caret-position="134">
+                  <caret line="17" column="4" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="27" selection-end-column="5" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
                   </folding>
@@ -159,13 +118,10 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/screens/RegistrePsswScreen.js">
+            <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/reducers/registerFormReducer.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-165">
-                  <caret line="37" column="55" selection-start-line="37" selection-start-column="55" selection-end-line="37" selection-end-column="55" />
-                  <folding>
-                    <element signature="e#0#26#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="340">
+                  <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
                 </state>
               </provider>
             </entry>
@@ -199,8 +155,6 @@
         <option value="$PROJECT_DIR$/jubilapp-mobile/src/screens/RegistreTelfScreen.js" />
         <option value="$PROJECT_DIR$/jubilapp-mobile/src/reducers/loginFormReducer.js" />
         <option value="$PROJECT_DIR$/jubilapp-mobile/src/constants/actions.js" />
-        <option value="$PROJECT_DIR$/jubilapp-mobile/src/actions/registerFormActions.js" />
-        <option value="$PROJECT_DIR$/jubilapp-mobile/src/actions/loginFormActions.js" />
         <option value="$PROJECT_DIR$/jubilapp-mobile/src/store.js" />
         <option value="$PROJECT_DIR$/jubilapp-mobile/src/reducers/index.js" />
         <option value="$PROJECT_DIR$/jubilapp-mobile/src/screens/RegistreCorreoScreen.js" />
@@ -213,11 +167,13 @@
         <option value="$PROJECT_DIR$/jubilapp-mobile/src/screens/Inici.js" />
         <option value="$PROJECT_DIR$/jubilapp-mobile/src/components/Desctription.js" />
         <option value="$PROJECT_DIR$/jubilapp-mobile/src/components/Formulari.js" />
-        <option value="$PROJECT_DIR$/jubilapp-mobile/src/screens/RegistrePsswScreen.js" />
-        <option value="$PROJECT_DIR$/jubilapp-mobile/src/screens/LoginScreen.js" />
         <option value="$PROJECT_DIR$/jubilapp-mobile/src/components/StartButton.js" />
         <option value="$PROJECT_DIR$/jubilapp-mobile/src/constants/colors.js" />
         <option value="$PROJECT_DIR$/jubilapp-mobile/src/components/NextButton.js" />
+        <option value="$PROJECT_DIR$/jubilapp-mobile/src/screens/RegistrePsswScreen.js" />
+        <option value="$PROJECT_DIR$/jubilapp-mobile/src/actions/loginFormActions.js" />
+        <option value="$PROJECT_DIR$/jubilapp-mobile/src/screens/LoginScreen.js" />
+        <option value="$PROJECT_DIR$/jubilapp-mobile/src/actions/registerFormActions.js" />
       </list>
     </option>
   </component>
@@ -234,6 +190,64 @@
     <packageJsonPaths>
       <path value="$PROJECT_DIR$/Web/argon-dashboard-v1.0.0/package.json" />
       <path value="$PROJECT_DIR$/jubilapp-mobile/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/@babel/runtime/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/@material-ui/core/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/@types/jss/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/@types/prop-types/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/@types/react-transition-group/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/@types/react/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/asap/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/brcast/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/change-emitter/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/classnames/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/core-js/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/css-vendor/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/csstype/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/debounce/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/deepmerge/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/dom-helpers/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/encoding/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/fbjs/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/hoist-non-react-statics/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/hyphenate-style-name/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/iconv-lite/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/indefinite-observable/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-in-browser/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-plain-object/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-stream/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/isobject/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/isomorphic-fetch/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/js-tokens/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/jss-camel-case/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/jss-default-unit/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/jss-global/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/jss-nested/node_modules/warning/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/jss-nested/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/jss-props-sort/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/jss-vendor-prefixer/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/jss/node_modules/symbol-observable/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/jss/node_modules/warning/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/jss/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/keycode/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/loose-envify/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/node-fetch/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/normalize-scroll-left/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/object-assign/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/popper.js/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/promise/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/prop-types/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/react-event-listener/node_modules/@babel/runtime/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/react-event-listener/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/react-lifecycles-compat/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/react-transition-group/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/recompose/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/regenerator-runtime/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/safer-buffer/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/setimmediate/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/symbol-observable/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ua-parser-js/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/warning/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/whatwg-fetch/package.json" />
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -332,10 +346,15 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/jubilapp-mobile/.idea/workspace.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/jubilapp-mobile/package-lock.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/jubilapp-mobile/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/jubilapp-mobile/src/Scenes.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/jubilapp-mobile/src/components/Formulari.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/jubilapp-mobile/src/components/NextButton.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/jubilapp-mobile/src/constants/colors.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/jubilapp-mobile/src/screens/KilometreScreen.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/jubilapp-mobile/src/screens/LoginScreen.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/jubilapp-mobile/src/screens/RegistreCorreoScreen.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/jubilapp-mobile/src/screens/RegistreNomCogScreen.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/jubilapp-mobile/src/screens/RegistrePsswScreen.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/jubilapp-mobile/src/screens/RegistreTelfScreen.js</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -343,7 +362,13 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/jubilapp-mobile/src/constants/colors.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/jubilapp-mobile/.idea/jubilapp-mobile.iml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/jubilapp-mobile/.idea/misc.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/jubilapp-mobile/.idea/modules.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/jubilapp-mobile/src/components/ButtonBack.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/jubilapp-mobile/src/images/artPES.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/jubilapp-mobile/src/images/esportPES.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/jubilapp-mobile/src/screens/InteressosScreen.js</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -351,7 +376,7 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="true" />
           <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/jubilapp-mobile/.idea/inspectionProfiles/profiles_settings.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/jubilapp-mobile/src/components/BotoAtras.js</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Restored" />
@@ -457,7 +482,8 @@
       <updated>1540299215535</updated>
       <workItem from="1540299218389" duration="795000" />
       <workItem from="1540322644430" duration="4599000" />
-      <workItem from="1540420680368" duration="28365000" />
+      <workItem from="1540420680368" duration="28427000" />
+      <workItem from="1540509392379" duration="1703000" />
     </task>
     <task id="LOCAL-00001" summary="change stuff">
       <created>1540420724828</created>
@@ -487,17 +513,24 @@
       <option name="project" value="LOCAL" />
       <updated>1540492807256</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Change style">
+      <created>1540496405606</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1540496405606</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33759000" />
+    <option name="totallyTimeSpent" value="35524000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19299406" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22604097" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -547,7 +580,8 @@
     <MESSAGE value="Add Redux for register" />
     <MESSAGE value="Fix some errors and add redux stuff for login" />
     <MESSAGE value="Change some style" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change some style" />
+    <MESSAGE value="Change style" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change style" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/jubilapp-mobile/node_modules/react-native/Libraries/react-native/react-native-implementation.js">
@@ -558,20 +592,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/components/Logo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/reducers/registerFormReducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/Scenes.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -607,23 +628,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/constants/actions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/actions/loginFormActions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#56#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jubilapp-mobile/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -631,24 +635,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/actions/registerFormActions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/components/Numbers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/reducers/loginFormReducer.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -664,33 +652,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/components/ButtonTest.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="22" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/components/RegisterButton.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="563">
-          <caret line="53" selection-start-line="53" selection-end-line="53" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/components/ButtonTest.js" />
+    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/components/RegisterButton.js" />
     <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/components/BotoAtras.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="18" lean-forward="true" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -715,9 +682,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -732,26 +696,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/components/Formulari.js">
+    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/constants/colors.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="85">
+          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/screens/RegistreTelfScreen.js">
+    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/components/StartButton.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-726">
-          <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="16" selection-end-column="5" />
+        <state relative-caret-position="442">
+          <caret line="26" column="51" selection-start-line="26" selection-start-column="51" selection-end-line="26" selection-end-column="51" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -767,10 +725,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/screens/RegistrePsswScreen.js">
+    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/components/NextButton.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-165">
-          <caret line="37" column="55" selection-start-line="37" selection-start-column="55" selection-end-line="37" selection-end-column="55" />
+        <state relative-caret-position="476">
+          <caret line="28" column="40" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -780,7 +738,48 @@
     <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/screens/RegistreCorreoScreen.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
-          <caret line="14" column="48" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="48" />
+          <caret line="14" column="48" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/screens/RegistrePsswScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="65" column="17" lean-forward="true" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/components/Formulari.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-122">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/constants/actions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/reducers/registerFormReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/screens/RegistreTelfScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="17" column="4" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="27" selection-end-column="5" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -789,37 +788,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/screens/LoginScreen.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="29" column="36" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
+        <state relative-caret-position="306">
+          <caret line="28" column="33" lean-forward="true" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/components/StartButton.js">
+    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/actions/loginFormActions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="28" column="47" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
+        <state relative-caret-position="595">
+          <caret line="44" column="10" lean-forward="true" selection-start-line="42" selection-start-column="10" selection-end-line="44" selection-end-column="10" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#56#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/constants/colors.js">
+    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/actions/registerFormActions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/components/NextButton.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
+        <state relative-caret-position="620">
+          <caret line="44" column="10" selection-start-line="44" selection-start-column="10" selection-end-line="44" selection-end-column="10" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#59#0" expanded="true" />
           </folding>
         </state>
       </provider>

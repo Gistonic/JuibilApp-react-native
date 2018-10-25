@@ -95,7 +95,7 @@ const mapStateToProps = (state) => {
 const  mapDispatchToProps = (dispatch)=>{
     return {
         changePassword: (value)=>dispatch(changeRegisterFormProperty("password", value)),
-        changeConfirmPassword: (value)=>dispatch(changeRegisterFormProperty("conformPassword", value))
+        changeConfirmPassword: (value)=>dispatch(changeRegisterFormProperty("confirmPassword", value))
     }
 }
 
