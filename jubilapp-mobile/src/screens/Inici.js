@@ -9,13 +9,13 @@ export default class Inici extends React.Component {
     componentDidMount(){
         this.timeoutHandle = setTimeout(()=>{
             Actions.login()
-        }, 2000);
+        }, 20);
     }
     render() {
         const {viewStyle} = styles;
         return (
             <View style = {viewStyle}>
-              <Logo></Logo>
+              <Logo/>
             </View>   
         );
     }

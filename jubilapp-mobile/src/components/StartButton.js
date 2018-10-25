@@ -1,7 +1,8 @@
 import React from 'react';
 import {View, TouchableOpacity, Text} from 'react-native';
+import {APP_COLORS} from "../constants/colors"
 
-const BotoRegLog = (props) => {
+const StartButton = (props) => {
     return (
         <View style = {styles.container}>
            <TouchableOpacity onPress= {props.path}>
@@ -19,13 +20,18 @@ const BotoRegLog = (props) => {
         alignItems: 'center',
      },
      button: {
+
         borderWidth: 1,
         padding: 8,
-        backgroundColor: '#68CE3B',
-        borderColor: '#68CE3B',
-        color: 'white',
-        borderRadius: 30,
-        fontSize: 30
+        textAlign:'center',
+        backgroundColor: APP_COLORS.color_button_1,
+        borderColor: APP_COLORS.color_button_1,
+        color: APP_COLORS.color_back,
+        borderRadius: 10,
+        fontSize: 30,
+        height: 60,
+        width: 300,
+         marginTop: 15
      }
   }
-export default BotoRegLog;
+export default StartButton;

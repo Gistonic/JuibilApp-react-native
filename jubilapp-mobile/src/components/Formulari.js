@@ -1,13 +1,13 @@
 import React from 'react';
 import { View, TextInput, Text}  from 'react-native';
-import TextExplicatiu from './TextExplicatiu';
+import Desctription from './Desctription';
 
 const Formulari = (props) => {
     const {viewStyle, textStyle, textInputStyle} = styles;
     const { value, onChangeText } = props
     return (
         <View style = {viewStyle}>
-            <TextExplicatiu textExpl = {props.textExplicatiu}/>
+            <Desctription textExpl = {props.textExplicatiu}/>
             <TextInput placeholder = {props.textPlaceHolder} keyboardType= {props.tipusTeclat}
             style = {textInputStyle} value={value} onChangeText={onChangeText}/>
         </View>
@@ -29,8 +29,9 @@ const styles ={
     },
     textInputStyle:{
         height: 40,
-        fontSize: 35,
-        width: 200
+        fontSize: 30,
+        width: 200,
+        marginTop: 20
     }
 }
 export default Formulari;

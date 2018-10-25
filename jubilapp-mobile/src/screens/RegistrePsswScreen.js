@@ -35,7 +35,7 @@ class RegistrePsswScreen extends React.Component {
                          value = {password}
                          onChangeText={(text) => changePassword(text)}/>
               <Formulari textExplicatiu = {'Repite la misma contraseña'}
-                         textPlaceHolder = {'Contraseña repetida'}
+                         textPlaceHolder = {'Contraseña'}
                          tipusTeclat = {'default'}
                          value = {confirmPassword}
                          onChangeText={(text) => changeConfirmPassword(text)}/>

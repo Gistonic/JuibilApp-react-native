@@ -1,6 +1,6 @@
 import React from 'react';
 import {View} from 'react-native';
-import TextExplicatiu from '../components/TextExplicatiu';
+import Desctription from '../components/Desctription';
 import BotoSiguiente from '../components/BotoSiguiente';
 
 import { Actions } from 'react-native-router-flux';
@@ -11,7 +11,7 @@ export default class Welcome extends React.Component {
         return (
             <View style = {viewBig}>
                 <View style = {viewStyle}>
-                <TextExplicatiu textExpl = {'¡Bienvenido a JubilApp!'}/>
+                <Desctription textExpl = {'¡Bienvenido a JubilApp!'}/>
                 </View>   
                 <View style = {viewStyle}>
                     <BotoSiguiente buttonText = {'Continuar'}

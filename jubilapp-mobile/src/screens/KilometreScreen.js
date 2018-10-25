@@ -1,7 +1,7 @@
 import React from 'react';
 import {TouchableOpacity, View} from 'react-native';
 import Header from '../components/Header';
-import TextExplicatiu from '../components/TextExplicatiu';
+import Desctription from '../components/Desctription';
 import BotoSiguiente from '../components/BotoSiguiente';
 import BotoAtras from '../components/BotoAtras';
 import Numbers from '../components/Numbers';
@@ -25,7 +25,7 @@ export default class KilometreScreen extends React.Component {
         return (
             <View style = {viewStyle}>
               <Header headerText = {'JubilApp'}/>
-              <TextExplicatiu textExpl= {'Escoge el radio de kilómetros'}/>
+              <Desctription textExpl= {'Escoge el radio de kilómetros'}/>
               <View style = {{flex: 6, flexDirection:'column'}}>
                   <View style = {container2}>
                     <TouchableOpacity style = {styles.tStyle}
