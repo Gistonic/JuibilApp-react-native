@@ -11,25 +11,30 @@ import {APP_COLORS} from "../constants/colors"
 
 export default class LoginScreen extends React.Component {
     render() {
-        const {viewStyle} = styles;
+        const {viewStyle, viewStyle1, viewStyle2} = styles;
         return (
             <View style = {viewStyle}>
               <Header headerText = {'JubilApp'}/>
-              <Formulari textExplicatiu = {'Introduce correo y contraseña'} textPlaceHolder = {'correo'} tipusTeclat = {'email-address'}/>
-              <Formulari textPlaceHolder = {'contraseña'} tipusTeclat = {'default'}/>
-              <StartButton buttonText = {'Entrar'}/>
-              <Desctription textExpl = {'No tienes cuenta?'}/>
-              <StartButton buttonText = {'Regístrate!'}
-                           path = {() => Actions.r1()}/>
+                <View style = {viewStyle1}>
+                  <Formulari textExplicatiu = {'Introduce correo y contraseña'} textPlaceHolder = {'correo'} tipusTeclat = {'email-address'}/>
+                  <Formulari textPlaceHolder = {'contraseña'} tipusTeclat = {'default'}/>
+                </View>
+                  <StartButton buttonText = {'Entrar'}/>
+                  <Desctription textExpl = {'No tienes cuenta?'}/>
+                  <StartButton buttonText = {'Regístrate!'}
+                               path = {() => Actions.r1()}/>
             </View>
         );
     }
   }
   const styles ={
-    viewStyle: {
-        backgroundColor: APP_COLORS.color_neutral,
-        width: '100%', 
-        height: '100%'
-    }
+        viewStyle: {
+            backgroundColor: APP_COLORS.color_neutral,
+            width: '100%',
+            height: '100%',
+        },
+        viewStyle1: {
+            paddingTop: '15%'
+        }
 
   }

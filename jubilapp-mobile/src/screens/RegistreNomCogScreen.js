@@ -10,28 +10,34 @@ import {changeRegisterFormProperty} from "../actions";
 
 class RegistreNomCogScreen extends React.Component {
     render() {
-        const {viewStyle, vista1Style, container} = styles;
+        const {viewStyle, vista1Style, container, formStyle, viewStyle1} = styles;
         const{name, surname, changeFormName, changeFormSurname}=this.props
         console.log("Render: " + name + " " + surname);
         return (
             <View style = {viewStyle}>
               <Header headerText = {'JubilApp'}/>
-              <View style = {vista1Style}></View>
-              <Formulari textExplicatiu = {'Introduce nombre y apellidos'}
-                         textPlaceHolder = {'Nombre'}
-                         tipusTeclat = {'default'}
-                         value = {name}
-                         onChangeText={(text) => changeFormName(text)}/>
-              <Formulari textPlaceHolder = {'Apellidos'}
-                         tipusTeclat = {'default'}
-                         value = {surname}
-                         onChangeText={(text) => changeFormSurname(text)}/>
-              <View style = {container}>
-                <ButtonBack buttonText = {'Atrás'}
-                            path = {() => Actions.login()}/>
-                <NextButton buttonText = {'Siguiente'}
-                            path = {() => Actions.r2()}/>
-              </View>
+                <View style = {viewStyle1}>
+                    <View style = {vista1Style}>
+                  <View style = {formStyle}>
+                      <Formulari textExplicatiu = {'Introduce nombre y apellidos'}
+                                 textPlaceHolder = {'Nombre'}
+                                 tipusTeclat = {'default'}
+                                 value = {name}
+                                 onChangeText={(text) => changeFormName(text)}
+                      />
+                  </View>
+                  <Formulari textPlaceHolder = {'Apellidos'}
+                             tipusTeclat = {'default'}
+                             value = {surname}
+                             onChangeText={(text) => changeFormSurname(text)}/>
+                    </View>
+                  <View style = {container}>
+                    <ButtonBack buttonText = {'Atrás'}
+                    path = {() => Actions.login()}/>
+                    <NextButton buttonText = {'Siguiente'}
+                                path = {() => Actions.r2()}/>
+                  </View>
+                </View>
             </View>   
         );
     }
@@ -42,15 +48,26 @@ const styles ={
         backgroundColor: '#FFF',
         width: '100%', 
         height: '100%',
-        alignContent: 'center'
+    },
+    viewStyle1: {
+        flex:1,
+        justifyContent: 'space-between'
     },
     vista1Style: {
-        width: '100%',
-        height: '15%'
+        flex:1,
+        paddingTop: '35%',
     },
     container: {
-        flex:1,
-        flexDirection: 'row'
+        flexDirection: 'row',
+        paddingBottom: '7%',
+        justifyContent: 'space-between',
+        paddingRight: '5%',
+        paddingLeft: '5%',
+
+    },
+    formStyle: {
+        paddingLeft: '10%',
+        paddingRight: '10%'
     }
 }
 const mapStateToProps = (state) => {
