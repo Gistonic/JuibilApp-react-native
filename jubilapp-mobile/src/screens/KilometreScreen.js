@@ -3,7 +3,7 @@ import {TouchableOpacity, View} from 'react-native';
 import Header from '../components/Header';
 import Desctription from '../components/Desctription';
 import NextButton from '../components/NextButton';
-import BotoAtras from '../components/BotoAtras';
+import ButtonBack from '../components/ButtonBack';
 import Numbers from '../components/Numbers';
 
 import {Actions} from 'react-native-router-flux';
@@ -125,8 +125,8 @@ export default class KilometreScreen extends React.Component {
                 </View>
                 </View>
               <View style = {container}>
-                <BotoAtras buttonText = {'Atrás'}
-                path = {() => Actions.welcome()}/>
+                <ButtonBack buttonText = {'Atrás'}
+                            path = {() => Actions.welcome()}/>
                 <NextButton buttonText = {'Siguiente'}/>
               </View>
             </View>   

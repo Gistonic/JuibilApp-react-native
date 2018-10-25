@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import Formulari from '../components/Formulari';
 import Header from '../components/Header';
 import NextButton from '../components/NextButton';
-import BotoAtras from '../components/BotoAtras';
+import ButtonBack from '../components/ButtonBack';
 import { Actions } from 'react-native-router-flux';
 import {changeRegisterFormProperty} from "../actions";
 
@@ -27,8 +27,8 @@ class RegistreNomCogScreen extends React.Component {
                          value = {surname}
                          onChangeText={(text) => changeFormSurname(text)}/>
               <View style = {container}>
-                <BotoAtras buttonText = {'Atrás'}
-                path = {() => Actions.login()}/>
+                <ButtonBack buttonText = {'Atrás'}
+                            path = {() => Actions.login()}/>
                 <NextButton buttonText = {'Siguiente'}
                             path = {() => Actions.r2()}/>
               </View>

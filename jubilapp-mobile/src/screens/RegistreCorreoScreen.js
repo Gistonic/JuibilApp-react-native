@@ -3,7 +3,7 @@ import {View} from 'react-native';
 import Formulari from '../components/Formulari';
 import Header from '../components/Header';
 import NextButton from '../components/NextButton';
-import BotoAtras from '../components/BotoAtras';
+import ButtonBack from '../components/ButtonBack';
 import { Actions } from 'react-native-router-flux';
 import {changeRegisterFormProperty} from "../actions";
 import connect from "react-redux/es/connect/connect";
@@ -24,8 +24,8 @@ class RegistreCorreoScreen extends React.Component {
                          onChangeText={(text) => changeFormEmail(text)}/>
               <View style = {vista1Style}></View>
               <View style = {container}>
-                <BotoAtras buttonText = {'Atrás'}
-                path = {() => Actions.r1()}/>
+                <ButtonBack buttonText = {'Atrás'}
+                            path = {() => Actions.r1()}/>
                 <NextButton buttonText = {'Siguiente'}
                             path = {() => Actions.r3()}/>
               </View>

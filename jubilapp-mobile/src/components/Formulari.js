@@ -8,9 +8,11 @@ const Formulari = (props) => {
     return (
         <View style = {viewStyle}>
             <Desctription textExpl = {props.textExplicatiu}/>
-            <TextInput placeholder = {props.textPlaceHolder} keyboardType= {props.tipusTeclat}
-            style = {textInputStyle} value={value} onChangeText={onChangeText}/>
+            <TextInput placeholder = {props.textPlaceHolder} keyboardType= {props.tipusTeclat} underlineColorAndroid='black'
+                       secureTextEntry={true}
+                       style = {textInputStyle} value={value} onChangeText={onChangeText}/>
         </View>
+
     );
 
 };
