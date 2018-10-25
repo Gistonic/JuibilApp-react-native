@@ -22,49 +22,68 @@ class RegistrePsswScreen extends React.Component {
         }
     }
     render() {
-        const {viewStyle, vista1Style, container} = styles;
+        const {viewStyle, vista1Style, container, formStyle, viewStyle1} = styles;
         const{password, confirmPassword, changePassword, changeConfirmPassword}=this.props
         return (
             
             <View style = {viewStyle}>
               <Header headerText = {'JubilApp'}/>
-              <View style = {vista1Style}></View>
-              <Formulari textExplicatiu = {'Introduce la contraseña (mínimo 8 carácteres)'}
-                         textPlaceHolder = {'Contraseña'}
-                         tipusTeclat = {'default'}
-                         value = {password}
-                         onChangeText={(text) => changePassword(text)}/>
-              <Formulari textExplicatiu = {'Repite la misma contraseña'}
-                         textPlaceHolder = {'Contraseña'}
-                         tipusTeclat = {'default'}
-                         value = {confirmPassword}
-                         onChangeText={(text) => changeConfirmPassword(text)}/>
-              <View style = {vista1Style}></View>
-              <View style = {container}>
-                <ButtonBack buttonText = {'Atrás'}
-                            path = {() => Actions.r2()}/>
-                <NextButton buttonText = {'Siguiente'}
-                            path = {() => this.nextScreen()}/>
-              </View>
+                <View style = {viewStyle1}>
+                    <View style = {vista1Style}>
+                        <View style = {formStyle}>
+                          <Formulari textExplicatiu = {'Introduce la contraseña (mínimo 8 carácteres)'}
+                                     textPlaceHolder = {'Contraseña'}
+                                     tipusTeclat = {'default'}
+                                     value = {password}
+                                     onChangeText={(text) => changePassword(text)}/>
+                        </View>
+                        <View style = {formStyle}>
+                          <Formulari textExplicatiu = {'Repite la misma contraseña'}
+                                     textPlaceHolder = {'Contraseña'}
+                                     tipusTeclat = {'default'}
+                                     value = {confirmPassword}
+                                     onChangeText={(text) => changeConfirmPassword(text)}/>
+                        </View>
+                    </View>
+                    <View style = {container}>
+                        <ButtonBack buttonText = {'Atrás'}
+                                        path = {() => Actions.r2()}/>
+                        <NextButton buttonText = {'Siguiente'}
+                                        path = {() => this.nextScreen()}/>
+                    </View>
+                </View>
             </View>   
         );
     }
   }
   const styles ={
-    viewStyle: {
-        backgroundColor: '#FFF',
-        width: '100%', 
-        height: '100%',
-        alignContent: 'center'
-    },
-    vista1Style: {
-        width: '100%',
-        height: '10%'
-    },
-    container: {
-        flex:1,
-        flexDirection: 'row'
-    }
+      viewStyle: {
+          backgroundColor: '#FFF',
+          width: '100%',
+          height: '100%',
+      },
+      viewStyle1: {
+          flex:1,
+          justifyContent: 'space-between'
+      },
+      vista1Style: {
+          flex:1,
+          paddingTop: '15%',
+      },
+      container: {
+          flexDirection: 'row',
+          paddingBottom: '7%',
+          justifyContent: 'space-between',
+          paddingRight: '5%',
+          paddingLeft: '5%',
+
+      },
+      formStyle: {
+          paddingLeft: '10%',
+          paddingRight: '10%',
+          paddingBottom: '10%',
+          paddingTop: '10%'
+      }
   }
 const mapStateToProps = (state) => {
     return {

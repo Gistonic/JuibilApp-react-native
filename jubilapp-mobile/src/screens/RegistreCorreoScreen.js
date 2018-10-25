@@ -11,43 +11,58 @@ import connect from "react-redux/es/connect/connect";
 class RegistreCorreoScreen extends React.Component {
 
     render() {
-        const {viewStyle, vista1Style, container} = styles;
+        const {viewStyle, vista1Style, container, viewStyle1, formStyle} = styles;
         const{email, changeFormEmail}=this.props
         return (
             <View style = {viewStyle}>
               <Header headerText = {'JubilApp'}/>
-              <View style = {vista1Style}></View>
-              <Formulari textExplicatiu = {'Introduce correo electrónico'}
-                         textPlaceHolder = {'Correo'}
-                         tipusTeclat = {'email-address'}
-                         value = {email}
-                         onChangeText={(text) => changeFormEmail(text)}/>
-              <View style = {vista1Style}></View>
-              <View style = {container}>
-                <ButtonBack buttonText = {'Atrás'}
-                            path = {() => Actions.r1()}/>
-                <NextButton buttonText = {'Siguiente'}
-                            path = {() => Actions.r3()}/>
-              </View>
+                <View style = {viewStyle1}>
+                    <View style = {vista1Style}>
+                        <View style = {formStyle}>
+                          <Formulari textExplicatiu = {'Introduce correo electrónico'}
+                                     textPlaceHolder = {'Correo'}
+                                     tipusTeclat = {'email-address'}
+                                     value = {email}
+                                     onChangeText={(text) => changeFormEmail(text)}/>
+                        </View>
+                    </View>
+                  <View style = {container}>
+                    <ButtonBack buttonText = {'Atrás'}
+                                path = {() => Actions.r1()}/>
+                    <NextButton buttonText = {'Siguiente'}
+                                path = {() => Actions.r3()}/>
+                  </View>
+                </View>
             </View>   
         );
     }
   }
   const styles ={
-    viewStyle: {
-        backgroundColor: '#FFF',
-        width: '100%', 
-        height: '100%',
-        alignContent: 'center'
-    },
-    vista1Style: {
-        width: '100%',
-        height: '15%'
-    },
-    container: {
-        flex:1,
-        flexDirection: 'row'
-    }
+      viewStyle: {
+          backgroundColor: '#FFF',
+          width: '100%',
+          height: '100%',
+      },
+      viewStyle1: {
+          flex:1,
+          justifyContent: 'space-between'
+      },
+      vista1Style: {
+          flex:1,
+          paddingTop: '45%',
+      },
+      container: {
+          flexDirection: 'row',
+          paddingBottom: '7%',
+          justifyContent: 'space-between',
+          paddingRight: '5%',
+          paddingLeft: '5%',
+
+      },
+      formStyle: {
+          paddingLeft: '10%',
+          paddingRight: '10%'
+      }
   }
 const mapStateToProps = (state) => {
     return {
