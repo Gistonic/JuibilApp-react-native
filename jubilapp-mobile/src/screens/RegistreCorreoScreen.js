@@ -9,8 +9,10 @@ import {changeRegisterFormProperty} from "../actions";
 import connect from "react-redux/es/connect/connect";
 
 class RegistreCorreoScreen extends React.Component {
+
     render() {
         const {viewStyle, vista1Style, container} = styles;
+        const{email, changeFormEmail}=this.props
         return (
             <View style = {viewStyle}>
               <Header headerText = {'JubilApp'}/>
