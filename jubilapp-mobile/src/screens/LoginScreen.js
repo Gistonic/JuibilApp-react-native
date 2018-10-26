@@ -1,5 +1,5 @@
 import React from 'react';
-import {View} from 'react-native';
+import {KeyboardAvoidingView, View} from 'react-native';
 import Formulari from '../components/Formulari';
 import Logo from '../components/Logo';
 import Header from '../components/Header';
@@ -29,6 +29,7 @@ class LoginScreen extends React.Component {
         const {viewStyle, viewStyle1, viewStyle2} = styles;
         const {email, changeFormEmail, password, changeFormPassword}=this.props;
         return (
+            <KeyboardAvoidingView behavior = 'position'>
             <View style = {viewStyle}>
               <Header headerText = {'JubilApp'}/>
                 <View style = {viewStyle1}>
@@ -48,6 +49,7 @@ class LoginScreen extends React.Component {
                   <StartButton buttonText = {'Regístrate!'}
                                path = {() => Actions.r1()}/>
             </View>
+            </KeyboardAvoidingView>
         );
     }
   }
@@ -58,7 +60,7 @@ class LoginScreen extends React.Component {
             height: '100%',
         },
         viewStyle1: {
-            paddingTop: '15%'
+            paddingTop: '25%'
         }
 
   }

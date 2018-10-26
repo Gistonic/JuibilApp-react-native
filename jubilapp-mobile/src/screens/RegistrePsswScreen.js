@@ -1,5 +1,5 @@
 import React from 'react';
-import {View} from 'react-native';
+import {View, KeyboardAvoidingView} from 'react-native';
 import Formulari from '../components/Formulari';
 import Header from '../components/Header';
 import NextButton from '../components/NextButton';
@@ -25,7 +25,7 @@ class RegistrePsswScreen extends React.Component {
         const {viewStyle, vista1Style, container, formStyle, viewStyle1} = styles;
         const{password, confirmPassword, changePassword, changeConfirmPassword}=this.props
         return (
-            
+            <KeyboardAvoidingView behavior = 'position'>
             <View style = {viewStyle}>
               <Header headerText = {'JubilApp'}/>
                 <View style = {viewStyle1}>
@@ -52,7 +52,8 @@ class RegistrePsswScreen extends React.Component {
                                         path = {() => this.nextScreen()}/>
                     </View>
                 </View>
-            </View>   
+            </View>
+            </KeyboardAvoidingView>
         );
     }
   }
@@ -68,7 +69,7 @@ class RegistrePsswScreen extends React.Component {
       },
       vista1Style: {
           flex:1,
-          paddingTop: '15%',
+          paddingTop: '10%',
       },
       container: {
           flexDirection: 'row',
@@ -83,7 +84,7 @@ class RegistrePsswScreen extends React.Component {
           paddingRight: '10%',
           paddingBottom: '10%',
           paddingTop: '10%'
-      }
+      },
   }
 const mapStateToProps = (state) => {
     return {

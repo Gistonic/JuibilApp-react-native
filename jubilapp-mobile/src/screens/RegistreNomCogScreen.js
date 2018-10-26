@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, KeyboardAvoidingView} from 'react-native';
 import {connect} from 'react-redux'
 import Formulari from '../components/Formulari';
 import Header from '../components/Header';
@@ -14,6 +14,7 @@ class RegistreNomCogScreen extends React.Component {
         const{name, surname, changeFormName, changeFormSurname}=this.props
         console.log("Render: " + name + " " + surname);
         return (
+            <KeyboardAvoidingView behavior = 'position'>
             <View style = {viewStyle}>
               <Header headerText = {'JubilApp'}/>
                 <View style = {viewStyle1}>
@@ -38,7 +39,8 @@ class RegistreNomCogScreen extends React.Component {
                                 path = {() => Actions.r2()}/>
                   </View>
                 </View>
-            </View>   
+            </View>
+            </KeyboardAvoidingView>
         );
     }
 }

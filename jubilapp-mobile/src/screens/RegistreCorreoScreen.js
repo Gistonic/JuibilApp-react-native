@@ -1,5 +1,5 @@
 import React from 'react';
-import {View} from 'react-native';
+import {KeyboardAvoidingView, View} from 'react-native';
 import Formulari from '../components/Formulari';
 import Header from '../components/Header';
 import NextButton from '../components/NextButton';
@@ -14,6 +14,7 @@ class RegistreCorreoScreen extends React.Component {
         const {viewStyle, vista1Style, container, viewStyle1, formStyle} = styles;
         const{email, changeFormEmail}=this.props
         return (
+            <KeyboardAvoidingView behavior = 'position'>
             <View style = {viewStyle}>
               <Header headerText = {'JubilApp'}/>
                 <View style = {viewStyle1}>
@@ -33,7 +34,8 @@ class RegistreCorreoScreen extends React.Component {
                                 path = {() => Actions.r3()}/>
                   </View>
                 </View>
-            </View>   
+            </View>
+            </KeyboardAvoidingView>
         );
     }
   }

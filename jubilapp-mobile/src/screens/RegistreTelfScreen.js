@@ -1,5 +1,5 @@
 import React from 'react';
-import {View} from 'react-native';
+import {KeyboardAvoidingView, View} from 'react-native';
 import Formulari from '../components/Formulari';
 import Header from '../components/Header';
 import NextButton from '../components/NextButton';
@@ -30,7 +30,7 @@ class RegistreTelfScreen extends React.Component {
         const {viewStyle, vista1Style, container, formStyle, viewStyle1} = styles;
         const { phone, changeFormPhone } = this.props;
         return (
-            
+            <KeyboardAvoidingView behavior = 'position'>
             <View style = {viewStyle}>
               <Header headerText = {'JubilApp'}/>
                 <View style = {viewStyle1}>
@@ -53,7 +53,8 @@ class RegistreTelfScreen extends React.Component {
                                         path = {this.onNextPressed}/>
                           </View>
                 </View>
-            </View>   
+            </View>
+            </KeyboardAvoidingView>
         );
     }
   }
