@@ -40,6 +40,7 @@ class LoginScreen extends React.Component {
                              onChangeText={(text) => changeFormEmail(text)}/>
                   <Formulari textPlaceHolder = {'contraseña'}
                              tipusTeclat = {'default'}
+                             psswCodificada = {true}
                              value = {password}
                              onChangeText={(text) => changeFormPassword(text)}/>
                 </View>

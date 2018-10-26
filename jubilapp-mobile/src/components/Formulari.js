@@ -9,7 +9,7 @@ const Formulari = (props) => {
         <View style = {viewStyle}>
             <Desctription textExpl = {props.textExplicatiu}/>
             <TextInput placeholder = {props.textPlaceHolder} keyboardType= {props.tipusTeclat} underlineColorAndroid='black'
-                       secureTextEntry={true}
+                       secureTextEntry={props.psswCodificada}
                        style = {textInputStyle} value={value} onChangeText={onChangeText}/>
         </View>
 

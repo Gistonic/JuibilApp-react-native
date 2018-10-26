@@ -34,6 +34,7 @@ class RegistrePsswScreen extends React.Component {
                           <Formulari textExplicatiu = {'Introduce la contraseña (mínimo 8 carácteres)'}
                                      textPlaceHolder = {'Contraseña'}
                                      tipusTeclat = {'default'}
+                                     psswCodificada = {true}
                                      value = {password}
                                      onChangeText={(text) => changePassword(text)}/>
                         </View>
@@ -41,6 +42,7 @@ class RegistrePsswScreen extends React.Component {
                           <Formulari textExplicatiu = {'Repite la misma contraseña'}
                                      textPlaceHolder = {'Contraseña'}
                                      tipusTeclat = {'default'}
+                                     psswCodificada = {true}
                                      value = {confirmPassword}
                                      onChangeText={(text) => changeConfirmPassword(text)}/>
                         </View>
