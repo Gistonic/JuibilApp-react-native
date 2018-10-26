@@ -21,7 +21,7 @@ const receiveLogin = (token) => {
 
 export const login = (userInfo) => {
     return (dispatch) => {
-        fetch('URL_LOGIN', {
+        fetch('http://jubilapp.serveo.net/login/', {
             method: 'POST',
             body: JSON.stringify(userInfo)
         }).then(response => {
@@ -36,7 +36,8 @@ export const login = (userInfo) => {
 
                 */
             } else {
-                console.error('Error sending register')
+                console.log('Error sending login')
+                console.log(response)
             }
         }).then(json => {
             dispatch(receiveLogin(json.token))
