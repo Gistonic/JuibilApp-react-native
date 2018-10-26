@@ -1,5 +1,6 @@
 import React from 'react';
 import {Image} from 'react-native';
+import {APP_COLORS} from "../constants/colors";
 
 const Logo = () => {
     return (
@@ -16,7 +17,7 @@ const styles = {
         borderWidth: 5,
  
         // Set border Hex Color Code Here.
-        borderColor: '#864EE8',
+        borderColor: APP_COLORS.color_neutral,
 
         borderRadius: 150
     }

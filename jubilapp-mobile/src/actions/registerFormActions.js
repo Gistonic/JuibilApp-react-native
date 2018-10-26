@@ -21,11 +21,17 @@ const receiveRegister = (token) => {
 
 export const register = (userInfo) => {
     return (dispatch) => {
-        fetch('http://jubilapp.serveo.net/register/', {
+        fetch('http://ordinadorcasa.no-ip.org:4100/auth/register', {
             method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
             body: JSON.stringify(userInfo)
         }).then(response => {
+            console.log(response)
             if (response.ok) {
+                console.log(response.ok)
 
                 return response.json()
 

@@ -21,14 +21,16 @@ const receiveLogin = (token) => {
 
 export const login = (userInfo) => {
     return (dispatch) => {
-        fetch('http://jubilapp.serveo.net/login/', {
+        fetch('http://ordinadorcasa.no-ip.org:4100/auth/login/', {
             method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
             body: JSON.stringify(userInfo)
         }).then(response => {
-            console.log(userInfo)
             if (response.ok) {
                 return response.json()
-
                 /*
                 {
                     "token": "123nahibrih123g13ugi217g"
