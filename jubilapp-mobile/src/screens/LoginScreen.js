@@ -10,6 +10,7 @@ import { Actions } from 'react-native-router-flux';
 import {APP_COLORS} from "../constants/colors";
 import connect from "react-redux/es/connect/connect";
 import {changeLoginFormProperty, login} from "../actions/loginFormActions";
+import NextButton from "../components/NextButton";
 
 class LoginScreen extends React.Component {
     constructor(props) {
@@ -43,6 +44,8 @@ class LoginScreen extends React.Component {
                              psswCodificada = {true}
                              value = {password}
                              onChangeText={(text) => changeFormPassword(text)}/>
+                    <NextButtonNextButton buttonText = {'Crear activitat'}
+                                          path = {() => Actions.r1()}/>
                 </View>
                   <StartButton buttonText = {'Entrar'}
                                path = {this.onLoginPressed}/>
