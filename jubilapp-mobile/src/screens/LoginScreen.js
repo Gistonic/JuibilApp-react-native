@@ -44,7 +44,7 @@ class LoginScreen extends React.Component {
                              psswCodificada = {true}
                              value = {password}
                              onChangeText={(text) => changeFormPassword(text)}/>
-                    <NextButtonNextButton buttonText = {'Crear activitat'}
+                    <NextButton buttonText = {'Crear activitat'}
                                           path = {() => Actions.r1()}/>
                 </View>
                   <StartButton buttonText = {'Entrar'}
