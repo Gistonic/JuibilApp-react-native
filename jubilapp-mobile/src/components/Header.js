@@ -1,6 +1,6 @@
 import React from 'react';
 import {Text, View } from 'react-native';
-import {APP_COLORS} from "../constants/colors"
+import {APP_COLORS} from "../constants/colors";
 
 const Header = (props) => {
     const {textStyle,viewStyle} = styles;
@@ -16,7 +16,7 @@ const styles ={
         justifyContent: 'center',
         alignItems: 'center', //horizontal
         height: 100,
-        paddingTop: 20
+        paddingTop: 20,
      
 
     },

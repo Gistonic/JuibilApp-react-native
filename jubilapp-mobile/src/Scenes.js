@@ -9,6 +9,8 @@ import RegistreCorreoScreen from './screens/RegistreCorreoScreen';
 import RegistrePsswScreen from './screens/RegistrePsswScreen';
 import RegistreTelfScreen from './screens/RegistreTelfScreen';
 import KilometreScreen from './screens/KilometreScreen';
+import HomeScreen from './screens/HomeScreen';
+import NameUbi from './screens/NameUbi';
 
 
 const Scenes = Actions.create(
@@ -21,6 +23,8 @@ const Scenes = Actions.create(
 		<Scene key="r3" component={RegistrePsswScreen}/>
 		<Scene key="r4" component={RegistreTelfScreen}/>
         <Scene key="km" component={KilometreScreen}/>
+		<Scene key="home" component={HomeScreen}/>
+		<Scene key="nameUbi" component={NameUbi}/>
 	</Scene>
 )
 
