@@ -45,7 +45,7 @@ export default class IniDate extends React.Component {
                 <Header headerText = {'Crear Actividad'}/>
                 <View style = {viewButtons}>
                     <View style={{paddingLeft: '8%', paddingRight: '8%'}}>
-                    <Description textExpl={ 'Define el inicio de la actividad'}/>
+                    <Description textExpl={ 'Define el final de la actividad'}/>
                     </View>
                     <Calendar style = {calendarStyle}
                               onDayPress={this.select.bind(this)}
@@ -65,13 +65,12 @@ export default class IniDate extends React.Component {
                                   textMonthFontSize: 30,
                                   textDayHeaderFontSize: 18,
                               }}
-                              />
+                    />
                 </View>
                 <View style = {container}>
                     <ButtonBack buttonText = {'Atrás'}
-                                path = {() => Actions.nameUbi()}/>
-                    <NextButton buttonText = {'Siguiente'}
-                                path = {() => Actions.finDate()}/>
+                                path = {() => Actions.iniDate()}/>
+                    <NextButton buttonText = {'Siguiente'}/>
                 </View>
             </View>
         );
