@@ -7,7 +7,15 @@ const IconButton = (props) => {
     return (
         <View style = {styles.viewStyle}>
             <TouchableOpacity onPress= {props.path}
-                              style={styles.touchableStyle}>
+                              style={{
+                                  borderWidth:3,
+                                  borderColor: props.colorName,
+                                  justifyContent:'space-between',
+                                  alignItems: 'center',
+                                  flexDirection: 'row',
+                                  height: 150,
+                                  borderRadius: 10
+                              }}>
                 <Text style = {styles.buttonTextStyle}>
                     {props.buttonText}
                 </Text>
@@ -23,15 +31,6 @@ const styles = {
         flex: 1,
         alignItems: 'center',
         paddingTop: '5%',
-    },
-    touchableStyle: {
-        borderWidth:3,
-        borderColor: APP_COLORS.color_button_1,
-        justifyContent:'space-between',
-        alignItems: 'center',
-        flexDirection: 'row',
-        height: 150,
-        borderRadius: 10
     },
     buttonTextStyle: {
         paddingLeft: '8%',
