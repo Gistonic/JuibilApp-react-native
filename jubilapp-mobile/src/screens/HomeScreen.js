@@ -17,14 +17,14 @@ export default class HomeScreen extends React.Component {
             />
                 <View style = {viewButtons}>
                     <IconButton iconName={ 'md-search'}
-                                colorName={ APP_COLORS.text_color}
+                                colorName={ APP_COLORS.color_button_1}
                                 buttonText = {'BUSCAR ACTIVIDADES'}
                     />
                     <IconButton iconName={ 'md-eye'}
-                                colorName={ APP_COLORS.text_color}
+                                colorName={ APP_COLORS.color_header}
                                 buttonText = {'VISUALIZAR ACTIVIDADES'}/>
                     <IconButton iconName={'md-add-circle'}
-                                colorName={ APP_COLORS.text_color}
+                                colorName={ APP_COLORS.color_next}
                                 buttonText = {'CREAR ACTIVIDAD'}
                                 path={() => Actions.nameUbi()}
                     />

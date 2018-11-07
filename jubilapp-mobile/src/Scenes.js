@@ -11,7 +11,7 @@ import RegistreTelfScreen from './screens/RegistreTelfScreen';
 import KilometreScreen from './screens/KilometreScreen';
 import HomeScreen from './screens/HomeScreen';
 import NameUbi from './screens/NameUbi';
-
+import IniDate from './screens/IniDate';
 
 const Scenes = Actions.create(
 	<Scene key="root" hideNavBar={true} duration={0}>
@@ -25,6 +25,7 @@ const Scenes = Actions.create(
         <Scene key="km" component={KilometreScreen}/>
 		<Scene key="home" component={HomeScreen}/>
 		<Scene key="nameUbi" component={NameUbi}/>
+		<Scene key="iniDate" component={IniDate}/>
 	</Scene>
 )
 

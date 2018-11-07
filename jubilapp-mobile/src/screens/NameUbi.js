@@ -28,7 +28,8 @@ class NameUbi extends React.Component {
                         <View style = {container}>
                             <ButtonBack buttonText = {'Atrás'}
                                         path = {() => Actions.home()}/>
-                            <NextButton buttonText = {'Siguiente'}/>
+                            <NextButton buttonText = {'Siguiente'}
+                                        path = {() => Actions.iniDate()}/>
                         </View>
                     </View>
                 </View>

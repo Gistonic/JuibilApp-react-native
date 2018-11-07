@@ -26,7 +26,7 @@ const styles = {
     },
     touchableStyle: {
         borderWidth:3,
-        borderColor: APP_COLORS.color_header,
+        borderColor: APP_COLORS.color_button_1,
         justifyContent:'space-between',
         alignItems: 'center',
         flexDirection: 'row',

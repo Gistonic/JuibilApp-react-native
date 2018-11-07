@@ -2,7 +2,7 @@ import React from 'react';
 import { View, TextInput, Text}  from 'react-native';
 import {APP_COLORS} from "../constants/colors"
 
-const Desctription = (props) => {
+const Description = (props) => {
     const {textStyle} = styles;
     return (
         <Text style = {textStyle}>{props.textExpl}</Text>
@@ -19,4 +19,4 @@ const styles ={
         marginTop: 30,
     }
 }
-export default Desctription;
+export default Description;

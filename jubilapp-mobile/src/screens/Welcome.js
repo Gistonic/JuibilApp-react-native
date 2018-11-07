@@ -1,6 +1,6 @@
 import React from 'react';
 import {View} from 'react-native';
-import Desctription from '../components/Desctription';
+import Description from '../components/Description';
 import NextButton from '../components/NextButton';
 import {APP_COLORS} from "../constants/colors";
 
@@ -12,7 +12,7 @@ export default class Welcome extends React.Component {
         return (
             <View style = {viewBig}>
                 <View style = {viewStyle}>
-                <Desctription textExpl = {'¡Bienvenido a JubilApp!'}/>
+                <Description textExpl = {'¡Bienvenido a JubilApp!'}/>
                 </View>   
                 <View style = {viewStyle}>
                     <NextButton buttonText = {'Continuar'}

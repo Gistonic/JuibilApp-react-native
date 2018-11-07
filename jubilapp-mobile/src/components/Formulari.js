@@ -1,13 +1,13 @@
 import React from 'react';
 import { View, TextInput, Text}  from 'react-native';
-import Desctription from './Desctription';
+import Description from './Description';
 
 const Formulari = (props) => {
     const {viewStyle, textStyle, textInputStyle} = styles;
     const { value, onChangeText } = props
     return (
         <View style = {viewStyle}>
-            <Desctription textExpl = {props.textExplicatiu}/>
+            <Description textExpl = {props.textExplicatiu}/>
             <TextInput placeholder = {props.textPlaceHolder} keyboardType= {props.tipusTeclat} underlineColorAndroid='black'
                        secureTextEntry={props.psswCodificada}
                        style = {textInputStyle} value={value} onChangeText={onChangeText}/>
