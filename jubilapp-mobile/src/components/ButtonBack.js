@@ -1,15 +1,19 @@
 import React from 'react';
-import {View, TouchableOpacity, Text} from 'react-native';
+import {View, TouchableOpacity, Text, Button, TouchableHighlight} from 'react-native';
 import {APP_COLORS} from "../constants/colors";
 
 const ButtonBack = (props) => {
     return (
         <View style = {styles.container}>
-           <TouchableOpacity onPress= {props.path}>
-              <Text style = {styles.button}>
-                 {props.buttonText}
-              </Text>
-           </TouchableOpacity>
+           <TouchableHighlight onPress= {props.path} style = {styles.touchableStyle}>
+                <View style = {styles.btnContainer}>
+                    <Text style = {styles.button}>
+                        {props.buttonText}
+                    </Text>
+                </View>
+
+           </TouchableHighlight>
+
         </View>
      )
   };
@@ -18,6 +22,17 @@ const ButtonBack = (props) => {
         container: {
             flex: 1,
             alignItems: 'center',
+        },
+        touchableStyle:{
+            flexDirection: 'row'
+        },
+        btnContainer: {
+            flex: 1,
+            flexDirection: 'row',
+            justifyContent: 'center',
+            alignItems: 'stretch',
+            alignSelf: 'stretch',
+            borderRadius: 10,
         },
         button: {
             borderWidth: 3,
@@ -33,3 +48,7 @@ const ButtonBack = (props) => {
         }
     }
 export default ButtonBack;
+
+/*<Text style = {styles.button}>
+    {props.buttonText}
+</Text>*/

@@ -14,6 +14,7 @@ export default class HomeScreen extends React.Component {
             <HeaderIcon headerText = {'JubilApp'}
                     iconName={ 'user'}
                     colorName={ APP_COLORS.color_neutral}
+                        path={() => Actions.interessos()}
             />
                 <View style = {viewButtons}>
                     <IconButton iconName={ 'md-search'}

@@ -12,7 +12,6 @@ const Formulari = (props) => {
                        secureTextEntry={props.psswCodificada}
                        style = {textInputStyle} value={value} onChangeText={onChangeText}/>
         </View>
-
     );
 
 };
