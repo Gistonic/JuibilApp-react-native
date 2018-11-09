@@ -109,6 +109,7 @@ export default class FinHour extends React.Component {
                     <NextButton buttonText = {'Siguiente'}/>
                 </View>
             </View>
+
         );
     }
 }

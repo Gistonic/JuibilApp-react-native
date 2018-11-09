@@ -7,7 +7,7 @@ import Interes from '../components/Interes';
 import Header from '../components/Header';
 
 import { Actions } from 'react-native-router-flux';
-import Desctription from "../components/Desctription";
+import Description from "../components/Description";
 import ButtonBack from "../components/ButtonBack";
 import NextButton from "../components/NextButton";
 
@@ -28,7 +28,7 @@ export default class InteressosScreen extends React.Component {
         return (
             <View style = {viewStyle}>
                 <Header headerText = {'JubilApp'}/>
-                <Desctription textExpl = {'Selecciona tus intereses'}/>
+                <Description textExpl = {'Selecciona tus intereses'}/>
                 <View style = {container}>
                     <TouchableOpacity style={styles.buttonStyle}
                                       onPress={ () => {
