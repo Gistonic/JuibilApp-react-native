@@ -70,7 +70,8 @@ export default class IniDate extends React.Component {
                 <View style = {container}>
                     <ButtonBack buttonText = {'Atrás'}
                                 path = {() => Actions.iniDate()}/>
-                    <NextButton buttonText = {'Siguiente'}/>
+                    <NextButton buttonText = {'Siguiente'}
+                                path = {() => Actions.iniHour()}/>
                 </View>
             </View>
         );

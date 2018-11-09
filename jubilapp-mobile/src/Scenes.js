@@ -13,6 +13,8 @@ import HomeScreen from './screens/HomeScreen';
 import NameUbi from './screens/NameUbi';
 import IniDate from './screens/IniDate';
 import FinDate from './screens/FinDate';
+import IniHour from './screens/IniHour';
+import FinHour from './screens/FinHour';
 
 const Scenes = Actions.create(
 	<Scene key="root" hideNavBar={true} duration={0}>
@@ -28,6 +30,8 @@ const Scenes = Actions.create(
 		<Scene key="nameUbi" component={NameUbi}/>
 		<Scene key="iniDate" component={IniDate}/>
         <Scene key="finDate" component={FinDate}/>
+        <Scene key="iniHour" component={IniHour}/>
+        <Scene key="finHour" component={FinHour}/>
 	</Scene>
 )
 
