@@ -98,9 +98,6 @@ export default class IniHour extends React.Component {
                             <FontAwesome name = 'chevron-circle-down' size={100}/>
                         </TouchableOpacity>
                     </View>
-                        <View style = {upsDownsStyle}>
-                            <Text style = {{fontSize: 100}}>h</Text>
-                        </View>
                     </View>
                 </View>
                 <View style = {container}>

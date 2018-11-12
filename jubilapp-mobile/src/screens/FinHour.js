@@ -98,15 +98,13 @@ export default class FinHour extends React.Component {
                                 <FontAwesome name = 'chevron-circle-down' size={100}/>
                             </TouchableOpacity>
                         </View>
-                        <View style = {upsDownsStyle}>
-                            <Text style = {{fontSize: 100}}>h</Text>
-                        </View>
                     </View>
                 </View>
                 <View style = {container}>
                     <ButtonBack buttonText = {'Atrás'}
                                 path = {() => Actions.iniHour()}/>
-                    <NextButton buttonText = {'Siguiente'}/>
+                    <NextButton buttonText = {'Siguiente'}
+                                path = {() => Actions.actdescr()}/>
                 </View>
             </View>
 
