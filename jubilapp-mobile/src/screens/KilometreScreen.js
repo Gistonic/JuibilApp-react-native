@@ -1,5 +1,6 @@
 import React from 'react';
 import {TouchableOpacity, View} from 'react-native';
+import {APP_COLORS} from "../constants/colors";
 import Header from '../components/Header';
 import Description from '../components/Description';
 import NextButton from '../components/NextButton';
@@ -21,7 +22,7 @@ export default class KilometreScreen extends React.Component {
         }
     }
     render() {
-        const {viewStyle, vista1Style, container, container2} = styles;
+        const {viewStyle, container, container2} = styles;
         return (
             <View style = {viewStyle}>
               <Header headerText = {'JubilApp'}/>
@@ -41,7 +42,7 @@ export default class KilometreScreen extends React.Component {
                      }}
                     >
                         <Numbers buttonText = '5'
-                        backcolor = {this.state.button_1 ? '#864EE8' : "gray"}></Numbers>
+                        backcolor = {this.state.button_1 ? APP_COLORS.color_button_1 : APP_COLORS.text_color}></Numbers>
                     </TouchableOpacity>
                     <TouchableOpacity style = {styles.tStyle}
                     onPress={() => {
@@ -56,7 +57,7 @@ export default class KilometreScreen extends React.Component {
                      }}
                     >
                         <Numbers buttonText = '10'
-                        backcolor = {this.state.button_2 ? '#864EE8' : "gray"}></Numbers>
+                        backcolor = {this.state.button_2 ? APP_COLORS.color_button_1 : APP_COLORS.text_color}></Numbers>
                     </TouchableOpacity>
                  </View>
                 <View style = {container2}>
@@ -73,7 +74,7 @@ export default class KilometreScreen extends React.Component {
                      }}
                     >
                         <Numbers buttonText = '15'
-                        backcolor = {this.state.button_3 ? '#864EE8' : "gray"}></Numbers>
+                        backcolor = {this.state.button_3 ? APP_COLORS.color_button_1 : APP_COLORS.text_color}></Numbers>
                     </TouchableOpacity>
                     <TouchableOpacity style = {styles.tStyle}
                     onPress={() => {
@@ -88,7 +89,7 @@ export default class KilometreScreen extends React.Component {
                      }}
                     >
                         <Numbers buttonText = '20'
-                        backcolor = {this.state.button_4 ? '#864EE8' : "gray"}></Numbers>
+                        backcolor = {this.state.button_4 ? APP_COLORS.color_button_1 : APP_COLORS.text_color}></Numbers>
                     </TouchableOpacity>
                 </View>
                 <View style = {container2}>
@@ -105,7 +106,7 @@ export default class KilometreScreen extends React.Component {
                      }}
                     >
                         <Numbers buttonText = '25'
-                        backcolor = {this.state.button_5 ? '#864EE8' : "gray"}></Numbers>
+                        backcolor = {this.state.button_5 ? APP_COLORS.color_button_1 : APP_COLORS.text_color}></Numbers>
                     </TouchableOpacity>
                     <TouchableOpacity style = {styles.tStyle}
                     onPress={() => {
@@ -120,13 +121,13 @@ export default class KilometreScreen extends React.Component {
                      }}
                     >
                         <Numbers buttonText = '30'
-                        backcolor = {this.state.button_6 ? '#864EE8' : "gray"}></Numbers>
+                        backcolor = {this.state.button_6 ? APP_COLORS.color_button_1 : APP_COLORS.text_color}></Numbers>
                     </TouchableOpacity>
                 </View>
                 </View>
               <View style = {container}>
                 <ButtonBack buttonText = {'Atrás'}
-                            path = {() => Actions.welcome()}/>
+                            path = {() => Actions.interessos()}/>
                 <NextButton buttonText = {'Siguiente'}/>
               </View>
             </View>   
@@ -135,7 +136,7 @@ export default class KilometreScreen extends React.Component {
   }
   const styles ={
     viewStyle: {
-        backgroundColor: '#FFE5EE',
+        backgroundColor: APP_COLORS.color_neutral,
         width: '100%', 
         height: '100%',
         alignContent: 'center'
@@ -146,8 +147,12 @@ export default class KilometreScreen extends React.Component {
         paddingLeft: '10%',
     },
     container: {
-        flex:1,
-        flexDirection: 'row'
+        flexDirection: 'row',
+        paddingBottom: '7%',
+        justifyContent: 'space-between',
+        paddingRight: '5%',
+        paddingLeft: '5%',
+        paddingTop: '8%'
     },
     container2: {
         flex: 2,

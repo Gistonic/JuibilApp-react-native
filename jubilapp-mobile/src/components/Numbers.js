@@ -16,7 +16,7 @@ const Numbers = (props) => {
        borderColor: '#286AFF',
        color: 'white',
        fontSize: 35,
-       borderRadius: 65,
+       borderRadius: 75,
     }
  }
 export default Numbers;

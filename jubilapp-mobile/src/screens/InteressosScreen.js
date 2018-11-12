@@ -24,7 +24,7 @@ export default class InteressosScreen extends React.Component {
         }
     }
     render() {
-        const {viewStyle, container, interesStyle, buttonStyle, textStyle, imageStyle} = styles;
+        const {viewStyle, container, interesStyle, buttonStyle, textStyle, imageStyle, container1} = styles;
         return (
             <View style = {viewStyle}>
                 <Header headerText = {'JubilApp'}/>
@@ -107,10 +107,11 @@ export default class InteressosScreen extends React.Component {
                     </TouchableOpacity>
                 </View>
 
-                <View style = {container}>
+                <View style = {container1}>
                     <ButtonBack buttonText = {'Atrás'}
-                                path = {() => Actions.welcome()}/>
-                    <NextButton buttonText = {'Siguiente'}/>
+                                path = {() => Actions.home()}/>
+                    <NextButton buttonText = {'Siguiente'}
+                                path = {() => Actions.km()}/>
                 </View>
             </View>
         );
@@ -129,6 +130,14 @@ const styles ={
         height: '20%',
         flex:1,
         flexDirection: 'row'
+    },
+    container1: {
+        flexDirection: 'row',
+        paddingBottom: '7%',
+        justifyContent: 'space-between',
+        paddingRight: '5%',
+        paddingLeft: '5%',
+        paddingTop: '8%'
     },
     buttonStyle:{
         justifyContent: 'center',
