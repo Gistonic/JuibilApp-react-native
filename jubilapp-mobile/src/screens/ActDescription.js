@@ -25,7 +25,8 @@ export default class ActDescription extends React.Component {
                         <View style = {container}>
                             <ButtonBack buttonText = {'Atrás'}
                                         path = {() => Actions.finHour()}/>
-                            <NextButton buttonText = {'Siguiente'}/>
+                            <NextButton buttonText = {'Siguiente'}
+                                        path = {() => Actions.seltype()}/>
                         </View>
                     </View>
                 </View>
