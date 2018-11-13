@@ -15,7 +15,7 @@ export default class KilometreScreen extends React.Component {
           this.state={
             button_1 : false,
             button_2 : false,
-            button_3 : false,
+            button_3 : true,
             button_4 : false,
             button_5 : false,
             button_6 : false,

@@ -13,7 +13,23 @@ import NextButton from "../components/NextButton";
 export default class FinHour extends React.Component {
     constructor(props) {
         super(props)
-        this.state = { hour: 0 , min: 0}
+        var date;
+        date = new Date();
+        if (((date.getMinutes())%5) == 1) {
+            this.state = { hour: date.getHours()+1 , min: date.getMinutes()+4}
+        }
+        if (((date.getMinutes())%5) == 2) {
+            this.state = { hour: date.getHours()+1 , min: date.getMinutes()+3}
+        }
+        if (((date.getMinutes())%5) == 3) {
+            this.state = { hour: date.getHours()+1 , min: date.getMinutes()+2}
+        }
+        if (((date.getMinutes())%5) == 4) {
+            this.state = { hour: date.getHours()+1 , min: date.getMinutes()+1}
+        }
+        if (((date.getMinutes())%5) == 0) {
+            this.state = {hour: date.getHours()+1, min: date.getMinutes()+5}
+        }
     }
     onPressUpHour = () => {
         if (this.state.hour == 23) {
