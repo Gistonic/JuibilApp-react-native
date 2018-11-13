@@ -30,101 +30,90 @@ export default class InteressosScreen extends React.Component {
         if(tipus == "Ocio")this.setState({selected_Arte: !this.state.selected_Ocio});
     }
     render() {
-        const {viewStyle, container, container1} = styles;
+        const {viewStyle, container, container1, viewInteressos} = styles;
         return (
             <View style = {viewStyle}>
 
                 <Header headerText = {'JubilApp'}/>
                 <Description textExpl = {'Selecciona tus intereses'}/>
-                <View style = {container}>
-                    <TouchableOpacity style={styles.buttonStyle}
-                                      onPress={ () => {
-                                          this.setState({
-                                            selected_Arte: !this.state.selected_Arte
-                                          });
-                                      }}>
-                        <ImageBackground source={require('../images/artPES.jpg')} style={styles.imageStyle}/>
-                        <View style = {styles.container2}>
-                            <CheckBox title = 'Arte' checked = {this.state.selected_Arte} style = {styles.checkBoxStyle}
-                                      onPress = {() => this.setState({selected_Arte: !this.state.selected_Arte})}
-                            />
-                        </View>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.buttonStyle}
-                                      onPress={ () => {
-                                          this.setState({
-                                              selected_Deporte: !this.state.selected_Deporte
-                                          });
-                                      }}>
-                        <ImageBackground source={require('../images/esportPES.jpg')} style={styles.imageStyle}/>
-                        <View style = {styles.container2}>
-                            <CheckBox title = 'Deporte' checked = {this.state.selected_Deporte} style = {styles.checkBoxStyle}
-                                      onPress = {() => this.setState({selected_Deporte: !this.state.selected_Deporte})}
-                            />
-                        </View>
-                    </TouchableOpacity>
+                <View style = {viewInteressos} >
+                    <View style = {container}>
+                        <TouchableOpacity style={styles.buttonStyle}
+                                          onPress={ () => {
+                                              this.setState({
+                                                selected_Arte: !this.state.selected_Arte
+                                              });
+                                          }}>
+                            <ImageBackground source={require('../images/artPES.jpg')} style={styles.imageStyle}/>
+                                <CheckBox title = 'Arte' checked = {this.state.selected_Arte} style = {styles.checkBoxStyle}
+                                          onPress = {() => this.setState({selected_Arte: !this.state.selected_Arte})}
+                                />
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.buttonStyle}
+                                          onPress={ () => {
+                                              this.setState({
+                                                  selected_Deporte: !this.state.selected_Deporte
+                                              });
+                                          }}>
+                            <ImageBackground source={require('../images/esportPES.jpg')} style={styles.imageStyle}/>
+                                <CheckBox title = 'Deporte' checked = {this.state.selected_Deporte} style = {styles.checkBoxStyle}
+                                          onPress = {() => this.setState({selected_Deporte: !this.state.selected_Deporte})}
+                                />
+                        </TouchableOpacity>
 
-                </View>
+                    </View>
 
-                <View style = {container}>
-                    <TouchableOpacity style={styles.buttonStyle}
-                                      onPress={ () => {
-                                          this.setState({
-                                              selected_Cultura: !this.state.selected_Cultura
-                                          });
-                                      }}>
-                        <ImageBackground source={require('../images/culturaPES.png')} style={styles.imageStyle}/>
-                        <View style = {styles.container2}>
-                            <CheckBox title = 'Cultura' checked = {this.state.selected_Cultura} style = {styles.checkBoxStyle}
-                                      onPress = {() => this.setState({selected_Cultura: !this.state.selected_Cultura})}
-                            />
-                        </View>
-                    </TouchableOpacity>
+                    <View style = {container}>
+                        <TouchableOpacity style={styles.buttonStyle}
+                                          onPress={ () => {
+                                              this.setState({
+                                                  selected_Cultura: !this.state.selected_Cultura
+                                              });
+                                          }}>
+                            <ImageBackground source={require('../images/culturaPES.png')} style={styles.imageStyle}/>
+                                <CheckBox title = 'Cultura' checked = {this.state.selected_Cultura} style = {styles.checkBoxStyle}
+                                          onPress = {() => this.setState({selected_Cultura: !this.state.selected_Cultura})}
+                                />
+                        </TouchableOpacity>
 
-                   <TouchableOpacity style={styles.buttonStyle}
-                                     onPress={ () => {
-                                         this.setState({
-                                             selected_Excursiones: !this.state.selected_Excursiones
-                                         });
-                                     }}>
-                        <ImageBackground source={require('../images/excursionsPES.jpg')} style={styles.imageStyle}/>
-                        <View style = {styles.container2}>
-                            <CheckBox title = 'Excursiones' checked = {this.state.selected_Excursiones} style = {styles.checkBoxStyle}
-                                      onPress = {() => this.setState({selected_Excursiones: !this.state.selected_Excursiones})}
-                            />
-                        </View>
-                    </TouchableOpacity>
-                </View>
+                       <TouchableOpacity style={styles.buttonStyle}
+                                         onPress={ () => {
+                                             this.setState({
+                                                 selected_Excursiones: !this.state.selected_Excursiones
+                                             });
+                                         }}>
+                            <ImageBackground source={require('../images/excursionsPES.jpg')} style={styles.imageStyle}/>
+                                <CheckBox title = 'Excursiones' checked = {this.state.selected_Excursiones} style = {styles.checkBoxStyle}
+                                          onPress = {() => this.setState({selected_Excursiones: !this.state.selected_Excursiones})}
+                                />
+                        </TouchableOpacity>
+                    </View>
 
-                <View style = {container}>
-                    <TouchableOpacity style={styles.buttonStyle} style={styles.buttonStyle}
-                                      onPress={ () => {
-                                          this.setState({
-                                              selected_Talleres: !this.state.selected_Talleres
-                                          });
-                                      }}>
-                        <ImageBackground source={require('../images/tallersPES.jpg')} style={styles.imageStyle}/>
-                        <View style = {styles.container2}>
-                            <CheckBox title = 'Talleres' checked = {this.state.selected_Talleres} style = {styles.checkBoxStyle}
-                                      onPress = {() => this.setState({selected_Talleres: !this.state.selected_Talleres})}
-                            />
-                        </View>
-                    </TouchableOpacity>
+                    <View style = {container}>
+                        <TouchableOpacity style={styles.buttonStyle} style={styles.buttonStyle}
+                                          onPress={ () => {
+                                              this.setState({
+                                                  selected_Talleres: !this.state.selected_Talleres
+                                              });
+                                          }}>
+                            <ImageBackground source={require('../images/tallersPES.jpg')} style={styles.imageStyle}/>
+                                <CheckBox title = 'Talleres' checked = {this.state.selected_Talleres} style = {styles.checkBoxStyle}
+                                          onPress = {() => this.setState({selected_Talleres: !this.state.selected_Talleres})}
+                                />
+                        </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.buttonStyle}
-                                      onPress={ () => {
-                                          this.setState({
-                                              selected_Ocio: !this.state.selected_Ocio
-                                          });
-                                      }}>
-                        <ImageBackground source={require('../images/ocioPES.jpg')} style={styles.imageStyle}/>
-                        <View style = {styles.container2}>
-
-                            <CheckBox title = 'Ocio' checked = {this.state.selected_Ocio} style = {styles.checkBoxStyle}
-                                      onPress = {() => this.setState({selected_Ocio: !this.state.selected_Ocio})}
-                            />
-                        </View>
-                    </TouchableOpacity>
+                        <TouchableOpacity style={styles.buttonStyle}
+                                          onPress={ () => {
+                                              this.setState({
+                                                  selected_Ocio: !this.state.selected_Ocio
+                                              });
+                                          }}>
+                            <ImageBackground source={require('../images/ocioPES.jpg')} style={styles.imageStyle}/>
+                                <CheckBox title = 'Ocio' checked = {this.state.selected_Ocio} style = {styles.checkBoxStyle}
+                                          onPress = {() => this.setState({selected_Ocio: !this.state.selected_Ocio})}
+                                />
+                        </TouchableOpacity>
+                    </View>
                 </View>
 
                 <View style = {container1}>
@@ -156,23 +145,23 @@ const styles ={
         justifyContent: 'space-between',
         paddingRight: '5%',
         paddingLeft: '5%',
-        paddingTop: '8%'
     },
     buttonStyle:{
         justifyContent: 'center',
         alignItems: 'center', //horizontal
-        height: '75%',
-        width: '45%',
-        marginTop: 5,
-        marginStart: 8,
-        marginEnd: 8
+        height: '100%',
+        width: '50%',
+        paddingLeft: '5%',
+        paddingRight: '5%',
+        paddingBottom: '2%',
     },
     imageStyle: {
-        width: '73%',
-        height: '73%',
+        flex: 1,
+        width: '100%',
+        height: '100%',
         alignItems: 'center',
         justifyContent: 'flex-end',
-        borderColor: APP_COLORS.color_header
+        borderColor: APP_COLORS.color_header,
     },
     textStyle:{
         fontSize:20,
@@ -188,8 +177,12 @@ const styles ={
         textAlign: 'center'
     },
     checkBoxStyle:{
-        size: 4,
-        center:true
+        center:true,
+    },
+    viewInteressos: {
+        flex: 6,
+        flexDirection:'column',
+        justifyContent: 'space-between',
     }
 }
 
