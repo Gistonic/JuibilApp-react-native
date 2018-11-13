@@ -21,8 +21,16 @@ export default class InteressosScreen extends React.Component {
             selected_Ocio: false,
         }
     }
+    onPressTouchable = (tipus) => {
+        if(tipus == "Arte")this.setState({selected_Arte: !this.state.selected_Arte});
+        if(tipus == "Cultura")this.setState({selected_Arte: !this.state.selected_Cultura});
+        if(tipus == "Deporte")this.setState({selected_Arte: !this.state.selected_Deporte});
+        if(tipus == "Excursiones")this.setState({selected_Arte: !this.state.selected_Excursiones});
+        if(tipus == "Talleres")this.setState({selected_Arte: !this.state.selected_Talleres});
+        if(tipus == "Ocio")this.setState({selected_Arte: !this.state.selected_Ocio});
+    }
     render() {
-        const {viewStyle, container, interesStyle, buttonStyle, textStyle, imageStyle, container1} = styles;
+        const {viewStyle, container, container1} = styles;
         return (
             <View style = {viewStyle}>
 
@@ -37,7 +45,9 @@ export default class InteressosScreen extends React.Component {
                                       }}>
                         <ImageBackground source={require('../images/artPES.jpg')} style={styles.imageStyle}/>
                         <View style = {styles.container2}>
-                            <CheckBox title = 'Arte' checked = {this.state.selected_Arte} style = {styles.checkBoxStyle}/>
+                            <CheckBox title = 'Arte' checked = {this.state.selected_Arte} style = {styles.checkBoxStyle}
+                                      onPress = {() => this.setState({selected_Arte: !this.state.selected_Arte})}
+                            />
                         </View>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.buttonStyle}
@@ -48,7 +58,9 @@ export default class InteressosScreen extends React.Component {
                                       }}>
                         <ImageBackground source={require('../images/esportPES.jpg')} style={styles.imageStyle}/>
                         <View style = {styles.container2}>
-                            <CheckBox title = 'Deporte' checked = {this.state.selected_Deporte} style = {styles.checkBoxStyle}/>
+                            <CheckBox title = 'Deporte' checked = {this.state.selected_Deporte} style = {styles.checkBoxStyle}
+                                      onPress = {() => this.setState({selected_Deporte: !this.state.selected_Deporte})}
+                            />
                         </View>
                     </TouchableOpacity>
 
@@ -63,7 +75,9 @@ export default class InteressosScreen extends React.Component {
                                       }}>
                         <ImageBackground source={require('../images/culturaPES.png')} style={styles.imageStyle}/>
                         <View style = {styles.container2}>
-                            <CheckBox title = 'Cultura' checked = {this.state.selected_Cultura} style = {styles.checkBoxStyle}/>
+                            <CheckBox title = 'Cultura' checked = {this.state.selected_Cultura} style = {styles.checkBoxStyle}
+                                      onPress = {() => this.setState({selected_Cultura: !this.state.selected_Cultura})}
+                            />
                         </View>
                     </TouchableOpacity>
 
@@ -75,7 +89,9 @@ export default class InteressosScreen extends React.Component {
                                      }}>
                         <ImageBackground source={require('../images/excursionsPES.jpg')} style={styles.imageStyle}/>
                         <View style = {styles.container2}>
-                            <CheckBox title = 'Excursiones' checked = {this.state.selected_Excursiones} style = {styles.checkBoxStyle}/>
+                            <CheckBox title = 'Excursiones' checked = {this.state.selected_Excursiones} style = {styles.checkBoxStyle}
+                                      onPress = {() => this.setState({selected_Excursiones: !this.state.selected_Excursiones})}
+                            />
                         </View>
                     </TouchableOpacity>
                 </View>
@@ -89,7 +105,9 @@ export default class InteressosScreen extends React.Component {
                                       }}>
                         <ImageBackground source={require('../images/tallersPES.jpg')} style={styles.imageStyle}/>
                         <View style = {styles.container2}>
-                            <CheckBox title = 'Talleres' checked = {this.state.selected_Talleres} style = {styles.checkBoxStyle}/>
+                            <CheckBox title = 'Talleres' checked = {this.state.selected_Talleres} style = {styles.checkBoxStyle}
+                                      onPress = {() => this.setState({selected_Talleres: !this.state.selected_Talleres})}
+                            />
                         </View>
                     </TouchableOpacity>
 
@@ -102,7 +120,9 @@ export default class InteressosScreen extends React.Component {
                         <ImageBackground source={require('../images/ocioPES.jpg')} style={styles.imageStyle}/>
                         <View style = {styles.container2}>
 
-                            <CheckBox title = 'Ocio' checked = {this.state.selected_Ocio} style = {styles.checkBoxStyle}/>
+                            <CheckBox title = 'Ocio' checked = {this.state.selected_Ocio} style = {styles.checkBoxStyle}
+                                      onPress = {() => this.setState({selected_Ocio: !this.state.selected_Ocio})}
+                            />
                         </View>
                     </TouchableOpacity>
                 </View>
@@ -124,7 +144,6 @@ const styles ={
         height: '100%',
         flexDirection: 'column'
     },
-
     container: {
         width: '100%',
         height: '20%',
@@ -151,7 +170,6 @@ const styles ={
     imageStyle: {
         width: '73%',
         height: '73%',
-        //backgroundColor: 'transparent',
         alignItems: 'center',
         justifyContent: 'flex-end',
         borderColor: APP_COLORS.color_header
@@ -178,42 +196,12 @@ const styles ={
 
 
 
-/*import React from 'react';
-import {View} from 'react-native';
-import Formulari from '../components/Formulari';
-import Header from '../components/Header';
-import BotoSiguiente from '../components/BotoSiguiente';
-import ButtonBack from '../components/ButtonBack';
-import Interes from '../components/Interes';
-import { Actions } from 'react-native-router-flux';
-
-export default class InteressosScreen extends React.Component {
-    render() {
-        const {viewStyle, vista1Style, container} = styles;
-        return (
-            
-            <View style = {viewStyle}>
-              <View style = {container}>
-                <Interes name = 'Arrte' ></Interes>
-                <Interes name = 'Deporte' ></Interes>
-              </View>
-            </View>   
-        );
-    }
-  }
-  const styles ={
-    viewStyle: {
-        backgroundColor: '#FFE5EE',
-        width: '100%', 
-        height: '100%',
-        alignContent: 'center'
-    },
-    vista1Style: {
-        width: '100%',
-        height: '15%'
-    },
-    container: {
-        flex:1,
-        flexDirection: 'row'
-    }
-  }*/
+/*onPress= {this.onPressTouchable("Arte")}
+* onPressTouchable = (tipus) => {
+        if(tipus == "Arte")this.setState({selected_Arte: !this.state.selected_Arte});
+        if(tipus == "Cultura")this.setState({selected_Arte: !this.state.selected_Cultura});
+        if(tipus == "Deporte")this.setState({selected_Arte: !this.state.selected_Deporte});
+        if(tipus == "Excursiones")this.setState({selected_Arte: !this.state.selected_Excursiones});
+        if(tipus == "Talleres")this.setState({selected_Arte: !this.state.selected_Talleres});
+        if(tipus == "Ocio")this.setState({selected_Arte: !this.state.selected_Ocio});
+    }*/
