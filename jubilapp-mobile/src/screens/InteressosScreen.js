@@ -22,7 +22,6 @@ export default class InteressosScreen extends React.Component {
         }
     }
     render() {
-        const {viewStyle, container} = styles;
         const {viewStyle, container, interesStyle, buttonStyle, textStyle, imageStyle, container1} = styles;
         return (
             <View style = {viewStyle}>
