@@ -1,8 +1,13 @@
 import {CREATE_ACTIVITY_FORM_ACTIONS} from "../constants/actions";
 
 const INITIAL_STATE ={
-    email: "",
-    password:""
+    name: "",
+    location:"",
+    dateIni: "",
+    dateEnd:"",
+    hourIni:"",
+    hourEnd:"",
+    description:""
 }
 const createActivityFormReducer = (state = INITIAL_STATE, action)=>{
     switch (action.type) {

@@ -1,57 +1,70 @@
 import React from 'react';
 import {View} from 'react-native';
-import { Calendar } from 'react-native-calendars';
+import {Calendar} from 'react-native-calendars';
 import {APP_COLORS} from "../constants/colors";
 
-import { Actions } from 'react-native-router-flux';
+import {Actions} from 'react-native-router-flux';
 
 import Header from "../components/Header";
 import Description from "../components/Description";
 import ButtonBack from "../components/ButtonBack";
 import NextButton from "../components/NextButton";
 import {LocaleConfig} from 'react-native-calendars';
+import {changeCreateActivityFormProperty} from "../actions";
+import connect from "react-redux/es/connect/connect";
+import Formulari from "../components/Formulari";
 
 LocaleConfig.locales['es'] = {
-    monthNames: ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
-    monthNamesShort: ['Ene.','Feb.','Mar.','Abr.','May.','Jun.','Jul.','Ago','Sep.','Oct.','Nov.','Dic.'],
-    dayNames: ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'],
-    dayNamesShort: ['Do.','Lu.','Ma.','Mi.','Ju.','Vi.','Sa.']
+    monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+    monthNamesShort: ['Ene.', 'Feb.', 'Mar.', 'Abr.', 'May.', 'Jun.', 'Jul.', 'Ago', 'Sep.', 'Oct.', 'Nov.', 'Dic.'],
+    dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+    dayNamesShort: ['Do.', 'Lu.', 'Ma.', 'Mi.', 'Ju.', 'Vi.', 'Sa.']
 };
 
 LocaleConfig.defaultLocale = 'es';
 
-export default class IniDate extends React.Component {
-    constructor(props){
+class IniDate extends React.Component {
+    constructor(props) {
         super(props)
         this.state = {
-            markedDay:{}
+            date: ""
         }
     }
+
     select(day) {
-        const markedDay = {[day.dateString]:{selected: true, marked: true, customStyles: {
-                    container: {
-                        backgroundColor: APP_COLORS.color_button_1,
-                    },
-                    text: {
-                        color: APP_COLORS.color_neutral,
-                    },
-                },}}
-        this.setState({markedDay: markedDay})
+        const { changeFormDateIni} = this.props;
+        changeFormDateIni(day.dateString)
     }
+
     render() {
         const {viewStyle, viewButtons, container, calendarStyle} = styles;
+        const {dateIni} = this.props;
+        const markedDay = {
+           [dateIni]: {
+               selected: true,
+               marked: true,
+               customStyles: {
+                   container: {
+                       backgroundColor: APP_COLORS.color_button_1,
+                   },
+                   text: {
+                       color: APP_COLORS.color_neutral,
+                   },
+               },
+           }
+       }
         return (
-            <View style = {viewStyle}>
-                <Header headerText = {'Crear Actividad'}/>
-                <View style = {viewButtons}>
+            <View style={viewStyle}>
+                <Header headerText={'Crear Actividad'}/>
+                <View style={viewButtons}>
                     <View style={{paddingLeft: '8%', paddingRight: '8%'}}>
-                    <Description textExpl={ 'Define el inicio de la actividad'}/>
+                        <Description textExpl={'Define el inicio de la actividad'}/>
                     </View>
-                    <Calendar style = {calendarStyle}
+                    <Calendar style={calendarStyle}
                               onDayPress={this.select.bind(this)}
                               markingType={'custom'}
-                              markedDates={this.state.markedDay}
-                              minDate = {Date()}
+                              markedDates={markedDay}
+                              minDate={Date()}
                               theme={{
                                   textSectionTitleColor: 'black',
                                   selectedDayTextColor: '#ffffff',
@@ -65,19 +78,21 @@ export default class IniDate extends React.Component {
                                   textMonthFontSize: 30,
                                   textDayHeaderFontSize: 18,
                               }}
-                              />
+
+                    />
                 </View>
-                <View style = {container}>
-                    <ButtonBack buttonText = {'Atrás'}
-                                path = {() => Actions.nameUbi()}/>
-                    <NextButton buttonText = {'Siguiente'}
-                                path = {() => Actions.finDate()}/>
+                <View style={container}>
+                    <ButtonBack buttonText={'Atrás'}
+                                path={() => Actions.nameUbi()}/>
+                    <NextButton buttonText={'Siguiente'}
+                                path={() => Actions.finDate()}/>
                 </View>
             </View>
         );
     }
 }
-const styles ={
+
+const styles = {
     viewStyle: {
         backgroundColor: APP_COLORS.color_neutral,
         width: '100%',
@@ -103,3 +118,16 @@ const styles ={
         paddingBottom: '10%',
     }
 }
+const mapStateToProps = (state) => {
+    return {
+        dateIni: state.createActivityForm.dateIni,
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        changeFormDateIni: (value) => dispatch(changeCreateActivityFormProperty("dateIni", value)),
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(IniDate);
