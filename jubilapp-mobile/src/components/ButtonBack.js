@@ -1,18 +1,18 @@
 import React from 'react';
-import {View, TouchableOpacity, Text, Button, TouchableHighlight} from 'react-native';
+import {View, TouchableOpacity, Text} from 'react-native';
 import {APP_COLORS} from "../constants/colors";
 
 const ButtonBack = (props) => {
     return (
         <View style = {styles.container}>
-           <TouchableHighlight onPress= {props.path} style = {styles.touchableStyle}>
+           <TouchableOpacity onPress= {props.path} style = {styles.touchableStyle}>
                 <View style = {styles.btnContainer}>
                     <Text style = {styles.button}>
                         {props.buttonText}
                     </Text>
                 </View>
 
-           </TouchableHighlight>
+           </TouchableOpacity>
 
         </View>
      )
