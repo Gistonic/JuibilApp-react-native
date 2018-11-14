@@ -5,10 +5,13 @@ import Header from '../components/Header';
 import NextButton from '../components/NextButton';
 import ButtonBack from '../components/ButtonBack';
 import { Actions } from 'react-native-router-flux';
+import {changeCreateActivityFormProperty} from "../actions";
+import connect from "react-redux/es/connect/connect";
 
 class NameUbi extends React.Component {
     render() {
         const {viewStyle, vista1Style, container, formStyle, viewStyle1} = styles;
+        const{name, changeFormName, location, changeFormLocation}=this.props
         return (
             <KeyboardAvoidingView behavior = 'position'>
                 <View style = {viewStyle}>
@@ -19,11 +22,15 @@ class NameUbi extends React.Component {
                                 <Formulari textExplicatiu = {'Introduce el nombre de la actividad'}
                                            textPlaceHolder = {'Nombre'}
                                            tipusTeclat = {'default'}
+                                           value = {name}
+                                           onChangeText={(text) => changeFormName(text)}
                                 />
                             </View>
                             <Formulari textExplicatiu = {'Introduce la ubicación'}
                                         textPlaceHolder = {'Ubicación'}
-                                       tipusTeclat = {'default'}/>
+                                       tipusTeclat = {'default'}
+                                       value = {location}
+                                       onChangeText={(text) => changeFormLocation(text)}/>
                         </View>
                         <View style = {container}>
                             <ButtonBack buttonText = {'Atrás'}
@@ -67,5 +74,18 @@ const styles ={
             paddingTop: '10%',
     }
 }
+const mapStateToProps = (state) => {
+    return {
+        name: state.createActivityForm.name,
+        location: state.createActivityForm.location
+    }
+}
 
-export default NameUbi;
+const  mapDispatchToProps = (dispatch)=>{
+    return {
+        changeFormName: (value)=>dispatch(changeCreateActivityFormProperty("name", value)),
+        changeFormLocation: (value)=>dispatch(changeCreateActivityFormProperty("loaction", value))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(NameUbi);
