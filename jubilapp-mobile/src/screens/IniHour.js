@@ -9,75 +9,38 @@ import Header from "../components/Header";
 import Description from "../components/Description";
 import ButtonBack from "../components/ButtonBack";
 import NextButton from "../components/NextButton";
+import {changeCreateActivityFormProperty} from "../actions";
+import connect from "react-redux/es/connect/connect";
 
-export default class IniHour extends React.Component {
+class IniHour extends React.Component {
     constructor(props) {
-        super(props)
-        var date;
-        date = new Date();
-        if (((date.getMinutes())%5) == 1) {
-            this.state = { hour: date.getHours() , min: date.getMinutes()+4}
-        }
-        if (((date.getMinutes())%5) == 2) {
-            this.state = { hour: date.getHours() , min: date.getMinutes()+3}
-        }
-        if (((date.getMinutes())%5) == 3) {
-            this.state = { hour: date.getHours() , min: date.getMinutes()+2}
-        }
-        if (((date.getMinutes())%5) == 4) {
-            this.state = { hour: date.getHours() , min: date.getMinutes()+1}
-        }
-        if (((date.getMinutes())%5) == 0) {
-            this.state = {hour: date.getHours(), min: date.getMinutes()+5}
-        }
+        super(props);
+
+        const date = new Date();
+        const hour = date.getHours();
+        const minute = date.getMinutes() - (date.getMinutes() % 5);
+
+        this.state = {
+            hour: hour,
+            min: minute
+        };
     }
+
     onPressUpHour = () => {
-        if (this.state.hour == 23) {
-            this.setState({
-                hour: 0
-            })
-        }
-        else {
-            this.setState({
-                hour: this.state.hour + 1
-            })
-        }
+        const hour = (this.state.hour + 1) % 24;
+        this.setState({hour: hour});
     }
     onPressDownHour = () => {
-        if (this.state.hour == 0) {
-            this.setState({
-                hour: 23
-            })
-        }
-        else {
-            this.setState({
-                hour: this.state.hour - 1
-            })
-        }
+        const hour = (this.state.hour - 1 + 24) % 24;
+        this.setState({hour: hour});
     }
     onPressUpMin = () => {
-        if (this.state.min == 55) {
-            this.setState({
-                min: 0
-            })
-        }
-        else {
-            this.setState({
-                min: this.state.min + 5
-            })
-        }
+        const minute = (this.state.min + 5) % 60;
+        this.setState({min: minute});
     }
     onPressDownMin = () => {
-        if (this.state.min == 0) {
-            this.setState({
-                min: 55
-            })
-        }
-        else {
-            this.setState({
-                min: this.state.min - 5
-            })
-        }
+        const minute = (this.state.min - 5 + 60) % 60;
+        this.setState({min: minute});
     }
     render() {
         const {viewStyle, viewButtons, container, upsDownsStyle, fullHourStyle} = styles;
@@ -161,3 +124,18 @@ const styles ={
         justifyContent: 'center',
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        dateIni: state.createActivityForm.hourIni,
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        changeFormHourIni: (value) => dispatch(changeCreateActivityFormProperty("hourIni", value)),
+        changeFormMinuteIni: (value) => dispatch(changeCreateActivityFormProperty("minuteIni", value)),
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(IniHour);

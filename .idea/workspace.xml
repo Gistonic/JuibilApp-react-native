@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5495091f-ad95-448f-800e-39442fbfebef" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jubilapp-mobile/src/reducers/createActivityFormReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/jubilapp-mobile/src/reducers/createActivityFormReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jubilapp-mobile/src/screens/IniDate.js" beforeDir="false" afterPath="$PROJECT_DIR$/jubilapp-mobile/src/screens/IniDate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jubilapp-mobile/src/screens/IniHour.js" beforeDir="false" afterPath="$PROJECT_DIR$/jubilapp-mobile/src/screens/IniHour.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,25 +27,25 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitignore" value="1" />
-          <entry key="js" value="146" />
+          <entry key="js" value="152" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JavaScript" value="146" />
+          <entry key="JavaScript" value="152" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="5364" />
-          <entry key="txt" value="181" />
+          <entry key="js" value="5682" />
+          <entry key="txt" value="198" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="5364" />
-          <entry key="PLAIN_TEXT" value="181" />
+          <entry key="JavaScript" value="5682" />
+          <entry key="PLAIN_TEXT" value="198" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -116,82 +115,70 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.6462036">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/screens/RegistreTelfScreen.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="221">
-                  <caret line="22" column="42" lean-forward="true" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/screens/IniDate.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1195">
-                  <caret line="34" column="48" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
-                  <folding>
-                    <element signature="e#0#26#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/reducers/createActivityFormReducer.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="187">
-                  <caret line="11" column="38" lean-forward="true" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/actions/createActivityFormActions.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="17">
-                  <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-                  <folding>
-                    <element signature="e#0#49#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/screens/RegistreCorreoScreen.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="268">
-                  <caret line="70" column="22" lean-forward="true" selection-start-line="70" selection-start-column="22" selection-end-line="70" selection-end-column="22" />
-                  <folding>
-                    <element signature="e#0#26#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/screens/NameUbi.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="330">
-                  <caret line="32" column="47" lean-forward="true" selection-start-line="32" selection-start-column="47" selection-end-line="32" selection-end-column="47" />
-                  <folding>
-                    <element signature="e#0#26#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/screens/RegistreTelfScreen.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="22" column="42" lean-forward="true" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/Scenes.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="217">
+              <caret line="14" column="40" lean-forward="true" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/screens/FinHour.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-30">
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/screens/IniHour.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="406">
+              <caret line="136" column="92" selection-start-line="136" selection-start-column="92" selection-end-line="136" selection-end-column="92" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/reducers/createActivityFormReducer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/actions/createActivityFormActions.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+              <folding>
+                <element signature="e#0#49#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -215,7 +202,6 @@
         <option value="$PROJECT_DIR$/jubilapp-mobile/src/components/TextExplicatiu.js" />
         <option value="$PROJECT_DIR$/jubilapp-mobile/src/reducers/formReducer.js" />
         <option value="$PROJECT_DIR$/jubilapp-mobile/src/Routes.js" />
-        <option value="$PROJECT_DIR$/jubilapp-mobile/src/Scenes.js" />
         <option value="$PROJECT_DIR$/jubilapp-mobile/src/screens/RegistreNomCogScreen.js" />
         <option value="$PROJECT_DIR$/jubilapp-mobile/src/reducers/registerFormReducer.js" />
         <option value="$PROJECT_DIR$/jubilapp-mobile/src/reducers/authReducer.js" />
@@ -254,6 +240,8 @@
         <option value="$PROJECT_DIR$/jubilapp-mobile/src/screens/NameUbi.js" />
         <option value="$PROJECT_DIR$/jubilapp-mobile/src/screens/IniDate.js" />
         <option value="$PROJECT_DIR$/jubilapp-mobile/src/reducers/createActivityFormReducer.js" />
+        <option value="$PROJECT_DIR$/jubilapp-mobile/src/Scenes.js" />
+        <option value="$PROJECT_DIR$/jubilapp-mobile/src/screens/IniHour.js" />
       </list>
     </option>
   </component>
@@ -349,14 +337,15 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\user\Documents\GitHub\JuibilApp-react-native\Web\vistes" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\user\Documents\GitHub\JuibilApp-react-native\Web\assets" />
       <recent name="C:\Users\user\Documents\GitHub\JuibilApp-react-native\Web\vistes" />
       <recent name="C:\Users\user\Documents\GitHub\JuibilApp-react-native\Web" />
       <recent name="C:\Users\user\Documents\GitHub\JuibilApp-react-native\Web\assets\img\brand" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\gisel\Desktop\JubilApp-App\jubilapp-mobile\src\screens\createActivity" />
+      <recent name="C:\Users\user\Documents\GitHub\JuibilApp-react-native\Web\vistes" />
     </key>
   </component>
   <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
@@ -503,7 +492,7 @@
       <workItem from="1541425076563" duration="6845000" />
       <workItem from="1541861637029" duration="3236000" />
       <workItem from="1542119796947" duration="2897000" />
-      <workItem from="1542212210134" duration="8703000" />
+      <workItem from="1542212210134" duration="13400000" />
     </task>
     <task id="LOCAL-00001" summary="change stuff">
       <created>1540420724828</created>
@@ -554,11 +543,18 @@
       <option name="project" value="LOCAL" />
       <updated>1542229251054</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add redux to iniDateScreen">
+      <created>1542237114253</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1542237114253</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69944000" />
+    <option name="totallyTimeSpent" value="74641000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -567,6 +563,7 @@
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18175809" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.18439716" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -617,13 +614,10 @@
     <MESSAGE value="Change style" />
     <MESSAGE value="Add redux login" />
     <MESSAGE value="Add redux for create activity and NameUbiScreen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add redux for create activity and NameUbiScreen" />
+    <MESSAGE value="Add redux to iniDateScreen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add redux to iniDateScreen" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Web/argon-dashboard-v1.0.0/assets/img/brand/favicon.png" />
-    <entry file="file://$PROJECT_DIR$/Web/argon-dashboard-v1.0.0/assets/vendor/nucleo/css/nucleo.css" />
-    <entry file="file://$PROJECT_DIR$/Web/argon-dashboard-v1.0.0/assets/vendor/chart.js/dist/Chart.min.js" />
-    <entry file="file://$PROJECT_DIR$/Web/argon-dashboard-v1.0.0/docs/documentation.html" />
     <entry file="file://$PROJECT_DIR$/Web/argon-dashboard-v1.0.0/examples/icons.html" />
     <entry file="file://$PROJECT_DIR$/Web/package-lock.json" />
     <entry file="file://$PROJECT_DIR$/Web/argon-dashboard-v1.0.0/examples/login.html" />
@@ -677,11 +671,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Web/assets/vendor/nucleo/css/nucleo.css" />
-    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/Scenes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-138" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Web/vistes/register.html" />
     <entry file="file://$PROJECT_DIR$/Web/vistes/login.html" />
     <entry file="file://$PROJECT_DIR$/Web/assets/js/argon.js" />
@@ -747,16 +736,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/screens/RegistreCorreoScreen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="70" column="22" lean-forward="true" selection-start-line="70" selection-start-column="22" selection-end-line="70" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/screens/NameUbi.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -784,10 +763,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/screens/IniDate.js">
+    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/screens/FinDate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1195">
-          <caret line="34" column="48" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
+        <state relative-caret-position="-50">
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -796,8 +774,64 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/reducers/createActivityFormReducer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="38" lean-forward="true" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+        <state relative-caret-position="408">
+          <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/screens/createActivity/SelectDate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="553">
+          <caret line="34" column="48" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/Scenes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="14" column="40" lean-forward="true" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/screens/RegistreCorreoScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="70" column="22" lean-forward="true" selection-start-line="70" selection-start-column="22" selection-end-line="70" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/screens/IniDate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2040">
+          <caret line="120" selection-start-line="120" selection-end-line="132" selection-end-column="69" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/screens/FinHour.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-30">
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/screens/IniHour.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="136" column="92" selection-start-line="136" selection-start-column="92" selection-end-line="136" selection-end-column="92" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
