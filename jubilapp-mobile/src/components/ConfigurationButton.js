@@ -1,7 +1,7 @@
 import React from 'react';
 import {TouchableOpacity, Text, View} from 'react-native';
 import {APP_COLORS} from "../constants/colors";
-import { EvilIcons } from '@expo/vector-icons';
+import { EvilIcons, Ionicons } from '@expo/vector-icons';
 
 const ConfigurationButton = (props) => {
     return (
@@ -11,8 +11,10 @@ const ConfigurationButton = (props) => {
                 <Text style = {[styles.buttonTextStyle, {fontSize: props.fontsizeStyle}, {width: props.widthStyle}]}>
                     {props.buttonText}
                 </Text>
-                <EvilIcons name={props.iconName} size={40} color= {props.colorName}
-                                               style = {styles.iconStyle}/>
+                {props.isEvilType ? <EvilIcons name={props.iconName} size={40} color= {props.colorName}
+                                               style = {styles.iconStyle}/>:
+                    <Ionicons name={props.iconName} size={75} color= {props.colorName}
+                              style = {styles.iconStyle}/>}
             </TouchableOpacity>
         </View>
     )
