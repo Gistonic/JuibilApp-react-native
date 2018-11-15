@@ -16,6 +16,29 @@
   <link href="../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
   <!-- Argon CSS -->
   <link type="text/css" href="../assets/css/argon.css?v=1.0.0" rel="stylesheet">
+
+  <script>
+      function funcioLogin(){
+          $.post("http://ordinadorcasa.no-ip.org:4100/auth/login", {
+                  "email": "username@gmail.com",
+                  "password": "user12345"
+              },
+              function(){
+                  alert("Success");
+                  //var myObj = JSON.parse(response);
+                  //localStorage.setItem("tokenJSON", myObj.token);
+              })
+              .done(function() {
+                  alert( "second success" );
+              })
+              .fail(function() {
+                  alert( "error" );
+              })
+              .always(function() {
+                  alert( "finished" );
+              });
+      }
+  </script>
 </head>
 
 <body class="bg-default">
@@ -71,7 +94,7 @@
                   </label>
                 </div>
                 <div class="text-center">
-                  <button type="button" class="btn btn-primary my-4">Entrar</button>
+                  <button type="button" class="btn btn-primary my-4" onclick="funcioLogin()">Entrar</button>
                 </div>
               </form>
             </div>

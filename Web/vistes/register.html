@@ -16,6 +16,23 @@
   <link href="../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
   <!-- Argon CSS -->
   <link type="text/css" href="../assets/css/argon.css?v=1.0.0" rel="stylesheet">
+  <!-- Scripts -->
+  <script>
+    function funcioRegistre(){
+        $.post("http://ordinadorcasa.no-ip.org:4100/auth/register", {
+            "name": "User",
+            "surname": "Surname",
+            "email": "username@gmail.com",
+            "password": "user12345",
+            "phone": "+34666777888"
+        },
+            function(){
+            alert("Success");
+        });
+    }
+  </script>
+
+
 </head>
 
 <body class="bg-default">
@@ -26,8 +43,8 @@
         <div class="header-body text-center mb-7">
           <div class="row justify-content-center">
             <div class="col-lg-5 col-md-6">
-              <h1 class="text-white">Bienvenido a JubilApp!</h1>
-              <p class="text-lead text-light">Por favor, introduzca sus credenciales para crear una nueva cuenta.</p>
+              <h1 class="text-white">Benvingut a JubilApp!</h1>
+              <p class="text-lead text-light">Si us plau, introdueixi les seves credencials per crear un nou compte.</p>
             </div>
           </div>
         </div>
@@ -46,7 +63,7 @@
           <div class="card bg-secondary shadow border-0">
             <div class="card-body px-lg-5 py-lg-5">
               <div class="text-center text-muted mb-4">
-                <small>Registrese usando credenciales</small>
+                <small>Registris utilitzant credencials</small>
               </div>
               <form role="form">
                 <div class="form-group">
@@ -54,7 +71,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-badge"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Nombre" type="text">
+                    <input id="formName" class="form-control" placeholder="Nom" type="text">
                   </div>
                 </div>
                 <div class="form-group">
@@ -78,7 +95,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Contraseña" type="password">
+                    <input class="form-control" placeholder="Contrasenya" type="password">
                   </div>
                 </div>
                 <div class="form-group">
@@ -86,7 +103,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-mobile-button"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Telefono" type="text">
+                    <input class="form-control" placeholder="Telèfon" type="text">
                   </div>
                 </div>
                 <div class="form-group">
@@ -94,11 +111,11 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-square-pin"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Dirección" type="text">
+                    <input class="form-control" placeholder="Direcció" type="text">
                   </div>
                 </div>
                 <div class="text-center">
-                  <button type="button" class="btn btn-primary mt-4" onclick="">Crear cuenta</button>
+                  <button type="submit" id="buttonSubmit" class="btn btn-primary mt-4" onclick="funcioRegistre()">Crear cuenta</button>
                 </div>
               </form>
             </div>
