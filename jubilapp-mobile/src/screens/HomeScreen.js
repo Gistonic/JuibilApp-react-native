@@ -2,7 +2,6 @@ import React from 'react';
 import {View} from 'react-native';
 import HeaderIcon from '../components/HeaderIcon';
 import {APP_COLORS} from "../constants/colors";
-import IconButton from '../components/IconButton';
 
 import { Actions } from 'react-native-router-flux';
 import ConfigurationButton from "../components/ConfigurationButton";
@@ -23,6 +22,7 @@ export default class HomeScreen extends React.Component {
                                 heightStyle={150}
                                 fontsizeStyle= {27}
                                 widthStyle = {200}
+                                         isEvilType = {false}
                                 buttonText = {'BUSCAR ACTIVIDADES'}
                     />
                     <ConfigurationButton iconName={ 'md-eye'}
@@ -30,6 +30,7 @@ export default class HomeScreen extends React.Component {
                                 heightStyle={150}
                                 fontsizeStyle= {27}
                                 widthStyle = {200}
+                                         isEvilType = {false}
                                 buttonText = {'VISUALIZAR ACTIVIDADES'}/>
 
                     <ConfigurationButton iconName={'md-add-circle'}
@@ -39,6 +40,7 @@ export default class HomeScreen extends React.Component {
                                 widthStyle = {200}
                                 buttonText = {'CREAR ACTIVIDAD'}
                                 path={() => Actions.nameUbi()}
+                                         isEvilType = {false}
                     />
                 </View>
             </View>

@@ -19,6 +19,7 @@ export default class HomeScreen extends React.Component {
                             iconName={ 'home'}
                             colorName={ APP_COLORS.color_neutral}
                             path={() => Actions.home()}
+                            isEvilType = {true}
                 />
                 <Description textExpl = {'Que quieres modificar?'}/>
 
@@ -30,6 +31,7 @@ export default class HomeScreen extends React.Component {
                                              fontsizeStyle= {15}
                                              widthStyle = {'60%'}
                                     buttonText = {'NOMBRE ACTIVIDAD'}
+                                             isEvilType = {true}
 
                                     path={() => Actions.nameUbi()}
                         />
@@ -39,6 +41,7 @@ export default class HomeScreen extends React.Component {
                                              heightStyle={'75%'}
                                              fontsizeStyle= {15}
                                              widthStyle = {'60%'}
+                                             isEvilType = {true}
                                     path={() => Actions.nameUbi()}
                         />
                     </View>
@@ -49,6 +52,7 @@ export default class HomeScreen extends React.Component {
                                              heightStyle={'75%'}
                                              fontsizeStyle= {15}
                                              widthStyle = {'60%'}
+                                             isEvilType = {true}
                                     path={() => Actions.iniDate()}
                         />
                         <ConfigurationButton iconName={'clock'}
@@ -57,6 +61,7 @@ export default class HomeScreen extends React.Component {
                                              heightStyle={'75%'}
                                              fontsizeStyle= {15}
                                              widthStyle = {'60%'}
+                                             isEvilType = {true}
                                     path={() => Actions.iniHour()}
                         />
                     </View>
@@ -67,6 +72,7 @@ export default class HomeScreen extends React.Component {
                                              heightStyle={'75%'}
                                              fontsizeStyle= {15}
                                              widthStyle = {'60%'}
+                                             isEvilType = {true}
                                     path={() => Actions.seltype()}
                         />
                         <ConfigurationButton iconName={'comment'}
@@ -74,6 +80,7 @@ export default class HomeScreen extends React.Component {
                                     buttonText = {'DESCRIPCION ACTIVIDAD'}
                                              heightStyle={'75%'}
                                              fontsizeStyle= {15}
+                                             isEvilType = {true}
                                              widthStyle = {'60%'}
                                     path={() => Actions.actdescr()}
                         />
