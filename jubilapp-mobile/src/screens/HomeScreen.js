@@ -5,6 +5,7 @@ import {APP_COLORS} from "../constants/colors";
 import IconButton from '../components/IconButton';
 
 import { Actions } from 'react-native-router-flux';
+import ConfigurationButton from "../components/ConfigurationButton";
 
 export default class HomeScreen extends React.Component {
     render() {
@@ -17,15 +18,25 @@ export default class HomeScreen extends React.Component {
                         path={() => Actions.modificaractivitat()}
             />
                 <View style = {viewButtons}>
-                    <IconButton iconName={ 'md-search'}
+                    <ConfigurationButton iconName={ 'md-search'}
                                 colorName={ APP_COLORS.color_button_1}
+                                heightStyle={150}
+                                fontsizeStyle= {27}
+                                widthStyle = {200}
                                 buttonText = {'BUSCAR ACTIVIDADES'}
                     />
-                    <IconButton iconName={ 'md-eye'}
+                    <ConfigurationButton iconName={ 'md-eye'}
                                 colorName={ APP_COLORS.color_header}
+                                heightStyle={150}
+                                fontsizeStyle= {27}
+                                widthStyle = {200}
                                 buttonText = {'VISUALIZAR ACTIVIDADES'}/>
-                    <IconButton iconName={'md-add-circle'}
+
+                    <ConfigurationButton iconName={'md-add-circle'}
                                 colorName={ APP_COLORS.color_next}
+                                heightStyle={150}
+                                fontsizeStyle= {27}
+                                widthStyle = {200}
                                 buttonText = {'CREAR ACTIVIDAD'}
                                 path={() => Actions.nameUbi()}
                     />

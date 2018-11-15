@@ -26,12 +26,19 @@ export default class HomeScreen extends React.Component {
                     <View style = {container}>
                         <ConfigurationButton iconName={ 'pencil'}
                                     colorName={ APP_COLORS.color_button_1}
+                                             heightStyle={'75%'}
+                                             fontsizeStyle= {15}
+                                             widthStyle = {'60%'}
                                     buttonText = {'NOMBRE ACTIVIDAD'}
+
                                     path={() => Actions.nameUbi()}
                         />
                         <ConfigurationButton iconName={ 'location'}
                                     colorName={ APP_COLORS.color_button_1}
                                     buttonText = {'UBICACION ACTIVIDAD'}
+                                             heightStyle={'75%'}
+                                             fontsizeStyle= {15}
+                                             widthStyle = {'60%'}
                                     path={() => Actions.nameUbi()}
                         />
                     </View>
@@ -39,11 +46,17 @@ export default class HomeScreen extends React.Component {
                         <ConfigurationButton iconName={'calendar'}
                                     colorName={ APP_COLORS.color_button_1}
                                     buttonText = {'FECHA ACTIVIDAD'}
+                                             heightStyle={'75%'}
+                                             fontsizeStyle= {15}
+                                             widthStyle = {'60%'}
                                     path={() => Actions.iniDate()}
                         />
                         <ConfigurationButton iconName={'clock'}
                                     colorName={ APP_COLORS.color_button_1}
                                     buttonText = {'HORA ACTIVIDAD'}
+                                             heightStyle={'75%'}
+                                             fontsizeStyle= {15}
+                                             widthStyle = {'60%'}
                                     path={() => Actions.iniHour()}
                         />
                     </View>
@@ -51,11 +64,17 @@ export default class HomeScreen extends React.Component {
                         <ConfigurationButton iconName={'gear'}
                                     colorName={ APP_COLORS.color_button_1}
                                     buttonText = {'INTERES ACTIVIDAD'}
+                                             heightStyle={'75%'}
+                                             fontsizeStyle= {15}
+                                             widthStyle = {'60%'}
                                     path={() => Actions.seltype()}
                         />
                         <ConfigurationButton iconName={'comment'}
                                     colorName={ APP_COLORS.color_button_1}
                                     buttonText = {'DESCRIPCION ACTIVIDAD'}
+                                             heightStyle={'75%'}
+                                             fontsizeStyle= {15}
+                                             widthStyle = {'60%'}
                                     path={() => Actions.actdescr()}
                         />
                     </View>

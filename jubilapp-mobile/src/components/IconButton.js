@@ -36,12 +36,19 @@ const styles = {
         paddingLeft: '8%',
         backgroundColor: APP_COLORS.color_neutral,
         color: APP_COLORS.text_color,
-        fontSize: 27,
-        width: 200,
+        fontSize: 27, //propss
+        width: 200, //props
     },
     iconStyle: {
         paddingRight: '8%',
         paddingLeft: '2%'
+    },
+    touchableOpacityStyle: {
+        borderWidth:3,
+        justifyContent:'space-between',
+        alignItems: 'center',
+        flexDirection: 'row',
+        borderRadius: 10
     }
 }
 export default IconButton;

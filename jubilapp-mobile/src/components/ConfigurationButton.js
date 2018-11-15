@@ -7,16 +7,8 @@ const ConfigurationButton = (props) => {
     return (
         <View style = {styles.viewStyle}>
             <TouchableOpacity onPress= {props.path}
-                              style={{
-                                  borderWidth:3,
-                                  borderColor: props.colorName,
-                                  justifyContent:'space-between',
-                                  alignItems: 'center',
-                                  flexDirection: 'row',
-                                  height: '75%',
-                                  borderRadius: 10,
-                              }}>
-                <Text style = {styles.buttonTextStyle}>
+                              style={[styles.touchableOpacityStyle,{borderColor: props.colorName},{height: props.heightStyle}]}>
+                <Text style = {[styles.buttonTextStyle, {fontSize: props.fontsizeStyle}, {width: props.widthStyle}]}>
                     {props.buttonText}
                 </Text>
                 <EvilIcons name={props.iconName} size={40} color= {props.colorName}
@@ -36,12 +28,17 @@ const styles = {
         paddingLeft: '8%',
         backgroundColor: APP_COLORS.color_neutral,
         color: APP_COLORS.text_color,
-        fontSize: 15,
-        width: '60%',
     },
     iconStyle: {
         paddingRight: '8%',
         paddingLeft: '2%'
+    },
+    touchableOpacityStyle: {
+        borderWidth:3,
+        justifyContent:'space-between',
+        alignItems: 'center',
+        flexDirection: 'row',
+        borderRadius: 10
     }
 }
 export default ConfigurationButton;
