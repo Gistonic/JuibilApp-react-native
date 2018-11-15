@@ -1,7 +1,7 @@
 import React from 'react';
 import {TouchableOpacity, Text, View} from 'react-native';
 import {APP_COLORS} from "../constants/colors";
-import { Ionicons, Entypo, MaterialIcons } from '@expo/vector-icons';
+import { EvilIcons } from '@expo/vector-icons';
 
 const ConfigurationButton = (props) => {
     return (
@@ -14,13 +14,13 @@ const ConfigurationButton = (props) => {
                                   alignItems: 'center',
                                   flexDirection: 'row',
                                   height: '75%',
-                                  borderRadius: 10
+                                  borderRadius: 10,
                               }}>
                 <Text style = {styles.buttonTextStyle}>
                     {props.buttonText}
                 </Text>
-                <Ionicons name={props.iconName} size={25} color= {props.colorName}
-                          style = {styles.iconStyle}/>
+                <EvilIcons name={props.iconName} size={40} color= {props.colorName}
+                                               style = {styles.iconStyle}/>
             </TouchableOpacity>
         </View>
     )
@@ -37,7 +37,7 @@ const styles = {
         backgroundColor: APP_COLORS.color_neutral,
         color: APP_COLORS.text_color,
         fontSize: 15,
-        width: '75%',
+        width: '60%',
     },
     iconStyle: {
         paddingRight: '8%',

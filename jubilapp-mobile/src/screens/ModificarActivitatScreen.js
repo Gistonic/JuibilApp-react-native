@@ -15,8 +15,8 @@ export default class HomeScreen extends React.Component {
         return (
             <View style = {viewStyle}>
 
-                <HeaderIcon headerText = { 'Modificar Actividad'}
-                            iconName={ 'user'}
+                <HeaderIcon headerText = { 'Modificar'}
+                            iconName={ 'home'}
                             colorName={ APP_COLORS.color_neutral}
                             path={() => Actions.home()}
                 />
@@ -24,37 +24,37 @@ export default class HomeScreen extends React.Component {
 
                 <View style = {viewButtons}>
                     <View style = {container}>
-                        <ConfigurationButton iconName={ 'md-search'}
-                                    colorName={ APP_COLORS.color_next}
+                        <ConfigurationButton iconName={ 'pencil'}
+                                    colorName={ APP_COLORS.color_button_1}
                                     buttonText = {'NOMBRE ACTIVIDAD'}
                                     path={() => Actions.nameUbi()}
                         />
-                        <ConfigurationButton iconName={ 'ios-pin'}
-                                    colorName={ APP_COLORS.color_next}
+                        <ConfigurationButton iconName={ 'location'}
+                                    colorName={ APP_COLORS.color_button_1}
                                     buttonText = {'UBICACION ACTIVIDAD'}
                                     path={() => Actions.nameUbi()}
                         />
                     </View>
                     <View style = {container}>
-                        <ConfigurationButton iconName={'md-add-circle'}
-                                    colorName={ APP_COLORS.color_next}
+                        <ConfigurationButton iconName={'calendar'}
+                                    colorName={ APP_COLORS.color_button_1}
                                     buttonText = {'FECHA ACTIVIDAD'}
                                     path={() => Actions.iniDate()}
                         />
-                        <ConfigurationButton iconName={'md-add-circle'}
-                                    colorName={ APP_COLORS.color_next}
+                        <ConfigurationButton iconName={'clock'}
+                                    colorName={ APP_COLORS.color_button_1}
                                     buttonText = {'HORA ACTIVIDAD'}
                                     path={() => Actions.iniHour()}
                         />
                     </View>
                     <View style = {container}>
-                        <ConfigurationButton iconName={'md-add-circle'}
-                                    colorName={ APP_COLORS.color_next}
+                        <ConfigurationButton iconName={'gear'}
+                                    colorName={ APP_COLORS.color_button_1}
                                     buttonText = {'INTERES ACTIVIDAD'}
                                     path={() => Actions.seltype()}
                         />
-                        <ConfigurationButton iconName={'md-add-circle'}
-                                    colorName={ APP_COLORS.color_next}
+                        <ConfigurationButton iconName={'comment'}
+                                    colorName={ APP_COLORS.color_button_1}
                                     buttonText = {'DESCRIPCION ACTIVIDAD'}
                                     path={() => Actions.actdescr()}
                         />
