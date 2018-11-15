@@ -73,7 +73,7 @@
     <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
       <div class="container-fluid">
         <!-- Brand -->
-        <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block">Crear activitat</a>        
+        <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block">Modificar activitat</a>        
         <!-- User -->
         <ul class="navbar-nav align-items-center d-none d-md-flex">
           <li class="nav-item dropdown">
@@ -91,7 +91,7 @@
               <div class=" dropdown-header noti-title">
                 <h6 class="text-overflow m-0">Benvingut!</h6>
               </div>
-              <a href="" class="dropdown-item">
+              <a href="../examples/profile.html" class="dropdown-item">
                 <i class="ni ni-single-02"></i>
                 <span>El meu perfil</span>
               </a>
@@ -106,14 +106,14 @@
       </div>
     </nav>
     <!-- Header -->
-    <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 400px; background-image: url(../assets/img/theme/Imagen11.jpg); background-size: cover; background-position: center center;">
+    <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 400px; background-image: url(../assets/img/theme/Stan-Lee.jpg); background-size: cover; background-position: center center;">
       <!-- Mask -->
       <span class="mask bg-gradient-default opacity-6"></span>
       <!-- Header container -->
       <div class="container-fluid d-flex align-items-center">
         <div class="row">
           <div class="col-lg-7 col-md-10">
-            <p class="text-white mt-0 mb-5">Des d'aquí pots crear noves activitats. Assegura't d'introduir el nom de l'activitat, l'interès al qual pertany, la ubicació, la descripció, la capacitat disponible i la data i hora d'inici/fi.</p>
+            <p class="text-white mt-0 mb-5">Ep, vols canviar alguna de les dades de l'activitat? Assegura't d'introduir els camps a modificar correctament! (No voldrem pas que un pobre avi se'ns perdi...)</p>
           </div>
         </div>
       </div>
@@ -126,7 +126,7 @@
             <div class="card-header bg-white border-0">
               <div class="row align-items-center">
                 <div class="col-8">
-                  <h3 class="mb-0">Introdueix els camps següents:</h3>
+                  <h3 class="mb-0">Modifica els camps pertinents:</h3>
                 </div>
               </div>
             </div>
@@ -206,7 +206,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
                             </div>
-                            <input class="form-control" id="input-dataini" placeholder="Start date" type="text">
+                            <input class="form-control" placeholder="Start date" type="text".datepicker>
                         </div>
                       </div>
                     </div>
@@ -217,7 +217,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
                             </div>
-                            <input class="form-control" id="input-datafi" placeholder="End date" type="text">
+                            <input class="form-control" placeholder="End date" type="text">
                             <!-- Add the .datepicker class on the text input that you want to become a datepicker. -->
                         </div>
                       </div>
@@ -234,7 +234,7 @@
                   </div>
                   <div class="row">
                     <div class="col-md-auto ml-auto">
-                      <button type="button" class="btn btn-outline-default">Crear activitat</button>
+                      <button type="button" class="btn btn-outline-default">Modificar activitat</button>
                     </div>
                   </div>
                 </div>
