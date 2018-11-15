@@ -16,6 +16,7 @@ import FinDate from './screens/FinDate';
 import IniHour from './screens/IniHour';
 import FinHour from './screens/FinHour';
 import InteressosScreen from './screens/InteressosScreen';
+import ModificarActivitatScreen from './screens/ModificarActivitatScreen';
 import ActDescription from './screens/ActDescription';
 import SelectType from './screens/SelectType';
 
@@ -38,6 +39,7 @@ const Scenes = Actions.create(
         <Scene key="iniHour" component={IniHour}/>
         <Scene key="finHour" component={FinHour}/>
         <Scene key="actdescr" component={ActDescription}/>
+        <Scene key="modificaractivitat" component={ModificarActivitatScreen}/>
         <Scene key="seltype" component={SelectType}/>
 	</Scene>
 )

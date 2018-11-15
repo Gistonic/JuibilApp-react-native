@@ -186,15 +186,3 @@ const styles ={
     }
 }
 
-
-
-
-/*onPress= {this.onPressTouchable("Arte")}
-* onPressTouchable = (tipus) => {
-        if(tipus == "Arte")this.setState({selected_Arte: !this.state.selected_Arte});
-        if(tipus == "Cultura")this.setState({selected_Arte: !this.state.selected_Cultura});
-        if(tipus == "Deporte")this.setState({selected_Arte: !this.state.selected_Deporte});
-        if(tipus == "Excursiones")this.setState({selected_Arte: !this.state.selected_Excursiones});
-        if(tipus == "Talleres")this.setState({selected_Arte: !this.state.selected_Talleres});
-        if(tipus == "Ocio")this.setState({selected_Arte: !this.state.selected_Ocio});
-    }*/
