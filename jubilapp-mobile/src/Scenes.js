@@ -19,6 +19,7 @@ import InteressosScreen from './screens/InteressosScreen';
 import ModificarActivitatScreen from './screens/ModificarActivitatScreen';
 import ActDescription from './screens/ActDescription';
 import SelectType from './screens/SelectType';
+import ActivitatListScreen from './screens/ActivitatListScreen';
 
 
 const Scenes = Actions.create(
@@ -41,6 +42,9 @@ const Scenes = Actions.create(
         <Scene key="actdescr" component={ActDescription}/>
         <Scene key="modificaractivitat" component={ModificarActivitatScreen}/>
         <Scene key="seltype" component={SelectType}/>
+        <Scene key="activitatlist" component={ActivitatListScreen}/>
+
+
 	</Scene>
 )
 
