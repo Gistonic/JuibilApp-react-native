@@ -1,7 +1,7 @@
 import {CREATE_ACTIVITY_FORM_ACTIONS} from "../constants/actions";
 const date = new Date();
 const initial_hour = date.getHours();
-const End_hour = date.getHours()+1;
+const End_hour = date.getHours()+ 1;
 const initial_minute = date.getMinutes() - (date.getMinutes() % 5);
 const INITIAL_STATE ={
     name: "",
@@ -19,7 +19,9 @@ const INITIAL_STATE ={
     selected_Excursiones: false,
     selected_Talleres: false,
     selected_Ocio: false,
-    type: ""
+    type: "",
+    startDate:"",
+    endDate:""
 }
 const createActivityFormReducer = (state = INITIAL_STATE, action)=>{
     switch (action.type) {

@@ -36,13 +36,11 @@ class SelectType extends React.Component {
             name: this.props.name,
             location:this.props.Location,
             type:this.props.type,
-            dateIni:this.props.dateIni,
-            dateEnd:this.props.dateEnd,
+            startDate:new Date(this.props.dateIni.year, this.props.dateIni.month, this.props.dateIni.day, this.props.hourIni, this.props.minuteIni),
+            endDate:new Date(this.props.endDate.year, this.props.endDate.month, this.props.endDate.day, this.props.hourEnd, this.props.minuteEnd),
             hourEnd:this.props.hourEnd,
-            minuteEnd: this.props.minuteEnd,
-            hourIni:this.props.hourIni,
-            minuteIni: this.props.minuteIni,
-            description:this.props.description
+            description:this.props.description,
+            token:this.props.token
         };
 
         this.props.createActivity(activityInfo)
@@ -209,7 +207,8 @@ const mapStateToProps = (state) => {
         minuteEnd: state.createActivityForm.minuteEnd,
         hourIni:state.createActivityForm.hourIni,
         minuteIni: state.createActivityForm.minuteIni,
-        description:state.createActivityForm.description
+        description:state.createActivityForm.description,
+        token:state.auth.token
 
     }
 }

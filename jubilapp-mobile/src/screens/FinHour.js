@@ -120,6 +120,8 @@ const styles ={
 }
 const mapStateToProps = (state) => {
     return {
+        hourIni: state.createActivityForm.hourIni,
+        minuteIni: state.createActivityForm.minuteIni,
         hourEnd: state.createActivityForm.hourEnd,
         minuteEnd: state.createActivityForm.minuteEnd
 

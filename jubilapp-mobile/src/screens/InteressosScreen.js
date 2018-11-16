@@ -8,29 +8,23 @@ import { Actions } from 'react-native-router-flux';
 import Description from "../components/Description";
 import ButtonBack from "../components/ButtonBack";
 import NextButton from "../components/NextButton";
+import {changeCreateActivityFormProperty} from "../actions";
+import connect from "react-redux/es/connect/connect";
 
-export default class InteressosScreen extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            selected_Arte: false,
-            selected_Deporte: false,
-            selected_Cultura: false,
-            selected_Excursiones: false,
-            selected_Talleres: false,
-            selected_Ocio: false,
-        }
-    }
+class InteressosScreen extends React.Component {
+
     onPressTouchable = (tipus) => {
-        if(tipus == "Arte")this.setState({selected_Arte: !this.state.selected_Arte});
-        if(tipus == "Cultura")this.setState({selected_Arte: !this.state.selected_Cultura});
-        if(tipus == "Deporte")this.setState({selected_Arte: !this.state.selected_Deporte});
-        if(tipus == "Excursiones")this.setState({selected_Arte: !this.state.selected_Excursiones});
-        if(tipus == "Talleres")this.setState({selected_Arte: !this.state.selected_Talleres});
-        if(tipus == "Ocio")this.setState({selected_Arte: !this.state.selected_Ocio});
+        const { changeArte, selected_Arte, changeCultura, selected_Cultura, changeDeporte,selected_Deporte, changeExcursiones, selected_Excursiones, changeTalleres, selected_Talleres, changeOcio, selected_Ocio} = this.props;
+        if(tipus === "Arte")changeArte(!selected_Arte);
+        if(tipus === "Cultura")changeCultura(!selected_Cultura);
+        if(tipus === "Deporte")changeDeporte(!selected_Deporte);
+        if(tipus === "Excursiones")changeExcursiones(!selected_Excursiones);
+        if(tipus == "Talleres")changeTalleres(!selected_Talleres);
+        if(tipus == "Ocio")changeOcio( !selected_Ocio);
     }
     render() {
         const {viewStyle, container, container1, viewInteressos} = styles;
+        const { changeArte, selected_Arte, changeCultura, selected_Cultura, changeDeporte,selected_Deporte, changeExcursiones, selected_Excursiones, changeTalleres, selected_Talleres, changeOcio, selected_Ocio} = this.props;
         return (
             <View style = {viewStyle}>
 
@@ -40,24 +34,20 @@ export default class InteressosScreen extends React.Component {
                     <View style = {container}>
                         <TouchableOpacity style={styles.buttonStyle}
                                           onPress={ () => {
-                                              this.setState({
-                                                selected_Arte: !this.state.selected_Arte
-                                              });
+                                              changeArte( !selected_Arte);
                                           }}>
                             <ImageBackground source={require('../images/artPES.jpg')} style={styles.imageStyle}/>
-                                <CheckBox title = 'Arte' checked = {this.state.selected_Arte} style = {styles.checkBoxStyle}
-                                          onPress = {() => this.setState({selected_Arte: !this.state.selected_Arte})}
+                                <CheckBox title = 'Arte' checked = {selected_Arte} style = {styles.checkBoxStyle}
+                                          onPress = {() => changeArte( !selected_Arte)}
                                 />
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.buttonStyle}
                                           onPress={ () => {
-                                              this.setState({
-                                                  selected_Deporte: !this.state.selected_Deporte
-                                              });
+                                              changeDeporte(!selected_Deporte);
                                           }}>
                             <ImageBackground source={require('../images/esportPES.jpg')} style={styles.imageStyle}/>
                                 <CheckBox title = 'Deporte' checked = {this.state.selected_Deporte} style = {styles.checkBoxStyle}
-                                          onPress = {() => this.setState({selected_Deporte: !this.state.selected_Deporte})}
+                                          onPress = {() => changeDeporte( !selected_Deporte)}
                                 />
                         </TouchableOpacity>
 
@@ -66,9 +56,7 @@ export default class InteressosScreen extends React.Component {
                     <View style = {container}>
                         <TouchableOpacity style={styles.buttonStyle}
                                           onPress={ () => {
-                                              this.setState({
-                                                  selected_Cultura: !this.state.selected_Cultura
-                                              });
+                                              changeCultura( !selected_Cultura);
                                           }}>
                             <ImageBackground source={require('../images/culturaPES.png')} style={styles.imageStyle}/>
                                 <CheckBox title = 'Cultura' checked = {this.state.selected_Cultura} style = {styles.checkBoxStyle}
@@ -185,4 +173,29 @@ const styles ={
         justifyContent: 'space-between',
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        selected_Arte: state.createActivityForm.selected_Arte,
+        selected_Deporte: state.createActivityForm.selected_Deporte,
+        selected_Cultura: state.createActivityForm.selected_Cultura,
+        selected_Excursiones: state.createActivityForm.selected_Excursiones,
+        selected_Talleres: state.createActivityForm.selected_Talleres,
+        selected_Ocio: state.createActivityForm.selected_Ocio
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+
+    return {
+        changeArte: (value) => dispatch(changeCreateActivityFormProperty("selected_Arte", value)),
+        changeDeporte: (value) => dispatch(changeCreateActivityFormProperty("selected_Deporte", value)),
+        changeCultura: (value) => dispatch(changeCreateActivityFormProperty("selected_Cultura", value)),
+        changeExcursiones: (value) => dispatch(changeCreateActivityFormProperty("selected_Excursiones", value)),
+        changeTalleres: (value) => dispatch(changeCreateActivityFormProperty("selected_Talleres", value)),
+        changeOcio: (value) => dispatch(changeCreateActivityFormProperty("selected_Ocio", value))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(InteressosScreen);
 
