@@ -19,14 +19,15 @@
   <!-- Scripts -->
   <script>
     function funcioRegistre(){
-        $.post("http://ordinadorcasa.no-ip.org:4100/auth/register", {
+        var txt = {
             "name": "User",
             "surname": "Surname",
             "email": "username@gmail.com",
             "password": "user12345",
             "phone": "+34666777888"
-        },
-            function(){
+        };
+        var myJSON = JSON.stringify(txt);
+        $.post("http://ordinadorcasa.no-ip.org:4100/auth/register", myJSON, function(){
             alert("Success");
         });
     }

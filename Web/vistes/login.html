@@ -16,7 +16,23 @@
   <link href="../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
   <!-- Argon CSS -->
   <link type="text/css" href="../assets/css/argon.css?v=1.0.0" rel="stylesheet">
-
+  <script>
+    function funcioLogin2(){
+        $("form").submit(function (){
+            var txt = {
+                "email": document.getElementById("email").value,
+                "password": document.getElementById("contr").value
+            };
+            var myJSON = JSON.stringify(txt);
+            alert(myJSON);
+            $.post("http://ordinadorcasa.no-ip.org:4100/auth/login", myJSON, function(){
+                alert("Success");
+                //var myObj = JSON.parse(response);
+                //localStorage.setItem("tokenJSON", myObj.token);
+            });
+        });
+    }
+  </script>
   <script>
       function funcioLogin(){
           $.post("http://ordinadorcasa.no-ip.org:4100/auth/login", {
@@ -67,7 +83,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Email" type="email">
+                    <input class="form-control" id="email" placeholder="Email" type="email">
                   </div>
                 </div>
                 <div class="form-group">
@@ -75,7 +91,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Contraseña" type="password">
+                    <input class="form-control" id="contr" placeholder="Contraseña" type="password">
                   </div>
                 </div>
                 <div class="custom-control custom-control-alternative custom-checkbox">
@@ -85,7 +101,7 @@
                   </label>
                 </div>
                 <div class="text-center">
-                  <button type="button" class="btn btn-primary my-4" onclick="funcioLogin()">Entrar</button>
+                  <button type="submit" class="btn btn-primary my-4" onclick="funcioLogin2()">Entrar</button>
                 </div>
               </form>
             </div>
