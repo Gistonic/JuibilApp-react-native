@@ -7,11 +7,14 @@ import ButtonBack from '../components/ButtonBack';
 import { Actions } from 'react-native-router-flux';
 import Description from "../components/Description";
 import {APP_COLORS} from "../constants/colors";
+import {changeCreateActivityFormProperty} from "../actions";
+import connect from "react-redux/es/connect/connect";
 
 
-export default class ActDescription extends React.Component {
+class ActDescription extends React.Component {
     render() {
         const {viewStyle, vista1Style, container, formStyle, viewStyle1, textStyle} = styles;
+        const { changeFormDescription,description } = this.props;
         return (
             <KeyboardAvoidingView behavior = 'position'>
                 <View style = {viewStyle}>
@@ -21,6 +24,8 @@ export default class ActDescription extends React.Component {
                         <TextInput multiline = {true}
                                    style = {textStyle}
                                    maxLength = {200}
+                                   value = {description}
+                                   onChangeText={(text) => changeFormDescription(text)}
                                     />
                         <View style = {container}>
                             <ButtonBack buttonText = {'Atrás'}
@@ -74,3 +79,17 @@ const styles ={
         borderColor: APP_COLORS.color_button_1
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        description: state.createActivityForm.description,
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        changeFormDescription: (value) => dispatch(changeCreateActivityFormProperty("description", value)),
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ActDescription);

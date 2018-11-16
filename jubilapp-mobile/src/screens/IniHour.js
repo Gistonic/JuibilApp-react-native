@@ -13,37 +13,30 @@ import {changeCreateActivityFormProperty} from "../actions";
 import connect from "react-redux/es/connect/connect";
 
 class IniHour extends React.Component {
-    constructor(props) {
-        super(props);
-
-        const date = new Date();
-        const hour = date.getHours();
-        const minute = date.getMinutes() - (date.getMinutes() % 5);
-
-        this.state = {
-            hour: hour,
-            min: minute
-        };
-    }
 
     onPressUpHour = () => {
-        const hour = (this.state.hour + 1) % 24;
-        this.setState({hour: hour});
+        const { changeFormHourIni, hourIni} = this.props;
+        const hour = (hourIni + 1) % 24;
+        changeFormHourIni( hour);
     }
     onPressDownHour = () => {
-        const hour = (this.state.hour - 1 + 24) % 24;
-        this.setState({hour: hour});
+        const { changeFormHourIni,hourIni } = this.props;
+        const hour = (hourIni - 1 + 24) % 24;
+        changeFormHourIni( hour);
     }
     onPressUpMin = () => {
-        const minute = (this.state.min + 5) % 60;
-        this.setState({min: minute});
+        const { changeFormMinuteIni,minuteIni } = this.props;
+        const minute = (minuteIni + 5) % 60;
+        changeFormMinuteIni( minute);
     }
     onPressDownMin = () => {
-        const minute = (this.state.min - 5 + 60) % 60;
-        this.setState({min: minute});
+        const { changeFormMinuteIni,minuteIni } = this.props;
+        const minute = (minuteIni - 5 + 60) % 60;
+        changeFormMinuteIni(minute);
     }
     render() {
         const {viewStyle, viewButtons, container, upsDownsStyle, fullHourStyle} = styles;
+        const { hourIni,minuteIni } = this.props;
         return (
             <View style = {viewStyle}>
                 <Header headerText = {'Crear Actividad'}/>
@@ -57,7 +50,7 @@ class IniHour extends React.Component {
                                           style = {{paddingLeft: '10%'}}>
                             <FontAwesome name = 'chevron-circle-up' size={100}/>
                         </TouchableOpacity>
-                            {this.state.hour < 10? <Text style={{fontSize: 100}}>0{this.state.hour}</Text>: <Text style={{fontSize: 100}}>{this.state.hour}</Text> }
+                            {hourIni < 10? <Text style={{fontSize: 100}}>0{hourIni}</Text>: <Text style={{fontSize: 100}}>{hourIni}</Text> }
                         <TouchableOpacity onPress={this.onPressDownHour}
                                           style = {{paddingLeft: '10%'}}>
                             <FontAwesome name = 'chevron-circle-down' size={100}/>
@@ -71,7 +64,7 @@ class IniHour extends React.Component {
                                             style = {{paddingLeft: '10%'}}>
                             <FontAwesome name = 'chevron-circle-up' size={100}/>
                         </TouchableOpacity>
-                            {this.state.min < 10? <Text style={{fontSize: 100}}>0{this.state.min}</Text>: <Text style={{fontSize: 100}}>{this.state.min}</Text> }
+                            {minuteIni < 10? <Text style={{fontSize: 100}}>0{minuteIni}</Text>: <Text style={{fontSize: 100}}>{minuteIni}</Text> }
                         <TouchableOpacity onPress={this.onPressDownMin}
                                           style = {{paddingLeft: '10%'}}>
                             <FontAwesome name = 'chevron-circle-down' size={100}/>
@@ -127,7 +120,9 @@ const styles ={
 
 const mapStateToProps = (state) => {
     return {
-        dateIni: state.createActivityForm.hourIni,
+        hourIni: state.createActivityForm.hourIni,
+        minuteIni: state.createActivityForm.minuteIni
+
     }
 }
 

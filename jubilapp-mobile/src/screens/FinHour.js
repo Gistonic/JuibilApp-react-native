@@ -9,78 +9,34 @@ import Header from "../components/Header";
 import Description from "../components/Description";
 import ButtonBack from "../components/ButtonBack";
 import NextButton from "../components/NextButton";
+import {changeCreateActivityFormProperty} from "../actions";
+import connect from "react-redux/es/connect/connect";
 
-export default class FinHour extends React.Component {
-    constructor(props) {
-        super(props)
-        var date;
-        date = new Date();
-        if (((date.getMinutes())%5) == 1) {
-            this.state = { hour: date.getHours()+1 , min: date.getMinutes()+4}
-        }
-        if (((date.getMinutes())%5) == 2) {
-            this.state = { hour: date.getHours()+1 , min: date.getMinutes()+3}
-        }
-        if (((date.getMinutes())%5) == 3) {
-            this.state = { hour: date.getHours()+1 , min: date.getMinutes()+2}
-        }
-        if (((date.getMinutes())%5) == 4) {
-            this.state = { hour: date.getHours()+1 , min: date.getMinutes()+1}
-        }
-        if (((date.getMinutes())%5) == 0) {
-            this.state = {hour: date.getHours()+1, min: date.getMinutes()+5}
-        }
-    }
+class FinHour extends React.Component {
+
     onPressUpHour = () => {
-        if (this.state.hour == 23) {
-            this.setState({
-                hour: 0
-            })
-        }
-        else {
-            this.setState({
-                hour: this.state.hour + 1
-            })
-        }
+        const { changeFormHourEnd, hourEnd} = this.props;
+        const hour = (hourEnd + 1) % 24;
+        changeFormHourEnd( hour);
     }
     onPressDownHour = () => {
-        if (this.state.hour == 0) {
-            this.setState({
-                hour: 23
-            })
-        }
-        else {
-            this.setState({
-                hour: this.state.hour - 1
-            })
-        }
+        const { changeFormHourEnd,hourEnd } = this.props;
+        const hour = (hourEnd - 1 + 24) % 24;
+        changeFormHourEnd( hour);
     }
     onPressUpMin = () => {
-        if (this.state.min == 55) {
-            this.setState({
-                min: 0
-            })
-        }
-        else {
-            this.setState({
-                min: this.state.min + 5
-            })
-        }
+        const { changeFormMinuteEnd,minuteEnd } = this.props;
+        const minute = (minuteEnd + 5) % 60;
+        changeFormMinuteEnd( minute);
     }
     onPressDownMin = () => {
-        if (this.state.min == 0) {
-            this.setState({
-                min: 55
-            })
-        }
-        else {
-            this.setState({
-                min: this.state.min - 5
-            })
-        }
+        const { changeFormMinuteEnd,minuteEnd } = this.props;
+        const minute = (minuteEnd - 5 + 60) % 60;
+        changeFormMinuteEnd(minute);
     }
     render() {
         const {viewStyle, viewButtons, container, upsDownsStyle, fullHourStyle} = styles;
+        const { hourEnd,minuteEnd } = this.props;
         return (
             <View style = {viewStyle}>
                 <Header headerText = {'Crear Actividad'}/>
@@ -94,7 +50,7 @@ export default class FinHour extends React.Component {
                                               style = {{paddingLeft: '10%'}}>
                                 <FontAwesome name = 'chevron-circle-up' size={100}/>
                             </TouchableOpacity>
-                            {this.state.hour < 10? <Text style={{fontSize: 100}}>0{this.state.hour}</Text>: <Text style={{fontSize: 100}}>{this.state.hour}</Text> }
+                            {hourEnd< 10? <Text style={{fontSize: 100}}>0{hourEnd}</Text>: <Text style={{fontSize: 100}}>{hourEnd}</Text> }
                             <TouchableOpacity onPress={this.onPressDownHour}
                                               style = {{paddingLeft: '10%'}}>
                                 <FontAwesome name = 'chevron-circle-down' size={100}/>
@@ -108,7 +64,7 @@ export default class FinHour extends React.Component {
                                               style = {{paddingLeft: '10%'}}>
                                 <FontAwesome name = 'chevron-circle-up' size={100}/>
                             </TouchableOpacity>
-                            {this.state.min < 10? <Text style={{fontSize: 100}}>0{this.state.min}</Text>: <Text style={{fontSize: 100}}>{this.state.min}</Text> }
+                            {minuteEnd < 10? <Text style={{fontSize: 100}}>0{minuteEnd}</Text>: <Text style={{fontSize: 100}}>{minuteEnd}</Text> }
                             <TouchableOpacity onPress={this.onPressDownMin}
                                               style = {{paddingLeft: '10%'}}>
                                 <FontAwesome name = 'chevron-circle-down' size={100}/>
@@ -162,3 +118,20 @@ const styles ={
         justifyContent: 'center',
     }
 }
+const mapStateToProps = (state) => {
+    return {
+        hourEnd: state.createActivityForm.hourEnd,
+        minuteEnd: state.createActivityForm.minuteEnd
+
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        changeFormHourEnd: (value) => dispatch(changeCreateActivityFormProperty("hourEnd", value)),
+        changeFormMinuteEnd: (value) => dispatch(changeCreateActivityFormProperty("minuteEnd", value)),
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(FinHour);
+

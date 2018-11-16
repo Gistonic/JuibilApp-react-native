@@ -24,12 +24,6 @@ LocaleConfig.locales['es'] = {
 LocaleConfig.defaultLocale = 'es';
 
 class IniDate extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            date: ""
-        }
-    }
 
     select(day) {
         const { changeFormDateIni} = this.props;

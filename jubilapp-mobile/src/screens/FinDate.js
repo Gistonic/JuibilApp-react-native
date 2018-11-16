@@ -10,6 +10,8 @@ import Description from "../components/Description";
 import ButtonBack from "../components/ButtonBack";
 import NextButton from "../components/NextButton";
 import {LocaleConfig} from 'react-native-calendars';
+import {changeCreateActivityFormProperty} from "../actions";
+import connect from "react-redux/es/connect/connect";
 
 LocaleConfig.locales['es'] = {
     monthNames: ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
@@ -20,26 +22,29 @@ LocaleConfig.locales['es'] = {
 
 LocaleConfig.defaultLocale = 'es';
 
-export default class IniDate extends React.Component {
-    constructor(props){
-        super(props)
-        this.state = {
-            markedDay:{}
-        }
-    }
+class FinDate extends React.Component {
+
     select(day) {
-        const markedDay = {[day.dateString]:{selected: true, marked: true, customStyles: {
+        const { changeFormDateEnd} = this.props;
+        changeFormDateEnd(day.dateString)
+    }
+    render() {
+        const {viewStyle, viewButtons, container, calendarStyle} = styles;
+        const {dateEnd} = this.props;
+        const markedDay = {
+            [dateEnd]: {
+                selected: true,
+                marked: true,
+                customStyles: {
                     container: {
                         backgroundColor: APP_COLORS.color_button_1,
                     },
                     text: {
                         color: APP_COLORS.color_neutral,
                     },
-                },}}
-        this.setState({markedDay: markedDay})
-    }
-    render() {
-        const {viewStyle, viewButtons, container, calendarStyle} = styles;
+                },
+            }
+        }
         return (
             <View style = {viewStyle}>
                 <Header headerText = {'Crear Actividad'}/>
@@ -50,7 +55,7 @@ export default class IniDate extends React.Component {
                     <Calendar style = {calendarStyle}
                               onDayPress={this.select.bind(this)}
                               markingType={'custom'}
-                              markedDates={this.state.markedDay}
+                              markedDates={markedDay}
                               minDate = {Date()}
                               theme={{
                                   textSectionTitleColor: 'black',
@@ -103,3 +108,16 @@ const styles ={
         paddingBottom: '10%',
     }
 }
+const mapStateToProps = (state) => {
+    return {
+        dateEnd: state.createActivityForm.dateEnd,
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        changeFormDateEnd: (value) => dispatch(changeCreateActivityFormProperty("dateEnd", value)),
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(FinDate);

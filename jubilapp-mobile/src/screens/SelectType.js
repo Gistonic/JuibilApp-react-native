@@ -1,3 +1,4 @@
+
 import React from 'react';
 import {ImageBackground, Text, TouchableOpacity, View} from 'react-native';
 import { CheckBox } from 'react-native-elements';
@@ -8,21 +9,48 @@ import { Actions } from 'react-native-router-flux';
 import Description from "../components/Description";
 import ButtonBack from "../components/ButtonBack";
 import NextButton from "../components/NextButton";
+import {changeCreateActivityFormProperty} from "../actions";
+import connect from "react-redux/es/connect/connect";
+import { createActivity } from '../actions'
 
-export default class InteressosScreen extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            selected_Arte: false,
-            selected_Deporte: false,
-            selected_Cultura: false,
-            selected_Excursiones: false,
-            selected_Talleres: false,
-            selected_Ocio: false,
-        }
+class SelectType extends React.Component {
+    constructor(props) {
+        super(props)
+        this.onNextPressed = this.onNextPressed.bind(this)
     }
+
+    selectType(){
+            if(this.props.selected_Arte) this.props.type = 'Art';
+            if(this.props.selected_Deporte) this.props.type = 'sports';
+            if(this.props.selected_Cultura) this.props.type = 'culture';
+            if(this.props.selected_Excursiones) this.props.type = 'trips';
+            if(this.props.selected_Talleres) this.props.type = 'workshops';
+            if(this.props.selected_Ocio) this.props.type = 'leisure';
+    }
+
+
+    onNextPressed() {
+        this.selectType()
+        const activityInfo = {
+
+            name: this.props.name,
+            location:this.props.Location,
+            type:this.props.type,
+            dateIni:this.props.dateIni,
+            dateEnd:this.props.dateEnd,
+            hourEnd:this.props.hourEnd,
+            minuteEnd: this.props.minuteEnd,
+            hourIni:this.props.hourIni,
+            minuteIni: this.props.minuteIni,
+            description:this.props.description
+        };
+
+        this.props.createActivity(activityInfo)
+    }
+
     render() {
         const {viewStyle, container, container1, viewInteressos} = styles;
+        const { changeArte, selected_Arte, changeCultura, selected_Cultura, changeDeporte,selected_Deporte, changeExcursiones, selected_Excursiones, changeTalleres, selected_Talleres, changeOcio, selected_Ocio} = this.props;
         return (
             <View style = {viewStyle}>
 
@@ -32,48 +60,20 @@ export default class InteressosScreen extends React.Component {
                     <View style = {container}>
                         <TouchableOpacity style={styles.buttonStyle}
                                           onPress={ () => {
-                                              this.setState({
-                                                  selected_Arte: !this.state.selected_Arte,
-                                                  selected_Deporte: false,
-                                                  selected_Cultura: false,
-                                                  selected_Excursiones: false,
-                                                  selected_Talleres: false,
-                                                  selected_Ocio: false,
-                                              });
+                                              changeArte(!selected_Arte);
                                           }}>
                             <ImageBackground source={require('../images/artPES.jpg')} style={styles.imageStyle}/>
-                            <CheckBox title = 'Arte' checked = {this.state.selected_Arte} style = {styles.checkBoxStyle}
-                                      onPress = {() => this.setState({
-                                          selected_Arte: !this.state.selected_Arte,
-                                          selected_Deporte: false,
-                                          selected_Cultura: false,
-                                          selected_Excursiones: false,
-                                          selected_Talleres: false,
-                                          selected_Ocio: false,
-                                      })}
+                            <CheckBox title = 'Arte' checked = {selected_Arte} style = {styles.checkBoxStyle}
+                                      onPress = {() => changeArte( !selected_Arte)}
                             />
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.buttonStyle}
                                           onPress={ () => {
-                                              this.setState({
-                                                  selected_Arte: false,
-                                                  selected_Deporte: !this.state.selected_Deporte,
-                                                  selected_Cultura: false,
-                                                  selected_Excursiones: false,
-                                                  selected_Talleres: false,
-                                                  selected_Ocio: false,
-                                              });
+                                              changeDeporte( !selected_Deporte);
                                           }}>
                             <ImageBackground source={require('../images/esportPES.jpg')} style={styles.imageStyle}/>
-                            <CheckBox title = 'Deporte' checked = {this.state.selected_Deporte} style = {styles.checkBoxStyle}
-                                      onPress = {() => this.setState({
-                                          selected_Arte: false,
-                                          selected_Deporte: !this.state.selected_Deporte,
-                                          selected_Cultura: false,
-                                          selected_Excursiones: false,
-                                          selected_Talleres: false,
-                                          selected_Ocio: false,
-                                      })}
+                            <CheckBox title = 'Deporte' checked = {selected_Deporte} style = {styles.checkBoxStyle}
+                                      onPress = {() =>changeDeporte(!selected_Deporte)}
                             />
                         </TouchableOpacity>
 
@@ -82,99 +82,43 @@ export default class InteressosScreen extends React.Component {
                     <View style = {container}>
                         <TouchableOpacity style={styles.buttonStyle}
                                           onPress={ () => {
-                                              this.setState({
-                                                  selected_Arte: false,
-                                                  selected_Deporte: false,
-                                                  selected_Excursiones: false,
-                                                  selected_Talleres: false,
-                                                  selected_Ocio: false,
-                                                  selected_Cultura: !this.state.selected_Cultura
-                                              });
+                                              changeCultura( !selected_Cultura);
                                           }}>
                             <ImageBackground source={require('../images/culturaPES.png')} style={styles.imageStyle}/>
-                            <CheckBox title = 'Cultura' checked = {this.state.selected_Cultura} style = {styles.checkBoxStyle}
-                                      onPress = {() => this.setState({
-                                          selected_Arte: false,
-                                          selected_Deporte: false,
-                                          selected_Excursiones: false,
-                                          selected_Talleres: false,
-                                          selected_Ocio: false,
-                                          selected_Cultura: !this.state.selected_Cultura
-                                      })}
+                            <CheckBox title = 'Cultura' checked = {selected_Cultura} style = {styles.checkBoxStyle}
+                                      onPress = {() => changeCultura(!selected_Cultura)}
                             />
                         </TouchableOpacity>
 
                         <TouchableOpacity style={styles.buttonStyle}
                                           onPress={ () => {
-                                              this.setState({
-                                                  selected_Arte: false,
-                                                  selected_Deporte: false,
-                                                  selected_Cultura: false,
-                                                  selected_Talleres: false,
-                                                  selected_Ocio: false,
-                                                  selected_Excursiones: !this.state.selected_Excursiones
-                                              });
+                                              changeExcursiones(!selected_Excursiones);
                                           }}>
                             <ImageBackground source={require('../images/excursionsPES.jpg')} style={styles.imageStyle}/>
-                            <CheckBox title = 'Excursiones' checked = {this.state.selected_Excursiones} style = {styles.checkBoxStyle}
-                                      onPress = {() => this.setState({
-                                          selected_Arte: false,
-                                          selected_Deporte: false,
-                                          selected_Cultura: false,
-                                          selected_Talleres: false,
-                                          selected_Ocio: false,
-                                          selected_Excursiones: !this.state.selected_Excursiones
-                                      })}
+                            <CheckBox title = 'Excursiones' checked = {selected_Excursiones} style = {styles.checkBoxStyle}
+                                      onPress = {() => changeExcursiones( !selected_Excursiones)}
                             />
                         </TouchableOpacity>
                     </View>
 
                     <View style = {container}>
-                        <TouchableOpacity style={styles.buttonStyle} style={styles.buttonStyle}
+                        <TouchableOpacity style={styles.buttonStyle}
                                           onPress={ () => {
-                                              this.setState({
-                                                  selected_Arte: false,
-                                                  selected_Deporte: false,
-                                                  selected_Cultura: false,
-                                                  selected_Excursiones: false,
-                                                  selected_Ocio: false,
-                                                  selected_Talleres: !this.state.selected_Talleres
-                                              });
+                                              changeTalleres(!selected_Talleres);
                                           }}>
                             <ImageBackground source={require('../images/tallersPES.jpg')} style={styles.imageStyle}/>
-                            <CheckBox title = 'Talleres' checked = {this.state.selected_Talleres} style = {styles.checkBoxStyle}
-                                      onPress = {() => this.setState({
-                                          selected_Arte: false,
-                                          selected_Deporte: false,
-                                          selected_Cultura: false,
-                                          selected_Excursiones: false,
-                                          selected_Ocio: false,
-                                          selected_Talleres: !this.state.selected_Talleres
-                                      })}
+                            <CheckBox title = 'Talleres' checked = {selected_Talleres} style = {styles.checkBoxStyle}
+                                      onPress = {() => changeTalleres(!selected_Talleres)}
                             />
                         </TouchableOpacity>
 
                         <TouchableOpacity style={styles.buttonStyle}
                                           onPress={ () => {
-                                              this.setState({
-                                                  selected_Arte: false,
-                                                  selected_Deporte: false,
-                                                  selected_Cultura: false,
-                                                  selected_Excursiones: false,
-                                                  selected_Talleres: false,
-                                                  selected_Ocio: !this.state.selected_Ocio
-                                              });
+                                              changeOcio(!selected_Ocio);
                                           }}>
                             <ImageBackground source={require('../images/ocioPES.jpg')} style={styles.imageStyle}/>
-                            <CheckBox title = 'Ocio' checked = {this.state.selected_Ocio} style = {styles.checkBoxStyle}
-                                      onPress = {() => this.setState({
-                                          selected_Arte: false,
-                                          selected_Deporte: false,
-                                          selected_Cultura: false,
-                                          selected_Excursiones: false,
-                                          selected_Talleres: false,
-                                          selected_Ocio: !this.state.selected_Ocio
-                                      })}
+                            <CheckBox title = 'Ocio' checked = {selected_Ocio} style = {styles.checkBoxStyle}
+                                      onPress = {() => changeOcio( !selected_Ocio)}
                             />
                         </TouchableOpacity>
                     </View>
@@ -183,7 +127,8 @@ export default class InteressosScreen extends React.Component {
                 <View style = {container1}>
                     <ButtonBack buttonText = {'Atrás'}
                                 path = {() => Actions.actdescr()}/>
-                    <NextButton buttonText = {'Siguiente'}/>
+                    <NextButton buttonText = {'Finalizar'}
+                                path = {this.onNextPressed}/>
                 </View>
             </View>
         );
@@ -248,3 +193,37 @@ const styles ={
         justifyContent: 'space-between',
     }
 }
+const mapStateToProps = (state) => {
+    return {
+        selected_Arte: state.createActivityForm.selected_Arte,
+        selected_Deporte: state.createActivityForm.selected_Deporte,
+        selected_Cultura: state.createActivityForm.selected_Cultura,
+        selected_Excursiones: state.createActivityForm.selected_Excursiones,
+        selected_Talleres: state.createActivityForm.selected_Talleres,
+        selected_Ocio: state.createActivityForm.selected_Ocio,
+        name: state.createActivityForm.name,
+        location:state.createActivityForm.Location,
+        dateIni: state.createActivityForm.dateIni,
+        dateEnd:state.createActivityForm.dateEnd,
+        hourEnd:state.createActivityForm.hourEnd,
+        minuteEnd: state.createActivityForm.minuteEnd,
+        hourIni:state.createActivityForm.hourIni,
+        minuteIni: state.createActivityForm.minuteIni,
+        description:state.createActivityForm.description
+
+    }
+}
+const mapDispatchToProps = (dispatch) => {
+
+    return {
+        changeArte: (value) => dispatch(changeCreateActivityFormProperty("selected_Arte", value)),
+        changeDeporte: (value) => dispatch(changeCreateActivityFormProperty("selected_Deporte", value)),
+        changeCultura: (value) => dispatch(changeCreateActivityFormProperty("selected_Cultura", value)),
+        changeExcursiones: (value) => dispatch(changeCreateActivityFormProperty("selected_Excursiones", value)),
+        changeTalleres: (value) => dispatch(changeCreateActivityFormProperty("selected_Talleres", value)),
+        changeOcio: (value) => dispatch(changeCreateActivityFormProperty("selected_Ocio", value)),
+        createActivity: (activityInfo)=> dispatch(createActivity(activityInfo))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SelectType);
