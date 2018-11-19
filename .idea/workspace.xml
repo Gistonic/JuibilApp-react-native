@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5495091f-ad95-448f-800e-39442fbfebef" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jubilapp-mobile/src/reducers/createActivityFormReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/jubilapp-mobile/src/reducers/createActivityFormReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jubilapp-mobile/src/screens/FinHour.js" beforeDir="false" afterPath="$PROJECT_DIR$/jubilapp-mobile/src/screens/FinHour.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jubilapp-mobile/src/screens/InteressosScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/jubilapp-mobile/src/screens/InteressosScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jubilapp-mobile/src/screens/SelectType.js" beforeDir="false" afterPath="$PROJECT_DIR$/jubilapp-mobile/src/screens/SelectType.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,13 +14,14 @@
     <session id="-1033259412">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.6" value="2" />
           <entry key="project.open.time.9" value="4" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.opened" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -44,13 +41,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="js" value="7124" />
-          <entry key="txt" value="214" />
+          <entry key="txt" value="223" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JavaScript" value="7124" />
-          <entry key="PLAIN_TEXT" value="214" />
+          <entry key="PLAIN_TEXT" value="223" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -125,10 +122,7 @@
         <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/screens/SelectType.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="390">
-              <caret line="36" column="41" lean-forward="true" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
-              <folding>
-                <element signature="e#1#27#0" expanded="true" />
-              </folding>
+              <caret line="36" column="41" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -136,7 +130,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/actions/loginFormActions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
+            <state relative-caret-position="748">
               <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
             </state>
           </provider>
@@ -154,7 +148,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/reducers/createActivityFormReducer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
+            <state relative-caret-position="391">
               <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
             </state>
           </provider>
@@ -173,7 +167,7 @@
         <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/reducers/loginFormReducer.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
-              <caret line="20" column="21" lean-forward="true" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+              <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -190,8 +184,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/actions/createActivityFormActions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="25" column="30" lean-forward="true" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+            <state relative-caret-position="408">
+              <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
               </folding>
@@ -310,7 +304,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -366,11 +359,12 @@
           <select />
         </subPane>
       </pane>
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../argon-dashboard-v1.0.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../HackEPS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -422,7 +416,9 @@
       <workItem from="1541861637029" duration="3236000" />
       <workItem from="1542119796947" duration="2897000" />
       <workItem from="1542212210134" duration="13400000" />
-      <workItem from="1542351244519" duration="19868000" />
+      <workItem from="1542351244519" duration="20491000" />
+      <workItem from="1542460797360" duration="535000" />
+      <workItem from="1542467719307" duration="107000" />
     </task>
     <task id="LOCAL-00001" summary="change stuff">
       <created>1540420724828</created>
@@ -487,17 +483,23 @@
       <option name="project" value="LOCAL" />
       <updated>1542383003402</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Add something">
+      <created>1542384883458</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1542384883458</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94509000" />
+    <option name="totallyTimeSpent" value="95774000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23691276" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.236616" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -554,7 +556,8 @@
     <MESSAGE value="Add redux for create activity and NameUbiScreen" />
     <MESSAGE value="Add redux to iniDateScreen" />
     <MESSAGE value="Add redux to create activity" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add redux to create activity" />
+    <MESSAGE value="Add something" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add something" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Web/argon-dashboard-v1.0.0/LICENSE.md" />
@@ -634,9 +637,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="239">
           <caret line="39" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -644,9 +644,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="531">
           <caret line="48" column="8" lean-forward="true" selection-start-line="34" selection-start-column="8" selection-end-line="48" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -654,9 +651,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2040">
           <caret line="120" selection-start-line="120" selection-end-line="136" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -678,9 +672,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="52" column="67" selection-start-line="52" selection-start-column="40" selection-end-line="52" selection-end-column="67" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -689,20 +680,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/screens/FinDate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-664">
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
+        <state relative-caret-position="-664" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/screens/ActivitatListScreen.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="23" lean-forward="true" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -714,21 +698,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/components/ActivitatItem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/screens/FinHour.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="123" column="54" selection-start-line="123" selection-start-column="54" selection-end-line="123" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -749,47 +724,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/actions/createActivityFormActions.js">
+    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/screens/SelectType.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="25" column="30" lean-forward="true" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/reducers/loginFormReducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="21" lean-forward="true" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/reducers/authReducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/reducers/createActivityFormReducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/reducers/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="390">
+          <caret line="36" column="41" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/actions/loginFormActions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
+        <state relative-caret-position="748">
           <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
         </state>
       </provider>
@@ -801,12 +745,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/screens/SelectType.js">
+    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/reducers/createActivityFormReducer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="36" column="41" lean-forward="true" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
+        <state relative-caret-position="391">
+          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/reducers/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/reducers/loginFormReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/reducers/authReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jubilapp-mobile/src/actions/createActivityFormActions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
           <folding>
-            <element signature="e#1#27#0" expanded="true" />
+            <element signature="e#0#49#0" expanded="true" />
           </folding>
         </state>
       </provider>
