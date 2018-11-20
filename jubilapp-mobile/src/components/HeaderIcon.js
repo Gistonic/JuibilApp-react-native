@@ -8,10 +8,10 @@ const HeaderIcon = (props) => {
     return(
         <View style = {viewStyle}>
             <TouchableOpacity onPress= {props.path}>
-                <FontAwesome name={props.iconName} size={75} color= {props.colorName}
+                <FontAwesome name={props.iconName} size={props.size} color= {props.colorName}
                 style={ styles.iconStyle}/>
             </TouchableOpacity>
-            <Text style = {textStyle}> {props.headerText} </Text>
+            <Text style = {[styles.textStyle, {fontSize: props.textSize}]}> {props.headerText} </Text>
         </View>
     );
 };
@@ -29,7 +29,6 @@ const styles ={
     textStyle:{
         color: APP_COLORS.color_neutral,
         fontFamily: 'sans-serif-condensed',
-        fontSize: 35,
         fontWeight: 'bold',
         paddingRight: '33%',
     },

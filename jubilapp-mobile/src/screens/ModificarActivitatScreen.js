@@ -15,10 +15,12 @@ export default class HomeScreen extends React.Component {
         return (
             <View style = {viewStyle}>
 
-                <HeaderIcon headerText = { 'Modificar'}
+                <HeaderIcon headerText = { 'Modificar Activitat'}
                             iconName={ 'home'}
                             colorName={ APP_COLORS.color_neutral}
                             path={() => Actions.home()}
+                            size = {60}
+                            textSize = {31}
                             isEvilType = {true}
                 />
                 <Description textExpl = {'Que quieres modificar?'}/>
