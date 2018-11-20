@@ -1,14 +1,13 @@
 import {CREATE_ACTIVITY_FORM_ACTIONS} from "../constants/actions";
 const date = new Date();
 const initial_hour = date.getHours();
-const End_hour = date.getHours()+ 1;
 const initial_minute = date.getMinutes() - (date.getMinutes() % 5);
 const INITIAL_STATE ={
     name: "",
     location:"",
     dateIni: "",
     dateEnd:"",
-    hourEnd:End_hour,
+    hourEnd:0,
     minuteEnd: initial_minute,
     hourIni:initial_hour,
     minuteIni: initial_minute,

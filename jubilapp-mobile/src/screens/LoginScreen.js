@@ -27,7 +27,7 @@ class LoginScreen extends React.Component {
         this.props.login(userInfo)
     }
     render() {
-        const {viewStyle, viewStyle1, viewStyle2} = styles;
+        const {viewStyle, viewStyle1} = styles;
         const {email, changeFormEmail, password, changeFormPassword}=this.props;
         return (
             <KeyboardAvoidingView behavior = 'position'>
@@ -48,7 +48,7 @@ class LoginScreen extends React.Component {
                   <StartButton buttonText = {'Entrar'}
                                path = {this.onLoginPressed}/>
                 <NextButton buttonText = {'Crear activitat'}
-                            path = {() => Actions.prova()}/>
+                            path = {() => Actions.home()}/>
                   <Description textExpl = {'No tienes cuenta?'}/>
                   <StartButton buttonText = {'Regístrate!'}
                                path = {() => Actions.r1()}/>
