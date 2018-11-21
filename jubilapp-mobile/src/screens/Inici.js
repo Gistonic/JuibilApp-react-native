@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Button} from 'react-native';
-import Logo from '../components/Logo';
+import Logo from '../components/basicComponents/Logo';
 import {APP_COLORS} from "../constants/colors";
 
 import { Actions } from 'react-native-router-flux';

@@ -10,17 +10,24 @@ import RegistrePsswScreen from './screens/RegistrePsswScreen';
 import RegistreTelfScreen from './screens/RegistreTelfScreen';
 import KilometreScreen from './screens/KilometreScreen';
 import HomeScreen from './screens/HomeScreen';
-import NameUbi from './screens/NameUbi';
-import IniDate from './screens/IniDate';
-import FinDate from './screens/FinDate';
-import IniHour from './screens/IniHour';
-import FinHour from './screens/FinHour';
+import NameUbi from './screens/crearActivitatScreens/NameUbiCreate';
+import IniDate from './screens/crearActivitatScreens/IniDateCreate';
+import FinDate from './screens/crearActivitatScreens/FinDateCreate';
+import IniHour from './screens/crearActivitatScreens/IniHourCreate';
+import FinHour from './screens/crearActivitatScreens/FinHourCreate';
 import InteressosScreen from './screens/InteressosScreen';
 import ModificarActivitatScreen from './screens/ModificarActivitatScreen';
-import ActDescription from './screens/ActDescription';
-import SelectType from './screens/SelectType';
+import ActDescription from './screens/crearActivitatScreens/ActDescriptionCreate';
+import SelectType from './screens/crearActivitatScreens/SelectTypeCreate';
 import ActivitatListScreen from './screens/ActivitatListScreen';
 import Interessos2 from './screens/Interessos2';
+import NameModify from "./screens/modificarActivitatScreens/NameModify";
+import LocationModify from "./screens/modificarActivitatScreens/LocationModify";
+import IniHourModify from "./screens/modificarActivitatScreens/IniHourModify";
+import FinHourModify from "./screens/modificarActivitatScreens/FinHourModify";
+import IniDateModify from "./screens/modificarActivitatScreens/IniDateModify";
+import FinDateModify from "./screens/modificarActivitatScreens/FinDateModify";
+import ActDescriptionModify from "./screens/modificarActivitatScreens/ActDescriptionModify";
 
 
 const Scenes = Actions.create(
@@ -45,6 +52,13 @@ const Scenes = Actions.create(
         <Scene key="seltype" component={SelectType}/>
         <Scene key="activitatlist" component={ActivitatListScreen}/>
         <Scene key="prova" component={Interessos2}/>
+		<Scene key="nameMod" component={NameModify}/>
+		<Scene key="locationMod" component={LocationModify}/>
+		<Scene key="iniHourMod" component={IniHourModify}/>
+		<Scene key="finHourMod" component={FinHourModify}/>
+        <Scene key="iniDateMod" component={IniDateModify}/>
+        <Scene key="finDateMod" component={FinDateModify}/>
+        <Scene key="actdescrMod" component={ActDescriptionModify}/>
 
 
 	</Scene>

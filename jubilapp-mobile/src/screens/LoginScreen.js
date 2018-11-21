@@ -1,16 +1,16 @@
 import React from 'react';
 import {KeyboardAvoidingView, View} from 'react-native';
-import Formulari from '../components/Formulari';
-import Logo from '../components/Logo';
-import Header from '../components/Header';
-import StartButton from '../components/StartButton';
-import Description from '../components/Description';
+import Formulari from '../components/basicComponents/Formulari';
+import Logo from '../components/basicComponents/Logo';
+import Header from '../components/basicComponents/Header';
+import StartButton from '../components/basicComponents/StartButton';
+import Description from '../components/basicComponents/Description';
 import { Font } from 'expo';
 import { Actions } from 'react-native-router-flux';
 import {APP_COLORS} from "../constants/colors";
 import connect from "react-redux/es/connect/connect";
 import {changeLoginFormProperty, login} from "../actions/loginFormActions";
-import NextButton from "../components/NextButton";
+import NextButton from "../components/basicComponents/NextButton";
 
 class LoginScreen extends React.Component {
     constructor(props) {

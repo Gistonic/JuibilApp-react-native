@@ -1,7 +1,7 @@
 import React from 'react';
 import {View} from 'react-native';
-import Description from '../components/Description';
-import NextButton from '../components/NextButton';
+import Description from '../components/basicComponents/Description';
+import NextButton from '../components/basicComponents/NextButton';
 import {APP_COLORS} from "../constants/colors";
 
 import { Actions } from 'react-native-router-flux';

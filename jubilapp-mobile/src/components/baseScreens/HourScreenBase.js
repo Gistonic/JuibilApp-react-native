@@ -1,13 +1,13 @@
 import React from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
-import {APP_COLORS} from "../constants/colors";
+import {APP_COLORS} from "../../constants/colors";
 
 import { FontAwesome } from '@expo/vector-icons';
 
-import Header from "../components/Header";
-import Description from "../components/Description";
-import ButtonBack from "../components/ButtonBack";
-import NextButton from "../components/NextButton";
+import Header from "../basicComponents/Header";
+import Description from "../basicComponents/Description";
+import ButtonBack from "../basicComponents/ButtonBack";
+import NextButton from "../basicComponents/NextButton";
 
 export default class HourScreenBase extends React.Component {
 
@@ -72,7 +72,7 @@ export default class HourScreenBase extends React.Component {
                 <View style = {container}>
                     <ButtonBack buttonText = {'Atrás'}
                                 path = {this.props.previousScreen}/>
-                    <NextButton buttonText = {'Siguiente'}
+                    <NextButton buttonText = {this.props.buttonNext}
                                 path = {this.props.nextScreen}/>
                 </View>
             </View>

@@ -2,12 +2,12 @@ import React from 'react';
 import {ImageBackground, Text, TouchableOpacity, View} from 'react-native';
 import { CheckBox } from 'react-native-elements';
 import {APP_COLORS} from "../constants/colors";
-import Header from '../components/Header';
+import Header from '../components/basicComponents/Header';
 
 import { Actions } from 'react-native-router-flux';
-import Description from "../components/Description";
-import ButtonBack from "../components/ButtonBack";
-import NextButton from "../components/NextButton";
+import Description from "../components/basicComponents/Description";
+import ButtonBack from "../components/basicComponents/ButtonBack";
+import NextButton from "../components/basicComponents/NextButton";
 import {changeCreateActivityFormProperty} from "../actions";
 import connect from "react-redux/es/connect/connect";
 

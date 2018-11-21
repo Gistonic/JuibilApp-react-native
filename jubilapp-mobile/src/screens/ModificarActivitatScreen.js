@@ -1,13 +1,13 @@
 import React from 'react';
 import {View} from 'react-native';
-import HeaderIcon from '../components/HeaderIcon';
+import HeaderIcon from '../components/basicComponents/HeaderIcon';
 import {APP_COLORS} from "../constants/colors";
-import ConfigurationButton from '../components/ConfigurationButton';
+import ConfigurationButton from '../components/basicComponents/ConfigurationButton';
 
 import { Actions } from 'react-native-router-flux';
-import Description from "../components/Description";
-import ButtonBack from "../components/ButtonBack";
-import NextButton from "../components/NextButton";
+import Description from "../components/basicComponents/Description";
+import ButtonBack from "../components/basicComponents/ButtonBack";
+import NextButton from "../components/basicComponents/NextButton";
 
 export default class HomeScreen extends React.Component {
     render() {
@@ -35,7 +35,7 @@ export default class HomeScreen extends React.Component {
                                     buttonText = {'NOMBRE ACTIVIDAD'}
                                              isEvilType = {true}
 
-                                    path={() => Actions.nameUbi()}
+                                    path={() => Actions.nameMod()}
                         />
                         <ConfigurationButton iconName={ 'location'}
                                     colorName={ APP_COLORS.color_button_1}
@@ -44,7 +44,7 @@ export default class HomeScreen extends React.Component {
                                              fontsizeStyle= {15}
                                              widthStyle = {'60%'}
                                              isEvilType = {true}
-                                    path={() => Actions.nameUbi()}
+                                    path={() => Actions.locationMod()}
                         />
                     </View>
                     <View style = {container}>
@@ -55,7 +55,7 @@ export default class HomeScreen extends React.Component {
                                              fontsizeStyle= {15}
                                              widthStyle = {'60%'}
                                              isEvilType = {true}
-                                    path={() => Actions.iniDate()}
+                                    path={() => Actions.iniDateMod()}
                         />
                         <ConfigurationButton iconName={'clock'}
                                     colorName={ APP_COLORS.color_button_1}
@@ -64,7 +64,7 @@ export default class HomeScreen extends React.Component {
                                              fontsizeStyle= {15}
                                              widthStyle = {'60%'}
                                              isEvilType = {true}
-                                    path={() => Actions.iniHour()}
+                                    path={() => Actions.iniHourMod()}
                         />
                     </View>
                     <View style = {container}>
@@ -84,7 +84,7 @@ export default class HomeScreen extends React.Component {
                                              fontsizeStyle= {15}
                                              isEvilType = {true}
                                              widthStyle = {'60%'}
-                                    path={() => Actions.actdescr()}
+                                    path={() => Actions.actdescrMod()}
                         />
                     </View>
                 </View>

@@ -1,10 +1,10 @@
 import React from 'react';
 import {View} from 'react-native';
 import {APP_COLORS} from "../constants/colors";
-import Header from "../components/Header";
+import Header from "../components/basicComponents/Header";
 import ActivitatItem from "../components/ActivitatItem";
 import {Actions} from "react-native-router-flux";
-import HeaderIcon from "../components/HeaderIcon";
+import HeaderIcon from "../components/basicComponents/HeaderIcon";
 
 export default class ActivitatListScreen extends React.Component {
     render() {

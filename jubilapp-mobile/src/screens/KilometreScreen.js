@@ -1,11 +1,11 @@
 import React from 'react';
 import {TouchableOpacity, View} from 'react-native';
 import {APP_COLORS} from "../constants/colors";
-import Header from '../components/Header';
-import Description from '../components/Description';
-import NextButton from '../components/NextButton';
-import ButtonBack from '../components/ButtonBack';
-import Numbers from '../components/Numbers';
+import Header from '../components/basicComponents/Header';
+import Description from '../components/basicComponents/Description';
+import NextButton from '../components/basicComponents/NextButton';
+import ButtonBack from '../components/basicComponents/ButtonBack';
+import Numbers from '../components/basicComponents/Numbers';
 
 import {Actions} from 'react-native-router-flux';
 

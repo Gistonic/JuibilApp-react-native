@@ -1,10 +1,10 @@
 import React from 'react';
 import { Actions } from 'react-native-router-flux';
-import {changeCreateActivityFormProperty} from "../actions";
+import {changeCreateActivityFormProperty} from "../../actions/index";
 import connect from "react-redux/es/connect/connect";
-import HourScreenBase from "../components/HourScreenBase";
+import HourScreenBase from "../../components/baseScreens/HourScreenBase";
 
-class FinHour extends React.Component {
+class FinHourCreate extends React.Component {
     render() {
         return (
             <HourScreenBase changeFormHour={this.props.changeFormHourEnd}
@@ -12,8 +12,9 @@ class FinHour extends React.Component {
                             _hour={(this.props.hourIni+1)%24}
                             _minute={this.props.minuteIni}
                             titleName="fin"
-                            nextScreen={() => Actions.iniHour()}
-                            previousScreen={() => Actions.actdescr()}/>
+                            buttonNext = "Siguiente"
+                            previousScreen={() => Actions.iniHour()}
+                            nextScreen={() => Actions.actdescr()}/>
 
         );
     }
@@ -36,5 +37,5 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(FinHour);
+export default connect(mapStateToProps, mapDispatchToProps)(FinHourCreate);
 

@@ -1,18 +1,18 @@
 import React from 'react';
 import {View} from 'react-native';
 import {Calendar} from 'react-native-calendars';
-import {APP_COLORS} from "../constants/colors";
+import {APP_COLORS} from "../../constants/colors";
 
 import {Actions} from 'react-native-router-flux';
 
-import Header from "./Header";
-import Description from "./Description";
-import ButtonBack from "./ButtonBack";
-import NextButton from "./NextButton";
+import Header from "../basicComponents/Header";
+import Description from "../basicComponents/Description";
+import ButtonBack from "../basicComponents/ButtonBack";
+import NextButton from "../basicComponents/NextButton";
 import {LocaleConfig} from 'react-native-calendars';
-import {changeCreateActivityFormProperty} from "../actions";
+import {changeCreateActivityFormProperty} from "../../actions/index";
 import connect from "react-redux/es/connect/connect";
-import Formulari from "../components/Formulari";
+import Formulari from "../basicComponents/Formulari";
 
 LocaleConfig.locales['es'] = {
     monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
@@ -77,8 +77,8 @@ export default class DateScreenBase extends React.Component {
                 </View>
                 <View style={container}>
                     <ButtonBack buttonText={'Atrás'}
-                                path={() => Actions.nameUbi()}/>
-                    <NextButton buttonText={'Siguiente'}
+                                path={this.props.previousScreen}/>
+                    <NextButton buttonText={this.props.buttonNext}
                                 path={this.props.nextScreen}/>
                 </View>
             </View>

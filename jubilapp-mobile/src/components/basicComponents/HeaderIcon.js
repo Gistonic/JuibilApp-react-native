@@ -1,6 +1,6 @@
 import React from 'react';
 import {Text, View, TouchableOpacity } from 'react-native';
-import {APP_COLORS} from "../constants/colors";
+import {APP_COLORS} from "../../constants/colors";
 import { FontAwesome } from '@expo/vector-icons';
 
 const HeaderIcon = (props) => {

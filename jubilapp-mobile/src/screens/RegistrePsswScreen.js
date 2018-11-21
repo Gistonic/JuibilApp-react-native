@@ -1,9 +1,9 @@
 import React from 'react';
 import {View, KeyboardAvoidingView} from 'react-native';
-import Formulari from '../components/Formulari';
-import Header from '../components/Header';
-import NextButton from '../components/NextButton';
-import ButtonBack from '../components/ButtonBack';
+import Formulari from '../components/basicComponents/Formulari';
+import Header from '../components/basicComponents/Header';
+import NextButton from '../components/basicComponents/NextButton';
+import ButtonBack from '../components/basicComponents/ButtonBack';
 import { Actions } from 'react-native-router-flux';
 import {changeRegisterFormProperty} from "../actions";
 import connect from "react-redux/es/connect/connect";

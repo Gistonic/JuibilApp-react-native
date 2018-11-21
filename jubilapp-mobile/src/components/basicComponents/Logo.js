@@ -1,10 +1,10 @@
 import React from 'react';
 import {Image} from 'react-native';
-import {APP_COLORS} from "../constants/colors";
+import {APP_COLORS} from "../../constants/colors";
 
 const Logo = () => {
     return (
-        <Image source={require('../images/logo.png')} style = {styles.imageStyle}
+        <Image source={require('../../images/logo.png')} style = {styles.imageStyle}
         ></Image>
     );
 };

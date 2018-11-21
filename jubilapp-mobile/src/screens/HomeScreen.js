@@ -1,10 +1,10 @@
 import React from 'react';
 import {View} from 'react-native';
-import HeaderIcon from '../components/HeaderIcon';
+import HeaderIcon from '../components/basicComponents/HeaderIcon';
 import {APP_COLORS} from "../constants/colors";
 
 import { Actions } from 'react-native-router-flux';
-import ConfigurationButton from "../components/ConfigurationButton";
+import ConfigurationButton from "../components/basicComponents/ConfigurationButton";
 
 export default class HomeScreen extends React.Component {
     render() {

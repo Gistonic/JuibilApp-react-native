@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, TextInput, Text}  from 'react-native';
-import {APP_COLORS} from "../constants/colors"
+import {APP_COLORS} from "../../constants/colors"
 
 const Description = (props) => {
     const {textStyle} = styles;

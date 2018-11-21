@@ -1,6 +1,6 @@
 import React from 'react';
 import {TouchableOpacity, Text, View} from 'react-native';
-import {APP_COLORS} from "../constants/colors";
+import {APP_COLORS} from "../../constants/colors";
 import { EvilIcons, Ionicons } from '@expo/vector-icons';
 
 const ConfigurationButton = (props) => {
