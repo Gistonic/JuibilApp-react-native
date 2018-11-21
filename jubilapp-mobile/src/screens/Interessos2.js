@@ -12,53 +12,77 @@ import {changeCreateActivityFormProperty} from "../actions";
 import connect from "react-redux/es/connect/connect";
 
 export default class Interessos2 extends React.Component {
-
-
-    var
-    interessos_checked = [false,false,false,false,false,false];
-    var
-    past_matches_circles =[];
-    var
-    path_imatges = ['../images/artPES.jpg', '../images/culturaPES.png','../images/esportPES.jpg','../images/excursionesPES.jpg','../images/ocioPES.jpg','../images/tallersPES.jpg'];
-
-
-    _onPressButton = (id) => {
-        alert(id);
-    }
-
-    dibuixarInteres(id)
-    {
-        return  <TouchableOpacity key={id} style={styles.buttonStyle} onPress = {this._onPressButton(id)}>
-                    <ImageBackground source={require('../images/artPES.jpg')} style={styles.imageStyle}/>
-                    <CheckBox title = 'Arte' onPress = {this._onPressButton(id)}
-                      checked = {this.interessos_checked[id]} style = {styles.checkBoxStyle}/>
-                </TouchableOpacity>
-
-    }
-    dibuixarInteressos()
-    {
-        for (var i = 0; i < 6; i++) {
-            this.past_matches_circles[i] = this.dibuixarInteres(i);
+    interessos_info = [
+        {
+            id:0,
+            estat:false,
+            icon: require('../images/artPES.jpg'),
+            nom:'Arte',
+        },
+        {
+            id:1,
+            estat:false,
+            icon: require('../images/culturaPES.png'),
+            nom:'Cultura',
+        },
+        {
+            id:2,
+            estat:false,
+            icon: require('../images/esportPES.jpg'),
+            nom:'Deporte',
+        },
+        {
+            id:3,
+            estat:false,
+            icon: require('../images/excursionsPES.jpg'),
+            nom:'Excursiones',
+        },
+        {
+            id:4,
+            estat:false,
+            icon: require('../images/ocioPES.jpg'),
+            nom:'Ocio',
+        },
+        {
+            id:5,
+            estat:false,
+            icon: require('../images/tallersPES.jpg'),
+            nom:'Talleres',
         }
+
+    ];
+    estats = [true,false,false,false,false,false];
+    _onPressButton(interes) {
+        //alert(interes.id);
+        this.estats[interes.id] = !this.estats[interes.id];
+        alert(this.estats[interes.id]);
+    }
+    dibuixarInteressos(num)
+    {
+        alert("Estic aqui");
+        return this.interessos_info.map(totsID=> {
+            if((totsID.id %2) == num) {
+                return  (<TouchableOpacity style={styles.buttonStyle} onPress={this._onPressButton.bind(this,totsID)}>
+                            <ImageBackground source={totsID.icon} style={styles.imageStyle}/>
+                            <CheckBox key={totsID.id} title = {totsID.nom} checked = {this.estats[totsID.id]} style = {styles.checkBoxStyle} onPress={this._onPressButton.bind(this,totsID)}/>
+                        </TouchableOpacity>
+                        );
+            }
+        });
     }
     render() {
-            const {viewStyle, container, container1, viewInteressos} = styles;
+            const {viewStyle, container, container1, viewInteressos, containerColumna} = styles;
             return (
                 <View style={viewStyle}>
                     <Header headerText={'JubilApp'}/>
                     <Description textExpl={'Selecciona tus intereses'}/>
-                    {this.dibuixarInteressos()}
                     <View style = {container}>
-                        {this.past_matches_circles[0]}
-                        {this.past_matches_circles[1]}
-                    </View>
-                    <View style = {container}>
-                        {this.past_matches_circles[2]}
-                        {this.past_matches_circles[3]}
-                    </View>
-                    <View style = {container}>
-                        {this.past_matches_circles[4]}
-                        {this.past_matches_circles[5]}
+                        <View style = {containerColumna}>
+                            {this.dibuixarInteressos(0)}
+                        </View>
+                        <View style = {containerColumna}>
+                            {this.dibuixarInteressos(1)}
+                        </View>
                     </View>
                     <View style = {container1}>
                         <ButtonBack buttonText = {'Atrás'}
@@ -78,11 +102,15 @@ export default class Interessos2 extends React.Component {
             height: '100%',
             flexDirection: 'column'
         },
+        containerColumna: {
+            width: '50%',
+            flexDirection: 'column'
+        },
         container: {
             width: '100%',
-            height: '20%',
             flex:1,
-            flexDirection: 'row'
+            flexDirection: 'row',
+            marginTop: '5%'
         },
         checkBoxStyle:{
             center:true,
@@ -105,10 +133,13 @@ export default class Interessos2 extends React.Component {
         buttonStyle:{
             justifyContent: 'center',
             alignItems: 'center', //horizontal
-            height: '100%',
-            width: '50%',
+            height: '35%',
+            width: '90%',
             paddingLeft: '5%',
             paddingRight: '5%',
             paddingBottom: '2%',
+            paddingTop: '2%',
+            marginStart: '5%',
+            marginEnd: '5%',
         }
     }
