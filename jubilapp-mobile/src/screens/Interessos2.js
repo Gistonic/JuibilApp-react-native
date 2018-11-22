@@ -8,8 +8,6 @@ import { Actions } from 'react-native-router-flux';
 import Description from "../components/basicComponents/Description";
 import ButtonBack from "../components/basicComponents/ButtonBack";
 import NextButton from "../components/basicComponents/NextButton";
-import {changeCreateActivityFormProperty} from "../actions";
-import connect from "react-redux/es/connect/connect";
 
 export default class Interessos2 extends React.Component {
     state = {
@@ -54,23 +52,21 @@ export default class Interessos2 extends React.Component {
       ]
     }
 
-    estats = [true,false,false,false,false,false];
     _onPressButton(interes) {
-        //alert(interes.id);
-      const new_interessos_info = this.state.interessos_info
-      new_interessos_info[interes.id] = !new_interessos_info[interes.id];
-      this.setState({interessos_info: new_interessos_info})
+        //s'ha de fer una copia del vector i modificar la copia perque laltre es com inmutable o nose quin rollo de JS que no es modifica be
+        const new_interessos_info = this.state.interessos_info;
+        new_interessos_info[interes.id].estat = !new_interessos_info[interes.id].estat;
+        this.setState({interessos_info: new_interessos_info})
 
-        alert(this.estats[interes.id]);
     }
     dibuixarInteressos(num)
     {
-        alert("Estic aqui");
-        return this.interessos_info.map(totsID=> {
+        //el num es per distingir a quina columna aniran, la dreta es per tots aquells que tenen id parell i lesquerra pels ids imparells
+        return this.state.interessos_info.map(totsID=> {
             if((totsID.id %2) == num) {
                 return  (<TouchableOpacity style={styles.buttonStyle} onPress={this._onPressButton.bind(this,totsID)}>
                             <ImageBackground source={totsID.icon} style={styles.imageStyle}/>
-                            <CheckBox key={totsID.id} title = {totsID.nom} checked = {this.estats[totsID.id]} style = {styles.checkBoxStyle} onPress={this._onPressButton.bind(this,totsID)}/>
+                            <CheckBox key={totsID.id} title = {totsID.nom} checked = {this.state.interessos_info[totsID.id].estat} style = {styles.checkBoxStyle} onPress={this._onPressButton.bind(this,totsID)}/>
                         </TouchableOpacity>
                         );
             }
