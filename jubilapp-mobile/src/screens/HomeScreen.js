@@ -16,7 +16,7 @@ export default class HomeScreen extends React.Component {
                     colorName={ APP_COLORS.color_neutral}
                         size = {75}
                         textSize = {35}
-                        path={() => Actions.modificaractivitat()}
+                        path={() => Actions.interessos()}
             />
                 <View style = {viewButtons}>
                     <ConfigurationButton iconName={ 'md-search'}

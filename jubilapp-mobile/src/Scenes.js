@@ -15,7 +15,6 @@ import IniDate from './screens/crearActivitatScreens/IniDateCreate';
 import FinDate from './screens/crearActivitatScreens/FinDateCreate';
 import IniHour from './screens/crearActivitatScreens/IniHourCreate';
 import FinHour from './screens/crearActivitatScreens/FinHourCreate';
-import InteressosScreen from './screens/InteressosScreen';
 import ModificarActivitatScreen from './screens/ModificarActivitatScreen';
 import ActDescription from './screens/crearActivitatScreens/ActDescriptionCreate';
 import SelectType from './screens/crearActivitatScreens/SelectTypeCreate';
@@ -42,7 +41,6 @@ const Scenes = Actions.create(
         <Scene key="km" component={KilometreScreen}/>
 		<Scene key="home" component={HomeScreen}/>
 		<Scene key="nameUbi" component={NameUbi}/>
-        <Scene key="interessos" component={InteressosScreen}/>
 		<Scene key="iniDate" component={IniDate}/>
         <Scene key="finDate" component={FinDate}/>
         <Scene key="iniHour" component={IniHour}/>
@@ -51,7 +49,7 @@ const Scenes = Actions.create(
         <Scene key="modificaractivitat" component={ModificarActivitatScreen}/>
         <Scene key="seltype" component={SelectType}/>
         <Scene key="activitatlist" component={ActivitatListScreen}/>
-        <Scene key="prova" component={Interessos2}/>
+        <Scene key="interessos" component={Interessos2}/>
 		<Scene key="nameMod" component={NameModify}/>
 		<Scene key="locationMod" component={LocationModify}/>
 		<Scene key="iniHourMod" component={IniHourModify}/>
