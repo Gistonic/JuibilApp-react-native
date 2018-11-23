@@ -92,7 +92,17 @@ class Interessos2 extends React.Component {
                 interessosInfo.push(interessosName[i]);
             }
         }
-        this.props.interessosProfile(interessosInfo)
+
+        if(interessosInfo.length == 0){
+            //console.log(interessosName);
+            this.props.interessosProfile(interessosName)
+        }
+        else{
+            //console.log(interessosInfo);
+            this.props.interessosProfile(interessosInfo)
+        }
+
+
     }
 
     render() {
