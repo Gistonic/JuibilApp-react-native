@@ -12,6 +12,7 @@ export const changeLoginFormProperty=(propertyName, value) =>{
 };
 
 const receiveLogin = (token) => {
+    //localstorage("token", token);
     Actions.welcome();
     return {
         type: LOGIN_FORM_ACTIONS.ReceiveLogin,

@@ -1,12 +1,13 @@
 import { combineReducers, createStore, applyMiddleware } from 'redux'
-import {registerFormReducer, authReducer, loginFormReducer, createActivityFormReducer} from "./reducers/";
+import {registerFormReducer, authReducer, loginFormReducer, createActivityFormReducer, interessosProfileReducer} from "./reducers/";
 import thunk from 'redux-thunk'
 import logger from 'redux-logger'
 const rootReducer = combineReducers({
     auth: authReducer,
     registerForm:registerFormReducer,
     loginForm:loginFormReducer,
-    createActivityForm:createActivityFormReducer
+    createActivityForm:createActivityFormReducer,
+    interessosProfile:interessosProfileReducer
 })
 
 const store= createStore(
