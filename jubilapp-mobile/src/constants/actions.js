@@ -13,7 +13,7 @@ export const CREATE_ACTIVITY_FORM_ACTIONS={
 }
 
 export const LIST_ACTIVITIES_ACTIONS={
-    FetchActivities: 'FETCH_PRODUCTS',
-    ReceiveActivities: 'RECEIVE_PRODUCTS',
-    RequestActivities: 'REQUEST_PRODUCTS'
+    FetchActivities: 'FETCH_ACTIVITIES',
+    ReceiveActivities: 'RECEIVE_ACTIVITIES',
+    RequestActivities: 'REQUEST_ACTIVITIES'
 }

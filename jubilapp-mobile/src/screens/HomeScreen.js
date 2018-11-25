@@ -32,6 +32,7 @@ export default class HomeScreen extends React.Component {
                                 heightStyle={150}
                                 fontsizeStyle= {27}
                                 widthStyle = {200}
+                                         path={() => Actions.activitatlist()}
                                          isEvilType = {false}
                                 buttonText = {'VISUALIZAR ACTIVIDADES'}/>
 

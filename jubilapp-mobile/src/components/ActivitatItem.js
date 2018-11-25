@@ -18,7 +18,7 @@ const ActivitatItem = (props) => {
 
 const styles = {
     viewStyle: {
-        height: '12%',
+        height: 100,
         width: '90%',
         paddingRight: '5%',
         paddingTop: '5%',

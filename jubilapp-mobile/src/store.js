@@ -1,5 +1,5 @@
 import { combineReducers, createStore, applyMiddleware } from 'redux'
-import {registerFormReducer, authReducer, loginFormReducer, createActivityFormReducer} from "./reducers/";
+import {registerFormReducer, authReducer, loginFormReducer, createActivityFormReducer,listActivitiesReducer} from "./reducers/";
 import thunk from 'redux-thunk'
 import logger from 'redux-logger'
 const rootReducer = combineReducers({
