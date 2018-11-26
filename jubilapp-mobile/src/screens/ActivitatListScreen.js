@@ -10,7 +10,14 @@ import { fetchActivities } from "../actions/ListActivitiesActions";
 class ActivitatListScreen extends React.Component {
     componentWillMount() {
         this.props.fetchActivities()
+        this.props.activitiesTypes.set('art', {name: 'Arte', path: '../images/artPES.jpg'});
+        this.props.activitiesTypes.set('sports', {name: 'Deportes', path: '../images/esportPES.jpg'});
+        this.props.activitiesTypes.set('culture', {name: 'Cultura', path: '../images/culturaPES.png'});
+        this.props.activitiesTypes.set('trips', {name: 'Excursiones', path: '../images/excursionsPES.jpg'});
+        this.props.activitiesTypes.set('workshops', {name: 'Talleres', path: '../images/tallersPES.jpg'});
+        this.props.activitiesTypes.set('leisure', {name: 'Ocio', path: '../images/ocioPES.jpg'});
     }
+
     render() {
         const {viewStyle,activitatStyle} = styles;
         console.log(this.props.activities.length)
@@ -52,7 +59,8 @@ const styles ={
 const mapStateToProps = (state) => {
     return {
 
-        activities: state.listActivities.activities
+        activities: state.listActivities.activities,
+        activitiesTypes: state.listActivities.activitiesTypes
     }
 }
 

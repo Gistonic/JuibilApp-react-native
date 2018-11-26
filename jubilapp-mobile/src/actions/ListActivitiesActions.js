@@ -30,14 +30,27 @@ export const fetchActivities = () => {
     }
 }
 
+
+
+
+
 const activitiesMock = [
     {
         id: 0,
-        name:'yoga'
+        name:'yoga',
+        description: 'clase de yoga super guay',
+        type: 'sports',
+        startDate: Date,
+        endDate: Date
+
     },
     {
         id: 1,
-        name:'mirar obres'
+        name:'mirar obras',
+        description: 'mirar las obras de la sagrada familia',
+        type: 'leisure',
+        startDate: Date,
+        endDate: Date
     }
 
 ]
