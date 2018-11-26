@@ -1,9 +1,14 @@
 import {Actions} from "react-native-router-flux";
 import {INTERESSOS_PROFILE_ACTIONS} from "../constants/actions";
+import { AsyncStorage } from "react-native";
 
+const token = null;
 
 export const interessosProfile = (interessosInfo) => {
     return () => {
+        AsyncStorage.getItem('token').then((data) => {
+            this.token = data
+        });
         fetch('http://ordinadorcasa.no-ip.org:4100/profile/events', {
             method: 'POST',
             headers: {

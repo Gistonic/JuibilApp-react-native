@@ -1,5 +1,6 @@
 import {LOGIN_FORM_ACTIONS} from "../constants/actions";
 import {Actions} from "react-native-router-flux";
+import { AsyncStorage } from "react-native";
 
 export const changeLoginFormProperty=(propertyName, value) =>{
     return {
@@ -13,6 +14,7 @@ export const changeLoginFormProperty=(propertyName, value) =>{
 
 const receiveLogin = (token) => {
     //localstorage("token", token);
+    AsyncStorage.setItem('token', token);
     Actions.welcome();
     return {
         type: LOGIN_FORM_ACTIONS.ReceiveLogin,
