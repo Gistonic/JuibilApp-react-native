@@ -128,7 +128,8 @@ export default class KilometreScreen extends React.Component {
               <View style = {container}>
                 <ButtonBack buttonText = {'Atrás'}
                             path = {() => Actions.interessos()}/>
-                <NextButton buttonText = {'Siguiente'}/>
+                <NextButton buttonText = {'Finalizar'}
+                            path = {() => Actions.home()}/>
               </View>
             </View>   
         );

@@ -65,7 +65,8 @@ class Interessos2 extends React.Component {
         //s'ha de fer una copia del vector i modificar la copia perque laltre es com inmutable o nose quin rollo de JS que no es modifica be
         const new_interessos_info = this.state.interessos_info;
         new_interessos_info[interes.id].estat = !new_interessos_info[interes.id].estat;
-        this.setState({interessos_info: new_interessos_info})
+
+        this.setState({interessos_info: new_interessos_info}) //aixo no seria aixi no?
 
     }
     dibuixarInteressos(num)
