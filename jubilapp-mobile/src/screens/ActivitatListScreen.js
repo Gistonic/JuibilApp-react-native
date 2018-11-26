@@ -2,8 +2,10 @@ import React from 'react';
 import {View} from 'react-native';
 import {APP_COLORS} from "../constants/colors";
 import ActivitatItem from "../components/ActivitatItem";
+import connect from "react-redux/es/connect/connect";
 import {Actions} from "react-native-router-flux";
 import HeaderIcon from "../components/basicComponents/HeaderIcon";
+import { fetchActivities } from "../actions/ListActivitiesActions";
 
 class ActivitatListScreen extends React.Component {
     componentWillMount() {
@@ -11,6 +13,7 @@ class ActivitatListScreen extends React.Component {
     }
     render() {
         const {viewStyle,activitatStyle} = styles;
+        console.log(this.props.activities.length)
         return (
             <View style = {viewStyle}>
 
@@ -25,7 +28,7 @@ class ActivitatListScreen extends React.Component {
                 {
                     this.props.activities.map((activity) => {
                         return (
-                            <ActivitatItem nomActivitat = {activity.name} style = {activitatStyle}/>
+                            <ActivitatItem key={activity.id} nomActivitat = {activity.name} style = {activitatStyle}/>
                         )
                     })
                 }
@@ -48,6 +51,7 @@ const styles ={
 
 const mapStateToProps = (state) => {
     return {
+
         activities: state.listActivities.activities
     }
 }
