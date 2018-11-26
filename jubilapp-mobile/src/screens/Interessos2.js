@@ -19,7 +19,7 @@ class Interessos2 extends React.Component {
 
 
     }
-    state = {
+    /*state = {
         interessos_info: [
             {
                 id:0,
@@ -59,11 +59,11 @@ class Interessos2 extends React.Component {
             }
 
         ]
-    }
+    }*/
 
     _onPressButton(interes) {
         //s'ha de fer una copia del vector i modificar la copia perque laltre es com inmutable o nose quin rollo de JS que no es modifica be
-        const new_interessos_info = this.state.interessos_info;
+        const new_interessos_info = this.props.interessos_info;
         new_interessos_info[interes.id].estat = !new_interessos_info[interes.id].estat;
 
         this.setState({interessos_info: new_interessos_info}) //aixo no seria aixi no?
@@ -72,11 +72,11 @@ class Interessos2 extends React.Component {
     dibuixarInteressos(num)
     {
         //el num es per distingir a quina columna aniran, la dreta es per tots aquells que tenen id parell i lesquerra pels ids imparells
-        return this.state.interessos_info.map(totsID=> {
+        return this.props.interessos_info.map((totsID)=> {
             if((totsID.id %2) == num) {
                 return  (<TouchableOpacity key={totsID.id} style={styles.buttonStyle} onPress={this._onPressButton.bind(this,totsID)}>
                             <ImageBackground source={totsID.icon} style={styles.imageStyle}/>
-                            <CheckBox key={totsID.id} title = {totsID.nom} checked = {this.state.interessos_info[totsID.id].estat} style = {styles.checkBoxStyle} onPress={this._onPressButton.bind(this,totsID)}/>
+                            <CheckBox key={totsID.id} title = {totsID.nom} checked = {this.props.interessos_info[totsID.id].estat} style = {styles.checkBoxStyle} onPress={this._onPressButton.bind(this,totsID)}/>
                         </TouchableOpacity>
                         );
             }
@@ -89,7 +89,7 @@ class Interessos2 extends React.Component {
         var i;
 
         for(i = 0; i < 6; i++){
-            if(this.state.interessos_info[i].estat){
+            if(this.props.interessos_info[i].estat){
                 interessosInfo.push(interessosName[i]);
             }
         }
@@ -180,7 +180,7 @@ class Interessos2 extends React.Component {
     }
 const mapStateToProps = (state) => {
     return {
-
+        interessos_info: state.interessosProfile.interessos_info
     }
 }
 

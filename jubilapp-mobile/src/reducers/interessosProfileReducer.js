@@ -1,6 +1,6 @@
 import {INTERESSOS_PROFILE_ACTIONS} from "../constants/actions";
 const INITIAL_STATE ={
-    /*interessos_info: [
+    interessos_info: [
         {
             id:0,
             estat:false,
@@ -38,17 +38,24 @@ const INITIAL_STATE ={
             nom:'Talleres',
         }
 
-    ]*/
+    ]
 }
 const interessosProfileReducer = (state = INITIAL_STATE, action)=>{
     switch (action.type) {
 
-        /*case INTERESSOS_PROFILE_ACTIONS.ChangeProperty:
+        case INTERESSOS_PROFILE_ACTIONS.ChangeProperty:
             let result = {
                 ...state
             }
-            result[action.payload.propertyName]=action.payload.value
-            return result*/
+            result[action.payload.propertyName]=state.interessos_info.map((interes)=>{
+                if(interes.id == ation.payload.value.id){
+                    interes.estat = true;
+                }
+                return interes;
+            });
+
+            return result
+
         default: return state
 
     }

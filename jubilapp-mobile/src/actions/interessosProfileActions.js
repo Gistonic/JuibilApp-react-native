@@ -4,6 +4,16 @@ import { AsyncStorage } from "react-native";
 
 const token = null;
 
+export const changeInteressosProfileProperty=(propertyName, value) =>{
+    return {
+        type:INTERESSOS_PROFILE_ACTIONS.ChangeProperty,
+        payload:{
+            propertyName,
+            value
+        }
+    }
+};
+
 export const interessosProfile = (interessosInfo) => {
     return () => {
         AsyncStorage.getItem('token').then((data) => {
