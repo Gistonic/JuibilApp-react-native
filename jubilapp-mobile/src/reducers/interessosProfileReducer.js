@@ -48,7 +48,7 @@ const interessosProfileReducer = (state = INITIAL_STATE, action)=>{
                 ...state
             }
             result[action.payload.propertyName]=state.interessos_info.map((interes)=>{
-                if(interes.id == ation.payload.value.id){
+                if(interes.id == action.payload.value.id){
                     interes.estat = true;
                 }
                 return interes;

@@ -17,3 +17,7 @@ export const LIST_ACTIVITIES_ACTIONS={
     ReceiveActivities: 'RECEIVE_ACTIVITIES',
     RequestActivities: 'REQUEST_ACTIVITIES'
 }
+
+export const INTERESSOS_PROFILE_ACTIONS={
+    ChangeProperty: 'CHANGE_INTERESSOS_PROPERTY'
+}
