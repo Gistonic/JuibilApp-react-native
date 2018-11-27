@@ -11,6 +11,7 @@ class ActivitatListScreen extends React.Component {
     componentWillMount() {
         this.props.fetchActivities()
     }
+
     render() {
         const {viewStyle,activitatStyle} = styles;
         console.log(this.props.activities.length)
