@@ -61,6 +61,10 @@ class Interessos2 extends React.Component {
         ]
     }*/
 
+    componentWillMount() {
+        this.props.fetchInteressos()
+    }
+
     _onPressButton(interes) {
         //s'ha de fer una copia del vector i modificar la copia perque laltre es com inmutable o nose quin rollo de JS que no es modifica be
         const new_interessos_info = this.props.interessos_info;

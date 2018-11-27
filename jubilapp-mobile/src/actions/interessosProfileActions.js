@@ -14,6 +14,31 @@ export const changeInteressosProfileProperty=(propertyName, value) =>{
     }
 };
 
+const recieveInteressos =(interessos)=>{
+    return {
+        type: INTERESSOS_PROFILE_ACTIONS.RecieveInteressos,
+        payload: interessos
+    }
+}
+
+export const fetchInteressos = () => {
+    return(dispatch)=>{
+      //  dispatch(requestActivities())
+
+
+        setTimeout(() => {
+            dispatch(recieveInteressos(interessosMock))
+        }, 1000)
+        // fetch('URL').then(response=>{
+        //     if(response.ok){
+        //         return response.json()
+        //     }
+        // }).then(json => {
+        //     dispatch(recieveInteressos(json))
+        // })
+    }
+}
+
 export const interessosProfile = (interessosInfo) => {
     return () => {
         AsyncStorage.getItem('token').then((data) => {
@@ -42,3 +67,5 @@ export const interessosProfile = (interessosInfo) => {
         Actions.km();
     }
 }
+
+const interessosMock = ['Art','Leisure'];

@@ -43,6 +43,8 @@ const INITIAL_STATE ={
 const interessosProfileReducer = (state = INITIAL_STATE, action)=>{
     switch (action.type) {
 
+        case INTERESSOS_PROFILE_ACTIONS.FetchInteressos:
+            return state
         case INTERESSOS_PROFILE_ACTIONS.ChangeProperty:
             let result = {
                 ...state
