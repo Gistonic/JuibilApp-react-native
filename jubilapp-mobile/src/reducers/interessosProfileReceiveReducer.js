@@ -57,7 +57,6 @@ const interessosProfileReceiveReducer = (state = INITIAL_STATE, action)=>{
         case INTERESSOS_PROFILE_ACTIONS.FetchInteressos:
             return state
         case INTERESSOS_PROFILE_ACTIONS.ChangeProperty:
-            console.log("HOOLAAA");
             let result = {
                 ...state
             }
@@ -67,6 +66,7 @@ const interessosProfileReceiveReducer = (state = INITIAL_STATE, action)=>{
                 }
                 return interes;
             });
+            console.log("HOLA");
             console.log(state.interessos_info);
 
             return result
