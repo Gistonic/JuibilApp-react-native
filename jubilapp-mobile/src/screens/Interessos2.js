@@ -8,7 +8,7 @@ import { Actions } from 'react-native-router-flux';
 import Description from "../components/basicComponents/Description";
 import ButtonBack from "../components/basicComponents/ButtonBack";
 import NextButton from "../components/basicComponents/NextButton";
-import {interessosProfile} from "../actions/index";
+import {fetchInteressos, interessosProfile} from "../actions/index";
 import connect from "react-redux/es/connect/connect";
 
 class Interessos2 extends React.Component {
@@ -19,47 +19,6 @@ class Interessos2 extends React.Component {
 
 
     }
-    /*state = {
-        interessos_info: [
-            {
-                id:0,
-                estat:false,
-                icon: require('../images/artPES2.jpg'),
-                nom:'Arte',
-            },
-            {
-                id:1,
-                estat:false,
-                icon: require('../images/culturaPES2.jpg'),
-                nom:'Cultura',
-            },
-            {
-                id:2,
-                estat:false,
-                icon: require('../images/esportPES2.jpg'),
-                nom:'Deporte',
-            },
-            {
-                id:3,
-                estat:false,
-                icon: require('../images/excursionesPES2.jpg'),
-                nom:'Excursiones',
-            },
-            {
-                id:4,
-                estat:false,
-                icon: require('../images/ocioPES3.jpg'),
-                nom:'Ocio',
-            },
-            {
-                id:5,
-                estat:false,
-                icon: require('../images/talleresPES2.jpg'),
-                nom:'Talleres',
-            }
-
-        ]
-    }*/
 
     componentWillMount() {
         this.props.fetchInteressos()
@@ -190,7 +149,8 @@ const mapStateToProps = (state) => {
 
 const  mapDispatchToProps = (dispatch)=>{
     return {
-        interessosProfile: (interessosInfo)=> dispatch(interessosProfile(interessosInfo))
+        interessosProfile: (interessosInfo)=> dispatch(interessosProfile(interessosInfo)),
+        fetchInteressos: ()=>dispatch(fetchInteressos())
     }
 }
 

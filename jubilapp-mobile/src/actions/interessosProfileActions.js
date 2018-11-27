@@ -16,14 +16,22 @@ export const changeInteressosProfileProperty=(propertyName, value) =>{
 
 const recieveInteressos =(interessos)=>{
     return {
-        type: INTERESSOS_PROFILE_ACTIONS.RecieveInteressos,
+        type: INTERESSOS_PROFILE_ACTIONS.ReceiveInteressos,
         payload: interessos
     }
 }
 
+const requestInteressos =()=>{
+    return {
+        type: INTERESSOS_PROFILE_ACTIONS.RequestInteressos,
+    }
+}
+
+
+
 export const fetchInteressos = () => {
     return(dispatch)=>{
-      //  dispatch(requestActivities())
+      //  dispatch(requestInteressos())
 
 
         setTimeout(() => {
@@ -39,7 +47,7 @@ export const fetchInteressos = () => {
     }
 }
 
-export const interessosProfile = (interessosInfo) => {
+/*export const interessosProfile = (interessosInfo) => {
     return () => {
         AsyncStorage.getItem('token').then((data) => {
             this.token = data
@@ -66,6 +74,6 @@ export const interessosProfile = (interessosInfo) => {
         })
         Actions.km();
     }
-}
+}*/
 
-const interessosMock = ['Art','Leisure'];
+const interessosMock = ['art','leisure'];

@@ -27,6 +27,7 @@ import FinHourModify from "./screens/modificarActivitatScreens/FinHourModify";
 import IniDateModify from "./screens/modificarActivitatScreens/IniDateModify";
 import FinDateModify from "./screens/modificarActivitatScreens/FinDateModify";
 import ActDescriptionModify from "./screens/modificarActivitatScreens/ActDescriptionModify";
+import ActivityInfo from "./screens/ActivityInfo";
 
 
 const Scenes = Actions.create(
@@ -57,6 +58,7 @@ const Scenes = Actions.create(
         <Scene key="iniDateMod" component={IniDateModify}/>
         <Scene key="finDateMod" component={FinDateModify}/>
         <Scene key="actdescrMod" component={ActDescriptionModify}/>
+		<Scene key="info" component={ActivityInfo}/>
 
 
 	</Scene>

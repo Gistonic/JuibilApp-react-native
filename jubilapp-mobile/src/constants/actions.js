@@ -20,5 +20,7 @@ export const LIST_ACTIVITIES_ACTIONS={
 
 export const INTERESSOS_PROFILE_ACTIONS={
     ChangeProperty: 'CHANGE_INTERESSOS_PROPERTY',
-    FetchInteressos: 'FETCH_INTERESSOS'
+    FetchInteressos: 'FETCH_INTERESSOS',
+    ReceiveInteressos: 'RECEIVE_INTERESSOS',
+    RequestInteressos: 'REQUEST_INTERESSOS',
 }

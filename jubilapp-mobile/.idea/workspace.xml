@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="37b478bf-4ea4-4824-9477-f817f349a0d1" name="Default Changelist" comment="Interessos amb redux (falta get) canv">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="eb4f4061-7a96-41d8-8449-f40df00a73aa" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/screens/ActivityInfo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Scenes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scenes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/interessosProfileActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/interessosProfileActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/interessosProfileReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/interessosProfileReceiveReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/Interessos2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/Interessos2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.js" afterDir="false" />
     </list>
+    <list id="2cb7fbde-d083-4f81-bdf7-f65b3d23a53f" name="Revert: Interessos screen changes" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -15,64 +26,98 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FUSProjectUsageTrigger">
-    <session id="-1539183965">
+    <session id="899357776">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="24" />
-          <entry key="project.open.time.105" value="1" />
-          <entry key="project.open.time.12" value="1" />
-          <entry key="project.open.time.30" value="1" />
-          <entry key="project.open.time.37" value="1" />
-          <entry key="project.open.time.41" value="1" />
-          <entry key="project.open.time.42" value="3" />
-          <entry key="project.open.time.44" value="3" />
-          <entry key="project.open.time.45" value="2" />
-          <entry key="project.open.time.47" value="1" />
-          <entry key="project.open.time.48" value="3" />
-          <entry key="project.open.time.49" value="1" />
-          <entry key="project.open.time.50" value="1" />
-          <entry key="project.open.time.52" value="1" />
-          <entry key="project.open.time.57" value="1" />
-          <entry key="project.open.time.58" value="2" />
-          <entry key="project.open.time.66" value="1" />
-          <entry key="project.open.time.69" value="1" />
-          <entry key="project.open.time.94" value="1" />
-          <entry key="project.opened" value="26" />
+          <entry key="project.closed" value="12" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.3" value="3" />
+          <entry key="project.open.time.4" value="3" />
+          <entry key="project.open.time.5" value="2" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.opened" value="12" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="js" value="4204" />
+          <entry key="txt" value="194" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JavaScript" value="4204" />
+          <entry key="PLAIN_TEXT" value="194" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="js" value="157" />
+          <entry key="jpg" value="1" />
+          <entry key="js" value="125" />
+          <entry key="json" value="1" />
+          <entry key="png" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JavaScript" value="157" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.js.language.service.starts" />
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JavaScript" value="11060" />
-          <entry key="PLAIN_TEXT" value="479" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.vcs.git.usages" />
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="js" value="11060" />
-          <entry key="txt" value="479" />
+          <entry key="Image" value="3" />
+          <entry key="JSON" value="1" />
+          <entry key="JavaScript" value="125" />
         </counts>
       </usages-collector>
     </session>
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="jubilapp-mobile" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/reducers/interessosProfileReducer.js">
+        <entry file="file://$PROJECT_DIR$/src/screens/Interessos2.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="40" column="7" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
+            <state relative-caret-position="150">
+              <caret line="10" column="62" selection-start-line="10" selection-start-column="62" selection-end-line="10" selection-end-column="62" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/actions/ListActivitiesActions.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="110">
+              <caret line="8" selection-start-line="8" selection-end-line="12" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/store.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+              <folding>
+                <element signature="e#0#69#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/constants/actions.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/reducers/interessosProfileReceiveReducer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="282">
+              <caret line="72" column="57" lean-forward="true" selection-start-line="72" selection-start-column="57" selection-end-line="72" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -80,86 +125,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/actions/interessosProfileActions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
-              <folding>
-                <element signature="e#0#49#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/screens/Interessos2.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1701">
-              <caret line="174" column="32" selection-start-line="174" selection-start-column="32" selection-end-line="174" selection-end-column="32" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/reducers/authReducer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/screens/KilometreScreen.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2040">
-              <caret line="129" column="54" selection-start-line="129" selection-start-column="54" selection-end-line="129" selection-end-column="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Scenes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="51" column="30" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="30" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/screens/crearActivitatScreens/SelectTypeCreate.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
-              <folding>
-                <element signature="e#1#27#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/actions/loginFormActions.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-              <folding>
-                <element signature="e#0#56#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/actions/createActivityFormActions.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+            <state relative-caret-position="362">
+              <caret line="33" column="36" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
               </folding>
@@ -169,70 +136,68 @@
       </file>
     </leaf>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>mapDispatchToProps</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
-    <option name="UPDATE_TYPE" value="REBASE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/constants/colors.js" />
-        <option value="$PROJECT_DIR$/src/components/BackButton.js" />
-        <option value="$PROJECT_DIR$/src/components/StartButton.js" />
-        <option value="$PROJECT_DIR$/src/components/NextButton.js" />
-        <option value="$PROJECT_DIR$/src/components/Formulari.js" />
-        <option value="$PROJECT_DIR$/src/components/ButtonBack.js" />
-        <option value="$PROJECT_DIR$/src/screens/RegistreTelfScreen.js" />
-        <option value="$PROJECT_DIR$/src/components/Interes.js" />
-        <option value="$PROJECT_DIR$/src/components/HidenView.js" />
-        <option value="$PROJECT_DIR$/src/screens/FinHour.js" />
-        <option value="$PROJECT_DIR$/src/screens/ModificarNom.js" />
-        <option value="$PROJECT_DIR$/src/screens/ModificarUbi.js" />
-        <option value="$PROJECT_DIR$/src/screens/InteressosScreen.js" />
-        <option value="$PROJECT_DIR$/src/screens/ModifcarDataIni.js" />
-        <option value="$PROJECT_DIR$/src/screens/ModificarDataIni.js" />
-        <option value="$PROJECT_DIR$/src/screens/ModificarDataFi.js" />
-        <option value="$PROJECT_DIR$/src/screens/ModificarHoraIni.js" />
-        <option value="$PROJECT_DIR$/src/screens/ModificarHoraFi.js" />
-        <option value="$PROJECT_DIR$/src/screens/NameUbi.js" />
-        <option value="$PROJECT_DIR$/src/components/IconButton.js" />
-        <option value="$PROJECT_DIR$/src/components/ConfigurationButton.js" />
-        <option value="$PROJECT_DIR$/src/components/HeaderIcon.js" />
-        <option value="$PROJECT_DIR$/src/screens/ModificarActivitatScreen.js" />
-        <option value="$PROJECT_DIR$/src/components/ActivitatItem.js" />
-        <option value="$PROJECT_DIR$/src/screens/ActivitatListScreen.js" />
-        <option value="$PROJECT_DIR$/src/reducers/interessosReducer.js" />
-        <option value="$PROJECT_DIR$/src/reducers/createActivityFormReducer.js" />
-        <option value="$PROJECT_DIR$/src/reducers/index.js" />
-        <option value="$PROJECT_DIR$/src/actions/index.js" />
-        <option value="$PROJECT_DIR$/src/store.js" />
-        <option value="$PROJECT_DIR$/src/actions/loginFormActions.js" />
-        <option value="$PROJECT_DIR$/src/screens/crearActivitatScreens/SelectTypeCreate.js" />
-        <option value="$PROJECT_DIR$/src/actions/interessosProfileActions.js" />
-        <option value="$PROJECT_DIR$/src/reducers/interessosProfileReducer.js" />
-        <option value="$PROJECT_DIR$/src/Scenes.js" />
-        <option value="$PROJECT_DIR$/src/screens/LoginScreen.js" />
-        <option value="$PROJECT_DIR$/src/screens/HomeScreen.js" />
         <option value="$PROJECT_DIR$/src/screens/KilometreScreen.js" />
+        <option value="$PROJECT_DIR$/src/screens/IniDate.js" />
+        <option value="$PROJECT_DIR$/src/screens/ActDescription.js" />
+        <option value="$PROJECT_DIR$/src/screens/SelectType.js" />
+        <option value="$PROJECT_DIR$/src/screens/InteressosScreen.js" />
+        <option value="$PROJECT_DIR$/src/components/ButtonBack.js" />
+        <option value="$PROJECT_DIR$/src/components/ConfigurationButton.js" />
+        <option value="$PROJECT_DIR$/src/screens/HomeScreen.js" />
+        <option value="$PROJECT_DIR$/src/reducers/registerFormReducer.js" />
+        <option value="$PROJECT_DIR$/src/components/HourScreenBase.js" />
+        <option value="$PROJECT_DIR$/src/screens/LoginScreen.js" />
+        <option value="$PROJECT_DIR$/src/reducers/createActivityFormReducer.js" />
+        <option value="$PROJECT_DIR$/src/components/basicComponents/ConfigurationButton.js" />
+        <option value="$PROJECT_DIR$/src/components/basicComponents/Interes.js" />
+        <option value="$PROJECT_DIR$/src/screens/FinHour.js" />
+        <option value="$PROJECT_DIR$/src/screens/NameUbi.js" />
+        <option value="$PROJECT_DIR$/src/screens/IniHour.js" />
+        <option value="$PROJECT_DIR$/src/screens/NameUbiCreate.js" />
+        <option value="$PROJECT_DIR$/src/screens/modificarActivitatScreens/NameUbiModify.js" />
+        <option value="$PROJECT_DIR$/src/components/baseScreens/NameUbiScreenBase.js" />
+        <option value="$PROJECT_DIR$/src/screens/crearActivitatScreens/NameUbiCreate.js" />
+        <option value="$PROJECT_DIR$/src/components/basicComponents/Formulari.js" />
+        <option value="$PROJECT_DIR$/src/screens/modificarActivitatScreens/NameModify.js" />
+        <option value="$PROJECT_DIR$/src/components/baseScreens/HourScreenBase.js" />
+        <option value="$PROJECT_DIR$/src/screens/crearActivitatScreens/IniHourCreate.js" />
+        <option value="$PROJECT_DIR$/src/screens/modificarActivitatScreens/LocationModify.js" />
+        <option value="$PROJECT_DIR$/src/screens/modificarActivitatScreens/IniHourModify.js" />
+        <option value="$PROJECT_DIR$/src/screens/crearActivitatScreens/FinHourCreate.js" />
+        <option value="$PROJECT_DIR$/src/screens/modificarActivitatScreens/FinHourModify.js" />
+        <option value="$PROJECT_DIR$/src/components/baseScreens/DateScreenBase.js" />
+        <option value="$PROJECT_DIR$/src/screens/crearActivitatScreens/IniDateCreate.js" />
+        <option value="$PROJECT_DIR$/src/screens/crearActivitatScreens/FinDateCreate.js" />
+        <option value="$PROJECT_DIR$/src/screens/modificarActivitatScreens/IniDateModify.js" />
+        <option value="$PROJECT_DIR$/src/screens/modificarActivitatScreens/FinDateModify.js" />
+        <option value="$PROJECT_DIR$/src/components/baseScreens/ActDescriptionScreenBase.js" />
+        <option value="$PROJECT_DIR$/src/screens/crearActivitatScreens/ActDescriptionCreate.js" />
+        <option value="$PROJECT_DIR$/src/screens/ModificarActivitatScreen.js" />
+        <option value="$PROJECT_DIR$/src/screens/modificarActivitatScreens/ActDescriptionModify.js" />
+        <option value="$PROJECT_DIR$/src/components/baseScreens/SelTypeScreenBase.js" />
+        <option value="$PROJECT_DIR$/src/screens/ActivitatListScreen.js" />
+        <option value="$PROJECT_DIR$/src/actions/index.js" />
+        <option value="$PROJECT_DIR$/src/reducers/index.js" />
+        <option value="$PROJECT_DIR$/src/store.js" />
+        <option value="$PROJECT_DIR$/src/reducers/interessosProfileReducer.js" />
+        <option value="$PROJECT_DIR$/src/components/ActivitatItem.js" />
+        <option value="$PROJECT_DIR$/src/Scenes.js" />
+        <option value="$PROJECT_DIR$/src/screens/ActivityInfo.js" />
         <option value="$PROJECT_DIR$/src/screens/Interessos2.js" />
+        <option value="$PROJECT_DIR$/src/constants/actions.js" />
+        <option value="$PROJECT_DIR$/src/actions/interessosProfileActions.js" />
+        <option value="$PROJECT_DIR$/src/reducers/interessosProfileReceiveReducer.js" />
       </list>
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
-    <package-json value="$PROJECT_DIR$/package.json" />
-  </component>
-  <component name="JsFlowSettings">
-    <service-enabled>true</service-enabled>
-    <exe-path />
-    <other-services-enabled>true</other-services-enabled>
-    <auto-save>true</auto-save>
-  </component>
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
@@ -245,20 +210,36 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="656" />
-    <option name="y" value="330" />
-    <option name="width" value="980" />
-    <option name="height" value="1040" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="179" />
+    <option name="y" value="23" />
+    <option name="width" value="1218" />
+    <option name="height" value="774" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
+    <OptionsSetting value="false" id="Update" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="jubilapp-mobile" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="jubilapp-mobile" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name=".idea" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -281,7 +262,7 @@
               <item name="jubilapp-mobile" type="b2602c69:ProjectViewProjectNode" />
               <item name="jubilapp-mobile" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="constants" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jubilapp-mobile" type="b2602c69:ProjectViewProjectNode" />
@@ -295,47 +276,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="screens" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="jubilapp-mobile" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jubilapp-mobile" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="screens" type="462c0819:PsiDirectoryNode" />
-              <item name="crearActivitatScreens" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="jubilapp-mobile" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-            <path>
-              <item name="jubilapp-mobile" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="jubilapp-mobile" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="components" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="jubilapp-mobile" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="images" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="jubilapp-mobile" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="screens" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -343,9 +283,131 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/screens" />
+      <recent name="$PROJECT_DIR$/src/screens/crearActivitatScreens" />
+      <recent name="$PROJECT_DIR$/src/components/baseComponents" />
+      <recent name="$PROJECT_DIR$/src/components" />
+      <recent name="$PROJECT_DIR$/src/components/basicComponents" />
+    </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/actions/interessosProfileActions.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/constants/actions.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/reducers/interessosProfileReducer.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/screens/Interessos2.js</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -364,452 +426,602 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="37b478bf-4ea4-4824-9477-f817f349a0d1" name="Default Changelist" comment="" />
-      <created>1540486090510</created>
+      <changelist id="eb4f4061-7a96-41d8-8449-f40df00a73aa" name="Default Changelist" comment="add colors constant" />
+      <changelist id="2cb7fbde-d083-4f81-bdf7-f65b3d23a53f" name="Revert: Interessos screen changes" comment="" />
+      <created>1540484580176</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1540486090510</updated>
-      <workItem from="1540486098387" duration="2926000" />
-      <workItem from="1540501837293" duration="11360000" />
-      <workItem from="1540565387333" duration="584000" />
-      <workItem from="1541439186925" duration="4246000" />
-      <workItem from="1541510779737" duration="3196000" />
-      <workItem from="1541518457140" duration="3040000" />
-      <workItem from="1541533143827" duration="594000" />
-      <workItem from="1541599173895" duration="7777000" />
-      <workItem from="1541708126769" duration="4432000" />
-      <workItem from="1541772569638" duration="7890000" />
-      <workItem from="1541967121199" duration="6584000" />
-      <workItem from="1542023391189" duration="1302000" />
-      <workItem from="1542060662950" duration="4125000" />
-      <workItem from="1542108815853" duration="14169000" />
-      <workItem from="1542195741094" duration="2787000" />
-      <workItem from="1542234697768" duration="266000" />
-      <workItem from="1542309995123" duration="10317000" />
-      <workItem from="1542369749529" duration="436000" />
-      <workItem from="1542371064678" duration="6484000" />
-      <workItem from="1542381446708" duration="596000" />
-      <workItem from="1542480724421" duration="4655000" />
-      <workItem from="1542542406213" duration="14976000" />
-      <workItem from="1542720417293" duration="5820000" />
-      <workItem from="1542794160275" duration="12505000" />
-      <workItem from="1542913097634" duration="15379000" />
-      <workItem from="1542986268069" duration="1042000" />
+      <updated>1540484580176</updated>
+      <workItem from="1540484581412" duration="20550000" />
+      <workItem from="1540557187126" duration="4561000" />
+      <workItem from="1540908661373" duration="167000" />
+      <workItem from="1541001868912" duration="866000" />
+      <workItem from="1541441379162" duration="45000" />
+      <workItem from="1541621866700" duration="5745000" />
+      <workItem from="1541777574739" duration="8568000" />
+      <workItem from="1542042781893" duration="739000" />
+      <workItem from="1542115454165" duration="370000" />
+      <workItem from="1542115830880" duration="5862000" />
+      <workItem from="1542145290551" duration="6179000" />
+      <workItem from="1542213818823" duration="1179000" />
+      <workItem from="1542314221955" duration="4047000" />
+      <workItem from="1542383061939" duration="1062000" />
+      <workItem from="1542654225711" duration="867000" />
+      <workItem from="1542720236043" duration="12307000" />
+      <workItem from="1542926387811" duration="1712000" />
+      <workItem from="1542987476522" duration="2936000" />
+      <workItem from="1543159653022" duration="253000" />
+      <workItem from="1543171316698" duration="1592000" />
+      <workItem from="1543327796616" duration="2931000" />
     </task>
-    <task id="LOCAL-00001" summary="Canvis ButtonBack, NextButton. Contrasenya.">
-      <created>1540508611433</created>
+    <task id="LOCAL-00001" summary="Interessos screen changes">
+      <created>1542148073798</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1540508611433</updated>
+      <updated>1542148073798</updated>
     </task>
-    <task id="LOCAL-00002" summary="Interessos Screen">
-      <created>1541782145744</created>
+    <task id="LOCAL-00002" summary="Some style changes">
+      <created>1542151888059</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1541782145744</updated>
+      <updated>1542151888059</updated>
     </task>
-    <task id="LOCAL-00003" summary="Interessos Screen">
-      <created>1541783374675</created>
+    <task id="LOCAL-00003" summary="Select type screen">
+      <created>1542152730349</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1541783374675</updated>
+      <updated>1542152730349</updated>
     </task>
-    <task id="LOCAL-00004" summary="Interessos, acabar de fer bé l'estil">
-      <created>1542110407586</created>
+    <task id="LOCAL-00004" summary="Button Back fixed">
+      <created>1542213898493</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1542110407586</updated>
+      <updated>1542213898493</updated>
     </task>
-    <task id="LOCAL-00005" summary="Interessos Screen">
-      <created>1542116196500</created>
+    <task id="LOCAL-00005" summary="Modificar Activitat Screen">
+      <created>1542317551450</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1542116196500</updated>
+      <updated>1542317551450</updated>
     </task>
-    <task id="LOCAL-00006" summary="Interessos 2.0">
-      <created>1542120183751</created>
+    <task id="LOCAL-00006" summary="Refactoring Icon Button and Configuration Button">
+      <created>1542322067274</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1542120183751</updated>
+      <updated>1542322067274</updated>
     </task>
-    <task id="LOCAL-00007" summary="Modificar Activitat">
-      <created>1542315991938</created>
+    <task id="LOCAL-00007" summary="HourScreenBase and changes in some screens">
+      <created>1542752816770</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1542315991938</updated>
+      <updated>1542752816770</updated>
     </task>
-    <task id="LOCAL-00008" summary="Refactor">
-      <created>1542321253911</created>
+    <task id="LOCAL-00008" summary="ScreenBases">
+      <created>1542760210283</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1542321253911</updated>
+      <updated>1542760210283</updated>
     </task>
-    <task id="LOCAL-00009" summary="Refactor">
-      <created>1542321818950</created>
+    <task id="LOCAL-00009" summary="add button to avoid login">
+      <created>1541002718583</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1542321818950</updated>
+      <updated>1541002718584</updated>
     </task>
-    <task id="LOCAL-00010" summary="component activityItem i l'screen per veureho. SUPER CUTRE PQ EMULADOR BASURA.">
-      <created>1542377701384</created>
+    <task id="LOCAL-00010" summary="add button to avoid login">
+      <created>1541511405645</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1542377701384</updated>
+      <updated>1541511405645</updated>
     </task>
-    <task id="LOCAL-00011" summary="Interessos canviat, activitatItem">
-      <created>1542722906122</created>
+    <task id="LOCAL-00011" summary="IniDate Screen and adding colors to icons in home screen">
+      <created>1541549920514</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1542722906123</updated>
+      <updated>1541549920514</updated>
     </task>
-    <task id="LOCAL-00012" summary="Interessos canviat, activitatItem">
-      <created>1542723015819</created>
+    <task id="LOCAL-00012" summary="good colors">
+      <created>1541550423450</created>
       <option name="number" value="00012" />
       <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
-      <updated>1542723015819</updated>
+      <updated>1541550423450</updated>
     </task>
-    <task id="LOCAL-00013" summary="Interessos amb .map, pero sense press">
-      <created>1542817062471</created>
+    <task id="LOCAL-00013" summary="FinDate Screen">
+      <created>1541551011058</created>
       <option name="number" value="00013" />
       <option name="presentableId" value="LOCAL-00013" />
       <option name="project" value="LOCAL" />
-      <updated>1542817062472</updated>
+      <updated>1541551011058</updated>
     </task>
-    <task id="LOCAL-00014" summary="Interessos view genial, sense redux">
-      <created>1542926514823</created>
+    <task id="LOCAL-00014" summary="IniHour &amp; FinHour screens">
+      <created>1541779606895</created>
       <option name="number" value="00014" />
       <option name="presentableId" value="LOCAL-00014" />
       <option name="project" value="LOCAL" />
-      <updated>1542926514823</updated>
+      <updated>1541779606896</updated>
     </task>
-    <task id="LOCAL-00015" summary="Interessos amb redux (falta get)">
-      <created>1542933512378</created>
+    <task id="LOCAL-00015" summary="Changes in km screen">
+      <created>1541989347982</created>
       <option name="number" value="00015" />
       <option name="presentableId" value="LOCAL-00015" />
       <option name="project" value="LOCAL" />
-      <updated>1542933512378</updated>
+      <updated>1541989347982</updated>
     </task>
-    <task id="LOCAL-00016" summary="Interessos amb redux (falta get) 2.0">
-      <created>1542933857178</created>
+    <task id="LOCAL-00016" summary="Add Description Activity">
+      <created>1542029037918</created>
       <option name="number" value="00016" />
       <option name="presentableId" value="LOCAL-00016" />
       <option name="project" value="LOCAL" />
-      <updated>1542933857178</updated>
+      <updated>1542029037918</updated>
     </task>
-    <task id="LOCAL-00017" summary="Interessos amb redux (falta get+controlant que no es seleccioni res) 3.0">
-      <created>1542934478364</created>
+    <task id="LOCAL-00017" summary="Interessos screen changes">
+      <created>1542115615173</created>
       <option name="number" value="00017" />
       <option name="presentableId" value="LOCAL-00017" />
       <option name="project" value="LOCAL" />
-      <updated>1542934478364</updated>
+      <updated>1542115615173</updated>
     </task>
-    <task id="LOCAL-00018" summary="canvi fotos interessos">
-      <created>1542937947469</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1542937947469</updated>
-    </task>
-    <option name="localTasksCounter" value="19" />
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="147488000" />
+    <option name="totallyTimeSpent" value="41034000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="179" y="23" width="1218" height="774" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8144654" visible="true" weight="0.23727693" />
-      <window_info id="Structure" order="1" sideWeight="0.1855346" side_tool="true" weight="0.23727693" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49769586" visible="true" weight="0.22639933" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Favorites" order="3" sideWeight="0.50230414" side_tool="true" weight="0.1595359" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32928678" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32776934" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32776934" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49963742" weight="0.32776934" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5025381" side_tool="true" weight="0.3414264" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49746192" weight="0.28528073" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49769586" visible="true" weight="0.17258883" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" sideWeight="0.50230414" side_tool="true" weight="0.1595359" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.09915014" />
-      <window_info anchor="bottom" id="Messages" order="11" visible="true" weight="0.32956153" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49963742" weight="0.32776934" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5025381" side_tool="true" weight="0.3414264" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49746192" weight="0.10656753" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Canvis ButtonBack, NextButton. Contrasenya." />
-    <MESSAGE value="Interessos, acabar de fer bé l'estil" />
-    <MESSAGE value="Interessos Screen" />
-    <MESSAGE value="Interessos 2.0" />
-    <MESSAGE value="Modificar Activitat" />
-    <MESSAGE value="Refactor" />
-    <MESSAGE value="component activityItem i l'screen per veureho. SUPER CUTRE PQ EMULADOR BASURA." />
-    <MESSAGE value="Interessos canviat, activitatItem" />
-    <MESSAGE value="Interessos amb .map, pero sense press" />
-    <MESSAGE value="Interessos view genial, sense redux" />
-    <MESSAGE value="Interessos amb redux (falta get)" />
-    <MESSAGE value="Interessos amb redux (falta get) 2.0" />
-    <MESSAGE value="Interessos amb redux (falta get+controlant que no es seleccioni res) 3.0" />
-    <MESSAGE value="canvi fotos interessos" />
-    <option name="LAST_COMMIT_MESSAGE" value="canvi fotos interessos" />
+    <MESSAGE value="add gitignore" />
+    <MESSAGE value="changing paddings in screens" />
+    <MESSAGE value="add colors constant" />
+    <MESSAGE value="add password type coded" />
+    <MESSAGE value="first sprint" />
+    <MESSAGE value="add button to avoid login" />
+    <MESSAGE value="IniDate Screen and adding colors to icons in home screen" />
+    <MESSAGE value="good colors" />
+    <MESSAGE value="FinDate Screen" />
+    <MESSAGE value="IniHour &amp; FinHour screens" />
+    <MESSAGE value="Changes in km screen" />
+    <MESSAGE value="Add Description Activity" />
+    <MESSAGE value="Interessos screen changes" />
+    <MESSAGE value="Some style changes" />
+    <MESSAGE value="Select type screen" />
+    <MESSAGE value="Button Back fixed" />
+    <MESSAGE value="Modificar Activitat Screen" />
+    <MESSAGE value="Refactoring Icon Button and Configuration Button" />
+    <MESSAGE value="HourScreenBase and changes in some screens" />
+    <MESSAGE value="ScreenBases" />
+    <option name="LAST_COMMIT_MESSAGE" value="ScreenBases" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/ButtonBack.js" />
-    <entry file="file://$PROJECT_DIR$/src/screens/RegistreTelfScreen.js">
+    <entry file="file://$PROJECT_DIR$/src/screens/RegistreNomCogScreen.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="984">
-          <caret line="99" column="42" selection-start-line="99" selection-start-column="42" selection-end-line="99" selection-end-column="42" />
+        <state relative-caret-position="1230">
+          <caret line="82" column="12" lean-forward="true" selection-start-line="82" selection-start-column="12" selection-end-line="82" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/basicComponents/Header.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/basicComponents/NextButton.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/basicComponents/HeaderIcon.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/registerFormReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/BotoArt.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="64" lean-forward="true" selection-start-line="7" selection-start-column="64" selection-end-line="7" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/screens/RegistreNomCogScreen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="18" column="47" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/screens/RegistreCorreoScreen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="43" column="29" lean-forward="true" selection-start-line="43" selection-start-column="29" selection-end-line="43" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/screens/RegistrePsswScreen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="52" column="14" lean-forward="true" selection-start-line="52" selection-start-column="14" selection-end-line="52" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/HidenView.js" />
-    <entry file="file://$PROJECT_DIR$/src/components/Description.js" />
-    <entry file="file://$PROJECT_DIR$/src/constants/actions.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/screens/ModificarUbi.js" />
-    <entry file="file://$PROJECT_DIR$/src/screens/IniHour.js" />
-    <entry file="file://$PROJECT_DIR$/src/screens/ModificarNom.js" />
-    <entry file="file://$PROJECT_DIR$/src/screens/ModificarDataIni.js" />
-    <entry file="file://$PROJECT_DIR$/src/screens/ModificarHoraIni.js" />
-    <entry file="file://$PROJECT_DIR$/src/screens/ModificarDataFi.js" />
-    <entry file="file://$PROJECT_DIR$/src/screens/ModificarHoraFi.js" />
-    <entry file="file://$PROJECT_DIR$/src/screens/FinHour.js" />
-    <entry file="file://$PROJECT_DIR$/src/screens/NameUbi.js" />
-    <entry file="file://$PROJECT_DIR$/src/components/IconButton.js" />
-    <entry file="file://$PROJECT_DIR$/src/constants/colors.js">
+    <entry file="file://$PROJECT_DIR$/src/components/basicComponents/ConfigurationButton.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="26" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="26" />
+        <state relative-caret-position="405">
+          <caret line="30" column="43" lean-forward="true" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Formulari.js" />
-    <entry file="file://$PROJECT_DIR$/src/screens/SelectType.js" />
-    <entry file="file://$PROJECT_DIR$/src/screens/Welcome.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Interes.js" />
+    <entry file="file://$PROJECT_DIR$/src/screens/LoginScreen.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="18" column="50" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
+        <state relative-caret-position="685">
+          <caret line="58" column="3" lean-forward="true" selection-start-line="58" selection-start-column="3" selection-end-line="58" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ConfigurationButton.js" />
-    <entry file="file://$PROJECT_DIR$/src/screens/ActivitatListScreen.js">
+    <entry file="file://$PROJECT_DIR$/src/screens/HomeScreen.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="62" selection-start-line="14" selection-start-column="62" selection-end-line="14" selection-end-column="62" />
+        <state relative-caret-position="470">
+          <caret line="37" column="49" selection-start-line="37" selection-start-column="49" selection-end-line="37" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/basicComponents/ButtonBack.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="36" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/modificarActivitatScreens/NameModify.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="36" lean-forward="true" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/crearActivitatScreens/NameUbiCreate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="55" lean-forward="true" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/basicComponents/Formulari.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/modificarActivitatScreens/LocationModify.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="51" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/modificarActivitatScreens/FinHourModify.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="49" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/modificarActivitatScreens/IniHourModify.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/crearActivitatScreens/IniHourCreate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="51" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/crearActivitatScreens/IniDateCreate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="22" column="12" lean-forward="true" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/modificarActivitatScreens/IniDateModify.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="14" column="42" lean-forward="true" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/modificarActivitatScreens/FinDateModify.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="12" lean-forward="true" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/baseScreens/HourScreenBase.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1050">
+          <caret line="74" column="68" selection-start-line="74" selection-start-column="68" selection-end-line="74" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/baseScreens/DateScreenBase.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1066">
+          <caret line="79" column="64" selection-start-line="79" selection-start-column="64" selection-end-line="79" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/baseScreens/NameUbiScreenBase.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="499">
+          <caret line="35" column="53" lean-forward="true" selection-start-line="35" selection-start-column="53" selection-end-line="35" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/modificarActivitatScreens/ActDescriptionModify.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/baseScreens/SelTypeScreenBase.js" />
+    <entry file="file://$PROJECT_DIR$/src/components/baseScreens/ActDescriptionScreenBase.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="28" column="75" selection-start-line="28" selection-start-column="75" selection-end-line="28" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/crearActivitatScreens/ActDescriptionCreate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/ModificarActivitatScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="86" column="67" selection-start-line="86" selection-start-column="67" selection-end-line="86" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/InteressosScreen.js" />
+    <entry file="file://$PROJECT_DIR$/src/screens/crearActivitatScreens/FinHourCreate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="11" column="55" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/crearActivitatScreens/FinDateCreate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="21" column="23" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/loginFormReducer.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="33" lean-forward="true" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/createActivityFormReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" column="33" lean-forward="true" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/createActivityFormActions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="4" selection-start-line="4" selection-end-line="12" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/crearActivitatScreens/SelectTypeCreate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/ActivitatItem.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+        <state relative-caret-position="150">
+          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/HeaderIcon.js" />
-    <entry file="file://$PROJECT_DIR$/src/screens/ModificarActivitatScreen.js">
+    <entry file="file://$PROJECT_DIR$/src/screens/RegistreTelfScreen.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="24" selection-end-column="18" />
+        <state relative-caret-position="375">
+          <caret line="34" column="14" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/screens/FinDate.js" />
-    <entry file="file://$PROJECT_DIR$/src/components/DateScreenBase.js" />
-    <entry file="file://$PROJECT_DIR$/src/screens/IniDate.js" />
-    <entry file="file://$PROJECT_DIR$/src/components/Interes.js" />
-    <entry file="file://$PROJECT_DIR$/src/reducers/index.js">
+    <entry file="file://$PROJECT_DIR$/src/Scenes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="41" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="41" />
+        <state relative-caret-position="435">
+          <caret line="29" column="50" selection-start-line="29" selection-start-column="50" selection-end-line="29" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/ActivityInfo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/listActivitiesReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/ActivitatListScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="915">
+          <caret line="61" column="25" selection-start-line="61" selection-start-column="25" selection-end-line="61" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/redux/lib/redux.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="201" selection-start-line="201" selection-end-line="201" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/constants/actions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/store.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="46" lean-forward="true" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+        <state relative-caret-position="180">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
           <folding>
             <element signature="e#0#69#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/registerFormReducer.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/registerFormActions.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/loginFormReducer.js">
+    <entry file="file://$PROJECT_DIR$/src/actions/ListActivitiesActions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/createActivityFormReducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="13" lean-forward="true" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/screens/InteressosScreen.js" />
-    <entry file="file://$PROJECT_DIR$/src/screens/HomeScreen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="25" column="50" lean-forward="true" selection-start-line="25" selection-start-column="50" selection-end-line="25" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/screens/LoginScreen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="50" column="54" selection-start-line="50" selection-start-column="54" selection-end-line="50" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/screens/KilometreScreen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2040">
-          <caret line="129" column="54" selection-start-line="129" selection-start-column="54" selection-end-line="129" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Scenes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="51" column="30" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/screens/crearActivitatScreens/SelectTypeCreate.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#1#27#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/createActivityFormActions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/authReducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/loginFormActions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#56#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="110">
+          <caret line="8" selection-start-line="8" selection-end-line="12" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/actions/interessosProfileActions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+        <state relative-caret-position="362">
+          <caret line="33" column="36" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
           <folding>
             <element signature="e#0#49#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/interessosProfileReducer.js">
+    <entry file="file://$PROJECT_DIR$/src/screens/Interessos2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="40" column="7" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
+        <state relative-caret-position="150">
+          <caret line="10" column="62" selection-start-line="10" selection-start-column="62" selection-end-line="10" selection-end-column="62" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/screens/Interessos2.js">
+    <entry file="file://$PROJECT_DIR$/src/reducers/interessosProfileReceiveReducer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1701">
-          <caret line="174" column="32" selection-start-line="174" selection-start-column="32" selection-end-line="174" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="282">
+          <caret line="72" column="57" lean-forward="true" selection-start-line="72" selection-start-column="57" selection-end-line="72" selection-end-column="57" />
         </state>
       </provider>
     </entry>

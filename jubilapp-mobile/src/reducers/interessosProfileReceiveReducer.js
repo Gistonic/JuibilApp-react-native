@@ -1,4 +1,14 @@
-import {INTERESSOS_PROFILE_ACTIONS} from "../constants/actions";
+import {INTERESSOS_PROFILE_ACTIONS, LIST_ACTIVITIES_ACTIONS} from "../constants/actions";
+
+const interessosTranslate= {
+    art: {id: 0},
+    sports: {id: 1},
+    culture: {id: 2},
+    trips: {id: 3},
+    workshops: {id: 4},
+    leisure: {id: 5}
+}
+
 const INITIAL_STATE ={
     interessos_info: [
         {
@@ -40,7 +50,7 @@ const INITIAL_STATE ={
 
     ]
 }
-const interessosProfileReducer = (state = INITIAL_STATE, action)=>{
+const interessosProfileReceiveReducer = (state = INITIAL_STATE, action)=>{
     switch (action.type) {
 
         case INTERESSOS_PROFILE_ACTIONS.FetchInteressos:
@@ -57,10 +67,25 @@ const interessosProfileReducer = (state = INITIAL_STATE, action)=>{
             });
 
             return result
+        case INTERESSOS_PROFILE_ACTIONS.ReceiveInteressos:
+            return {
+                ...state,
+                interessos: action.payload.map(interes=>{
+                    console.log(state.interessos_info[interessosTranslate[interes].id]);
+                    console.log(interessosTranslate[interes].id);
+                    state.interessos_info[interessosTranslate[interes].id].estat = true
+
+                })
+            }
+        case INTERESSOS_PROFILE_ACTIONS.RequestInteressos:
+            return {
+                ...state,
+                interessos: []
+            }
 
         default: return state
 
     }
 
 }
-export {interessosProfileReducer}
+export {interessosProfileReceiveReducer}
