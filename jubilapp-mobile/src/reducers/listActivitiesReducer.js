@@ -2,13 +2,13 @@ import {LIST_ACTIVITIES_ACTIONS} from "../constants/actions";
 
 
 const activitiesTranslate= {
-    art: {name: 'Arte', path: '../images/artPES.jpg'},
-    sports: {name: 'Deportes', path: '../images/esportPES.jpg'},
+    art: {typeName: 'Arte', path: '../images/artPES2.jpg'},
+    sports: {typeName: 'Deportes', path: '../images/esportPES2.jpg'},
+    culture: {typeName: 'Cultura', path: '../images/culturaPES2.jpg'},
+    trips: {typeName: 'Excursiones', path: '../images/excursionsPES2.jpg'},
+    workshops: {typeName: 'Talleres', path: '../images/tallersPES2.jpg'},
+    leisure: {typeName: 'Ocio', path: '../images/ocioPES2.jpg'}
 }
-/*this.props.activitiesTypes.set('culture', {name: 'Cultura', path: '../images/culturaPES.png'});
-this.props.activitiesTypes.set('trips', {name: 'Excursiones', path: '../images/excursionsPES.jpg'});
-this.props.activitiesTypes.set('workshops', {name: 'Talleres', path: '../images/tallersPES.jpg'});
-this.props.activitiesTypes.set('leisure', {name: 'Ocio', path: '../images/ocioPES.jpg'});*/
 
 
 const INITIAL_STATE = {
@@ -28,7 +28,7 @@ export const listActivitiesReducer = (state = INITIAL_STATE, action) => {
 
                     return {
                         ...activity,// agafam la activity copia el mateix per no ser amb referencia i afegeix les dos noves propietats
-                        name: name,
+                        typeName: name,
                         path: path
                     }
                 })

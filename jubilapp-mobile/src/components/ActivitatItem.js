@@ -8,21 +8,24 @@ import {Actions} from "react-native-router-flux";
 const ActivitatItem = (props) => {
     return(
         <View style = {styles.viewStyle}>
-            <Text style = {styles.textStyle} >{props.nomActivitat}</Text>
-            <EvilIcons name='eye' size={30} color= {APP_COLORS.color_button_1}  style = {styles.iconStyle}/>
-            <EvilIcons name='pencil' size={30} color= {APP_COLORS.color_next} style = {styles.iconStyle} onPress= { () => {Actions.modificaractivitat()}}/>
-            <EvilIcons name='trash' size={30} color= {APP_COLORS.color_header} style = {styles.iconStyle}/>
+            <View>
+                <Text style = {styles.textStyle} >{props.nomActivitat}</Text>
+            </View>
+            <View style={styles.viewIconStyle}>
+                <EvilIcons name='eye' size={60} color= {APP_COLORS.color_button_1}  style = {styles.iconStyle}/>
+                <EvilIcons name='pencil' size={60} color= {APP_COLORS.color_next} style = {styles.iconStyle} onPress= { () => {Actions.modificaractivitat()}}/>
+                <EvilIcons name='trash' size={60} color= {APP_COLORS.color_header} style = {styles.iconStyle}/>
+            </View>
         </View>
     );
 };
 
 const styles = {
     viewStyle: {
-        height: 100,
+
         width: '90%',
         paddingRight: '5%',
         paddingTop: '5%',
-        flexDirection: 'row',
         borderColor: APP_COLORS.color_button_1,
         borderWidth: 2,
         marginTop: '5%',
@@ -30,9 +33,22 @@ const styles = {
         marginEnd:'5%',
         borderRadius: 10
     },
+    viewIconStyle: {
+        justifyContent: 'space-between',
+        flexDirection: 'row',
+        marginStart:30,
+        marginEnd:30,
+        marginBottom:20,
+        marginTop: 20
+
+
+    },
 
     iconStyle: {
-        paddingRight: '8%'
+        backgroundColor: '#D9D9D9',
+
+        borderRadius: 10
+
     },
     textStyle: {
         paddingLeft: '8%',

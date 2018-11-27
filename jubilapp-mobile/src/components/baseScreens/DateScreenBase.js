@@ -49,7 +49,7 @@ export default class DateScreenBase extends React.Component {
         }
         return (
             <View style={viewStyle}>
-                <Header headerText={'Crear Actividad'}/>
+                <Header headerText={this.props.headerName}/>
                 <View style={viewButtons}>
                     <View style={{paddingLeft: '8%', paddingRight: '8%'}}>
                         <Description textExpl={`Define el ${this.props.titleName} de la actividad`}/>
