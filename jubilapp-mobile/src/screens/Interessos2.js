@@ -32,6 +32,7 @@ class Interessos2 extends React.Component {
         this.setState({interessos_info: new_interessos_info}) //aixo no seria aixi no?
 
     }
+    
     dibuixarInteressos(num)
     {
         //el num es per distingir a quina columna aniran, la dreta es per tots aquells que tenen id parell i lesquerra pels ids imparells

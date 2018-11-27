@@ -1,4 +1,4 @@
-import {INTERESSOS_PROFILE_ACTIONS, LIST_ACTIVITIES_ACTIONS} from "../constants/actions";
+import {INTERESSOS_PROFILE_ACTIONS} from "../constants/actions";
 
 const interessosTranslate= {
     art: {id: 0},
@@ -14,39 +14,40 @@ const INITIAL_STATE ={
         {
             id:0,
             estat:false,
-            icon: require('../images/artPES.jpg'),
+            icon: require('../images/artPES2.jpg'),
             nom:'Arte',
         },
         {
             id:1,
             estat:false,
-            icon: require('../images/culturaPES.png'),
+            icon: require('../images/culturaPES2.jpg'),
             nom:'Cultura',
         },
         {
             id:2,
             estat:false,
-            icon: require('../images/esportPES.jpg'),
+            icon: require('../images/esportPES2.jpg'),
             nom:'Deporte',
         },
         {
             id:3,
             estat:false,
-            icon: require('../images/excursionsPES.jpg'),
+            icon: require('../images/excursionesPES2.jpg'),
             nom:'Excursiones',
         },
         {
             id:4,
             estat:false,
-            icon: require('../images/ocioPES.jpg'),
-            nom:'Ocio',
+            icon: require('../images/talleresPES2.jpg'),
+            nom:'Talleres',
         },
         {
             id:5,
             estat:false,
-            icon: require('../images/tallersPES.jpg'),
-            nom:'Talleres',
+            icon: require('../images/ocioPES3.jpg'),
+            nom:'Ocio',
         }
+        
 
     ]
 }
@@ -71,10 +72,9 @@ const interessosProfileReceiveReducer = (state = INITIAL_STATE, action)=>{
             return {
                 ...state,
                 interessos: action.payload.map(interes=>{
-                    console.log(state.interessos_info[interessosTranslate[interes].id]);
-                    console.log(interessosTranslate[interes].id);
                     state.interessos_info[interessosTranslate[interes].id].estat = true
-
+                    console.log("AQUI");
+                    console.log(state.interessos_info[interessosTranslate[interes].id].estat);
                 })
             }
         case INTERESSOS_PROFILE_ACTIONS.RequestInteressos:
