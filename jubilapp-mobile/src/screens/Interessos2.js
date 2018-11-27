@@ -8,7 +8,7 @@ import { Actions } from 'react-native-router-flux';
 import Description from "../components/basicComponents/Description";
 import ButtonBack from "../components/basicComponents/ButtonBack";
 import NextButton from "../components/basicComponents/NextButton";
-import {fetchInteressos, interessosProfile} from "../actions/index";
+import {fetchInteressos, interessosProfile,changeInteressosProfileProperty} from "../actions/index";
 import connect from "react-redux/es/connect/connect";
 
 class Interessos2 extends React.Component {
@@ -28,8 +28,9 @@ class Interessos2 extends React.Component {
         //s'ha de fer una copia del vector i modificar la copia perque laltre es com inmutable o nose quin rollo de JS que no es modifica be
         const new_interessos_info = this.props.interessos_info;
         new_interessos_info[interes.id].estat = !new_interessos_info[interes.id].estat;
-
-        this.setState({interessos_info: new_interessos_info}) //aixo no seria aixi no?
+        //this.props.value = new_interessos_info[interes.id];
+        this.props.changeEstat(new_interessos_info[interes.id]);
+        console.log(new_interessos_info[interes.id]);
 
     }
     
@@ -37,6 +38,7 @@ class Interessos2 extends React.Component {
     {
         //el num es per distingir a quina columna aniran, la dreta es per tots aquells que tenen id parell i lesquerra pels ids imparells
         return this.props.interessos_info.map((totsID)=> {
+            console.log(totsID.estat);
             if((totsID.id %2) == num) {
                 return  (<TouchableOpacity key={totsID.id} style={styles.buttonStyle} onPress={this._onPressButton.bind(this,totsID)}>
                             <ImageBackground source={totsID.icon} style={styles.imageStyle}/>
@@ -150,6 +152,8 @@ const mapStateToProps = (state) => {
 
 const  mapDispatchToProps = (dispatch)=>{
     return {
+
+        changeEstat: (interes)=>dispatch(changeInteressosProfileProperty(interes)),
         interessosProfile: (interessosInfo)=> dispatch(interessosProfile(interessosInfo)),
         fetchInteressos: ()=>dispatch(fetchInteressos())
     }

@@ -4,11 +4,10 @@ import { AsyncStorage } from "react-native";
 
 const token = null;
 
-export const changeInteressosProfileProperty=(propertyName, value) =>{
+export const changeInteressosProfileProperty=(value) =>{
     return {
         type:INTERESSOS_PROFILE_ACTIONS.ChangeProperty,
         payload:{
-            propertyName,
             value
         }
     }

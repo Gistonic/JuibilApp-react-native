@@ -57,15 +57,17 @@ const interessosProfileReceiveReducer = (state = INITIAL_STATE, action)=>{
         case INTERESSOS_PROFILE_ACTIONS.FetchInteressos:
             return state
         case INTERESSOS_PROFILE_ACTIONS.ChangeProperty:
+            console.log("HOOLAAA");
             let result = {
                 ...state
             }
             result[action.payload.propertyName]=state.interessos_info.map((interes)=>{
                 if(interes.id == action.payload.value.id){
-                    interes.estat = true;
+                    interes.estat = action.payload.value.estat;
                 }
                 return interes;
             });
+            console.log(state.interessos_info);
 
             return result
         case INTERESSOS_PROFILE_ACTIONS.ReceiveInteressos:
