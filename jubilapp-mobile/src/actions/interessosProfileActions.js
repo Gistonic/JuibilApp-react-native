@@ -33,9 +33,7 @@ export const fetchInteressos = () => {
       //  dispatch(requestInteressos())
 
 
-        setTimeout(() => {
-            dispatch(recieveInteressos(interessosMock))
-        }, 1000)
+        dispatch(recieveInteressos(interessosMock));
         // fetch('URL').then(response=>{
         //     if(response.ok){
         //         return response.json()
