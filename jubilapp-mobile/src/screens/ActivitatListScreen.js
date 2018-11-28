@@ -29,7 +29,7 @@ class ActivitatListScreen extends React.Component {
                 {
                     this.props.activities.map((activity) => {
                         return (
-                            <ActivitatItem key={activity.id} nomActivitat = {activity.name} style = {activitatStyle}/>
+                            <ActivitatItem key={activity.id} nomActivitat = {activity.name} style = {activitatStyle} id={activity.id}/>
                         )
                     })
                 }

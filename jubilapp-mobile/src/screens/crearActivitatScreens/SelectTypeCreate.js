@@ -37,7 +37,7 @@ class SelectTypeCreate extends React.Component {
             location:this.props.Location,
             type:this.props.type,
             startDate:new Date(this.props.dateIni.year, this.props.dateIni.month, this.props.dateIni.day, this.props.hourIni, this.props.minuteIni),
-            endDate:new Date(this.props.endDate.year, this.props.endDate.month, this.props.endDate.day, this.props.hourEnd, this.props.minuteEnd),
+            endDate:new Date(this.props.dateEnd.year, this.props.dateEnd.month, this.props.dateEnd.day, this.props.hourEnd, this.props.minuteEnd),
             hourEnd:this.props.hourEnd,
             description:this.props.description,
             token:this.props.token

@@ -4,3 +4,4 @@ export * from "./loginFormReducer";
 export * from "./createActivityFormReducer";
 export * from "./interessosProfileReceiveReducer";
 export * from "./listActivitiesReducer";
+export * from "./activityInfoReducer";

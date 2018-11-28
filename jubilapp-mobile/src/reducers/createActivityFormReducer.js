@@ -5,8 +5,8 @@ const initial_minute = date.getMinutes() - (date.getMinutes() % 5);
 const INITIAL_STATE ={
     name: "",
     location:"",
-    dateIni: "",
-    dateEnd:"",
+    dateIni: {},
+    dateEnd: {},
     hourEnd:0,
     minuteEnd: initial_minute,
     hourIni:initial_hour,
@@ -19,8 +19,8 @@ const INITIAL_STATE ={
     selected_Talleres: false,
     selected_Ocio: false,
     type: "",
-    startDate:"",
-    endDate:""
+    startDate: null,
+    endDate: null
 }
 const createActivityFormReducer = (state = INITIAL_STATE, action)=>{
     switch (action.type) {

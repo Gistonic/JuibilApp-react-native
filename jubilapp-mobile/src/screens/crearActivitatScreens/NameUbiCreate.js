@@ -29,7 +29,7 @@ const mapStateToProps = (state) => {
 const  mapDispatchToProps = (dispatch)=>{
     return {
         changeFormName: (value)=>dispatch(changeCreateActivityFormProperty("name", value)),
-        changeFormLocation: (value)=>dispatch(changeCreateActivityFormProperty("loaction", value))
+        changeFormLocation: (value)=>dispatch(changeCreateActivityFormProperty("location", value))
     }
 }
 

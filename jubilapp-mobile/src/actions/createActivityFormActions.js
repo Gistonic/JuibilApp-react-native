@@ -1,6 +1,8 @@
 import {Actions} from "react-native-router-flux";
 import {CREATE_ACTIVITY_FORM_ACTIONS} from "../constants/actions";
+import { AsyncStorage } from "react-native";
 
+const token= null;
 
 export const changeCreateActivityFormProperty=(propertyName, value) =>{
     return {
@@ -14,11 +16,17 @@ export const changeCreateActivityFormProperty=(propertyName, value) =>{
 
 export const createActivity = (activityInfo) => {
     return () => {
-        fetch('http://ordinadorcasa.no-ip.org:4100/auth/events', {
+        AsyncStorage.getItem('token').then((data) => {
+            this.token = data
+        });
+        console.log("HOLAAAAAAAA2" + this.token);
+        fetch('http://ordinadorcasa.no-ip.org:4100/event', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
+                Authorization: 'Bearer ' + this.token
+
             },
             body: JSON.stringify(activityInfo)
         }).then(response => {

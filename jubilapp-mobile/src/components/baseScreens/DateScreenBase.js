@@ -27,14 +27,14 @@ export default class DateScreenBase extends React.Component {
 
     select(day) {
         const { changeFormDate} = this.props;
-        changeFormDate(day.dateString)
+        changeFormDate(day)
     }
 
     render() {
         const {viewStyle, viewButtons, container, calendarStyle} = styles;
         const {date} = this.props;
         const markedDay = {
-            [date]: {
+            [date.dateString]: {
                 selected: true,
                 marked: true,
                 customStyles: {

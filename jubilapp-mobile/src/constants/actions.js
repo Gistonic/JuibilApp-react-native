@@ -24,3 +24,10 @@ export const INTERESSOS_PROFILE_ACTIONS={
     ReceiveInteressos: 'RECEIVE_INTERESSOS',
     RequestInteressos: 'REQUEST_INTERESSOS',
 }
+
+export const ACTIVITY_INFO_ACTIONS= {
+    FetchActivity: 'FETCH_ACTIVITY',
+    ChangeProperty: 'CHANGE_ACTIVITY_ID_PROPERTY',
+    ReceiveActivity: 'RECEIVE_ACTIVITY',
+
+}
