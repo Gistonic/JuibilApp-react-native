@@ -7,19 +7,20 @@ const token = null;
 export const changeInteressosProfileProperty=(value) =>{
     return {
         type:INTERESSOS_PROFILE_ACTIONS.ChangeProperty,
-        payload:{
-            value
-        }
+        payload: value
     }
 };
 
 const recieveInteressos =(interessos)=>{
+    
     return {
+        
         type: INTERESSOS_PROFILE_ACTIONS.ReceiveInteressos,
         payload: interessos
     }
 }
 
+//cal??
 const requestInteressos =()=>{
     return {
         type: INTERESSOS_PROFILE_ACTIONS.RequestInteressos,
@@ -30,32 +31,47 @@ const requestInteressos =()=>{
 
 export const fetchInteressos = () => {
     return(dispatch)=>{
+        AsyncStorage.getItem('token').then((data) => {
+            this.token = data
+        });
+
       //  dispatch(requestInteressos())
 
 
-        dispatch(recieveInteressos(interessosMock));
-        // fetch('URL').then(response=>{
-        //     if(response.ok){
-        //         return response.json()
-        //     }
-        // }).then(json => {
-        //     dispatch(recieveInteressos(json))
-        // })
+        //dispatch(recieveInteressos(interessosMock));
+        fetch('http://ordinadorcasa.no-ip.org:4100/profile', {
+            method: 'GET',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+                Authorization: 'Bearer ' + this.token
+            }
+        }).then(response=>{
+            console.log("HOLAAA" + response.json());
+             if(response.ok){
+                return response.json()
+             }
+         }).then(json => {
+            console.log(json);
+             dispatch(recieveInteressos(json.interests))
+        })
+        
     }
 }
 
-/*export const interessosProfile = (interessosInfo) => {
+export const interessosProfile = (interessosInfo) => {
     return () => {
         AsyncStorage.getItem('token').then((data) => {
             this.token = data
         });
-        fetch('http://ordinadorcasa.no-ip.org:4100/profile/events', {
-            method: 'POST',
+        fetch('http://ordinadorcasa.no-ip.org:4100/profile', {
+            method: 'PATCH',
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
+                Authorization: 'Bearer ' + this.token
             },
-            body: JSON.stringify(interessosInfo)
+            body: JSON.stringify({interests: interessosInfo})
         }).then(response => {
             console.log(response)
             if (response.ok) {
@@ -71,6 +87,6 @@ export const fetchInteressos = () => {
         })
         Actions.km();
     }
-}*/
+}
 
 const interessosMock = ['art','leisure'];

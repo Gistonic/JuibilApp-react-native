@@ -21,7 +21,6 @@ import SelectType from './screens/crearActivitatScreens/SelectTypeCreate';
 import ActivitatListScreen from './screens/ActivitatListScreen';
 import Interessos2 from './screens/Interessos2';
 import NameModify from "./screens/modificarActivitatScreens/NameModify";
-import LocationModify from "./screens/modificarActivitatScreens/LocationModify";
 import IniHourModify from "./screens/modificarActivitatScreens/IniHourModify";
 import FinHourModify from "./screens/modificarActivitatScreens/FinHourModify";
 import IniDateModify from "./screens/modificarActivitatScreens/IniDateModify";
@@ -52,7 +51,6 @@ const Scenes = Actions.create(
         <Scene key="activitatlist" component={ActivitatListScreen}/>
         <Scene key="interessos" component={Interessos2}/>
 		<Scene key="nameMod" component={NameModify}/>
-		<Scene key="locationMod" component={LocationModify}/>
 		<Scene key="iniHourMod" component={IniHourModify}/>
 		<Scene key="finHourMod" component={FinHourModify}/>
         <Scene key="iniDateMod" component={IniDateModify}/>

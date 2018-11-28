@@ -9,7 +9,47 @@ import Description from "../components/basicComponents/Description";
 import ButtonBack from "../components/basicComponents/ButtonBack";
 import NextButton from "../components/basicComponents/NextButton";
 
-export default class HomeScreen extends React.Component {
+
+const botonsModificar= [
+    {
+        id:0,
+        typeName: 'NOMBRE ACTIVIDAD', path: 'Actions.nameMod()', icon: 'pencil'
+    },
+    {
+        id:1,
+        typeName: 'DESCRIPCION ACTIVIDAD', path: 'Actions.actdescrMod()', icon: 'comment'
+    },
+    {
+        id:2,
+        typeName: 'FECHA ACTIVIDAD', path: 'Actions.iniDateMod()', icon: 'calendar'
+    },
+    {
+        id:3,
+        typeName: 'HORA ACTIVIDAD', path: 'Actions.iniHourMod()', icon: 'clock'
+    }
+]
+
+
+const dibuixarBotons = (num) => {
+        //el num es per distingir a quina columna aniran, la dreta es per tots aquells que tenen id parell i lesquerra pels ids imparells
+    return botonsModificar.map((totsID)=> {
+        if((totsID.id %2) == num) {
+            return  (
+                <ConfigurationButton key = {totsID.id} iconName={totsID.icon}
+                    colorName={ APP_COLORS.color_button_1}
+                    heightStyle={'90%'}
+                    fontsizeStyle= {19}
+                    widthStyle = {'63%'}
+                    buttonText = {totsID.typeName}
+                    isEvilType = {true}/>
+            );
+        }
+    }
+    );
+}
+
+
+export default class ModificarActivitatScreen extends React.Component {
     render() {
         const {viewStyle, viewButtons,container,container1} = styles;
         return (
@@ -27,66 +67,13 @@ export default class HomeScreen extends React.Component {
 
                 <View style = {viewButtons}>
                     <View style = {container}>
-                        <ConfigurationButton iconName={ 'pencil'}
-                                    colorName={ APP_COLORS.color_button_1}
-                                             heightStyle={'75%'}
-                                             fontsizeStyle= {15}
-                                             widthStyle = {'60%'}
-                                    buttonText = {'NOMBRE ACTIVIDAD'}
-                                             isEvilType = {true}
-
-                                    path={() => Actions.nameMod()}
-                        />
-                        <ConfigurationButton iconName={ 'location'}
-                                    colorName={ APP_COLORS.color_button_1}
-                                    buttonText = {'UBICACION ACTIVIDAD'}
-                                             heightStyle={'75%'}
-                                             fontsizeStyle= {15}
-                                             widthStyle = {'60%'}
-                                             isEvilType = {true}
-                                    path={() => Actions.locationMod()}
-                        />
+                        {dibuixarBotons(0)}
                     </View>
                     <View style = {container}>
-                        <ConfigurationButton iconName={'calendar'}
-                                    colorName={ APP_COLORS.color_button_1}
-                                    buttonText = {'FECHA ACTIVIDAD'}
-                                             heightStyle={'75%'}
-                                             fontsizeStyle= {15}
-                                             widthStyle = {'60%'}
-                                             isEvilType = {true}
-                                    path={() => Actions.iniDateMod()}
-                        />
-                        <ConfigurationButton iconName={'clock'}
-                                    colorName={ APP_COLORS.color_button_1}
-                                    buttonText = {'HORA ACTIVIDAD'}
-                                             heightStyle={'75%'}
-                                             fontsizeStyle= {15}
-                                             widthStyle = {'60%'}
-                                             isEvilType = {true}
-                                    path={() => Actions.iniHourMod()}
-                        />
+                        {dibuixarBotons(1)}
                     </View>
-                    <View style = {container}>
-                        <ConfigurationButton iconName={'gear'}
-                                    colorName={ APP_COLORS.color_button_1}
-                                    buttonText = {'INTERES ACTIVIDAD'}
-                                             heightStyle={'75%'}
-                                             fontsizeStyle= {15}
-                                             widthStyle = {'60%'}
-                                             isEvilType = {true}
-                                    path={() => Actions.seltype()}
-                        />
-                        <ConfigurationButton iconName={'comment'}
-                                    colorName={ APP_COLORS.color_button_1}
-                                    buttonText = {'DESCRIPCION ACTIVIDAD'}
-                                             heightStyle={'75%'}
-                                             fontsizeStyle= {15}
-                                             isEvilType = {true}
-                                             widthStyle = {'60%'}
-                                    path={() => Actions.actdescrMod()}
-                        />
-                    </View>
+                    
+                        
                 </View>
                 <View style = {container1}>
                     <ButtonBack buttonText = {'Cancelar'}
@@ -114,15 +101,15 @@ const styles ={
         paddingTop: '8%'
     },
     viewButtons: {
-        flexDirection: 'column',
+        flexDirection: 'row',
         flex: 2,
         backgroundColor: APP_COLORS.color_neutral
     },
     container: {
         flex:3,
         backgroundColor: APP_COLORS.color_neutral,
-        flexDirection: 'row',
+        flexDirection: 'column',
         width: '100%',
-        height: '10%'
+        height: '100%'
     }
 }

@@ -57,26 +57,16 @@ const interessosProfileReceiveReducer = (state = INITIAL_STATE, action)=>{
         case INTERESSOS_PROFILE_ACTIONS.FetchInteressos:
             return state
         case INTERESSOS_PROFILE_ACTIONS.ChangeProperty:
-            let result = {
-                ...state
-            }
-            result[action.payload.propertyName]=state.interessos_info.map((interes)=>{
-                if(interes.id == action.payload.value.id){
-                    interes.estat = action.payload.value.estat;
-                }
-                return interes;
-            });
-            console.log("HOLA");
-            console.log(state.interessos_info);
+            
+            const newInteressosInfo = [...state.interessos_info];
+            newInteressosInfo[action.payload].estat = !newInteressosInfo[action.payload].estat;
+            return { ...state, interessos_info: newInteressosInfo }
 
-            return result
         case INTERESSOS_PROFILE_ACTIONS.ReceiveInteressos:
             return {
                 ...state,
                 interessos: action.payload.map(interes=>{
                     state.interessos_info[interessosTranslate[interes].id].estat = true
-                    console.log("AQUI");
-                    console.log(state.interessos_info[interessosTranslate[interes].id].estat);
                 })
             }
         case INTERESSOS_PROFILE_ACTIONS.RequestInteressos:

@@ -25,13 +25,7 @@ class Interessos2 extends React.Component {
     }
 
     _onPressButton(interes) {
-        //s'ha de fer una copia del vector i modificar la copia perque laltre es com inmutable o nose quin rollo de JS que no es modifica be
-        const new_interessos_info = this.props.interessos_info;
-        new_interessos_info[interes.id].estat = !new_interessos_info[interes.id].estat;
-        //this.props.value = new_interessos_info[interes.id];
-        this.props.changeEstat(new_interessos_info[interes.id]);
-        console.log(new_interessos_info[interes.id]);
-
+        this.props.changeEstat(interes.id);
     }
     
     dibuixarInteressos(num)
@@ -61,11 +55,9 @@ class Interessos2 extends React.Component {
         }
 
         if(interessosInfo.length == 0){
-            //console.log(interessosName);
             this.props.interessosProfile(interessosName)
         }
         else{
-            //console.log(interessosInfo);
             this.props.interessosProfile(interessosInfo)
         }
 
@@ -73,6 +65,7 @@ class Interessos2 extends React.Component {
     }
 
     render() {
+        console.log("Render Interessos");
             const {viewStyle, container, container1, viewInteressos, containerColumna} = styles;
             return (
                 <View style={viewStyle}>
