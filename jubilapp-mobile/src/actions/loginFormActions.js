@@ -39,6 +39,7 @@ const receiveLogin = (token) => {
     }
 };
 
+
 export const login = (userInfo) => {
     return (dispatch) => {
         fetch('http://ordinadorcasa.no-ip.org:4100/auth/login/', {
