@@ -18,6 +18,7 @@ export const createActivity = (activityInfo) => {
     return () => {
         AsyncStorage.getItem('token').then((data) => {
             this.token = data
+            console.log("HOLAAAAAAAA5" + this.token);
         });
         console.log("HOLAAAAAAAA2" + this.token);
         fetch('http://ordinadorcasa.no-ip.org:4100/event', {
@@ -30,6 +31,7 @@ export const createActivity = (activityInfo) => {
             },
             body: JSON.stringify(activityInfo)
         }).then(response => {
+            console.log("HOLAAAAAAAA11" + this.token);
             console.log(response)
             if (response.ok) {
                 console.log(response.ok)

@@ -2,7 +2,6 @@ import {LOGIN_FORM_ACTIONS} from "../constants/actions";
 import {Actions} from "react-native-router-flux";
 import { AsyncStorage } from "react-native";
 
-const tokens= null;
 
 export const changeLoginFormProperty=(propertyName, value) =>{
     return {
@@ -14,20 +13,23 @@ export const changeLoginFormProperty=(propertyName, value) =>{
     }
 };
 
-const _storeData = async () => {
+/*const _storeData = async () => {
     try {
         await AsyncStorage.setItem('token', token);
     } catch (error) {
         // Error saving data
     }
-}
-
+} */
+const tokens = "";
 const receiveLogin = (token) => {
     //localstorage("token", token);
     console.log("HOLAAAAAAAA" + token);
-    _storeData();
+    //_storeData();
+    AsyncStorage.setItem('token', token);
     AsyncStorage.getItem('token').then((data) => {
+        console.log("HOLAAAAAAAA3" + data);
         this.tokens = data
+        console.log("HOLAAAAAAAA4" + this.tokens);
     });
     console.log("HOLAAAAAAAA1" + this.tokens);
     Actions.welcome();
