@@ -9,7 +9,7 @@ export const request = async (path = "", method = "GET", body) => {
           };
           if(token != null)headers.Authorization = 'Bearer ' + token;
           const finalPath = baseUrl + path;
-          const bodyString = JSON.stringify(activityInfo);
+          const bodyString = JSON.stringify(body);
           fetch(finalPath, {
                 method,
                 headers,

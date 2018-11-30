@@ -1,6 +1,7 @@
 import {Actions} from "react-native-router-flux";
 import {INTERESSOS_PROFILE_ACTIONS} from "../constants/actions";
 import { AsyncStorage } from "react-native";
+import {request} from "../request";
 
 const token = null;
 
@@ -29,8 +30,12 @@ const requestInteressos =()=>{
 
 
 
-export const fetchInteressos = async () => {
-    recieveInteressos((await request('/profile')).interests)
+export const fetchInteressos = () => {
+    return () => {
+        request('/profile').then(res => {
+            dispatch(recieveInteressos(res.interests))
+        })
+    }
 }
 export const fetchInteressosOld = () => {
     return(dispatch)=>{

@@ -60,7 +60,7 @@ class SelectTypeCreate extends React.Component {
                                           onPress={ () => {
                                               changeArte(!selected_Arte);
                                           }}>
-                            <ImageBackground source={require('../../images/artPES.jpg')} style={styles.imageStyle}/>
+                            <ImageBackground source={require('../../images/artPES2.jpg')} style={styles.imageStyle}/>
                             <CheckBox title = 'Arte' checked = {selected_Arte} style = {styles.checkBoxStyle}
                                       onPress = {() => changeArte( !selected_Arte)}
                             />
@@ -69,7 +69,7 @@ class SelectTypeCreate extends React.Component {
                                           onPress={ () => {
                                               changeDeporte( !selected_Deporte);
                                           }}>
-                            <ImageBackground source={require('../../images/esportPES.jpg')} style={styles.imageStyle}/>
+                            <ImageBackground source={require('../../images/esportPES2.jpg')} style={styles.imageStyle}/>
                             <CheckBox title = 'Deporte' checked = {selected_Deporte} style = {styles.checkBoxStyle}
                                       onPress = {() =>changeDeporte(!selected_Deporte)}
                             />
@@ -82,7 +82,7 @@ class SelectTypeCreate extends React.Component {
                                           onPress={ () => {
                                               changeCultura( !selected_Cultura);
                                           }}>
-                            <ImageBackground source={require('../../images/culturaPES.png')} style={styles.imageStyle}/>
+                            <ImageBackground source={require('../../images/culturaPES2.jpg')} style={styles.imageStyle}/>
                             <CheckBox title = 'Cultura' checked = {selected_Cultura} style = {styles.checkBoxStyle}
                                       onPress = {() => changeCultura(!selected_Cultura)}
                             />
@@ -92,7 +92,7 @@ class SelectTypeCreate extends React.Component {
                                           onPress={ () => {
                                               changeExcursiones(!selected_Excursiones);
                                           }}>
-                            <ImageBackground source={require('../../images/excursionsPES.jpg')} style={styles.imageStyle}/>
+                            <ImageBackground source={require('../../images/excursionesPES2.jpg')} style={styles.imageStyle}/>
                             <CheckBox title = 'Excursiones' checked = {selected_Excursiones} style = {styles.checkBoxStyle}
                                       onPress = {() => changeExcursiones( !selected_Excursiones)}
                             />
@@ -104,7 +104,7 @@ class SelectTypeCreate extends React.Component {
                                           onPress={ () => {
                                               changeTalleres(!selected_Talleres);
                                           }}>
-                            <ImageBackground source={require('../../images/tallersPES.jpg')} style={styles.imageStyle}/>
+                            <ImageBackground source={require('../../images/talleresPES2.jpg')} style={styles.imageStyle}/>
                             <CheckBox title = 'Talleres' checked = {selected_Talleres} style = {styles.checkBoxStyle}
                                       onPress = {() => changeTalleres(!selected_Talleres)}
                             />
@@ -114,7 +114,7 @@ class SelectTypeCreate extends React.Component {
                                           onPress={ () => {
                                               changeOcio(!selected_Ocio);
                                           }}>
-                            <ImageBackground source={require('../../images/ocioPES.jpg')} style={styles.imageStyle}/>
+                            <ImageBackground source={require('../../images/ocioPES3.jpg')} style={styles.imageStyle}/>
                             <CheckBox title = 'Ocio' checked = {selected_Ocio} style = {styles.checkBoxStyle}
                                       onPress = {() => changeOcio( !selected_Ocio)}
                             />
