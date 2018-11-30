@@ -23,7 +23,6 @@ export const changeLoginFormProperty=(propertyName, value) =>{
 const tokens = "";
 const receiveLogin = async (token) => {
     //localstorage("token", token);
-    console.log("HOLAAAAAAAA" + token);
     //_storeData();
     await AsyncStorage.setItem('token', token);
     Actions.welcome();

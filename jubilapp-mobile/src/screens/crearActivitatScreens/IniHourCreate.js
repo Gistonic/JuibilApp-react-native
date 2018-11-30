@@ -6,10 +6,6 @@ import connect from "react-redux/es/connect/connect";
 import HourScreenBase from "../../components/baseScreens/HourScreenBase";
 
 class IniHourCreate extends React.Component {
-
-    _initialEndHour(hour) {
-        this.props.changeFormHourEnd(hour)
-    }
     render() {
         return (
             <HourScreenBase changeFormHour={this.props.changeFormHourIni}
