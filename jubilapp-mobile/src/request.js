@@ -1,6 +1,6 @@
 import {AsyncStorage} from "react-native";
-const baseUrl = "";
-export const request = async (method = "GET", path = "", body) => {
+const baseUrl = "http://ordinadorcasa.no-ip.org:4100";
+export const request = async (path = "", method = "GET", body) => {
     return new Promise((res, rej) => {
         AsyncStorage.getItem('token').then((token) => {
           let headers = {
@@ -9,10 +9,11 @@ export const request = async (method = "GET", path = "", body) => {
           };
           if(token != null)headers.Authorization = 'Bearer ' + token;
           const finalPath = baseUrl + path;
+          const bodyString = JSON.stringify(activityInfo);
           fetch(finalPath, {
                 method,
                 headers,
-                body
+                body: bodyString
             }).then(response => {
                 console.log(response)
                 if (response.ok) {
