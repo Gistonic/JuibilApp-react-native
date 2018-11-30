@@ -9,8 +9,8 @@ class FinHourCreate extends React.Component {
         return (
             <HourScreenBase changeFormHour={this.props.changeFormHourEnd}
                             changeFormMinute={this.props.changeFormMinuteEnd}
-                            _hour={(this.props.hourIni+1)%24}
-                            _minute={this.props.minuteIni}
+                            _hour={(this.props.hourEnd)%24}
+                            _minute={this.props.minuteEnd}
                             titleName="fin"
                             buttonNext = "Siguiente"
                             previousScreen={() => Actions.iniHour()}
@@ -25,8 +25,7 @@ const mapStateToProps = (state) => {
         hourIni: state.createActivityForm.hourIni,
         minuteIni: state.createActivityForm.minuteIni,
         hourEnd: state.createActivityForm.hourEnd,
-        minuteEnd: state.createActivityForm.minuteEnd
-
+        minuteEnd: state.createActivityForm.minuteEnd,
     }
 }
 

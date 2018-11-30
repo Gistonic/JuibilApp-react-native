@@ -6,6 +6,10 @@ import connect from "react-redux/es/connect/connect";
 import HourScreenBase from "../../components/baseScreens/HourScreenBase";
 
 class IniHourCreate extends React.Component {
+
+    _initialEndHour(hour) {
+        this.props.changeFormHourEnd(hour)
+    }
     render() {
         return (
             <HourScreenBase changeFormHour={this.props.changeFormHourIni}
@@ -16,6 +20,7 @@ class IniHourCreate extends React.Component {
                             buttonNext = "Siguiente"
                             nextScreen={() => Actions.finHour()}
                             previousScreen={() => Actions.finDate()}/>
+
         )
     }
 
@@ -24,8 +29,9 @@ class IniHourCreate extends React.Component {
 const mapStateToProps = (state) => {
     return {
         hourIni: state.createActivityForm.hourIni,
-        minuteIni: state.createActivityForm.minuteIni
-
+        minuteIni: state.createActivityForm.minuteIni,
+        hourEnd: state.createActivityForm.hourIni,
+        minuteEnd: state.createActivityForm.minuteIni,
     }
 }
 
