@@ -31,3 +31,10 @@ export const ACTIVITY_INFO_ACTIONS= {
     ReceiveActivity: 'RECEIVE_ACTIVITY',
 
 }
+
+export const KILOMETRES_PROFILE_ACTIONS={
+    ChangeProperty: 'CHANGE_KILOMETRES_PROPERTY',
+    FetchKilometres:'FETCH_KILOMETRES',
+    ReceiveKilometres: 'RECEIVE_KILOMETRES',
+    RequestKilometres: 'REQUEST_KILOMETRES'
+}
