@@ -12,9 +12,9 @@ export const changeInteressosProfileProperty=(value) =>{
 };
 
 const recieveInteressos =(interessos)=>{
-    
+
     return {
-        
+
         type: INTERESSOS_PROFILE_ACTIONS.ReceiveInteressos,
         payload: interessos
     }
@@ -29,7 +29,10 @@ const requestInteressos =()=>{
 
 
 
-export const fetchInteressos = () => {
+export const fetchInteressos = async () => {
+    recieveInteressos((await request('/profile')).interests)
+}
+export const fetchInteressosOld = () => {
     return(dispatch)=>{
         AsyncStorage.getItem('token').then((data) => {
             this.token = data
@@ -55,7 +58,7 @@ export const fetchInteressos = () => {
             console.log(json);
              dispatch(recieveInteressos(json.interests))
         })
-        
+
     }
 }
 
