@@ -12,10 +12,9 @@ const activitiesTranslate= {
 
 
 const INITIAL_STATE = {
-
-
     activities: []
 };
+
 export const listActivitiesReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case LIST_ACTIVITIES_ACTIONS.FetchActivities:
@@ -33,12 +32,13 @@ export const listActivitiesReducer = (state = INITIAL_STATE, action) => {
                     }
                 })
             }
+        case LIST_ACTIVITIES_ACTIONS.DeleteActivity:
+            return state
         case LIST_ACTIVITIES_ACTIONS.RequestActivities:
             return {
                 ...state,
-                activities: []
+                activities: action.payload
             }
-
         default:
             return state
 

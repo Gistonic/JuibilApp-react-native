@@ -9,12 +9,12 @@ import { fetchActivities } from "../actions/ListActivitiesActions";
 
 class ActivitatListScreen extends React.Component {
     componentWillMount() {
-        this.props.fetchActivities()
+        this.props.fetchActivities('/own')
     }
 
     render() {
         const {viewStyle,activitatStyle} = styles;
-        console.log(this.props.activities.length)
+        console.log(this.props.activities)
         return (
             <View style = {viewStyle}>
 
@@ -59,7 +59,7 @@ const mapStateToProps = (state) => {
 
 const  mapDispatchToProps = (dispatch)=>{
     return {
-        fetchActivities: ()=>dispatch(fetchActivities())
+        fetchActivities: (value)=>dispatch(fetchActivities(value))
     }
 }
 

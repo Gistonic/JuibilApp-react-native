@@ -18,7 +18,8 @@ export const request = async (path = "", method = "GET", body) => {
                 console.log(response)
                 if (response.ok) {
                     console.log(response.ok)
-                    return res(response.json())
+                    console.log(res(response))
+                    return res(response)
                 } else {
                     console.log('Error sending create activity')
                     rej(new Error('Server responded with ' + response.code))

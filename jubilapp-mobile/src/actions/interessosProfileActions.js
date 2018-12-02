@@ -31,7 +31,7 @@ const requestInteressos =()=>{
 
 
 export const fetchInteressos = () => {
-    return () => {
+    return (dispatch) => {
         request('/profile').then(res => {
             dispatch(recieveInteressos(res.interests))
         })

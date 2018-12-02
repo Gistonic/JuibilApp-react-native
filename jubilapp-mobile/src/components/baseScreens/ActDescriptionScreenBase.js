@@ -19,7 +19,7 @@ export default class ActDescriptionScreenBase extends React.Component {
                         <Description textExpl = "Describe la actividad"/>
                         <TextInput multiline = {true}
                                    style = {textStyle}
-                                   maxLength = {200}
+                                   maxLength = {180}
                                    value = {this.props.description}
                                    onChangeText={(text) => this.props.changeFormDescription(text)}
                         />

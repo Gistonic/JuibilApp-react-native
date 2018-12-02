@@ -1,4 +1,7 @@
 import {LIST_ACTIVITIES_ACTIONS} from "../constants/actions";
+import {request} from "../request";
+import {AsyncStorage} from "react-native";
+
 
 const recieveActivities =(activities)=>{
     return {
@@ -6,13 +9,38 @@ const recieveActivities =(activities)=>{
         payload: activities
     }
 }
-const requestActivities =()=>{
+const requestActivities =(activities)=>{
     return {
         type: LIST_ACTIVITIES_ACTIONS.RequestActivities,
+        payload: activities
     }
 }
 
-export const fetchActivities = () => {
+export const deleteActivity = () => {
+
+}
+
+export const fetchActivities = (tipus) => {
+    return (dispatch) => {
+        AsyncStorage.getItem('token').then((token) => {
+            const baseUrl = 'http://ordinadorcasa.no-ip.org:4100/event';
+            const finalPath = baseUrl + tipus;
+            fetch(finalPath, {
+                method: 'GET',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                    Authorization: 'Bearer ' + token,
+
+                },
+                dataType: 'json',
+            }).then((resp) =>
+                resp.json().then((body) => dispatch(requestActivities(body.events))))
+        });
+    }
+}
+
+export const fetchActivitiesOld = () => {
     return(dispatch)=>{
       //  dispatch(requestActivities())
 

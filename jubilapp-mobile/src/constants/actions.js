@@ -15,7 +15,8 @@ export const CREATE_ACTIVITY_FORM_ACTIONS={
 export const LIST_ACTIVITIES_ACTIONS={
     FetchActivities: 'FETCH_ACTIVITIES',
     ReceiveActivities: 'RECEIVE_ACTIVITIES',
-    RequestActivities: 'REQUEST_ACTIVITIES'
+    RequestActivities: 'REQUEST_ACTIVITIES',
+    DeleteActivity: 'DELETE_ACTIVITY'
 }
 
 export const INTERESSOS_PROFILE_ACTIONS={
@@ -29,6 +30,7 @@ export const ACTIVITY_INFO_ACTIONS= {
     FetchActivity: 'FETCH_ACTIVITY',
     ChangeProperty: 'CHANGE_ACTIVITY_ID_PROPERTY',
     ReceiveActivity: 'RECEIVE_ACTIVITY',
+    DeleteActivity: 'DELETE_ACTIVITY',
 
 }
 

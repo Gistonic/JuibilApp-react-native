@@ -20,22 +20,39 @@ class SelectTypeCreate extends React.Component {
     }
 
     selectType(){
-            if(this.props.selected_Arte) this.props.type = 'Art';
-            if(this.props.selected_Deporte) this.props.type = 'sports';
-            if(this.props.selected_Cultura) this.props.type = 'culture';
-            if(this.props.selected_Excursiones) this.props.type = 'trips';
-            if(this.props.selected_Talleres) this.props.type = 'workshops';
-            if(this.props.selected_Ocio) this.props.type = 'leisure';
+            if(this.props.selected_Arte) {
+                this.props.changeTipus('art');
+                return 'art';
+            }
+            if(this.props.selected_Deporte) {
+                this.props.changeTipus('sports');
+                return 'sports';
+            }
+            if(this.props.selected_Cultura) {
+                this.props.changeTipus('culture');
+                return 'culture';
+            }
+            if(this.props.selected_Excursiones) {
+                this.props.changeTipus('trips');
+                return 'trips';
+            }
+            if(this.props.selected_Talleres) {
+                this.props.changeTipus('workshops');
+                return 'workshops';
+            }
+            if(this.props.selected_Ocio) {
+                this.props.changeTipus('leisure');
+                return 'leisure';
+            }
     }
 
 
     onNextPressed() {
-        this.selectType()
         const activityInfo = {
 
             name: this.props.name,
             //location:this.props.Location,
-            type:this.props.type,
+            type:this.selectType(),
             startDate:new Date(this.props.dateIni.year, this.props.dateIni.month, this.props.dateIni.day, this.props.hourIni, this.props.minuteIni),
             endDate:new Date(this.props.dateEnd.year, this.props.dateEnd.month, this.props.dateEnd.day, this.props.hourEnd, this.props.minuteEnd),
             description:this.props.description,
@@ -199,6 +216,7 @@ const mapStateToProps = (state) => {
         selected_Excursiones: state.createActivityForm.selected_Excursiones,
         selected_Talleres: state.createActivityForm.selected_Talleres,
         selected_Ocio: state.createActivityForm.selected_Ocio,
+        type: state.createActivityForm.type,
         name: state.createActivityForm.name,
         location:state.createActivityForm.Location,
         dateIni: state.createActivityForm.dateIni,
@@ -208,7 +226,7 @@ const mapStateToProps = (state) => {
         hourIni:state.createActivityForm.hourIni,
         minuteIni: state.createActivityForm.minuteIni,
         description:state.createActivityForm.description,
-        token:state.auth.token
+        token:state.auth.token,
 
     }
 }
@@ -221,6 +239,7 @@ const mapDispatchToProps = (dispatch) => {
         changeExcursiones: (value) => dispatch(changeCreateActivityFormProperty("selected_Excursiones", value)),
         changeTalleres: (value) => dispatch(changeCreateActivityFormProperty("selected_Talleres", value)),
         changeOcio: (value) => dispatch(changeCreateActivityFormProperty("selected_Ocio", value)),
+        changeTipus: (value) => dispatch(changeCreateActivityFormProperty("type", value)),
         createActivity: (activityInfo)=> dispatch(createActivity(activityInfo))
     }
 }
