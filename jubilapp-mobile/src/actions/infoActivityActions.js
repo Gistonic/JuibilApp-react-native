@@ -18,34 +18,25 @@ export const changeActivityIDProperty = (propertyName, value) => {
     }
 }
 
-export const fetchActivity = () => {
-    return(dispatch)=>
-    {
-        dispatch(receiveActivity(activityMock))
+export const fetchActivity = (id) => {
+    return (dispatch) => {
+        AsyncStorage.getItem('token').then((token) => {
+            const baseUrl = 'http://ordinadorcasa.no-ip.org:4100/event/';
+            const finalPath = baseUrl + id;
+            fetch(finalPath, {
+                method: 'GET',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                    Authorization: 'Bearer ' + token,
+
+                },
+                dataType: 'json',
+            }).then((resp) =>
+                resp.json().then((body) =>
+                    dispatch(receiveActivity(body.event))))
+        });
     }
-    // return(dispatch)=>{
-    //     AsyncStorage.getItem('token').then((data) => {
-    //         this.token = data
-    //     });
-    //     fetch('http://ordinadorcasa.no-ip.org:4100/profile', {
-    //         method: 'GET',
-    //         headers: {
-    //             Accept: 'application/json',
-    //             'Content-Type': 'application/json',
-    //             Authorization: 'Bearer ' + this.token
-    //         }
-    //     }).then(response=>{
-    //         console.log("HOLAAA" + response.json());
-    //         if(response.ok){
-    //             return response.json()
-    //         }
-    //     }).then(json => {
-    //         console.log(json);
-    //         dispatch(recieveInteressos(json.interests))
-    //     })
-    //
-    // }
-//}
 }
 
 const activityMock = {

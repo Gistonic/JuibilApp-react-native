@@ -32,7 +32,7 @@ export default class ActivityInfoBase extends React.Component {
                 <Text style = {titleStyle}>
                     {this.props.nomActivitat}
                 </Text>
-                <Text style = {textStyle}>{`C/Jordi Girona 21, Barcelona${"\n"}Data Inici: 05/12/2018 12:00 AM${"\n"}Data Fi: 05/12/2018 13:00 AM${"\n"}${"\n"}${this.props.descripcio}`}</Text>
+                <Text style = {textStyle}>{`C/Jordi Girona 21, Barcelona${"\n"}Data Inici: ${this.props.dataIni}${"\n"}Data Fi: ${this.props.dataFi}${"\n"}${"\n"}${this.props.descripcio}`}</Text>
 
                 {this._cardActionSelector(this.props.screen)}
 

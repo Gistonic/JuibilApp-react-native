@@ -5,8 +5,8 @@ import connect from "react-redux/es/connect/connect";
 
 class ActivityInfo extends React.Component {
     componentWillMount(){
-        this.props.changeID(this.props.id)
-        this.props.fetchActivity()
+        this.props.changeID(this.props.id);
+        this.props.fetchActivity(this.props.id)
     }
 
     render() {
@@ -31,7 +31,7 @@ const mapStateToProps = (state) => {
 const  mapDispatchToProps = (dispatch)=>{
     return {
         changeID: (value)=>dispatch(changeActivityIDProperty("idActivity", value)),
-        fetchActivity: () => dispatch(fetchActivity()),
+        fetchActivity: (value) => dispatch(fetchActivity(value)),
     }
 }
 
