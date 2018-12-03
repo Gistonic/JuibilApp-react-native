@@ -1,6 +1,7 @@
 import {LIST_ACTIVITIES_ACTIONS} from "../constants/actions";
 import {request} from "../request";
 import {AsyncStorage} from "react-native";
+import {Actions} from "react-native-router-flux";
 
 
 const recieveActivities =(activities)=>{
@@ -16,8 +17,13 @@ const requestActivities =(activities)=>{
     }
 }
 
-export const deleteActivity = () => {
-
+export const deleteActivity = (id) => {
+    return () => {
+        const url = '/event/';
+        const final = url + id;
+        request(final, 'DELETE');
+        Actions.home();
+    }
 }
 
 export const fetchActivities = (tipus) => {

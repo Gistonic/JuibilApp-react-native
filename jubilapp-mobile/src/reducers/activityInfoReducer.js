@@ -20,6 +20,8 @@ const activityInfoReducer = (state = INITIAL_STATE, action)=> {
                 ...state,
                 activityReceived: action.payload
             }
+        case ACTIVITY_INFO_ACTIONS.DeleteActivity:
+            return state
         default: return state
     }
 }

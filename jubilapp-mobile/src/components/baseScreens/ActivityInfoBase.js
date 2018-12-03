@@ -3,6 +3,7 @@ import {View, Text, ImageBackground} from 'react-native';
 import {APP_COLORS} from "../../constants/colors";
 import Header from "../../components/basicComponents/Header";
 import CardActionCreades from "../CardActionCreades";
+import {Actions} from "react-native-router-flux";
 
 export default class ActivityInfoBase extends React.Component {
     _selectSource(type) {
@@ -14,7 +15,7 @@ export default class ActivityInfoBase extends React.Component {
         if (type === 'leisure') return require('../../images/ocioPES3.jpg');
     }
     _cardActionSelector(screen) {
-        if (screen === 'Creades') return <CardActionCreades/>
+        if (screen === 'Creades') return <CardActionCreades deleteAct = {this.props.deleteAct} id = {this.props.id}/>
         //if (screen === 'Apuntades')
         //if (screen === 'Cancelades')
     }

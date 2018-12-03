@@ -5,7 +5,7 @@ import ActivitatItem from "../components/ActivitatItem";
 import connect from "react-redux/es/connect/connect";
 import {Actions} from "react-native-router-flux";
 import HeaderIcon from "../components/basicComponents/HeaderIcon";
-import { fetchActivities } from "../actions/ListActivitiesActions";
+import { fetchActivities , deleteActivity} from "../actions/ListActivitiesActions";
 
 class ActivitatListScreen extends React.Component {
     componentWillMount() {
@@ -14,7 +14,6 @@ class ActivitatListScreen extends React.Component {
 
     render() {
         const {viewStyle,activitatStyle} = styles;
-        console.log(this.props.activities)
         return (
             <View style = {viewStyle}>
 
@@ -29,7 +28,7 @@ class ActivitatListScreen extends React.Component {
                 {
                     this.props.activities.map((activity) => {
                         return (
-                            <ActivitatItem key={activity.id} nomActivitat = {activity.name} style = {activitatStyle} id={activity.id} screen = 'Creades'/>
+                            <ActivitatItem key={activity.id} nomActivitat = {activity.name} style = {activitatStyle} id={activity.id} screen = 'Creades' deleteActivity = {this.props.deleteActivity}/>
                         )
                     })
                 }
@@ -52,14 +51,14 @@ const styles ={
 
 const mapStateToProps = (state) => {
     return {
-
         activities: state.listActivities.activities
     }
 }
 
 const  mapDispatchToProps = (dispatch)=>{
     return {
-        fetchActivities: (value)=>dispatch(fetchActivities(value))
+        fetchActivities: (value)=>dispatch(fetchActivities(value)),
+        deleteActivity: (value) => dispatch(deleteActivity(value))
     }
 }
 

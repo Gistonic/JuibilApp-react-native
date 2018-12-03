@@ -6,18 +6,35 @@ import {Actions} from "react-native-router-flux";
 import {EvilIcons} from "@expo/vector-icons";
 
 
-const CardActionCreades = () => {
-    return (
-        <View style = {styles.container}
-            separator={true}
-            inColumn={false}>
-            <ButtonBack buttonText = "Atrás"
-                        path = {() => Actions.activitatlist()}
-            />
-            <EvilIcons name='pencil' size={60} color= {APP_COLORS.color_next} style = {[styles.iconStyle, {marginLeft: '7%'}]} onPress= { () => {Actions.modificaractivitat()}}/>
-            <EvilIcons name='trash' size={60} color= {APP_COLORS.color_header} style = {[styles.iconStyle, {marginLeft: '0%'}]}/>
-        </View>
-    )
+class CardActionCreades extends React.Component {
+    constructor(props) {
+        super(props)
+        this._onPress = this._onPress.bind(this)
+
+
+    }
+    _onPress() {
+        this.props.deleteAct(this.props.id);
+        Actions.home();
+    }
+    render() {
+        return (
+            <View style={styles.container}
+                  separator={true}
+                  inColumn={false}>
+                <ButtonBack buttonText="Atrás"
+                            path={() => Actions.activitatlist()}
+                />
+                <EvilIcons name='pencil' size={60} color={APP_COLORS.color_next}
+                           style={[styles.iconStyle, {marginLeft: '7%'}]} onPress={() => {
+                    Actions.modificaractivitat()
+                }}/>
+                <EvilIcons name='trash' size={60} color={APP_COLORS.color_header}
+                           style={[styles.iconStyle, {marginLeft: '0%'}]}
+                onPress = {this._onPress}/>
+            </View>
+        )
+    }
 };
 
 const styles = {

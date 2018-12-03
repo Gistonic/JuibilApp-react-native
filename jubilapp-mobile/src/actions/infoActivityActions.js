@@ -1,5 +1,7 @@
 import {ACTIVITY_INFO_ACTIONS} from "../constants/actions";
 import {AsyncStorage} from "react-native";
+import {request} from "../request";
+import {Actions} from "react-native-router-flux";
 
 const receiveActivity =(activity)=>{
     return {
@@ -15,6 +17,14 @@ export const changeActivityIDProperty = (propertyName, value) => {
             propertyName,
             value
         }
+    }
+}
+
+export const deleteAct = (id) => {
+    return () => {
+        const url = '/event/';
+        const final = url + id;
+        request(final, 'DELETE');
     }
 }
 

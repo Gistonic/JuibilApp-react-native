@@ -1,6 +1,6 @@
 import React from 'react';
 import ActivityInfoBase from "../components/baseScreens/ActivityInfoBase";
-import {changeActivityIDProperty, fetchActivity} from "../actions/infoActivityActions";
+import {changeActivityIDProperty, fetchActivity, deleteAct} from "../actions/infoActivityActions";
 import connect from "react-redux/es/connect/connect";
 
 class ActivityInfo extends React.Component {
@@ -17,6 +17,8 @@ class ActivityInfo extends React.Component {
                              dataIni = {this.props.activityReceived.startDate}
                              dataFi = {this.props.activityReceived.endDate}
                              screen = {this.props.screen}
+                             deleteAct = {this.props.deleteAct}
+                             id = {this.props.id}
            />
         );
     }
@@ -32,6 +34,7 @@ const  mapDispatchToProps = (dispatch)=>{
     return {
         changeID: (value)=>dispatch(changeActivityIDProperty("idActivity", value)),
         fetchActivity: (value) => dispatch(fetchActivity(value)),
+        deleteAct: (value) => dispatch(deleteAct(value))
     }
 }
 

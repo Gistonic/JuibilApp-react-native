@@ -5,19 +5,39 @@ import {APP_COLORS} from "../constants/colors";
 import {EvilIcons} from "@expo/vector-icons";
 import {Actions} from "react-native-router-flux";
 
-const ActivitatItem = (props) => {
-    return(
-        <View style = {styles.viewStyle}>
-            <View>
-                <Text style = {styles.textStyle} >{props.nomActivitat}</Text>
+class ActivitatItem extends React.Component {
+    constructor(props) {
+        super(props)
+        this._onPress = this._onPress.bind(this)
+
+
+    }
+    _onPress() {
+        this.props.deleteActivity(this.props.id);
+        Actions.home();
+    }
+    render ()
+    {
+        return (
+            <View style={styles.viewStyle}>
+                <View>
+                    <Text style={styles.textStyle}>{this.props.nomActivitat}</Text>
+                </View>
+                <View style={styles.viewIconStyle}>
+                    <EvilIcons name='eye' size={60} color={APP_COLORS.color_button_1} style={styles.iconStyle}
+                               onPress={() => {
+                                   Actions.info({id: this.props.id, screen: this.props.screen})
+                               }}/>
+                    <EvilIcons name='pencil' size={60} color={APP_COLORS.color_next} style={styles.iconStyle}
+                               onPress={() => {
+                                   Actions.modificaractivitat()
+                               }}/>
+                    <EvilIcons name='trash' size={60} color={APP_COLORS.color_header} style={styles.iconStyle}
+                               onPress = {this._onPress}/>
+                </View>
             </View>
-            <View style={styles.viewIconStyle}>
-                <EvilIcons name='eye' size={60} color= {APP_COLORS.color_button_1}  style = {styles.iconStyle} onPress= {() => {Actions.info({id: props.id, screen: props.screen})}}/>
-                <EvilIcons name='pencil' size={60} color= {APP_COLORS.color_next} style = {styles.iconStyle} onPress= { () => {Actions.modificaractivitat()}}/>
-                <EvilIcons name='trash' size={60} color= {APP_COLORS.color_header} style = {styles.iconStyle}/>
-            </View>
-        </View>
-    );
+        );
+    }
 };
 
 const styles = {
