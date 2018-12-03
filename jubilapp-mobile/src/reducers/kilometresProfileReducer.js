@@ -23,9 +23,7 @@ const kilometresProfileReducer = (state = INITIAL_STATE, action)=>{
         case KILOMETRES_PROFILE_ACTIONS.ReceiveKilometres:
             return { ...state, km_selected: action.payload }
         case KILOMETRES_PROFILE_ACTIONS.RequestKilometres:
-            return {
-                ...state
-            }
+            return { ...state, km_selected: action.payload }
 
         default: return state
 

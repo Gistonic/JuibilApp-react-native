@@ -21,20 +21,28 @@ const recieveInteressos =(interessos)=>{
     }
 }
 
-//cal??
-const requestInteressos =()=>{
+const requestInteressos =(interessos)=>{
     return {
         type: INTERESSOS_PROFILE_ACTIONS.RequestInteressos,
+        payload: interessos
     }
 }
 
-
-
 export const fetchInteressos = () => {
     return (dispatch) => {
-        request('/profile').then(res => {
-            dispatch(recieveInteressos(res.interests))
-        })
+        AsyncStorage.getItem('token').then((token) => {
+            fetch('http://ordinadorcasa.no-ip.org:4100/profile', {
+                method: 'GET',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                    Authorization: 'Bearer ' + token,
+
+                },
+                dataType: 'json',
+            }).then((resp) =>
+                resp.json().then((body) => dispatch(requestInteressos(body.interests))))
+        });
     }
 }
 export const fetchInteressosOld = () => {
@@ -69,10 +77,8 @@ export const fetchInteressosOld = () => {
 
 export const interessosProfile = (interessosInfo) => {
     return () => {
-        AsyncStorage.getItem('token').then((data) => {
-            this.token = data
-        });
-        fetch('http://ordinadorcasa.no-ip.org:4100/profile', {
+        AsyncStorage.getItem('token').then((token) => {
+            fetch('http://ordinadorcasa.no-ip.org:4100/profile', {
             method: 'PATCH',
             headers: {
                 Accept: 'application/json',
@@ -80,19 +86,21 @@ export const interessosProfile = (interessosInfo) => {
                 Authorization: 'Bearer ' + this.token
             },
             body: JSON.stringify({interests: interessosInfo})
-        }).then(response => {
-            console.log(response)
-            if (response.ok) {
-                console.log(response.ok)
+            }).then(response => {
+                console.log(response)
+                if (response.ok) {
+                    console.log(response.ok)
 
-                return response.json()
+                    return response.json()
 
-            } else {
-                console.log('Error sending interessos profile')
-            }
-        }).catch(err => {
-            console.log(err)
-        })
+                } else {
+                    console.log('Error sending interessos profile')
+                }
+            }).catch(err => {
+                console.log(err)
+            })
+        });
+        
         Actions.km();
     }
 }

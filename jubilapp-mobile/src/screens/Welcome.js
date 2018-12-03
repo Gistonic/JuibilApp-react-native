@@ -16,7 +16,7 @@ export default class Welcome extends React.Component {
                 </View>   
                 <View style = {viewStyle}>
                     <NextButton buttonText = {'Continuar'}
-                                path = {() => Actions.km()}/>
+                                path = {() => Actions.home()}/>
                 </View> 
             </View>
         );

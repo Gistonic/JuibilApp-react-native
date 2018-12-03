@@ -20,16 +20,32 @@ const recieveKilometres =(value)=>{
     }
 }
 
-//cal??
-const requestKilometres =()=>{
+const requestKilometres =(kilometre_num)=>{
     return {
         type: KILOMETRES_PROFILE_ACTIONS.RequestKilometres,
+        payload: kilometre_num
     }
 }
 
-
-
 export const fetchKilometres = () => {
+    return (dispatch) => {
+        AsyncStorage.getItem('token').then((token) => {
+            fetch('http://ordinadorcasa.no-ip.org:4100/profile', {
+                method: 'GET',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                    Authorization: 'Bearer ' + token,
+
+                },
+                dataType: 'json',
+            }).then((resp) =>
+                resp.json().then((body) => dispatch(requestKilometres(body.searchDistance))))
+        });
+    }
+}
+
+export const fetchKilometresOld = () => {
     return(dispatch)=>{
         AsyncStorage.getItem('token').then((data) => {
             this.token = data
@@ -69,7 +85,7 @@ export const kilometresProfile = (km_num) => {
                 'Content-Type': 'application/json',
                 Authorization: 'Bearer ' + this.token
             },
-            body: JSON.stringify({interests: interessosInfo}) //CANVIAR
+            body: JSON.stringify({searchDistance: km_num}) //CANVIAR
         }).then(response => {
             console.log(response)
             if (response.ok) {
@@ -78,7 +94,7 @@ export const kilometresProfile = (km_num) => {
                 return response.json()
 
             } else {
-                console.log('Error sending interessos profile')
+                console.log('Error sending kilometres profile')
             }
         }).catch(err => {
             console.log(err)

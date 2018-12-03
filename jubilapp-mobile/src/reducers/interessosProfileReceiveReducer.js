@@ -72,7 +72,9 @@ const interessosProfileReceiveReducer = (state = INITIAL_STATE, action)=>{
         case INTERESSOS_PROFILE_ACTIONS.RequestInteressos:
             return {
                 ...state,
-                interessos: []
+                interessos: action.payload.map(interes=>{
+                    state.interessos_info[interessosTranslate[interes].id].estat = true
+                })
             }
 
         default: return state
