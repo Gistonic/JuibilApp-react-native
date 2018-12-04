@@ -15,6 +15,13 @@ import {Actions} from 'react-native-router-flux';
 
 class KilometreScreen extends React.Component {
 
+    constructor(props) {
+        super(props)
+        this.onNextPressed = this.onNextPressed.bind(this)
+
+
+    }
+
     componentWillMount() {
         this.props.fetchKilometres()
     }
@@ -38,6 +45,10 @@ class KilometreScreen extends React.Component {
         });
     }
 
+    onNextPressed(){
+        this.props.kilometresProfile(this.props.km_selected);
+    }
+
     render() {
         const {viewStyle, container, container2,containerColumna,containerPrincipal} = styles;
         return (
@@ -57,7 +68,7 @@ class KilometreScreen extends React.Component {
                 <ButtonBack buttonText = {'Atrás'}
                             path = {() => Actions.interessos()}/>
                 <NextButton buttonText = {'Finalizar'}
-                            path = {() => Actions.home()}/>
+                            path = {() => this.onNextPressed()}/>
               </View>
             </View>   
         );
@@ -114,7 +125,7 @@ const mapStateToProps = (state) => {
 const  mapDispatchToProps = (dispatch)=>{
     return {
         changeEstat: (km_num)=>dispatch(changeKilometresProfileProperty(km_num)),
-        interessosProfile: (interessosInfo)=> dispatch(kilometresProfile(interessosInfo)),
+        kilometresProfile: (km_num)=> dispatch(kilometresProfile(km_num)),
         fetchKilometres: ()=>dispatch(fetchKilometres())
     }
 }
