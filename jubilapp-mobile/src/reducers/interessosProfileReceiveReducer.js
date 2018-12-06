@@ -20,14 +20,14 @@ const INITIAL_STATE ={
         {
             id:1,
             estat:false,
-            icon: require('../images/culturaPES2.jpg'),
-            nom:'Cultura',
+            icon: require('../images/esportPES2.jpg'),
+            nom:'Deporte',
         },
         {
             id:2,
             estat:false,
-            icon: require('../images/esportPES2.jpg'),
-            nom:'Deporte',
+            icon: require('../images/culturaPES2.jpg'),
+            nom:'Cultura',
         },
         {
             id:3,
@@ -60,7 +60,7 @@ const interessosProfileReceiveReducer = (state = INITIAL_STATE, action)=>{
             
             const newInteressosInfo = [...state.interessos_info];
             newInteressosInfo[action.payload].estat = !newInteressosInfo[action.payload].estat;
-            return { ...state, interessos_info: newInteressosInfo }
+            return { ...state, interessos_info: newInteressosInfo };
 
         case INTERESSOS_PROFILE_ACTIONS.ReceiveInteressos:
             return {
@@ -70,12 +70,11 @@ const interessosProfileReceiveReducer = (state = INITIAL_STATE, action)=>{
                 })
             }
         case INTERESSOS_PROFILE_ACTIONS.RequestInteressos:
-            return {
-                ...state,
-                interessos: action.payload.map(interes=>{
-                    state.interessos_info[interessosTranslate[interes].id].estat = true
-                })
-            }
+            const newInteressosInfo2 = [...state.interessos_info];
+            action.payload.map(interes=>{
+                newInteressosInfo2[interessosTranslate[interes].id].estat = true
+            });
+            return {...state, interessos_info: newInteressosInfo2};
 
         default: return state
 

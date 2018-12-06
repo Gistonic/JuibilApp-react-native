@@ -2,12 +2,18 @@ import React from 'react';
 import {View} from 'react-native';
 import HeaderIcon from '../components/basicComponents/HeaderIcon';
 import {APP_COLORS} from "../constants/colors";
+import {Location} from 'expo';
 
 import { Actions } from 'react-native-router-flux';
 import ConfigurationButton from "../components/basicComponents/ConfigurationButton";
 
 export default class HomeScreen extends React.Component {
+    // getLocationAsync() {
+    //     let location = Location.getCurrentPosition({});
+    //     console.log(location);
+    // };
     render() {
+        // this.getLocationAsync();
         const {viewStyle, viewButtons} = styles;
         return (
             <View style = {viewStyle}>

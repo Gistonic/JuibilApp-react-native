@@ -3,8 +3,6 @@ import {INTERESSOS_PROFILE_ACTIONS} from "../constants/actions";
 import { AsyncStorage } from "react-native";
 import {request} from "../request";
 
-const token = null;
-
 export const changeInteressosProfileProperty=(value) =>{
     return {
         type:INTERESSOS_PROFILE_ACTIONS.ChangeProperty,
@@ -13,7 +11,6 @@ export const changeInteressosProfileProperty=(value) =>{
 };
 
 const recieveInteressos =(interessos)=>{
-
     return {
 
         type: INTERESSOS_PROFILE_ACTIONS.ReceiveInteressos,
@@ -54,8 +51,8 @@ export const fetchInteressosOld = () => {
       //  dispatch(requestInteressos())
 
 
-        //dispatch(recieveInteressos(interessosMock));
-        fetch('http://ordinadorcasa.no-ip.org:4100/profile', {
+        dispatch(recieveInteressos(interessosMock));
+        /*fetch('http://ordinadorcasa.no-ip.org:4100/profile', {
             method: 'GET',
             headers: {
                 Accept: 'application/json',
@@ -70,12 +67,18 @@ export const fetchInteressosOld = () => {
          }).then(json => {
             console.log(json);
              dispatch(recieveInteressos(json.interests))
-        })
+        })*/
 
     }
 }
-
 export const interessosProfile = (interessosInfo) => {
+    return () => {
+        request('/profile', 'PATCH', {interests: interessosInfo});
+        Actions.km();
+    }
+}
+
+export const interessosProfileOld = (interessosInfo) => {
     return () => {
         AsyncStorage.getItem('token').then((token) => {
             fetch('http://ordinadorcasa.no-ip.org:4100/profile', {
@@ -83,7 +86,7 @@ export const interessosProfile = (interessosInfo) => {
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
-                Authorization: 'Bearer ' + this.token
+                Authorization: 'Bearer ' + token
             },
             body: JSON.stringify({interests: interessosInfo})
             }).then(response => {

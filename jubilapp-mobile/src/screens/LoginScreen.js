@@ -47,8 +47,6 @@ class LoginScreen extends React.Component {
                 </View>
                   <StartButton buttonText = {'Entrar'}
                                path = {this.onLoginPressed}/>
-                <NextButton buttonText = {'Crear activitat'}
-                            path = {() => Actions.home()}/>
                   <Description textExpl = {'No tienes cuenta?'}/>
                   <StartButton buttonText = {'Regístrate!'}
                                path = {() => Actions.r1()}/>
