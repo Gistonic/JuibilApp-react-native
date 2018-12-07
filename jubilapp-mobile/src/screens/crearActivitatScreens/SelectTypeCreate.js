@@ -3,7 +3,7 @@ import React from 'react';
 import {ImageBackground, Text, TouchableOpacity, View} from 'react-native';
 import { CheckBox } from 'react-native-elements';
 import {APP_COLORS} from "../../constants/colors";
-import Header from '../../components/basicComponents/Header';
+import HeaderIcon from '../../components/basicComponents/HeaderIcon';
 
 import { Actions } from 'react-native-router-flux';
 import Description from "../../components/basicComponents/Description";
@@ -69,7 +69,13 @@ class SelectTypeCreate extends React.Component {
         return (
             <View style = {viewStyle}>
 
-                <Header headerText = {'JubilApp'}/>
+                <HeaderIcon headerText = "Crear Actividad"
+                                iconName={ 'home'}
+                                colorName={ APP_COLORS.color_neutral}
+                                size = {75}
+                                textSize = {35}
+                                path={() => Actions.home()}
+                />
                 <Description textExpl = {'Selecciona el tipo'}/>
                 <View style = {viewInteressos} >
                     <View style = {container}>

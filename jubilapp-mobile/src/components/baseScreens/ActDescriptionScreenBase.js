@@ -1,11 +1,12 @@
 import React from 'react';
 import {KeyboardAvoidingView, View, TextInput} from 'react-native';
-import Header from '../../components/basicComponents/Header';
+import HeaderIcon from '../../components/basicComponents/HeaderIcon';
 import NextButton from '../../components/basicComponents/NextButton';
 import ButtonBack from '../../components/basicComponents/ButtonBack';
 import { Actions } from 'react-native-router-flux';
 import Description from "../../components/basicComponents/Description";
 import {APP_COLORS} from "../../constants/colors";
+
 
 
 export default class ActDescriptionScreenBase extends React.Component {
@@ -14,7 +15,13 @@ export default class ActDescriptionScreenBase extends React.Component {
         return (
             <KeyboardAvoidingView behavior = 'position'>
                 <View style = {viewStyle}>
-                    <Header headerText = {'JubilApp'}/>
+                    <HeaderIcon headerText = {this.props.headerName}
+                                iconName={ 'home'}
+                                colorName={ APP_COLORS.color_neutral}
+                                size = {75}
+                                textSize = {35}
+                                path={() => Actions.home()}
+                    />
                     <View style = {viewStyle1}>
                         <Description textExpl = "Describe la actividad"/>
                         <TextInput multiline = {true}

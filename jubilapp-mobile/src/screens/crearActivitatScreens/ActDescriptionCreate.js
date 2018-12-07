@@ -12,7 +12,8 @@ class ActDescriptionCreate extends React.Component {
                             description = {this.props.description}
                             buttonNext = "Siguiente"
                             previousScreen={() => Actions.finHour()}
-                            nextScreen={() => Actions.seltype()}/>
+                            nextScreen={() => Actions.seltype()}
+                            headerName = "Crear Actividad"/>
 
         );
     }

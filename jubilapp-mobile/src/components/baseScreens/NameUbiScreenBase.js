@@ -1,9 +1,10 @@
 import React from 'react';
 import {View, KeyboardAvoidingView} from 'react-native';
 import Formulari from '../basicComponents/Formulari';
-import Header from '../basicComponents/Header';
+import HeaderIcon from '../basicComponents/HeaderIcon';
 import NextButton from '../basicComponents/NextButton';
 import ButtonBack from '../basicComponents/ButtonBack';
+import {APP_COLORS} from "../../constants/colors";
 
 export default class NameUbiScreenBase extends React.Component {
     render() {
@@ -11,7 +12,13 @@ export default class NameUbiScreenBase extends React.Component {
         return (
             <KeyboardAvoidingView behavior = 'position'>
                 <View style = {viewStyle}>
-                    <Header headerText = {'Crear Actividad'}/>
+                <HeaderIcon headerText = {this.props.headerName}
+                                iconName={ 'home'}
+                                colorName={ APP_COLORS.color_neutral}
+                                size = {75}
+                                textSize = {35}
+                                path={() => Actions.home()}
+                />
                     <View style = {viewStyle1}>
                         <View style = {vista1Style}>
                             <View style = {formStyle}>

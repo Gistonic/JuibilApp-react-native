@@ -5,7 +5,7 @@ import {APP_COLORS} from "../../constants/colors";
 
 import {Actions} from 'react-native-router-flux';
 
-import Header from "../basicComponents/Header";
+import HeaderIcon from '../basicComponents/HeaderIcon';
 import Description from "../basicComponents/Description";
 import ButtonBack from "../basicComponents/ButtonBack";
 import NextButton from "../basicComponents/NextButton";
@@ -49,7 +49,13 @@ export default class DateScreenBase extends React.Component {
         }
         return (
             <View style={viewStyle}>
-                <Header headerText={this.props.headerName}/>
+                <HeaderIcon headerText = {this.props.headerName}
+                                iconName={ 'home'}
+                                colorName={ APP_COLORS.color_neutral}
+                                size = {75}
+                                textSize = {35}
+                                path={() => Actions.home()}
+                />
                 <View style={viewButtons}>
                     <View style={{paddingLeft: '8%', paddingRight: '8%'}}>
                         <Description textExpl={`Define el ${this.props.titleName} de la actividad`}/>

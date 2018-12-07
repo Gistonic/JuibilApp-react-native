@@ -4,7 +4,7 @@ import {APP_COLORS} from "../../constants/colors";
 
 import { FontAwesome } from '@expo/vector-icons';
 
-import Header from "../basicComponents/Header";
+import HeaderIcon from '../basicComponents/HeaderIcon';
 import Description from "../basicComponents/Description";
 import ButtonBack from "../basicComponents/ButtonBack";
 import NextButton from "../basicComponents/NextButton";
@@ -36,7 +36,13 @@ export default class HourScreenBase extends React.Component {
         const { _hour, _minute } = this.props;
         return (
             <View style = {viewStyle}>
-                <Header headerText = {'Crear Actividad'}/>
+                <HeaderIcon headerText = {this.props.headerName}
+                                iconName={ 'home'}
+                                colorName={ APP_COLORS.color_neutral}
+                                size = {75}
+                                textSize = {35}
+                                path={() => Actions.home()}
+                />
                 <View style = {viewButtons}>
                     <View style={{paddingLeft: '8%', paddingRight: '8%'}}>
                         <Description textExpl={`Define la hora de ${this.props.titleName} de la actividad`}/>
