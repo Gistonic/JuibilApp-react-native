@@ -13,11 +13,11 @@ export default class ListsActivitiesScreen extends React.Component {
         return (
             <View style = {viewStyle}>
                 <HeaderIcon headerText = {'Visualizar'}
-                            iconName={ 'user'}
+                            iconName={ 'home'}
                             colorName={ APP_COLORS.color_neutral}
                             size = {75}
                             textSize = {35}
-                            path={() => Actions.interessos()}
+                            path={() => Actions.home()}
                 />
                 <View style = {viewButtons}>
                     <ConfigurationButton iconName={ 'ios-checkmark-circle'}

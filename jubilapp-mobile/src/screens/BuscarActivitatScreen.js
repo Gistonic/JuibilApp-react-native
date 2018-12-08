@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Image, Text} from 'react-native';
+import {View, Image, Text, Alert} from 'react-native';
 import {APP_COLORS} from "../constants/colors";
 import connect from "react-redux/es/connect/connect";
 import {Actions} from "react-native-router-flux";
@@ -17,12 +17,25 @@ class BuscarActivitatScreen extends React.Component {
     }
 
     _onPressDenegar(){
-        this.props.changeIterador();
+        Alert.alert(
+            'Denegar Actividad',
+            'La actividad se añadira a la lista de NO APUNTADAS.',
+            [
+              {text: 'OK', onPress: () => this.props.changeIterador()},
+            ],
+            { cancelable: false }
+        );    
     }
 
     _onPressAcceptar(){
-        
-        this.props.changeIterador();
+        Alert.alert(
+            'Aceptar Actividad',
+            'La actividad se añadira a la lista de APUNTADAS.',
+            [
+              {text: 'OK', onPress: () => this.props.changeIterador()},
+            ],
+            { cancelable: false }
+        );
     }
     
 
