@@ -24,6 +24,17 @@ const INITIAL_STATE ={
             horaFi: "12:00",
             descripcio: "Classe de yoga per relaxarse de bon mati.",
             tipus: "sports"
+        },
+        {
+            id:2,
+            nom: "Club de Lectura",
+            ubicacio: "Casal avis Eixample",
+            dataIni: "28/12/2018",
+            dataFi: "28/12/2018",
+            horaIni: "12:30",
+            horaFi: "14:00",
+            descripcio: "Comentem el llibre Acid House de Irvine Welsh.",
+            tipus: "culture"
         }
     ]
 }
@@ -36,9 +47,7 @@ const buscarActivityReducer = (state = INITIAL_STATE, action)=>{
         case BUSCAR_ACTIVITY_ACTIONS.ReceiveActivitats:
             return state
         case BUSCAR_ACTIVITY_ACTIONS.ChangeIterador:
-            const newIterador = [...state.iterador];
-            newIterador = newIterador + 1;
-            return{ ...state, iterador: newIterador};
+            return{ ...state, iterador: state.iterador+1};
         default: return state
     }
 }

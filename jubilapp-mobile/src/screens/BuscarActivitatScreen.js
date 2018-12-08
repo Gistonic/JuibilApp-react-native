@@ -21,6 +21,7 @@ class BuscarActivitatScreen extends React.Component {
     }
 
     _onPressAcceptar(){
+        
         this.props.changeIterador();
     }
     
@@ -35,6 +36,8 @@ class BuscarActivitatScreen extends React.Component {
             workshops: {source: require('../images/talleresPES2.jpg')},
             leisure: {source: require('../images/ocioPES3.jpg')}
         }
+        {console.log("HOLAAAAA", this.props.activitats_trobades);}
+        {console.log("HOLAA1",this.props.iterador)}
         return(
             <View style = {viewStyle}>
                 <HeaderIcon headerText = "Buscar Actividad"
