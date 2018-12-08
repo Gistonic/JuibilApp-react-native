@@ -2,8 +2,6 @@ import {APP_COLORS} from "../constants/colors";
 
 import {View, Image, Text} from 'react-native';
 import React from "react";
-import ButtonBack from "./basicComponents/ButtonBack";
-import {Actions} from "react-native-router-flux";
 import { Card } from 'react-native-elements';
 import { EvilIcons, Ionicons } from '@expo/vector-icons';
 

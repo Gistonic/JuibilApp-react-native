@@ -1,5 +1,5 @@
 import { combineReducers, createStore, applyMiddleware } from 'redux'
-import {registerFormReducer, authReducer, loginFormReducer, createActivityFormReducer,listActivitiesReducer, interessosProfileReceiveReducer, activityInfoReducer} from "./reducers/";
+import {registerFormReducer, authReducer, loginFormReducer, buscarActivityReducer, createActivityFormReducer,listActivitiesReducer, interessosProfileReceiveReducer, activityInfoReducer} from "./reducers/";
 import thunk from 'redux-thunk'
 import logger from 'redux-logger'
 import { kilometresProfileReducer } from './reducers/kilometresProfileReducer';
@@ -11,7 +11,8 @@ const rootReducer = combineReducers({
     listActivities:listActivitiesReducer,
     interessosProfile:interessosProfileReceiveReducer,
     activityInfoForm: activityInfoReducer,
-    kilometresProfile: kilometresProfileReducer
+    kilometresProfile: kilometresProfileReducer,
+    buscarActivity: buscarActivityReducer
 })
 
 const store= createStore(

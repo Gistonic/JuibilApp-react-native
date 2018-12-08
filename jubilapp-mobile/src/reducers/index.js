@@ -5,3 +5,4 @@ export * from "./createActivityFormReducer";
 export * from "./interessosProfileReceiveReducer";
 export * from "./listActivitiesReducer";
 export * from "./activityInfoReducer";
+export * from "./buscarActivityReducer";

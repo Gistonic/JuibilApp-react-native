@@ -5,33 +5,36 @@ import connect from "react-redux/es/connect/connect";
 import {Actions} from "react-native-router-flux";
 import HeaderIcon from "../components/basicComponents/HeaderIcon";
 import CardModified from "../components/CardModified";
-import { fetchActivities , deleteActivity} from "../actions/ListActivitiesActions";
-import { Card } from 'react-native-elements';
 import { EvilIcons, Ionicons } from '@expo/vector-icons';
+import {fetchActivitats,changeIterador} from "../actions/index";
 
 class BuscarActivitatScreen extends React.Component {
 
     constructor(props){
         super(props);
-        this.state = {
-            activitats: [
-                {
-                    id:0,
-                    nom: "Classe de Pintura",
-                    ubicacio: "Casal avis les Corts",
-                    dataIni: "22/12/2018",
-                    dataFi: "22/12/2018",
-                    horaIni: "17:30",
-                    horaFi: "19:00",
-                    descripcio: "Classe de pintura per aprendre els colors.",
-                    tipus: "art"
-                }
-            ]
-        }
+        this._onPressDenegar = this._onPressDenegar.bind(this);
+        this._onPressAcceptar = this._onPressAcceptar.bind(this);
     }
+
+    _onPressDenegar(){
+        this.props.changeIterador();
+    }
+
+    _onPressAcceptar(){
+        this.props.changeIterador();
+    }
+    
 
     render(){
         const {texticonStyle,footer,circle,viewStyle,cardStyle,titleStyle,viewCard,textStyle,imageStyle,iconStyle} = styles;
+        const activitatsTranslate= {
+            art: {source: require('../images/artPES2.jpg')},
+            sports: {source: require('../images/esportPES2.jpg')},
+            culture: {source: require('../images/culturaPES2.jpg')},
+            trips: {source: require('../images/excursionesPES2.jpg')},
+            workshops: {source: require('../images/talleresPES2.jpg')},
+            leisure: {source: require('../images/ocioPES3.jpg')}
+        }
         return(
             <View style = {viewStyle}>
                 <HeaderIcon headerText = "Buscar Actividad"
@@ -43,24 +46,26 @@ class BuscarActivitatScreen extends React.Component {
                 />
                 <View>
                     <View style = {viewCard}>
-                        <CardModified image = {require('../images/artPES2.jpg')}
-                                        nom =  {this.state.activitats[0].nom}
-                                        ubicacio = {this.state.activitats[0].ubicacio}
-                                        dataIni = {this.state.activitats[0].dataIni}
-                                        dataFi = {this.state.activitats[0].dataFi}
-                                        horaIni = {this.state.activitats[0].horaIni}
-                                        horaFi = {this.state.activitats[0].horaFi}
+                        <CardModified image = {activitatsTranslate[this.props.activitats_trobades[this.props.iterador].tipus].source}
+                                        nom =  {this.props.activitats_trobades[this.props.iterador].nom}
+                                        ubicacio = {this.props.activitats_trobades[this.props.iterador].ubicacio}
+                                        dataIni = {this.props.activitats_trobades[this.props.iterador].dataIni}
+                                        dataFi = {this.props.activitats_trobades[this.props.iterador].dataFi}
+                                        horaIni = {this.props.activitats_trobades[this.props.iterador].horaIni}
+                                        horaFi = {this.props.activitats_trobades[this.props.iterador].horaFi}
                         />
                     </View>
                     <View style={footer}>
                         <View style={circle} backgroundColor = {APP_COLORS.color_header}>
-                            <Ionicons name="md-close" size={70} color={APP_COLORS.color_neutral} />
+                            <Ionicons name="md-close" size={70} color={APP_COLORS.color_neutral}
+                            onPress = {this._onPressDenegar} />
                         </View>
                         <View style={circle} backgroundColor = {APP_COLORS.color_back}>
                             <Ionicons name="md-information" size={70} color={APP_COLORS.color_neutral}/>
                         </View>
                         <View style={circle} backgroundColor = "#125E38">
-                            <Ionicons name="md-checkmark" size={70} color={APP_COLORS.color_neutral} />
+                            <Ionicons name="md-checkmark" size={70} color={APP_COLORS.color_neutral} 
+                            onPress = {this._onPressAcceptar}/>
                         </View>
                     </View>
                 </View>  
@@ -149,4 +154,19 @@ const styles ={
     }
 }
 
-export default BuscarActivitatScreen;
+const mapStateToProps = (state) => {
+    return {
+        activitats_trobades: state.buscarActivity.activitats_trobades,
+        iterador: state.buscarActivity.iterador
+    }
+}
+
+const  mapDispatchToProps = (dispatch)=>{
+    return {
+        fetchActivitats: ()=>dispatch(fetchActivitats()),
+        changeIterador: ()=>dispatch(changeIterador())
+    }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(BuscarActivitatScreen)
+

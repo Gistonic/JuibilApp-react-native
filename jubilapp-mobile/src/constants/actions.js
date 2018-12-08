@@ -40,3 +40,9 @@ export const KILOMETRES_PROFILE_ACTIONS={
     ReceiveKilometres: 'RECEIVE_KILOMETRES',
     RequestKilometres: 'REQUEST_KILOMETRES'
 }
+
+export const BUSCAR_ACTIVITY_ACTIONS={
+    FetchActivitats: 'FETCH_ACTIVITATS',
+    RecieveActivitats: 'RECIEVE_ACTIVITATS',
+    ChangeIterador: 'CHANGE_ITERADOR'
+}
