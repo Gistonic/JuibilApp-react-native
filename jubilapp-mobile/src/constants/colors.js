@@ -4,6 +4,7 @@ export const APP_COLORS={
     color_button_1:'#246475',
     text_color: '#848484',
     color_back:'#B07310',
-    color_next: '#125243'
+    color_next: '#125243',
+    black: '#000',
 }
 //'#22563a',

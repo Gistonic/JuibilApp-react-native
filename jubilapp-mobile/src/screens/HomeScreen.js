@@ -2,18 +2,14 @@ import React from 'react';
 import {View} from 'react-native';
 import HeaderIcon from '../components/basicComponents/HeaderIcon';
 import {APP_COLORS} from "../constants/colors";
-import {Location} from 'expo';
+import {MapView} from 'react-native-maps';
+
 
 import { Actions } from 'react-native-router-flux';
 import ConfigurationButton from "../components/basicComponents/ConfigurationButton";
 
 export default class HomeScreen extends React.Component {
-    // getLocationAsync() {
-    //     let location = Location.getCurrentPosition({});
-    //     console.log(location);
-    // };
     render() {
-        // this.getLocationAsync();
         const {viewStyle, viewButtons} = styles;
         return (
             <View style = {viewStyle}>
@@ -27,6 +23,7 @@ export default class HomeScreen extends React.Component {
                 <View style = {viewButtons}>
                     <ConfigurationButton iconName={ 'md-search'}
                                 colorName={ APP_COLORS.color_button_1}
+                                         colorIconName={ APP_COLORS.color_button_1}
                                 heightStyle={150}
                                 fontsizeStyle= {27}
                                 widthStyle = {200}
@@ -36,15 +33,17 @@ export default class HomeScreen extends React.Component {
                     />
                     <ConfigurationButton iconName={ 'md-eye'}
                                 colorName={ APP_COLORS.color_header}
+                                         colorIconName={ APP_COLORS.color_header}
                                 heightStyle={150}
                                 fontsizeStyle= {27}
                                 widthStyle = {200}
-                                path={() => Actions.activitatlist()}
+                                path={() => Actions.llistesActs()}
                                 isEvilType = {false}
                                 buttonText = {'VISUALIZAR ACTIVIDADES'}/>
 
                     <ConfigurationButton iconName={'md-add-circle'}
                                 colorName={ APP_COLORS.color_next}
+                                         colorIconName={ APP_COLORS.color_next}
                                 heightStyle={150}
                                 fontsizeStyle= {27}
                                 widthStyle = {200}

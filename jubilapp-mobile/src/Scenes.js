@@ -28,6 +28,7 @@ import FinDateModify from "./screens/modificarActivitatScreens/FinDateModify";
 import ActDescriptionModify from "./screens/modificarActivitatScreens/ActDescriptionModify";
 import ActivityInfo from "./screens/ActivityInfo";
 import BuscarActivitatScreen from "./screens/BuscarActivitatScreen";
+import ListsActivitiesScreen from "./screens/ListsActivitiesScreen";
 
 
 const Scenes = Actions.create(
@@ -59,6 +60,7 @@ const Scenes = Actions.create(
         <Scene key="actdescrMod" component={ActDescriptionModify}/>
 		<Scene key="info" component={ActivityInfo}/>
 		<Scene key="buscar" component={BuscarActivitatScreen}/>
+		<Scene key="llistesActs" component={ListsActivitiesScreen}/>
 
 
 	</Scene>

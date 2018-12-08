@@ -11,9 +11,9 @@ const ConfigurationButton = (props) => {
                 <Text style = {[styles.buttonTextStyle, {fontSize: props.fontsizeStyle}, {width: props.widthStyle}]}>
                     {props.buttonText}
                 </Text>
-                {props.isEvilType ? <EvilIcons name={props.iconName} size={40} color= {props.colorName}
+                {props.isEvilType ? <EvilIcons name={props.iconName} size={40} color= {props.colorIconName}
                                                style = {styles.iconStyle}/>:
-                    <Ionicons name={props.iconName} size={75} color= {props.colorName}
+                    <Ionicons name={props.iconName} size={75} color= {props.colorIconName}
                               style = {styles.iconStyle}/>}
             </TouchableOpacity>
         </View>

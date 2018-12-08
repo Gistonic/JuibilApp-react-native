@@ -37,6 +37,7 @@ const dibuixarBotons = (num) => {
             return  (
                 <ConfigurationButton key = {totsID.id} iconName={totsID.icon}
                     colorName={ APP_COLORS.color_button_1}
+                                     colorIconName={ APP_COLORS.color_button_1}
                     heightStyle={'90%'}
                     fontsizeStyle= {19}
                     widthStyle = {'63%'}
