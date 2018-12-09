@@ -2,8 +2,6 @@ import React from 'react';
 import {View} from 'react-native';
 import HeaderIcon from '../components/basicComponents/HeaderIcon';
 import {APP_COLORS} from "../constants/colors";
-import {MapView} from 'react-native-maps';
-
 
 import { Actions } from 'react-native-router-flux';
 import ConfigurationButton from "../components/basicComponents/ConfigurationButton";
