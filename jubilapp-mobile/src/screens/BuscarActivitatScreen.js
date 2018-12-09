@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Image, Text, Alert} from 'react-native';
+import {View, Alert, Text} from 'react-native';
 import {APP_COLORS} from "../constants/colors";
 import connect from "react-redux/es/connect/connect";
 import {Actions} from "react-native-router-flux";
@@ -7,6 +7,7 @@ import HeaderIcon from "../components/basicComponents/HeaderIcon";
 import CardModified from "../components/CardModified";
 import { EvilIcons, Ionicons } from '@expo/vector-icons';
 import {fetchActivitats,changeIterador} from "../actions/index";
+import Description from '../components/basicComponents/Description';
 
 class BuscarActivitatScreen extends React.Component {
 
@@ -14,8 +15,13 @@ class BuscarActivitatScreen extends React.Component {
         super(props);
         this._onPressDenegar = this._onPressDenegar.bind(this);
         this._onPressAcceptar = this._onPressAcceptar.bind(this);
+        this.esTres = this.esTres.bind(this);
     }
 
+    componentWillMount() {
+        //this.props.fetchActivitats()
+    }
+    
     _onPressDenegar(){
         Alert.alert(
             'Denegar Actividad',
@@ -38,9 +44,7 @@ class BuscarActivitatScreen extends React.Component {
         );
     }
     
-
-    render(){
-        const {texticonStyle,footer,circle,viewStyle,cardStyle,titleStyle,viewCard,textStyle,imageStyle,iconStyle} = styles;
+    esTres(){
         const activitatsTranslate= {
             art: {source: require('../images/artPES2.jpg')},
             sports: {source: require('../images/esportPES2.jpg')},
@@ -48,9 +52,47 @@ class BuscarActivitatScreen extends React.Component {
             trips: {source: require('../images/excursionesPES2.jpg')},
             workshops: {source: require('../images/talleresPES2.jpg')},
             leisure: {source: require('../images/ocioPES3.jpg')}
+        };
+        if(this.props.iterador == this.props.activitats_trobades.length){
+            return(
+                <View style = {styles.viewbuitStyle}>
+                    <Description textExpl = "No se encuentran más actividades"/>
+                </View>
+            )
         }
-        {console.log("HOLAAAAA", this.props.activitats_trobades);}
-        {console.log("HOLAA1",this.props.iterador)}
+        else {
+            return(
+                <View>
+                <View style = {styles.viewCard}>
+                    <CardModified image = {activitatsTranslate[this.props.activitats_trobades[this.props.iterador].tipus].source}
+                            nom =  {this.props.activitats_trobades[this.props.iterador].nom}
+                            ubicacio = {this.props.activitats_trobades[this.props.iterador].ubicacio}
+                            dataIni = {this.props.activitats_trobades[this.props.iterador].dataIni}
+                            dataFi = {this.props.activitats_trobades[this.props.iterador].dataFi}
+                            horaIni = {this.props.activitats_trobades[this.props.iterador].horaIni}
+                            horaFi = {this.props.activitats_trobades[this.props.iterador].horaFi}/>
+                </View>
+                <View style={styles.footer}>
+                <View style={styles.circle} backgroundColor = {APP_COLORS.color_header}>
+                    <Ionicons name="md-close" size={70} color={APP_COLORS.color_neutral}
+                    onPress = {this._onPressDenegar} />
+                </View>
+                <View style={styles.circle} backgroundColor = {APP_COLORS.color_back}>
+                    <Ionicons name="md-information" size={70} color={APP_COLORS.color_neutral}/>
+                </View>
+                <View style={styles.circle} backgroundColor = "#125E38">
+                    <Ionicons name="md-checkmark" size={70} color={APP_COLORS.color_neutral} 
+                    onPress = {this._onPressAcceptar}/>
+                </View>
+            </View>
+            </View>
+            ); 
+        }
+    }
+
+    render(){
+        const {viewStyle} = styles;
+        
         return(
             <View style = {viewStyle}>
                 <HeaderIcon headerText = "Buscar Actividad"
@@ -60,35 +102,10 @@ class BuscarActivitatScreen extends React.Component {
                                 textSize = {35}
                                 path={() => Actions.home()}
                 />
-                <View>
-                    <View style = {viewCard}>
-                        <CardModified image = {activitatsTranslate[this.props.activitats_trobades[this.props.iterador].tipus].source}
-                                        nom =  {this.props.activitats_trobades[this.props.iterador].nom}
-                                        ubicacio = {this.props.activitats_trobades[this.props.iterador].ubicacio}
-                                        dataIni = {this.props.activitats_trobades[this.props.iterador].dataIni}
-                                        dataFi = {this.props.activitats_trobades[this.props.iterador].dataFi}
-                                        horaIni = {this.props.activitats_trobades[this.props.iterador].horaIni}
-                                        horaFi = {this.props.activitats_trobades[this.props.iterador].horaFi}
-                        />
-                    </View>
-                    <View style={footer}>
-                        <View style={circle} backgroundColor = {APP_COLORS.color_header}>
-                            <Ionicons name="md-close" size={70} color={APP_COLORS.color_neutral}
-                            onPress = {this._onPressDenegar} />
-                        </View>
-                        <View style={circle} backgroundColor = {APP_COLORS.color_back}>
-                            <Ionicons name="md-information" size={70} color={APP_COLORS.color_neutral}/>
-                        </View>
-                        <View style={circle} backgroundColor = "#125E38">
-                            <Ionicons name="md-checkmark" size={70} color={APP_COLORS.color_neutral} 
-                            onPress = {this._onPressAcceptar}/>
-                        </View>
-                    </View>
-                </View>  
+                {this.esTres()} 
             </View>         
         );
     }
-
 }
 
 const styles ={
@@ -100,6 +117,10 @@ const styles ={
     texticonStyle: {
         flexDirection: 'row',
         margin: '2%'
+    },
+    viewbuitStyle:{
+        alignItems: 'center',
+        paddingTop: '50%'
     },
     circle:{
         width: 75,
@@ -185,4 +206,5 @@ const  mapDispatchToProps = (dispatch)=>{
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(BuscarActivitatScreen)
+
 

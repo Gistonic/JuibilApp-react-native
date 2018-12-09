@@ -45,9 +45,9 @@ const buscarActivityReducer = (state = INITIAL_STATE, action)=>{
         case BUSCAR_ACTIVITY_ACTIONS.FetchActivitats:
             return state
         case BUSCAR_ACTIVITY_ACTIONS.ReceiveActivitats:
-            return state
+            return {...state, activitats_trobades: action.payload}
         case BUSCAR_ACTIVITY_ACTIONS.ChangeIterador:
-            return{ ...state, iterador: state.iterador+1};
+            return { ...state, iterador: state.iterador+1};
         default: return state
     }
 }
