@@ -25,7 +25,7 @@ class BuscarActivitatScreen extends React.Component {
     _onPressDenegar(){
         Alert.alert(
             'Denegar Actividad',
-            'La actividad se añadira a la lista de NO APUNTADAS.',
+            'La actividad '+ this.props.activitats_trobades[this.props.iterador].nom +' se añadira a la lista de NO APUNTADAS.',
             [
               {text: 'OK', onPress: () => this.props.changeIterador()},
             ],
@@ -36,7 +36,7 @@ class BuscarActivitatScreen extends React.Component {
     _onPressAcceptar(){
         Alert.alert(
             'Aceptar Actividad',
-            'La actividad se añadira a la lista de APUNTADAS.',
+            'La actividad '+ this.props.activitats_trobades[this.props.iterador].nom +' se añadira a la lista de APUNTADAS.',
             [
               {text: 'OK', onPress: () => this.props.changeIterador()},
             ],
