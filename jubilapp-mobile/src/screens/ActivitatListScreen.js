@@ -1,5 +1,5 @@
 import React from 'react';
-import {View} from 'react-native';
+import { View, ActivityIndicator } from 'react-native';
 import {APP_COLORS} from "../constants/colors";
 import ActivitatItem from "../components/ActivitatItem";
 import connect from "react-redux/es/connect/connect";
@@ -8,12 +8,38 @@ import HeaderIcon from "../components/basicComponents/HeaderIcon";
 import { fetchActivities , deleteActivity} from "../actions/ListActivitiesActions";
 
 class ActivitatListScreen extends React.Component {
+    constructor(props) {
+        super(props)
+
+        this.renderActivities = this.renderActivities.bind(this)
+    }
+
     componentWillMount() {
         this.props.fetchActivities('/own')
     }
 
+    renderActivities() {
+        const { activitatStyle } = styles;
+        const { activities, isFetching } = this.props;
+        console.log('IsFetching: ' + isFetching)
+        if (isFetching) {
+            return (
+                <View>
+                    <ActivityIndicator size="large"/>
+                </View>
+            );
+        } else {
+            return activities.map((activity) => {
+                return (
+                    <ActivitatItem key={activity.id} nomActivitat = {activity.name} style = {activitatStyle} id={activity.id} screen = 'Creades' deleteActivity = {this.props.deleteActivity}/>
+                )
+            });
+        }
+    }
+
     render() {
-        const {viewStyle,activitatStyle} = styles;
+        const {viewStyle} = styles;
+        //console.log('IsFetching: ' + this.props)
         return (
             <View style = {viewStyle}>
 
@@ -26,11 +52,7 @@ class ActivitatListScreen extends React.Component {
                             isEvilType = {true}
                 />
                 {
-                    this.props.activities.map((activity) => {
-                        return (
-                            <ActivitatItem key={activity.id} nomActivitat = {activity.name} style = {activitatStyle} id={activity.id} screen = 'Creades' deleteActivity = {this.props.deleteActivity}/>
-                        )
-                    })
+                    this.renderActivities()
                 }
 
 
@@ -51,7 +73,8 @@ const styles ={
 
 const mapStateToProps = (state) => {
     return {
-        activities: state.listActivities.activities
+        activities: state.listActivities.activities,
+        isFetching: state.listActivities.isFetching
     }
 }
 

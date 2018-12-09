@@ -21,11 +21,15 @@ export const changeLoginFormProperty=(propertyName, value) =>{
     }
 } */
 const tokens = "";
-const receiveLogin = async (token) => {
+const receiveLogin = (token) => {
     //localstorage("token", token);
     //_storeData();
-    await AsyncStorage.setItem('token', token);
-    Actions.welcome();
+    AsyncStorage.setItem('token', token, (err) => {
+        if (err) {
+            console.log('Error saving token: ' + token)
+        }
+        Actions.welcome();
+    });
     return {
         type: LOGIN_FORM_ACTIONS.ReceiveLogin,
         payload: token

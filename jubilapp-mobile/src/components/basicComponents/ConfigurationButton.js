@@ -24,7 +24,7 @@ const styles = {
     viewStyle: {
         flex: 1,
         alignItems: 'center',
-        paddingTop: '5%',
+        paddingTop: 10,
     },
     buttonTextStyle: {
         paddingLeft: '8%',

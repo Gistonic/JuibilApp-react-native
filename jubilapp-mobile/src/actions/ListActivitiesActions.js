@@ -10,10 +10,9 @@ const recieveActivities =(activities)=>{
         payload: activities
     }
 }
-const requestActivities =(activities)=>{
+const requestActivities =()=>{
     return {
-        type: LIST_ACTIVITIES_ACTIONS.RequestActivities,
-        payload: activities
+        type: LIST_ACTIVITIES_ACTIONS.RequestActivities
     }
 }
 
@@ -29,24 +28,33 @@ export const deleteActivity = (id) => {
 export const fetchActivities = (tipus) => {
     return (dispatch) => {
         AsyncStorage.getItem('token').then((token) => {
+            console.log('Token: ' + token);
             const baseUrl = 'http://ordinadorcasa.no-ip.org:4100/event';
             const finalPath = baseUrl + tipus;
+
+            dispatch(requestActivities())
+
             fetch(finalPath, {
                 method: 'GET',
                 headers: {
                     Accept: 'application/json',
                     'Content-Type': 'application/json',
-                    Authorization: 'Bearer ' + token,
-
+                    Authorization: 'Bearer ' + token
                 },
                 dataType: 'json',
-            }).then((resp) =>
-                resp.json().then((body) => dispatch(requestActivities(body.events))))
+            }).then((resp) => {
+                resp.json().then((body) => {
+                    dispatch(recieveActivities(body.events))
+                })
+            })
         });
     }
 }
 
-export const fetchActivitiesOld = () => {
+
+// MOCKS
+
+export const fetchActivitiesMock = () => {
     return(dispatch)=>{
       //  dispatch(requestActivities())
 
@@ -63,10 +71,6 @@ export const fetchActivitiesOld = () => {
         // })
     }
 }
-
-
-
-
 
 const activitiesMock = [
     {

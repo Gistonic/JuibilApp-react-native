@@ -19,38 +19,40 @@ const botonsModificar= [
         id:1,
         typeName: 'DESCRIPCION ACTIVIDAD', path: 'Actions.actdescrMod()', icon: 'comment'
     },
+    // {
+    //     id:2,
+    //     typeName: 'FECHA ACTIVIDAD', path: 'Actions.iniDateMod()', icon: 'calendar'
+    // },
     {
         id:2,
-        typeName: 'FECHA ACTIVIDAD', path: 'Actions.iniDateMod()', icon: 'calendar'
-    },
-    {
-        id:3,
         typeName: 'HORA ACTIVIDAD', path: 'Actions.iniHourMod()', icon: 'clock'
     }
 ]
 
 
-const dibuixarBotons = (num) => {
-        //el num es per distingir a quina columna aniran, la dreta es per tots aquells que tenen id parell i lesquerra pels ids imparells
-    return botonsModificar.map((totsID)=> {
-        if((totsID.id %2) == num) {
-            return  (
-                <ConfigurationButton key = {totsID.id} iconName={totsID.icon}
-                    colorName={ APP_COLORS.color_button_1}
-                                     colorIconName={ APP_COLORS.color_button_1}
-                    heightStyle={'90%'}
-                    fontsizeStyle= {19}
-                    widthStyle = {'63%'}
-                    buttonText = {totsID.typeName}
-                    isEvilType = {true}/>
-            );
-        }
-    }
-    );
-}
-
-
 export default class ModificarActivitatScreen extends React.Component {
+    constructor(props) {
+        super(props)
+
+        this.dibuixarBotons = this.dibuixarBotons.bind(this);
+    }
+    dibuixarBotons = (num) => {
+        //el num es per distingir a quina columna aniran, la dreta es per tots aquells que tenen id parell i lesquerra pels ids imparells
+        return botonsModificar.map((totsID)=> {
+            if((totsID.id %2) == num) {
+                return  (
+                    <ConfigurationButton key = {totsID.id} iconName={totsID.icon}
+                        colorName={ APP_COLORS.color_button_1}
+                        colorIconName={ APP_COLORS.color_button_1}
+                        heightStyle={150}
+                        fontsizeStyle= {19}
+                        widthStyle = {'63%'}
+                        buttonText = {totsID.typeName}
+                        isEvilType = {true}/>
+                );
+            }
+        });
+    }
     render() {
         const {viewStyle, viewButtons,container,container1} = styles;
         return (
@@ -68,10 +70,10 @@ export default class ModificarActivitatScreen extends React.Component {
 
                 <View style = {viewButtons}>
                     <View style = {container}>
-                        {dibuixarBotons(0)}
+                        {this.dibuixarBotons(0)}
                     </View>
                     <View style = {container}>
-                        {dibuixarBotons(1)}
+                        {this.dibuixarBotons(1)}
                     </View>
                     
                         
