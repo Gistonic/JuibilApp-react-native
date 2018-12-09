@@ -12,6 +12,13 @@ const recieveActivitats = (activitats) =>{
     }
 }
 
+export const changeBuscarActivityForm=(value) =>{
+    return {
+        type:BUSCAR_ACTIVITY_ACTIONS.ChangeProperty,
+        payload: value,
+    }
+};
+
 export const fetchActivitats = () =>{
     dispatch(recieveActivitats(activitatsMock));
 }

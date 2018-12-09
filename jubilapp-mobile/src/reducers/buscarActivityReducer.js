@@ -36,7 +36,8 @@ const INITIAL_STATE ={
             descripcio: "Comentem el llibre Acid House de Irvine Welsh.",
             tipus: "culture"
         }
-    ]
+    ],
+    location: null
 }
 
 const buscarActivityReducer = (state = INITIAL_STATE, action)=>{
@@ -44,6 +45,8 @@ const buscarActivityReducer = (state = INITIAL_STATE, action)=>{
     switch (action.type) {
         case BUSCAR_ACTIVITY_ACTIONS.FetchActivitats:
             return state
+        case BUSCAR_ACTIVITY_ACTIONS.ChangeProperty:
+            return {...state, location: action.payload}
         case BUSCAR_ACTIVITY_ACTIONS.ReceiveActivitats:
             return {...state, activitats_trobades: action.payload}
         case BUSCAR_ACTIVITY_ACTIONS.ChangeIterador:

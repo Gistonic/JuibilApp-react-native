@@ -6,8 +6,9 @@ import {Actions} from "react-native-router-flux";
 import HeaderIcon from "../components/basicComponents/HeaderIcon";
 import CardModified from "../components/CardModified";
 import { EvilIcons, Ionicons } from '@expo/vector-icons';
-import {fetchActivitats,changeIterador} from "../actions/index";
+import {fetchActivitats,changeIterador, changeBuscarActivityForm} from "../actions/index";
 import Description from '../components/basicComponents/Description';
+import { Constants, Location, Permissions } from 'expo';
 
 class BuscarActivitatScreen extends React.Component {
 
@@ -19,8 +20,24 @@ class BuscarActivitatScreen extends React.Component {
     }
 
     componentWillMount() {
+        if (Platform.OS === 'android' && !Constants.isDevice) {
+            console.log('Oops, this will not work on Sketch in an Android emulator. Try it on your device!');
+        } else {
+            this._getLocationAsync();
+        }
+
         //this.props.fetchActivitats()
+
     }
+    _getLocationAsync = async () => {
+        let { status } = await Permissions.askAsync(Permissions.LOCATION);
+        if (status !== 'granted') {
+            console.log('Permission to access location was denied');
+        }
+
+        let location = await Location.getCurrentPositionAsync({});
+        this.props.changeBuscarActivityForm(JSON.stringify(location));
+    };
     
     _onPressDenegar(){
         Alert.alert(
@@ -163,11 +180,6 @@ const styles ={
     activitatStyle: {
         paddingTop: '5%'
     },
-    imageStyle: {
-        borderRadius: 8,
-        height: '60%',
-        width: '80%'
-    },
     iconStyle: {
         paddingLeft: '2%'
     },
@@ -194,14 +206,16 @@ const styles ={
 const mapStateToProps = (state) => {
     return {
         activitats_trobades: state.buscarActivity.activitats_trobades,
-        iterador: state.buscarActivity.iterador
+        iterador: state.buscarActivity.iterador,
+        location: state.buscarActivity.location,
     }
 }
 
 const  mapDispatchToProps = (dispatch)=>{
     return {
         fetchActivitats: ()=>dispatch(fetchActivitats()),
-        changeIterador: ()=>dispatch(changeIterador())
+        changeIterador: ()=>dispatch(changeIterador()),
+        changeBuscarActivityForm: (value)=> dispatch(changeBuscarActivityForm(value)),
     }
 }
 

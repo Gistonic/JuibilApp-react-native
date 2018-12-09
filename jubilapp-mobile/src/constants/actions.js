@@ -44,5 +44,6 @@ export const KILOMETRES_PROFILE_ACTIONS={
 export const BUSCAR_ACTIVITY_ACTIONS={
     FetchActivitats: 'FETCH_ACTIVITATS',
     RecieveActivitats: 'RECIEVE_ACTIVITATS',
-    ChangeIterador: 'CHANGE_ITERADOR'
+    ChangeIterador: 'CHANGE_ITERADOR',
+    ChangeProperty: 'CHANGE_PROPERTY',
 }
