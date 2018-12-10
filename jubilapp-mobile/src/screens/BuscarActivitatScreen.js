@@ -36,7 +36,7 @@ class BuscarActivitatScreen extends React.Component {
         }
 
         let location = await Location.getCurrentPositionAsync({});
-        this.props.changeBuscarActivityForm(JSON.stringify(location));
+        this.props.changeBuscarActivityForm(location);
     };
     
     _onPressDenegar(){
