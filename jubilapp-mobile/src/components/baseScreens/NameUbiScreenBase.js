@@ -5,6 +5,7 @@ import HeaderIcon from '../basicComponents/HeaderIcon';
 import NextButton from '../basicComponents/NextButton';
 import ButtonBack from '../basicComponents/ButtonBack';
 import {APP_COLORS} from "../../constants/colors";
+import { Actions } from 'react-native-router-flux';
 
 export default class NameUbiScreenBase extends React.Component {
     render() {

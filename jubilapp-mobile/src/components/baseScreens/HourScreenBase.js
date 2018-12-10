@@ -8,6 +8,7 @@ import HeaderIcon from '../basicComponents/HeaderIcon';
 import Description from "../basicComponents/Description";
 import ButtonBack from "../basicComponents/ButtonBack";
 import NextButton from "../basicComponents/NextButton";
+import { Actions } from 'react-native-router-flux';
 
 export default class HourScreenBase extends React.Component {
 
