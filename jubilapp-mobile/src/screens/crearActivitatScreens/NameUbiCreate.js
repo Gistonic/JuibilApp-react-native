@@ -16,7 +16,8 @@ class NameUbiCreate extends React.Component {
                                previousScreen={() => Actions.home()}
                                enabledLocation = {true}
                                enabledName = {true}
-                               headerName = "Crear Actividad"/>
+                               headerName = "Crear Actividad"
+                               hideUbi = {false} />
         )
     }
 }

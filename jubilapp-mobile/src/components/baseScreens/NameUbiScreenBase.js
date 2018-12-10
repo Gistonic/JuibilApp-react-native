@@ -30,12 +30,14 @@ export default class NameUbiScreenBase extends React.Component {
                                            enabled = {this.props.enabledName}
                                 />
                             </View>
-                            <Formulari textExplicatiu = {'Introduce la ubicación'}
+                            {!this.props.hideUbi &&
+                                <Formulari textExplicatiu = {'Introduce la ubicación'}
                                        textPlaceHolder = {'Ubicación'}
                                        tipusTeclat = {'default'}
                                        value = {this.props.location}
                                        onChangeText={(text) => this.props.changeFormLocation(text)}
                                        enabled = {this.props.enabledLocation}/>
+                            }
                         </View>
                         <View style = {container}>
                             <ButtonBack buttonText = {'Atrás'}

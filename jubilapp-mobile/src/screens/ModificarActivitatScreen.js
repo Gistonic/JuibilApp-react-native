@@ -39,7 +39,7 @@ export default class ModificarActivitatScreen extends React.Component {
     dibuixarBotons = (num) => {
         //el num es per distingir a quina columna aniran, la dreta es per tots aquells que tenen id parell i lesquerra pels ids imparells
         return botonsModificar.map((totsID)=> {
-            if((totsID.id %2) == num) {
+            if((totsID.id %2) === num) {
                 return  (
                     <ConfigurationButton key = {totsID.id} iconName={totsID.icon}
                         colorName={ APP_COLORS.color_button_1}
@@ -48,7 +48,8 @@ export default class ModificarActivitatScreen extends React.Component {
                         fontsizeStyle= {19}
                         widthStyle = {'63%'}
                         buttonText = {totsID.typeName}
-                        isEvilType = {true}/>
+                        isEvilType = {true}
+                        path={totsID.path}/>
                 );
             }
         });

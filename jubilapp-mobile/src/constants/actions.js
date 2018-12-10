@@ -47,3 +47,11 @@ export const BUSCAR_ACTIVITY_ACTIONS={
     ChangeIterador: 'CHANGE_ITERADOR',
     ChangeProperty: 'CHANGE_PROPERTY',
 }
+
+export const MODIFICAR_ACTIVITY_ACTIONS = {
+    RequestActivityValue: 'FETCH_ACTIVITY_VALUE',
+    ReceiveActivityValue: 'RECEIVE_ACTIVITY_VALUE',
+    ChangeActivityValue: 'CHANGE_ACTIVITY_VALUE',
+    RequestPatchActivityValue: 'REQUEST_PATCH_ACTIVITY_VALUE',
+    ReceivePatchActivityValue: 'RECEIVE_PATCH_ACTIVITY_VALUE'
+}
