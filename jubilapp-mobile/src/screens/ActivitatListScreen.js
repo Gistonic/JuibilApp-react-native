@@ -5,7 +5,7 @@ import ActivitatItem from "../components/ActivitatItem";
 import connect from "react-redux/es/connect/connect";
 import {Actions} from "react-native-router-flux";
 import HeaderIcon from "../components/basicComponents/HeaderIcon";
-import { fetchActivities , deleteActivity} from "../actions/ListActivitiesActions";
+import { fetchActivities , deleteActivity, setModifyActivityId} from "../actions/ListActivitiesActions";
 
 class ActivitatListScreen extends React.Component {
     constructor(props) {
@@ -21,7 +21,6 @@ class ActivitatListScreen extends React.Component {
     renderActivities() {
         const { activitatStyle } = styles;
         const { activities, isFetching } = this.props;
-        console.log('IsFetching: ' + isFetching)
         if (isFetching) {
             return (
                 <View>
@@ -31,7 +30,14 @@ class ActivitatListScreen extends React.Component {
         } else {
             return activities.map((activity) => {
                 return (
-                    <ActivitatItem key={activity.id} nomActivitat = {activity.name} style = {activitatStyle} id={activity.id} screen = 'Creades' deleteActivity = {this.props.deleteActivity}/>
+                    <ActivitatItem key={activity.id}
+                                   dataIni ={activity.startDate}
+                                   dataEnd ={activity.endDate}
+                                   nomActivitat = {activity.name}
+                                   style = {activitatStyle}
+                                   id={activity.id} screen = 'Creades'
+                                   deleteActivity = {this.props.deleteActivity}
+                                   setModifyActivityId={this.props.setModifyActivityId}/>
                 )
             });
         }
@@ -81,7 +87,8 @@ const mapStateToProps = (state) => {
 const  mapDispatchToProps = (dispatch)=>{
     return {
         fetchActivities: (value)=>dispatch(fetchActivities(value)),
-        deleteActivity: (value) => dispatch(deleteActivity(value))
+        deleteActivity: (value) => dispatch(deleteActivity(value)),
+        setModifyActivityId:(id) => dispatch(setModifyActivityId(id))
     }
 }
 

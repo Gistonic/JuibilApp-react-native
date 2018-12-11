@@ -29,6 +29,13 @@ const modifyActivityReducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 isPatching: false
             };
+
+        case MODIFICAR_ACTIVITY_ACTIONS.ChangeActivityValue:
+            return {
+                ...state,
+                value: action.payload
+
+            }
         default:
             return state
     }

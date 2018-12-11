@@ -21,7 +21,13 @@ class ActivitatItem extends React.Component {
         return (
             <View style={styles.viewStyle}>
                 <View>
-                    <Text style={styles.textStyle}>{this.props.nomActivitat}</Text>
+                    <Text style={styles.textStyle}>
+                        {this.props.dataIni}
+                        {this.props.dataEnd}
+                        {this.props.nomActivitat}
+
+
+                        </Text>
                 </View>
                 <View style={styles.viewIconStyle}>
                     <EvilIcons name='eye' size={60} color={APP_COLORS.color_button_1} style={styles.iconStyle}
@@ -31,6 +37,7 @@ class ActivitatItem extends React.Component {
                     <EvilIcons name='pencil' size={60} color={APP_COLORS.color_next} style={styles.iconStyle}
                                onPress={() => {
                                    Actions.modificaractivitat()
+                                   this.props.setModifyActivityId(this.props.id)
                                }}/>
                     <EvilIcons name='trash' size={60} color={APP_COLORS.color_header} style={styles.iconStyle}
                                onPress = {this._onPress}/>

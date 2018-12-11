@@ -22,7 +22,8 @@ const activitiesTranslate= [
 
 const INITIAL_STATE = {
     activities: [],
-    isFetching: false
+    isFetching: false,
+    modifyActivityId: null
 };
 
 export const listActivitiesReducer = (state = INITIAL_STATE, action) => {
@@ -31,7 +32,6 @@ export const listActivitiesReducer = (state = INITIAL_STATE, action) => {
             return state
         case LIST_ACTIVITIES_ACTIONS.ReceiveActivities:
             const activities = action.payload.map(activity=>{
-                console.log('ActivityType: ' + activity.type)
                 const {typeName,path}=activitiesTranslate[activity.type]
 
                 return {
@@ -52,6 +52,12 @@ export const listActivitiesReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 isFetching: true
+            }
+
+        case LIST_ACTIVITIES_ACTIONS.SetModifyActivityId:
+            return {
+                ...state,
+                modifyActivityId: action.payload
             }
         default:
             return state

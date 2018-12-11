@@ -13,19 +13,20 @@ import NextButton from "../components/basicComponents/NextButton";
 const botonsModificar= [
     {
         id:0,
-        typeName: 'NOMBRE ACTIVIDAD', path: 'Actions.nameMod()', icon: 'pencil'
+        typeName: 'NOMBRE ACTIVIDAD', path: ()=>Actions.nameMod(), icon: 'pencil'
     },
     {
         id:1,
-        typeName: 'DESCRIPCION ACTIVIDAD', path: 'Actions.actdescrMod()', icon: 'comment'
+        typeName: 'DESCRIPCION ACTIVIDAD', path: ()=>Actions.actdescrMod(), icon: 'comment'
     },
-    // {
-    //     id:2,
-    //     typeName: 'FECHA ACTIVIDAD', path: 'Actions.iniDateMod()', icon: 'calendar'
-    // },
+
     {
         id:2,
-        typeName: 'HORA ACTIVIDAD', path: 'Actions.iniHourMod()', icon: 'clock'
+        typeName: 'HORA INICIAL ACTIVIDAD', path: ()=>Actions.iniHourMod(), icon: 'clock'
+    },
+    {
+        id:3,
+        typeName: 'HORA FINAL ACTIVIDAD', path: ()=>Actions.finHourMod(), icon: 'clock'
     }
 ]
 
@@ -56,6 +57,7 @@ export default class ModificarActivitatScreen extends React.Component {
     }
     render() {
         const {viewStyle, viewButtons,container,container1} = styles;
+        console.log('render modificar')
         return (
             <View style = {viewStyle}>
 
@@ -80,10 +82,9 @@ export default class ModificarActivitatScreen extends React.Component {
                         
                 </View>
                 <View style = {container1}>
-                    <ButtonBack buttonText = {'Cancelar'}
-                                path = {() => Actions.home()}/>
-                    <NextButton buttonText = {'Finalizar'}
-                                path = {() => Actions.home()}/>
+                    <ButtonBack buttonText = {'Volver'}
+                                path = {() => Actions.activitatlist()}/>
+
                 </View>
             </View>
         );
