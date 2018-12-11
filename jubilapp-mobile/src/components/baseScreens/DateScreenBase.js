@@ -55,7 +55,7 @@ export default class DateScreenBase extends React.Component {
                                 colorName={ APP_COLORS.color_neutral}
                                 size = {75}
                                 textSize = {35}
-                                path={() => pressPopup('Salir de Crear Actividad', 'Desea ir al menú principal y perder todos los cambios?')}
+                                path={() => pressPopup('Salir', 'Desea ir al menú principal y perder todos los cambios?')}
                 />
                 <View style={viewButtons}>
                     <View style={{paddingLeft: '8%', paddingRight: '8%'}}>
