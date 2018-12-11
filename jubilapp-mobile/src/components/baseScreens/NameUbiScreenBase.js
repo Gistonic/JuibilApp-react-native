@@ -1,10 +1,12 @@
 import React from 'react';
-import {View, KeyboardAvoidingView} from 'react-native';
+import {View, KeyboardAvoidingView,Alert} from 'react-native';
 import Formulari from '../basicComponents/Formulari';
 import HeaderIcon from '../basicComponents/HeaderIcon';
 import NextButton from '../basicComponents/NextButton';
 import ButtonBack from '../basicComponents/ButtonBack';
 import {APP_COLORS} from "../../constants/colors";
+import { Actions } from 'react-native-router-flux';
+import {pressPopup} from "../../pressPopup";
 
 export default class NameUbiScreenBase extends React.Component {
     render() {
@@ -17,7 +19,7 @@ export default class NameUbiScreenBase extends React.Component {
                                 colorName={ APP_COLORS.color_neutral}
                                 size = {75}
                                 textSize = {35}
-                                path={() => Actions.home()}
+                                path={() => pressPopup('Salir de Crear Actividad', 'Desea ir al menú principal y perder todos los cambios?')}
                 />
                     <View style = {viewStyle1}>
                         <View style = {vista1Style}>

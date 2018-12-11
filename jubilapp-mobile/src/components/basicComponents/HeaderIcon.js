@@ -1,9 +1,24 @@
 import React from 'react';
-import {Text, View, TouchableOpacity } from 'react-native';
+import {Text, View, TouchableOpacity, Alert } from 'react-native';
 import {APP_COLORS} from "../../constants/colors";
+import {Actions} from "react-native-router-flux";
 import { FontAwesome } from '@expo/vector-icons';
 
+
 const HeaderIcon = (props) => {
+
+    const pressPopup = () =>{
+        Alert.alert(
+            'Salir de Crear Actividad',
+            'Desea cancelar la creación de esta actividad y perder todos los cambios?',
+            [
+                {text: 'No'},
+                {text: 'Sí', onPress: () => Actions.home()},
+            ],
+            { cancelable: false }
+        );    
+    }
+    
     const {textStyle,viewStyle} = styles;
     return(
         <View style = {viewStyle}>

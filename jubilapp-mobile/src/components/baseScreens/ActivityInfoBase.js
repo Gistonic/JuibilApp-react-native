@@ -5,6 +5,7 @@ import Header from "../../components/basicComponents/Header";
 import CardActionCreades from "../CardActionCreades";
 import {Actions} from "react-native-router-flux";
 
+
 export default class ActivityInfoBase extends React.Component {
     _selectSource(type) {
         if (type === 'art') return require('../../images/artPES2.jpg');

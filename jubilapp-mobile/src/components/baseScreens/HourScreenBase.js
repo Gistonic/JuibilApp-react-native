@@ -8,6 +8,8 @@ import HeaderIcon from '../basicComponents/HeaderIcon';
 import Description from "../basicComponents/Description";
 import ButtonBack from "../basicComponents/ButtonBack";
 import NextButton from "../basicComponents/NextButton";
+import { Actions } from 'react-native-router-flux';
+import {pressPopup} from "../../pressPopup";
 
 export default class HourScreenBase extends React.Component {
 
@@ -41,7 +43,7 @@ export default class HourScreenBase extends React.Component {
                                 colorName={ APP_COLORS.color_neutral}
                                 size = {75}
                                 textSize = {35}
-                                path={() => Actions.home()}
+                                path={() => pressPopup('Salir de Crear Actividad', 'Desea ir al menú principal y perder todos los cambios?')}
                 />
                 <View style = {viewButtons}>
                     <View style={{paddingLeft: '8%', paddingRight: '8%'}}>

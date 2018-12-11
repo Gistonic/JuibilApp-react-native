@@ -11,7 +11,8 @@ import ButtonBack from "../../components/basicComponents/ButtonBack";
 import NextButton from "../../components/basicComponents/NextButton";
 import {changeCreateActivityFormProperty} from "../../actions/index";
 import connect from "react-redux/es/connect/connect";
-import { createActivity } from '../../actions/index'
+import { createActivity } from '../../actions/index';
+import {pressPopup} from "../../pressPopup";
 
 class SelectTypeCreate extends React.Component {
     constructor(props) {
@@ -74,7 +75,7 @@ class SelectTypeCreate extends React.Component {
                                 colorName={ APP_COLORS.color_neutral}
                                 size = {75}
                                 textSize = {35}
-                                path={() => Actions.home()}
+                                path={() => pressPopup('Salir de Crear Actividad', 'Desea cancelar la creación de esta actividad y perder todos los cambios?')}
                 />
                 <Description textExpl = {'Selecciona el tipo'}/>
                 <View style = {viewInteressos} >
