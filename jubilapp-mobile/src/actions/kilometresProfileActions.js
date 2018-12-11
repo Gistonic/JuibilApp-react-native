@@ -75,32 +75,33 @@ export const fetchKilometresOld = () => {
 
 export const kilometresProfile = (km_num) => {
     return () => {
-        AsyncStorage.getItem('token').then((data) => {
-            this.token = data
+        AsyncStorage.getItem('token').then((token) => {
+            fetch('http://ordinadorcasa.no-ip.org:4100/profile', {
+                method: 'PATCH',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                    Authorization: 'Bearer ' + token
+                },
+                body: JSON.stringify({searchDistance: km_num}) //CANVIAR
+            }).then(response => {
+                console.log(response)
+                if (response.ok) {
+                    console.log(response.ok)
+
+                    return response.json()
+
+                } else {
+                    console.log('Error sending kilometres profile')
+                }
+            }).catch(err => {
+                console.log(err)
+            })
         });
-        fetch('http://ordinadorcasa.no-ip.org:4100/profile', {
-            method: 'PATCH',
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
-                Authorization: 'Bearer ' + this.token
-            },
-            body: JSON.stringify({searchDistance: km_num}) //CANVIAR
-        }).then(response => {
-            console.log(response)
-            if (response.ok) {
-                console.log(response.ok)
-
-                return response.json()
-
-            } else {
-                console.log('Error sending kilometres profile')
-            }
-        }).catch(err => {
-            console.log(err)
-        })
-        Actions.home();
+            Actions.home();
+        
+        }
     }
-}
+
 
 const kilometresMock = '25';
