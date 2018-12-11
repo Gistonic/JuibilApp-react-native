@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {View, Text} from 'react-native';
+import {View, Text,Alert} from 'react-native';
 import {APP_COLORS} from "../constants/colors";
 import {EvilIcons} from "@expo/vector-icons";
 import {Actions} from "react-native-router-flux";
@@ -13,7 +13,15 @@ class ActivitatItem extends React.Component {
 
     }
     _onPress() {
-        this.props.deleteActivity(this.props.id);
+        Alert.alert(
+            'Eliminar actividad',
+            'Seguro que desea eliminar la actividad '+this.props.nomActivitat+'?',
+            [
+                {text: 'No'},
+                {text: 'Sí', onPress: () => this.props.deleteActivity(this.props.id)},
+            ],
+            { cancelable: false }
+        );    
         Actions.home();
     }
     render ()

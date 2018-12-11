@@ -1,15 +1,17 @@
 import React from 'react';
-import {KeyboardAvoidingView, View, TextInput} from 'react-native';
+import {KeyboardAvoidingView, View, TextInput, Alert} from 'react-native';
 import HeaderIcon from '../../components/basicComponents/HeaderIcon';
 import NextButton from '../../components/basicComponents/NextButton';
 import ButtonBack from '../../components/basicComponents/ButtonBack';
-import { Actions } from 'react-native-router-flux';
 import Description from "../../components/basicComponents/Description";
 import {APP_COLORS} from "../../constants/colors";
+import {pressPopup} from "../../pressPopup";
 
 
 
 export default class ActDescriptionScreenBase extends React.Component {
+    
+
     render() {
         const {viewStyle, container, viewStyle1, textStyle} = styles;
         return (
@@ -20,7 +22,7 @@ export default class ActDescriptionScreenBase extends React.Component {
                                 colorName={ APP_COLORS.color_neutral}
                                 size = {75}
                                 textSize = {35}
-                                path={() => Actions.home()}
+                                onPress={() => pressPopup('Salir', 'Desea ir al menú principal y perder todos los cambios?')}
                     />
                     <View style = {viewStyle1}>
                         <Description textExpl = "Describe la actividad"/>
