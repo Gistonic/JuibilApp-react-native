@@ -3,7 +3,7 @@ import {APP_COLORS} from "../constants/colors";
 import {View, Image, Text} from 'react-native';
 import React from "react";
 import { Card } from 'react-native-elements';
-import { EvilIcons, Ionicons } from '@expo/vector-icons';
+import { EvilIcons, Ionicons, FontAwesome } from '@expo/vector-icons';
 
 
 class CardModified extends React.Component {

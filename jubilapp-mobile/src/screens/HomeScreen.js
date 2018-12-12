@@ -17,6 +17,9 @@ export default class HomeScreen extends React.Component {
                         size = {75}
                         textSize = {35}
                         path={() => Actions.interessos()}
+                        iconName2 = {'star'}
+                        size2 = {67}
+                        iconSecond = {true}
             />
                 <View style = {viewButtons}>
                     <ConfigurationButton iconName={ 'md-search'}

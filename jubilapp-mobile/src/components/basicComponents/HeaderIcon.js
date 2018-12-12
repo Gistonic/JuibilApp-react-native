@@ -6,18 +6,6 @@ import { FontAwesome } from '@expo/vector-icons';
 
 
 const HeaderIcon = (props) => {
-
-    const pressPopup = () =>{
-        Alert.alert(
-            'Salir de Crear Actividad',
-            'Desea cancelar la creación de esta actividad y perder todos los cambios?',
-            [
-                {text: 'No'},
-                {text: 'Sí', onPress: () => Actions.home()},
-            ],
-            { cancelable: false }
-        );    
-    }
     
     const {textStyle,viewStyle} = styles;
     return(
@@ -27,6 +15,10 @@ const HeaderIcon = (props) => {
                 style={ styles.iconStyle}/>
             </TouchableOpacity>
             <Text style = {[styles.textStyle, {fontSize: props.textSize}]}> {props.headerText} </Text>
+            {props.iconSecond ? <TouchableOpacity onPress= {props.path2}>
+                <FontAwesome name={props.iconName2} size={props.size2} color= {props.colorName}
+                style={ styles.icon2Style}/>
+            </TouchableOpacity>:null}
         </View>
     );
 };
@@ -48,7 +40,10 @@ const styles ={
         paddingRight: '33%',
     },
     iconStyle: {
-        paddingLeft: '2%'
+        paddingLeft: '2%',
+    },
+    icon2Style:{
+        paddingRight: '2%'
     }
 }
 

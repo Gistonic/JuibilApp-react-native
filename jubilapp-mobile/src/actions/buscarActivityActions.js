@@ -5,10 +5,10 @@ import {request} from "../request";
 
 
 const recieveActivitats = (activitats) =>{
+    
     return {
-
-        type: BUSCAR_ACTIVITY_ACTIONS.ReceiveActivitats,
-        payload: activitats
+        type:BUSCAR_ACTIVITY_ACTIONS.RecieveActivitats,
+        payload:activitats
     }
 }
 
@@ -20,7 +20,26 @@ export const changeBuscarActivityForm=(value) =>{
 };
 
 export const fetchActivitats = () =>{
-    dispatch(recieveActivitats(activitatsMock));
+    
+    return(dispatch)=>{
+        dispatch(recieveActivitats(activitatsMock));
+    }
+    //demanar crida Biel
+    /*return (dispatch) => {
+        AsyncStorage.getItem('token').then((token) => {
+            fetch('http://ordinadorcasa.no-ip.org:4100/event', {
+                method: 'GET',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                    Authorization: 'Bearer ' + token,
+
+                },
+                dataType: 'json',
+            }).then((resp) =>
+                resp.json().then((body) => dispatch(requestInteressos(body.interests))))
+        });
+    } */
 }
 
 export const changeIterador = () => {
