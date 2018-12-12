@@ -2,7 +2,7 @@ import React from 'react';
 import {ImageBackground, Text, TouchableOpacity, View} from 'react-native';
 import { CheckBox } from 'react-native-elements';
 import {APP_COLORS} from "../constants/colors";
-import Header from '../components/basicComponents/Header';
+import HeaderIcon from '../components/basicComponents/HeaderIcon';
 
 import { Actions } from 'react-native-router-flux';
 import Description from "../components/basicComponents/Description";
@@ -69,7 +69,14 @@ class Interessos2 extends React.Component {
             const {viewStyle, container, container1, viewInteressos, containerColumna} = styles;
             return (
                 <View style={viewStyle}>
-                    <Header headerText={'JubilApp'}/>
+                    <HeaderIcon headerText = {'Perfil'}
+                    iconName={ 'home'}
+                    colorName={ APP_COLORS.color_neutral}
+                        size = {75}
+                        textSize = {35}
+                        path={() => Actions.home()}
+                        
+                    />
                     <Description textExpl={'Selecciona tus intereses'}/>
                     <View style = {container}>
                         <View style = {containerColumna}>
@@ -80,10 +87,10 @@ class Interessos2 extends React.Component {
                         </View>
                     </View>
                     <View style = {container1}>
-                        <ButtonBack buttonText = {'Atrás'}
-                                    path = {() => Actions.home()}/>
-                        <NextButton buttonText = {'Siguiente'}
-                                    path = {this.onNextPressed}/>
+                        <ButtonBack buttonText = {'Atras'}
+                                    path = {() => Actions.modperfil()}/>
+                        <NextButton buttonText = {'Aceptar'}
+                                    path = {() => this.onNextPressed()}/>
                     </View>
                 </View>
             );

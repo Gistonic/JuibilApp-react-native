@@ -1,7 +1,7 @@
 import React from 'react';
 import {TouchableOpacity, View} from 'react-native';
 import {APP_COLORS} from "../constants/colors";
-import Header from '../components/basicComponents/Header';
+import HeaderIcon from '../components/basicComponents/HeaderIcon';
 import Description from '../components/basicComponents/Description';
 import NextButton from '../components/basicComponents/NextButton';
 import ButtonBack from '../components/basicComponents/ButtonBack';
@@ -53,7 +53,14 @@ class KilometreScreen extends React.Component {
         const {viewStyle, container, container2,containerColumna,containerPrincipal} = styles;
         return (
             <View style = {viewStyle}>
-              <Header headerText = {'JubilApp'}/>
+              <HeaderIcon headerText = {'Perfil'}
+                    iconName={ 'home'}
+                    colorName={ APP_COLORS.color_neutral}
+                        size = {75}
+                        textSize = {35}
+                        path={() => Actions.home()}
+                        
+                    />
               <Description textExpl= {'Escoge el radio de kilómetros'}/>
               
               <View style = {containerPrincipal}>
@@ -65,9 +72,9 @@ class KilometreScreen extends React.Component {
                         </View>
                 </View>
               <View style = {container}>
-                <ButtonBack buttonText = {'Atrás'}
-                            path = {() => Actions.interessos()}/>
-                <NextButton buttonText = {'Finalizar'}
+                <ButtonBack buttonText = {'Atras'}
+                            path = {() => Actions.modperfil()}/>
+                <NextButton buttonText = {'Aceptar'}
                             path = {() => this.onNextPressed()}/>
               </View>
             </View>   

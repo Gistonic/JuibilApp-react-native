@@ -98,7 +98,7 @@ export const kilometresProfile = (km_num) => {
                 console.log(err)
             })
         });
-            Actions.home();
+            Actions.modperfil();
         
         }
     }

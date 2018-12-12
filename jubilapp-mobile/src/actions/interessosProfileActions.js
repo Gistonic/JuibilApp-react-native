@@ -74,7 +74,7 @@ export const fetchInteressosOld = () => {
 export const interessosProfile = (interessosInfo) => {
     return () => {
         request('/profile', 'PATCH', {interests: interessosInfo});
-        Actions.km();
+        Actions.modperfil();
     }
 }
 

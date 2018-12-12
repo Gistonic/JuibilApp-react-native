@@ -29,6 +29,8 @@ import ActDescriptionModify from "./screens/modificarActivitatScreens/ActDescrip
 import ActivityInfo from "./screens/ActivityInfo";
 import BuscarActivitatScreen from "./screens/BuscarActivitatScreen";
 import ListsActivitiesScreen from "./screens/ListsActivitiesScreen";
+import modificarPerfilScreen from "./screens/modificarPerfilScreen";
+import PerfilScreen from "./screens/PerfilScreen";
 
 
 const Scenes = Actions.create(
@@ -61,6 +63,8 @@ const Scenes = Actions.create(
 		<Scene key="info" component={ActivityInfo}/>
 		<Scene key="buscar" component={BuscarActivitatScreen}/>
 		<Scene key="llistesActs" component={ListsActivitiesScreen}/>
+		<Scene key="modperfil" component={modificarPerfilScreen}/>
+		<Scene key="perfil" component={PerfilScreen}/>
 
 
 	</Scene>
