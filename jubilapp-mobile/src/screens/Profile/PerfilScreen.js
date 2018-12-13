@@ -2,19 +2,18 @@ import React from 'react';
 import {View,Text} from 'react-native';
 import { Font } from 'expo';
 import { Actions } from 'react-native-router-flux';
-import {APP_COLORS} from "../constants/colors";
+import {APP_COLORS} from "../../constants/colors";
 import connect from "react-redux/es/connect/connect";
-import {changeLoginFormProperty, login} from "../actions/loginFormActions";
-import Description from "../components/basicComponents/Description";
-import HeaderIcon from "../components/basicComponents/HeaderIcon";
+import {changeLoginFormProperty, login} from "../../actions/loginFormActions";
+import Description from "../../components/basicComponents/Description";
+import HeaderIcon from "../../components/basicComponents/HeaderIcon";
 import { Ionicons, EvilIcons } from '@expo/vector-icons';
 
-import {fetchName} from "../actions/index";
+import {fetchName} from "../../actions/index";
 
 class PerfilScreen extends React.Component {
     constructor(props) {
         super(props)
-
     }
 
     componentWillMount() {
@@ -53,41 +52,41 @@ class PerfilScreen extends React.Component {
         );
     }
   }
-  const styles ={
-        textStyle:{
-            color: APP_COLORS.color_neutral,
-            fontFamily: 'sans-serif-condensed',
-            fontSize: 18
-        },
-        viewStyle: {
-            backgroundColor: APP_COLORS.color_neutral,
-            width: '100%',
-            height: '100%',
-        },
-        circle:{
-            width: 120,
-            height: 120,
-            borderRadius: 40,
-            padding: 12,
-            justifyContent: "center",
-            alignItems: "center",
-            shadowColor: "gray",
-            shadowOffset: { width: 1, height: 1 },
-            shadowOpacity: 0.18,
-            shadowRadius: 2
-        },
-        container: {
-            marginTop: '15%',
-            flexDirection: 'row',
-            paddingBottom: '7%',
-            paddingRight: '5%',
-            paddingLeft: '5%',
-            paddingTop: '5%',
-            justifyContent: 'space-between',
-        },
-        viewStyle1: {
-            paddingTop: '25%'
-        }
+const styles ={
+    textStyle:{
+        color: APP_COLORS.color_neutral,
+        fontFamily: 'sans-serif-condensed',
+        fontSize: 18
+    },
+    viewStyle: {
+        backgroundColor: APP_COLORS.color_neutral,
+        width: '100%',
+        height: '100%',
+    },
+    circle:{
+        width: 120,
+        height: 120,
+        borderRadius: 40,
+        padding: 12,
+        justifyContent: "center",
+        alignItems: "center",
+        shadowColor: "gray",
+        shadowOffset: { width: 1, height: 1 },
+        shadowOpacity: 0.18,
+        shadowRadius: 2
+    },
+    container: {
+        marginTop: '15%',
+        flexDirection: 'row',
+        paddingBottom: '7%',
+        paddingRight: '5%',
+        paddingLeft: '5%',
+        paddingTop: '5%',
+        justifyContent: 'space-between',
+    },
+    viewStyle1: {
+        paddingTop: '25%'
+    }
   }
 
   const mapStateToProps = (state) => {

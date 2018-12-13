@@ -1,14 +1,14 @@
 import React from 'react';
 import {ImageBackground, Text, TouchableOpacity, View} from 'react-native';
 import { CheckBox } from 'react-native-elements';
-import {APP_COLORS} from "../constants/colors";
-import HeaderIcon from '../components/basicComponents/HeaderIcon';
+import {APP_COLORS} from "../../constants/colors";
+import HeaderIcon from '../../components/basicComponents/HeaderIcon';
 
 import { Actions } from 'react-native-router-flux';
-import Description from "../components/basicComponents/Description";
-import ButtonBack from "../components/basicComponents/ButtonBack";
-import NextButton from "../components/basicComponents/NextButton";
-import {fetchInteressos, interessosProfile,changeInteressosProfileProperty} from "../actions/index";
+import Description from "../../components/basicComponents/Description";
+import ButtonBack from "../../components/basicComponents/ButtonBack";
+import NextButton from "../../components/basicComponents/NextButton";
+import {fetchInteressos, interessosProfile,changeInteressosProfileProperty} from "../../actions/index";
 import connect from "react-redux/es/connect/connect";
 
 class Interessos2 extends React.Component {

@@ -1,13 +1,13 @@
 import React from 'react';
 import {TouchableOpacity, View} from 'react-native';
-import {APP_COLORS} from "../constants/colors";
-import HeaderIcon from '../components/basicComponents/HeaderIcon';
-import Description from '../components/basicComponents/Description';
-import NextButton from '../components/basicComponents/NextButton';
-import ButtonBack from '../components/basicComponents/ButtonBack';
-import Numbers from '../components/basicComponents/Numbers';
+import {APP_COLORS} from "../../constants/colors";
+import HeaderIcon from '../../components/basicComponents/HeaderIcon';
+import Description from '../../components/basicComponents/Description';
+import NextButton from '../../components/basicComponents/NextButton';
+import ButtonBack from '../../components/basicComponents/ButtonBack';
+import Numbers from '../../components/basicComponents/Numbers';
 import connect from "react-redux/es/connect/connect";
-import {fetchKilometres,changeKilometresProfileProperty,kilometresProfile} from "../actions/index";
+import {fetchKilometres,changeKilometresProfileProperty,kilometresProfile} from "../../actions/index";
 import {Actions} from 'react-native-router-flux';
 
 

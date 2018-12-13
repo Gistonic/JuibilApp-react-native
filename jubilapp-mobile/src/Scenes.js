@@ -8,7 +8,7 @@ import RegistreNomCogScreen from './screens/RegistreNomCogScreen';
 import RegistreCorreoScreen from './screens/RegistreCorreoScreen';
 import RegistrePsswScreen from './screens/RegistrePsswScreen';
 import RegistreTelfScreen from './screens/RegistreTelfScreen';
-import KilometreScreen from './screens/KilometreScreen';
+import KilometreScreen from './screens/Profile/KilometreScreen';
 import HomeScreen from './screens/HomeScreen';
 import NameUbi from './screens/crearActivitatScreens/NameUbiCreate';
 import IniDate from './screens/crearActivitatScreens/IniDateCreate';
@@ -19,7 +19,7 @@ import ModificarActivitatScreen from './screens/ModificarActivitatScreen';
 import ActDescription from './screens/crearActivitatScreens/ActDescriptionCreate';
 import SelectType from './screens/crearActivitatScreens/SelectTypeCreate';
 import ActivitatListScreen from './screens/ActivitatListScreen';
-import Interessos2 from './screens/Interessos2';
+import Interessos2 from './screens/Profile/Interessos2';
 import NameModify from "./screens/modificarActivitatScreens/NameModify";
 import IniHourModify from "./screens/modificarActivitatScreens/IniHourModify";
 import FinHourModify from "./screens/modificarActivitatScreens/FinHourModify";
@@ -29,8 +29,8 @@ import ActDescriptionModify from "./screens/modificarActivitatScreens/ActDescrip
 import ActivityInfo from "./screens/ActivityInfo";
 import BuscarActivitatScreen from "./screens/BuscarActivitatScreen";
 import ListsActivitiesScreen from "./screens/ListsActivitiesScreen";
-import modificarPerfilScreen from "./screens/modificarPerfilScreen";
-import PerfilScreen from "./screens/PerfilScreen";
+import modificarPerfilScreen from "./screens/Profile/modificarPerfilScreen";
+import PerfilScreen from "./screens/Profile/PerfilScreen";
 
 
 const Scenes = Actions.create(

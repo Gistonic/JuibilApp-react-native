@@ -1,13 +1,13 @@
 import React from 'react';
 import {View} from 'react-native';
-import HeaderIcon from '../components/basicComponents/HeaderIcon';
-import {APP_COLORS} from "../constants/colors";
-import ConfigurationButton from '../components/basicComponents/ConfigurationButton';
+import HeaderIcon from '../../components/basicComponents/HeaderIcon';
+import {APP_COLORS} from "../../constants/colors";
+import ConfigurationButton from '../../components/basicComponents/ConfigurationButton';
 
 import { Actions } from 'react-native-router-flux';
-import Description from "../components/basicComponents/Description";
-import ButtonBack from "../components/basicComponents/ButtonBack";
-import NextButton from "../components/basicComponents/NextButton";
+import Description from "../../components/basicComponents/Description";
+import ButtonBack from "../../components/basicComponents/ButtonBack";
+import NextButton from "../../components/basicComponents/NextButton";
 
 
 const botonsModificar= [
