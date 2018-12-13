@@ -37,7 +37,7 @@ const styles ={
         color: APP_COLORS.color_neutral,
         fontFamily: 'sans-serif-condensed',
         fontWeight: 'bold',
-        paddingRight: '33%',
+        alignItems: 'flex-start'
     },
     iconStyle: {
         paddingLeft: '2%',

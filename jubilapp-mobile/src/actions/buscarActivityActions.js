@@ -19,15 +19,32 @@ export const changeBuscarActivityForm=(value) =>{
     }
 };
 
-export const fetchActivitats = () =>{
-    
-    return(dispatch)=>{
-        dispatch(recieveActivitats(activitatsMock));
+export const changeBuscarActivityFormProperty=(propertyName, value) =>{
+    return {
+        type:BUSCAR_ACTIVITY_ACTIONS.ChangeProperty2,
+        payload:{
+            propertyName,
+            value
+        }
     }
+};
+
+export const fetchActivitats = (stringISOfromDate, stringISOtoDate) =>{
+    console.log(stringISOfromDate);
+    /*return(dispatch)=>{
+        dispatch(recieveActivitats(activitatsMock));
+    }*/
     //demanar crida Biel
-    /*return (dispatch) => {
+    return (dispatch) => {
         AsyncStorage.getItem('token').then((token) => {
-            fetch('http://ordinadorcasa.no-ip.org:4100/event', {
+        const url1 = "http://ordinadorcasa.no-ip.org:4100/event?";
+        const url2 = "lat=41.3892";
+        const url3 = "&lng=2.1175024";
+        const url4 = "&fromDate=";
+        const url5 = "&toDate=";
+        const finalurl = url1+url2+url3+url4+stringISOfromDate+url5+stringISOtoDate;
+        console.log("finalurl: ", finalurl);
+            fetch(finalurl, {
                 method: 'GET',
                 headers: {
                     Accept: 'application/json',
@@ -37,9 +54,9 @@ export const fetchActivitats = () =>{
                 },
                 dataType: 'json',
             }).then((resp) =>
-                resp.json().then((body) => dispatch(requestInteressos(body.interests))))
+                resp.json().then((body) => dispatch(recieveActivitats(body.events))))
         });
-    } */
+    }
 }
 
 export const changeIterador = () => {

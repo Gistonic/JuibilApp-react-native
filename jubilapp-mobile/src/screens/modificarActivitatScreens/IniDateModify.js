@@ -15,7 +15,7 @@ class IniDateCreate extends React.Component {
                             buttonNext = "Siguiente"
                             previousScreen={() => Actions.home()}
                             nextScreen={() => Actions.finDateMod()}
-                            titleName="inicio"/>
+                            titleName="Modifica el inicio de la actividad"/>
         )
     }
 }

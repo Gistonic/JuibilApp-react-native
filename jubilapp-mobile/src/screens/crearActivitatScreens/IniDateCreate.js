@@ -15,7 +15,7 @@ class IniDateCreate extends React.Component {
                             buttonNext = "Siguiente"
                             previousScreen={() => Actions.ubi()}
                             nextScreen={() => Actions.finDate()}
-                            titleName="inicio"
+                            titleName= "Define el inicio de la actividad"
                             headerName = "Crear Actividad"/>
         )
     }

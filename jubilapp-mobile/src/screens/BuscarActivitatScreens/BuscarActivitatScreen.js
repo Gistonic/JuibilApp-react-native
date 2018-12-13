@@ -1,13 +1,13 @@
 import React from 'react';
 import {View, Alert, Text} from 'react-native';
-import {APP_COLORS} from "../constants/colors";
+import {APP_COLORS} from "../../constants/colors";
 import connect from "react-redux/es/connect/connect";
 import {Actions} from "react-native-router-flux";
-import HeaderIcon from "../components/basicComponents/HeaderIcon";
-import CardModified from "../components/CardModified";
+import HeaderIcon from "../../components/basicComponents/HeaderIcon";
+import CardModified from "../../components/CardModified";
 import { EvilIcons, Ionicons } from '@expo/vector-icons';
-import {fetchActivitats,changeIterador, changeBuscarActivityForm} from "../actions/index";
-import Description from '../components/basicComponents/Description';
+import {fetchActivitats,changeIterador, changeBuscarActivityForm} from "../../actions/index";
+import Description from '../../components/basicComponents/Description';
 import { Constants, Location, Permissions } from 'expo';
 
 class BuscarActivitatScreen extends React.Component {
@@ -25,8 +25,12 @@ class BuscarActivitatScreen extends React.Component {
         } else {
             this._getLocationAsync();
         }*/
+        const stringISOfromDate = new Date(this.props.fromDate.year, this.props.fromDate.month, this.props.fromDate.day).toISOString();
+        const stringISOtoDate = new Date(this.props.toDate.year, this.props.toDate.month, this.props.toDate.day).toISOString();
+        console.log(stringISOtoDate);
+        console.log(stringISOfromDate);
 
-        this.props.fetchActivitats();
+        this.props.fetchActivitats(stringISOfromDate, stringISOtoDate);
 
     }
     _getLocationAsync = async () => {
@@ -63,12 +67,12 @@ class BuscarActivitatScreen extends React.Component {
     
     esTres(){
         const activitatsTranslate= {
-            art: {source: require('../images/artPES2.jpg')},
-            sports: {source: require('../images/esportPES2.jpg')},
-            culture: {source: require('../images/culturaPES2.jpg')},
-            trips: {source: require('../images/excursionesPES2.jpg')},
-            workshops: {source: require('../images/talleresPES2.jpg')},
-            leisure: {source: require('../images/ocioPES3.jpg')}
+            art: {source: require('../../images/artPES2.jpg')},
+            sports: {source: require('../../images/esportPES2.jpg')},
+            culture: {source: require('../../images/culturaPES2.jpg')},
+            trips: {source: require('../../images/excursionesPES2.jpg')},
+            workshops: {source: require('../../images/talleresPES2.jpg')},
+            leisure: {source: require('../../images/ocioPES3.jpg')}
         };
         if(this.props.iterador == this.props.activitats_trobades.length){
             return(
@@ -208,12 +212,14 @@ const mapStateToProps = (state) => {
         activitats_trobades: state.buscarActivity.activitats_trobades,
         iterador: state.buscarActivity.iterador,
         location: state.buscarActivity.location,
+        fromDate: state.buscarActivity.fromDate,
+        toDate: state.buscarActivity.toDate,
     }
 }
 
 const  mapDispatchToProps = (dispatch)=>{
     return {
-        fetchActivitats: ()=>dispatch(fetchActivitats()),
+        fetchActivitats: (stringISOfromDate, stringISOtoDate)=>dispatch(fetchActivitats(stringISOfromDate, stringISOtoDate)),
         changeIterador: ()=>dispatch(changeIterador()),
         changeBuscarActivityForm: (value)=> dispatch(changeBuscarActivityForm(value)),
     }

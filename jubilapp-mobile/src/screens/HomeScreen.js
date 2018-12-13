@@ -29,7 +29,7 @@ export default class HomeScreen extends React.Component {
                                 fontsizeStyle= {27}
                                 widthStyle = {200}
                                 isEvilType = {false}
-                                path={() => Actions.buscar()}
+                                path={() => Actions.fromDate()}
                                 buttonText = {'BUSCAR ACTIVIDADES'}
                     />
                     <ConfigurationButton iconName={ 'md-eye'}

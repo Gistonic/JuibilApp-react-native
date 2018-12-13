@@ -28,7 +28,7 @@ const receiveLogin = (token) => {
         if (err) {
             console.log('Error saving token: ' + token)
         }
-        Actions.welcome();
+        Actions.welcome({textExpl: 'Continuar', paths: () => Actions.home()});
     });
     return {
         type: LOGIN_FORM_ACTIONS.ReceiveLogin,

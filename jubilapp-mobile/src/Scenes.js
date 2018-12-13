@@ -4,10 +4,10 @@ import {Scene, Actions} from 'react-native-router-flux';
 import LoginScreen from './screens/LoginScreen';
 import Inici from './screens/Inici';
 import Welcome from './screens/Welcome';
-import RegistreNomCogScreen from './screens/RegistreNomCogScreen';
-import RegistreCorreoScreen from './screens/RegistreCorreoScreen';
-import RegistrePsswScreen from './screens/RegistrePsswScreen';
-import RegistreTelfScreen from './screens/RegistreTelfScreen';
+import RegistreNomCogScreen from './screens/RegistreScreens/RegistreNomCogScreen';
+import RegistreCorreoScreen from './screens/RegistreScreens/RegistreCorreoScreen';
+import RegistrePsswScreen from './screens/RegistreScreens/RegistrePsswScreen';
+import RegistreTelfScreen from './screens/RegistreScreens/RegistreTelfScreen';
 import KilometreScreen from './screens/Profile/KilometreScreen';
 import HomeScreen from './screens/HomeScreen';
 import NameCreate from './screens/crearActivitatScreens/NameCreate';
@@ -16,10 +16,10 @@ import IniDate from './screens/crearActivitatScreens/IniDateCreate';
 import FinDate from './screens/crearActivitatScreens/FinDateCreate';
 import IniHour from './screens/crearActivitatScreens/IniHourCreate';
 import FinHour from './screens/crearActivitatScreens/FinHourCreate';
-import ModificarActivitatScreen from './screens/ModificarActivitatScreen';
+import ModificarActivitatScreen from './screens/modificarActivitatScreens/ModificarActivitatScreen';
 import ActDescription from './screens/crearActivitatScreens/ActDescriptionCreate';
 import SelectType from './screens/crearActivitatScreens/SelectTypeCreate';
-import ActivitatListScreen from './screens/ActivitatListScreen';
+import ActivitatListScreen from './screens/LlistarActivitatsScreens/ActivitatListScreen';
 import Interessos2 from './screens/Profile/Interessos2';
 import NameModify from "./screens/modificarActivitatScreens/NameModify";
 import IniHourModify from "./screens/modificarActivitatScreens/IniHourModify";
@@ -27,11 +27,13 @@ import FinHourModify from "./screens/modificarActivitatScreens/FinHourModify";
 import IniDateModify from "./screens/modificarActivitatScreens/IniDateModify";
 import FinDateModify from "./screens/modificarActivitatScreens/FinDateModify";
 import ActDescriptionModify from "./screens/modificarActivitatScreens/ActDescriptionModify";
-import ActivityInfo from "./screens/ActivityInfo";
-import BuscarActivitatScreen from "./screens/BuscarActivitatScreen";
-import ListsActivitiesScreen from "./screens/ListsActivitiesScreen";
+import ActivityInfo from "./screens/MostrarInfoActScreens/ActivityInfo";
+import BuscarActivitatScreen from "./screens/BuscarActivitatScreens/BuscarActivitatScreen";
+import ListsActivitiesScreen from "./screens/LlistarActivitatsScreens/ListsActivitiesScreen";
 import modificarPerfilScreen from "./screens/Profile/modificarPerfilScreen";
 import PerfilScreen from "./screens/Profile/PerfilScreen";
+import SelectFromDate from "./screens/BuscarActivitatScreens/SelectFromDate";
+import SelectToDate from "./screens/BuscarActivitatScreens/SelectToDate";
 
 
 const Scenes = Actions.create(
@@ -67,6 +69,8 @@ const Scenes = Actions.create(
 		<Scene key="modperfil" component={modificarPerfilScreen}/>
 		<Scene key="perfil" component={PerfilScreen}/>
 		<Scene key="ubi" component={UbiCreate}/>
+        <Scene key="toDate" component={SelectToDate}/>
+        <Scene key="fromDate" component={SelectFromDate}/>
 
 
 	</Scene>

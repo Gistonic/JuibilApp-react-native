@@ -12,7 +12,7 @@ class FinDateCreate extends React.Component {
                             changeFormDate={this.props.changeFormDateEnd}
                             nextScreen ={() => Actions.iniHour()}
                             previousScreen={() => Actions.iniDate()}
-                            titleName="final"
+                            titleName="Define el final de la actividad"
                             buttonNext = "Siguiente"
                             headerName = "Crear Actividad"/>
         )

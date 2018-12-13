@@ -15,8 +15,8 @@ export default class Welcome extends React.Component {
                 <Description textExpl = {'¡Bienvenido a JubilApp!'}/>
                 </View>   
                 <View style = {viewStyle}>
-                    <NextButton buttonText = {'Continuar'}
-                                path = {() => Actions.home()}/>
+                    <NextButton buttonText = {this.props.textExpl}
+                                path = {this.props.paths}/>
                 </View> 
             </View>
         );
@@ -27,7 +27,7 @@ export default class Welcome extends React.Component {
         backgroundColor: APP_COLORS.color_neutral,
         width: '100%', 
         height: '50%',
-        padding: 50,
+        margin: 50,
         alignContent: 'center',
         alignItems: 'center',
         justifyContent: 'center'

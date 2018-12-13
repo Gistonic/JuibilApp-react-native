@@ -1,6 +1,6 @@
 import React from 'react';
-import ActivityInfoBase from "../components/baseScreens/ActivityInfoBase";
-import {changeActivityIDProperty, fetchActivity, deleteAct} from "../actions/infoActivityActions";
+import ActivityInfoBase from "../../components/baseScreens/ActivityInfoBase";
+import {changeActivityIDProperty, fetchActivity, deleteAct} from "../../actions/infoActivityActions";
 import connect from "react-redux/es/connect/connect";
 
 class ActivityInfo extends React.Component {

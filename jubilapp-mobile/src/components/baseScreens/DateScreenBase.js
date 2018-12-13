@@ -59,7 +59,7 @@ export default class DateScreenBase extends React.Component {
                 />
                 <View style={viewButtons}>
                     <View style={{paddingLeft: '8%', paddingRight: '8%'}}>
-                        <Description textExpl={`Define el ${this.props.titleName} de la actividad`}/>
+                        <Description textExpl={this.props.titleName}/>
                     </View>
                     <Calendar style={calendarStyle}
                               onDayPress={this.select.bind(this)}

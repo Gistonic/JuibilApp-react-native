@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, ActivityIndicator } from 'react-native';
-import {APP_COLORS} from "../constants/colors";
-import ActivitatItem from "../components/ActivitatItem";
+import {APP_COLORS} from "../../constants/colors";
+import ActivitatItem from "../../components/ActivitatItem";
 import connect from "react-redux/es/connect/connect";
 import {Actions} from "react-native-router-flux";
-import HeaderIcon from "../components/basicComponents/HeaderIcon";
-import { fetchActivities , deleteActivity, setModifyActivityId} from "../actions/ListActivitiesActions";
+import HeaderIcon from "../../components/basicComponents/HeaderIcon";
+import { fetchActivities , deleteActivity, setModifyActivityId} from "../../actions/ListActivitiesActions";
 
 class ActivitatListScreen extends React.Component {
     constructor(props) {

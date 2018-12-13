@@ -1,5 +1,6 @@
 import {REGISTER_FORM_ACTIONS} from "../constants/actions";
 import {Actions} from "react-native-router-flux";
+import {AsyncStorage} from "react-native";
 
 export const changeRegisterFormProperty=(propertyName, value) =>{
     return {
@@ -12,7 +13,12 @@ export const changeRegisterFormProperty=(propertyName, value) =>{
 };
 
 const receiveRegister = (token) => {
-    Actions.welcome();
+    AsyncStorage.setItem('token', token, (err) => {
+        if (err) {
+            console.log('Error saving token: ' + token)
+        }
+        Actions.welcome({textExpl: 'Empezar', paths: () => Actions.interessos()});
+    });
     return {
         type: REGISTER_FORM_ACTIONS.ReceiveRegister,
         payload: token

@@ -47,6 +47,7 @@ export const BUSCAR_ACTIVITY_ACTIONS={
     RecieveActivitats: 'RECIEVE_ACTIVITATS',
     ChangeIterador: 'CHANGE_ITERADOR',
     ChangeProperty: 'CHANGE_PROPERTY',
+    ChangeProperty2: 'CHANGE_PROPERTY2',
 }
 
 export const MODIFICAR_ACTIVITY_ACTIONS = {
