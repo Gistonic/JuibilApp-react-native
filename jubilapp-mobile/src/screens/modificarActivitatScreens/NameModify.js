@@ -1,7 +1,7 @@
 import React from 'react';
 import { Actions } from 'react-native-router-flux';
 import connect from "react-redux/es/connect/connect";
-import NameUbiScreenBase from "../../components/baseScreens/NameUbiScreenBase";
+import NameScreenBase from "../../components/baseScreens/NameScreenBase";
 import {changeActivityValue, patchActivityValue, fetchActivityValue} from "../../actions";
 
 
@@ -12,14 +12,14 @@ class NameModify extends React.Component {
     render() {
 
         return (
-            <NameUbiScreenBase changeFormName = {this.props.changeActivityName}
-                               changeFormLocation = {()=>{}}
-                               name = {this.props.name}
-                               buttonNext= "Aceptar"
-                               nextScreen={() => this.props.patchActivityName(this.props.id, this.props.name)}
-                               previousScreen={() => Actions.modificaractivitat()}
-                               enabledName = {!this.props.isFetching && !this.props.isPatching}
-                               hideUbi = {true} />
+            <NameScreenBase changeFormName = {this.props.changeActivityName}
+                            changeFormLocation = {()=>{}}
+                            name = {this.props.name}
+                            buttonNext= "Aceptar"
+                            nextScreen={() => this.props.patchActivityName(this.props.id, this.props.name)}
+                            previousScreen={() => Actions.modificaractivitat()}
+                            enabledName = {!this.props.isFetching && !this.props.isPatching}
+            />
         )
     }
 }

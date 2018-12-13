@@ -4,7 +4,8 @@ const initial_hour = date.getHours();
 const initial_minute = date.getMinutes() - (date.getMinutes() % 5);
 const INITIAL_STATE ={
     name: "",
-    location:"",
+    latitude: null,
+    longitude: null,
     dateIni: {},
     dateEnd: {},
     hourIni:initial_hour,

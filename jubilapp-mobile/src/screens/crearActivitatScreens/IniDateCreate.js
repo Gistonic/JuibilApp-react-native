@@ -13,7 +13,7 @@ class IniDateCreate extends React.Component {
             <DateScreenBase date={this.props.dateIni}
                             changeFormDate={this.props.changeFormDateIni}
                             buttonNext = "Siguiente"
-                            previousScreen={() => Actions.nameUbi()}
+                            previousScreen={() => Actions.ubi()}
                             nextScreen={() => Actions.finDate()}
                             titleName="inicio"
                             headerName = "Crear Actividad"/>

@@ -49,7 +49,7 @@ export default class HomeScreen extends React.Component {
                                 fontsizeStyle= {27}
                                 widthStyle = {200}
                                 buttonText = {'CREAR ACTIVIDAD'}
-                                path={() => Actions.nameUbi()}
+                                path={() => Actions.name()}
                                          isEvilType = {false}
                     />
                 </View>

@@ -57,8 +57,8 @@ class SelectTypeCreate extends React.Component {
             startDate:new Date(this.props.dateIni.year, this.props.dateIni.month, this.props.dateIni.day, this.props.hourIni, this.props.minuteIni),
             endDate:new Date(this.props.dateEnd.year, this.props.dateEnd.month, this.props.dateEnd.day, this.props.hourEnd, this.props.minuteEnd),
             description:this.props.description,
-            longitude: 1,
-            latitude: 1,
+            longitude: this.props.longitude,
+            latitude: this.props.latitude,
         };
 
         this.props.createActivity(activityInfo)
@@ -225,7 +225,8 @@ const mapStateToProps = (state) => {
         selected_Ocio: state.createActivityForm.selected_Ocio,
         type: state.createActivityForm.type,
         name: state.createActivityForm.name,
-        location:state.createActivityForm.Location,
+        latitude:state.createActivityForm.latitude,
+        longitude:state.createActivityForm.longitude,
         dateIni: state.createActivityForm.dateIni,
         dateEnd:state.createActivityForm.dateEnd,
         hourEnd:state.createActivityForm.hourEnd,
