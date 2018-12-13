@@ -7,8 +7,9 @@ import ButtonBack from '../basicComponents/ButtonBack';
 import {APP_COLORS} from "../../constants/colors";
 import { Actions } from 'react-native-router-flux';
 import {pressPopup} from "../../pressPopup";
+import Description from "../basicComponents/Description";
 
-export default class NameUbiScreenBase extends React.Component {
+export default class NameScreenBase extends React.Component {
     render() {
         const {viewStyle, vista1Style, container, formStyle, viewStyle1} = styles;
         return (
@@ -22,7 +23,6 @@ export default class NameUbiScreenBase extends React.Component {
                                 path={() => pressPopup('Salir', 'Desea ir al menú principal y perder todos los cambios?')}
                 />
                     <View style = {viewStyle1}>
-                        <View style = {vista1Style}>
                             <View style = {formStyle}>
                                 <Formulari textExplicatiu = {'Introduce el nombre de la actividad'}
                                            textPlaceHolder = {'Nombre'}
@@ -32,15 +32,6 @@ export default class NameUbiScreenBase extends React.Component {
                                            enabled = {this.props.enabledName}
                                 />
                             </View>
-                            {!this.props.hideUbi &&
-                                <Formulari textExplicatiu = {'Introduce la ubicación'}
-                                       textPlaceHolder = {'Ubicación'}
-                                       tipusTeclat = {'default'}
-                                       value = {this.props.location}
-                                       onChangeText={(text) => this.props.changeFormLocation(text)}
-                                       enabled = {this.props.enabledLocation}/>
-                            }
-                        </View>
                         <View style = {container}>
                             <ButtonBack buttonText = {'Atrás'}
                                         path = {this.props.previousScreen}/>
@@ -77,10 +68,10 @@ const styles ={
 
     },
     formStyle: {
+        marginTop: '40%',
         paddingLeft: '10%',
         paddingRight: '10%',
         paddingBottom: '10%',
-        paddingTop: '10%',
     }
 }
 

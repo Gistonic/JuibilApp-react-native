@@ -10,7 +10,8 @@ import RegistrePsswScreen from './screens/RegistrePsswScreen';
 import RegistreTelfScreen from './screens/RegistreTelfScreen';
 import KilometreScreen from './screens/Profile/KilometreScreen';
 import HomeScreen from './screens/HomeScreen';
-import NameUbi from './screens/crearActivitatScreens/NameUbiCreate';
+import NameCreate from './screens/crearActivitatScreens/NameCreate';
+import UbiCreate from './screens/crearActivitatScreens/UbiScreenCreate';
 import IniDate from './screens/crearActivitatScreens/IniDateCreate';
 import FinDate from './screens/crearActivitatScreens/FinDateCreate';
 import IniHour from './screens/crearActivitatScreens/IniHourCreate';
@@ -44,7 +45,7 @@ const Scenes = Actions.create(
 		<Scene key="r4" component={RegistreTelfScreen}/>
         <Scene key="km" component={KilometreScreen}/>
 		<Scene key="home" component={HomeScreen}/>
-		<Scene key="nameUbi" component={NameUbi}/>
+		<Scene key="name" component={NameCreate}/>
 		<Scene key="iniDate" component={IniDate}/>
         <Scene key="finDate" component={FinDate}/>
         <Scene key="iniHour" component={IniHour}/>
@@ -65,6 +66,7 @@ const Scenes = Actions.create(
 		<Scene key="llistesActs" component={ListsActivitiesScreen}/>
 		<Scene key="modperfil" component={modificarPerfilScreen}/>
 		<Scene key="perfil" component={PerfilScreen}/>
+		<Scene key="ubi" component={UbiCreate}/>
 
 
 	</Scene>
