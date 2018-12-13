@@ -7,3 +7,4 @@ export * from "./listActivitiesReducer";
 export * from "./activityInfoReducer";
 export * from "./buscarActivityReducer";
 export * from "./modifyActivityReducer";
+export * from "./modificarProfileReducer";

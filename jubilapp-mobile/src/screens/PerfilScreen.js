@@ -9,13 +9,22 @@ import Description from "../components/basicComponents/Description";
 import HeaderIcon from "../components/basicComponents/HeaderIcon";
 import { Ionicons, EvilIcons } from '@expo/vector-icons';
 
+import {fetchName} from "../actions/index";
+
 class PerfilScreen extends React.Component {
     constructor(props) {
         super(props)
 
     }
+
+    componentWillMount() {
+        this.props.fetchName()
+    }
+
+
     render() {
         const {viewStyle, viewStyle1,container,circle,textStyle} = styles;
+        const saludos = "Hola "+this.props.name+"!!";
         return (
             <View style = {viewStyle}>
                 <HeaderIcon headerText = {'JubilApp'}
@@ -27,7 +36,7 @@ class PerfilScreen extends React.Component {
                         
                 />
                 <View style = {viewStyle1}>
-                    <Description textExpl={'Hola Elena!'}/>
+                    <Description textExpl={saludos}/>
                     <Description textExpl={'Que deseas hacer con tu perfil?'}/>
                 </View>
                 <View style = {container}>
@@ -81,5 +90,16 @@ class PerfilScreen extends React.Component {
         }
   }
 
+  const mapStateToProps = (state) => {
+    return {
+        name: state.modifyPerfil.name
+    }
+}
 
-export default PerfilScreen
+const  mapDispatchToProps = (dispatch)=>{
+    return {
+        fetchName: ()=>dispatch(fetchName())
+    }
+}
+
+  export default connect (mapStateToProps,mapDispatchToProps)(PerfilScreen);

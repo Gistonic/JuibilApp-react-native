@@ -56,3 +56,8 @@ export const MODIFICAR_ACTIVITY_ACTIONS = {
     RequestPatchActivityValue: 'REQUEST_PATCH_ACTIVITY_VALUE',
     ReceivePatchActivityValue: 'RECEIVE_PATCH_ACTIVITY_VALUE'
 }
+
+export const PROFILE_ACTIONS = {
+    FetchName: 'FETCH_NAME',
+    ReceiveName: 'RECEIVE_NAME'
+}
