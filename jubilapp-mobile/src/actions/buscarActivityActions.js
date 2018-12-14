@@ -42,7 +42,8 @@ export const fetchActivitats = (stringISOfromDate, stringISOtoDate) =>{
         const url3 = "&lng=2.1175024";
         const url4 = "&fromDate=";
         const url5 = "&toDate=";
-        const finalurl = url1+url2+url3+url4+stringISOfromDate+url5+stringISOtoDate;
+        const url6 = "&forMe=true";
+        const finalurl = url1+url2+url3+url4+stringISOfromDate+url5+stringISOtoDate+url6;
         console.log("finalurl: ", finalurl);
             fetch(finalurl, {
                 method: 'GET',

@@ -59,7 +59,7 @@ class BuscarActivitatScreen extends React.Component {
     _onPressDenegar(){
         Alert.alert(
             'Denegar Actividad',
-            'La actividad '+ this.props.activitats_trobades[this.props.iterador].nom +' se añadira a la lista de NO APUNTADAS.',
+            'La actividad '+ this.props.activitats_trobades[this.props.iterador].name +' se añadira a la lista de NO APUNTADAS.',
             [
               {text: 'OK', onPress: () => this.props.changeIterador()},
             ],
@@ -70,7 +70,7 @@ class BuscarActivitatScreen extends React.Component {
     _onPressAcceptar(){
         Alert.alert(
             'Aceptar Actividad',
-            'La actividad '+ this.props.activitats_trobades[this.props.iterador].nom +' se añadira a la lista de APUNTADAS.',
+            'La actividad '+ this.props.activitats_trobades[this.props.iterador].name +' se añadira a la lista de APUNTADAS.',
             [
               {text: 'OK', onPress: () => this.props.changeIterador()},
             ],
@@ -102,10 +102,10 @@ class BuscarActivitatScreen extends React.Component {
                     <CardModified image = {activitatsTranslate[this.props.activitats_trobades[this.props.iterador].type].source}
                             nom =  {this.props.activitats_trobades[this.props.iterador].name}
                             ubicacio = {this.props.ubicacioactual}
-                            dataIni = {this.props.activitats_trobades[this.props.iterador].dataIni}
-                            dataFi = {this.props.activitats_trobades[this.props.iterador].dataFi}
-                            horaIni = {this.props.activitats_trobades[this.props.iterador].horaIni}
-                            horaFi = {this.props.activitats_trobades[this.props.iterador].horaFi}/>
+                            dataIni = {this.props.activitats_trobades[this.props.iterador].startDate}
+                            dataFi = {this.props.activitats_trobades[this.props.iterador].endDate}
+                            horaIni = {this.props.activitats_trobades[this.props.iterador].startDate}
+                            horaFi = {this.props.activitats_trobades[this.props.iterador].endDate}/>
                 </View>
                 <View style={styles.footer}>
                     <View style={styles.circle} backgroundColor = {APP_COLORS.color_header}>
