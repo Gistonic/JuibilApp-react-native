@@ -6,6 +6,7 @@ const INITIAL_STATE ={
     location: null,
     fromDate: {},
     toDate: {},
+    ubicacioactual: "",
 }
 
 const buscarActivityReducer = (state = INITIAL_STATE, action)=>{

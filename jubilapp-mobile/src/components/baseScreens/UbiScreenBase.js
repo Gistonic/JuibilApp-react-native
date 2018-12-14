@@ -35,7 +35,6 @@ export default class NameScreenBase extends React.Component {
                                 fetchDetails={true}
                                 renderDescription={row => row.description}
                                 onPress={(data, details = null) => { // 'details' is provided when fetchDetails = true
-                                    console.log("Latitude: ", details.geometry.location.lat);
                                     this.props.changeFormLatitude(details.geometry.location.lat);
                                     this.props.changeFormLongitude(details.geometry.location.lng);
                                 }}
