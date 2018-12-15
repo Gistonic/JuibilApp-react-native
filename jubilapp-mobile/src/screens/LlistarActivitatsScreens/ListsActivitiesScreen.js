@@ -28,6 +28,7 @@ export default class ListsActivitiesScreen extends React.Component {
                                          widthStyle = {200}
                                          isEvilType = {false}
                                          buttonText = {'APUNTADAS'}
+                                         path={() => Actions.activitatlist({url: "/attending", att: "yes", headerText: "Apuntadas"})}
                     />
                     <ConfigurationButton iconName={ 'ios-close-circle'}
                                          colorName={ APP_COLORS.color_header}
@@ -36,7 +37,9 @@ export default class ListsActivitiesScreen extends React.Component {
                                          fontsizeStyle= {28}
                                          widthStyle = {200}
                                          isEvilType = {false}
-                                         buttonText = {'NO'+ '\n'+'APUNTADAS'}/>
+                                         buttonText = {'NO'+ '\n'+'APUNTADAS'}
+                                         path={() => Actions.activitatlist({url: "/attending", att: "no", headerText: "Rechazadas"})}
+                    />
 
                     <ConfigurationButton iconName={'ios-add-circle'}
                                          colorName={ APP_COLORS.color_button_1}
@@ -45,7 +48,7 @@ export default class ListsActivitiesScreen extends React.Component {
                                          fontsizeStyle= {28}
                                          widthStyle = {200}
                                          buttonText = {'CREADAS'}
-                                         path={() => Actions.activitatlist()}
+                                         path={() => Actions.activitatlist({url: "/own", headerText: "Creadas"})}
                                          isEvilType = {false}
                     />
                 </View>

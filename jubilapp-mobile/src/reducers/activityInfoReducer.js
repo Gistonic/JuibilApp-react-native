@@ -3,6 +3,7 @@ import {ACTIVITY_INFO_ACTIONS} from "../constants/actions";
 const INITIAL_STATE ={
     idActivity: "",
     activityReceived: [],
+    ubicacioactual: "",
 }
 
 const activityInfoReducer = (state = INITIAL_STATE, action)=> {

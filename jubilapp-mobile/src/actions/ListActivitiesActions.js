@@ -33,7 +33,7 @@ export const setModifyActivityId =(id)=>{
     }
 }
 
-export const fetchActivities = (tipus) => {
+export const fetchActivities = (tipus, att) => {
     return (dispatch) => {
         AsyncStorage.getItem('token').then((token) => {
             console.log('Token: ' + token);
@@ -52,7 +52,11 @@ export const fetchActivities = (tipus) => {
                 dataType: 'json',
             }).then((resp) => {
                 resp.json().then((body) => {
-                    dispatch(recieveActivities(body.events))
+                    if (tipus === "/own") dispatch(recieveActivities(body.events));
+                    else {
+                        if (att === "yes") dispatch(recieveActivities(body.events.yes));
+                        else dispatch(recieveActivities(body.events.no));
+                    }
                 })
             })
         });

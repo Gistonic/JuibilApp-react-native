@@ -10,7 +10,9 @@ import {
     fetchActivitats,
     changeIterador,
     changeBuscarActivityForm,
-    changeBuscarActivityFormProperty
+    changeBuscarActivityFormProperty,
+    attend,
+    notAttend
 } from "../../actions/index";
 import Description from '../../components/basicComponents/Description';
 import { Constants, Location, Permissions } from 'expo';
@@ -64,7 +66,8 @@ class BuscarActivitatScreen extends React.Component {
               {text: 'OK', onPress: () => this.props.changeIterador()},
             ],
             { cancelable: false }
-        );    
+        );
+        this.props.notAttend(this.props.activitats_trobades[this.props.iterador].id);
     }
 
     _onPressAcceptar(){
@@ -76,6 +79,7 @@ class BuscarActivitatScreen extends React.Component {
             ],
             { cancelable: false }
         );
+        this.props.attend(this.props.activitats_trobades[this.props.iterador].id);
     }
     
     esTres(){
@@ -237,7 +241,9 @@ const  mapDispatchToProps = (dispatch)=>{
         fetchActivitats: (stringISOfromDate, stringISOtoDate)=>dispatch(fetchActivitats(stringISOfromDate, stringISOtoDate)),
         changeIterador: ()=>dispatch(changeIterador()),
         changeBuscarActivityForm: (value)=> dispatch(changeBuscarActivityForm(value)),
-        changeUbicacioActual: (value) => dispatch(changeBuscarActivityFormProperty("ubicacioactual",value))
+        changeUbicacioActual: (value) => dispatch(changeBuscarActivityFormProperty("ubicacioactual",value)),
+        attend: (value) => dispatch(attend(value)),
+        notAttend: (value) => dispatch(notAttend(value))
     }
 }
 

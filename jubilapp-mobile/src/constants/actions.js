@@ -48,6 +48,7 @@ export const BUSCAR_ACTIVITY_ACTIONS={
     ChangeIterador: 'CHANGE_ITERADOR',
     ChangeProperty: 'CHANGE_PROPERTY',
     ChangeProperty2: 'CHANGE_PROPERTY2',
+    Attend: 'ATTEND',
 }
 
 export const MODIFICAR_ACTIVITY_ACTIONS = {

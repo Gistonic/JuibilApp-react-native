@@ -6,7 +6,7 @@ import {Actions} from "react-native-router-flux";
 import {EvilIcons} from "@expo/vector-icons";
 
 
-class CardActionCreades extends React.Component {
+class CardActionCancelades extends React.Component {
     constructor(props) {
         super(props)
         this._onPress = this._onPress.bind(this)
@@ -14,7 +14,7 @@ class CardActionCreades extends React.Component {
 
     }
     _onPress() {
-        this.props.deleteAct(this.props.id);
+        this.props.attend(this.props.id);
         Actions.llistesActs();
     }
     render() {
@@ -23,15 +23,11 @@ class CardActionCreades extends React.Component {
                   separator={true}
                   inColumn={false}>
                 <ButtonBack buttonText="Atrás"
-                            path={() => Actions.activitatlist({url: "/own", headerText: "Creadas"})}
+                            path={() => Actions.activitatlist({url: "/attending", att: "no", headerText: "Canceladas"})}
                 />
-                <EvilIcons name='pencil' size={60} color={APP_COLORS.color_next}
-                           style={[styles.iconStyle, {marginLeft: '7%'}]} onPress={() => {
-                    Actions.modificaractivitat()
-                }}/>
-                <EvilIcons name='trash' size={60} color={APP_COLORS.color_header}
+                <EvilIcons name='check' size={60} color={APP_COLORS.color_next}
                            style={[styles.iconStyle, {marginLeft: '0%'}]}
-                onPress = {this._onPress}/>
+                           onPress = {this._onPress}/>
             </View>
         )
     }
@@ -54,4 +50,4 @@ const styles = {
     },
 }
 
-export default CardActionCreades;
+export default CardActionCancelades;

@@ -6,6 +6,7 @@ import connect from "react-redux/es/connect/connect";
 import {Actions} from "react-native-router-flux";
 import HeaderIcon from "../../components/basicComponents/HeaderIcon";
 import { fetchActivities , deleteActivity, setModifyActivityId} from "../../actions/ListActivitiesActions";
+import {attend, notAttend} from "../../actions/buscarActivityActions";
 
 class ActivitatListScreen extends React.Component {
     constructor(props) {
@@ -15,7 +16,7 @@ class ActivitatListScreen extends React.Component {
     }
 
     componentWillMount() {
-        this.props.fetchActivities('/own')
+        this.props.fetchActivities(this.props.url, this.props.att);
     }
 
     renderActivities() {
@@ -35,8 +36,11 @@ class ActivitatListScreen extends React.Component {
                                    dataEnd ={activity.endDate}
                                    nomActivitat = {activity.name}
                                    style = {activitatStyle}
-                                   id={activity.id} screen = 'Creades'
+                                   id={activity.id} screen = {this.props.url}
+                                   att = {this.props.att}
                                    deleteActivity = {this.props.deleteActivity}
+                                   attend = {this.props.attend}
+                                   notAttend = {this.props.notAttend}
                                    setModifyActivityId={this.props.setModifyActivityId}/>
                 )
             });
@@ -49,7 +53,7 @@ class ActivitatListScreen extends React.Component {
         return (
             <View style = {viewStyle}>
 
-                <HeaderIcon headerText = { 'Activitats Creades'}
+                <HeaderIcon headerText = {this.props.headerText}
                             iconName={ 'home'}
                             colorName={ APP_COLORS.color_neutral}
                             path={() => Actions.home()}
@@ -86,9 +90,11 @@ const mapStateToProps = (state) => {
 
 const  mapDispatchToProps = (dispatch)=>{
     return {
-        fetchActivities: (value)=>dispatch(fetchActivities(value)),
+        fetchActivities: (value, att)=>dispatch(fetchActivities(value, att)),
         deleteActivity: (value) => dispatch(deleteActivity(value)),
-        setModifyActivityId:(id) => dispatch(setModifyActivityId(id))
+        setModifyActivityId:(id) => dispatch(setModifyActivityId(id)),
+        attend: (value) => dispatch(attend(value)),
+        notAttend: (value) => dispatch(notAttend(value)),
     }
 }
 
