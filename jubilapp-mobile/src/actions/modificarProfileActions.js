@@ -7,13 +7,35 @@ const receiveName =(value)=>{
     console.log(value);
     return {
         type: PROFILE_ACTIONS.ReceiveName,
-        payload: value
+        payload: {
+            value
+        }
+    }
+}
+
+const receiveInterests =(value)=>{
+    return {
+        type: PROFILE_ACTIONS.ReceiveInterests,
+        payload: {
+            value
+        }
+    }
+}
+
+const receiveKilometres =(value)=>{
+    return {
+        type: PROFILE_ACTIONS.ReceiveKilometres,
+        payload: {
+            value
+        }
     }
 }
 
 
+
 export const fetchName = () => {
     return (dispatch) => {
+        //receiveInterests(interessosMock);
         AsyncStorage.getItem('token').then((token) => {
             fetch('http://ordinadorcasa.no-ip.org:4100/profile', {
                 method: 'GET',
@@ -25,7 +47,16 @@ export const fetchName = () => {
                 },
                 dataType: 'json',
             }).then((resp) =>
-                resp.json().then((body) => dispatch(receiveName(body.name))))
+                resp.json().then((body) => {
+                    dispatch(receiveInterests(body.interests));
+                    dispatch(receiveName(body.name));
+                    dispatch(receiveKilometres(body.searchDistance));
+                }))
         });
     }
 }
+
+const interessosMock = ['art','sports','culture','trips','workshops','leisure'];
+const kmMock = 10;
+const nameMock = "Elena";
+

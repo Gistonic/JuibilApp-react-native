@@ -61,5 +61,7 @@ export const MODIFICAR_ACTIVITY_ACTIONS = {
 
 export const PROFILE_ACTIONS = {
     FetchName: 'FETCH_NAME',
-    ReceiveName: 'RECEIVE_NAME'
+    ReceiveName: 'RECEIVE_NAME',
+    ReceiveInterests: 'RECEIVE_INTERESTS',
+    ReceiveKilometres: 'RECEIVE_KILOMETRES',
 }
