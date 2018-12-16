@@ -29,6 +29,21 @@ export const changeBuscarActivityFormProperty=(propertyName, value) =>{
     }
 };
 
+export const attend = (id) => {
+    return () => {
+        const url1 = '/event/';
+        const url2 = '/attend';
+        request(url1+id+url2, 'POST');
+    }
+}
+export const notAttend = (id) => {
+    return () => {
+        const url1 = '/event/';
+        const url2 = '/attend';
+        request(url1+id+url2, 'DELETE');
+    }
+}
+
 export const fetchActivitats = (stringISOfromDate, stringISOtoDate) =>{
     console.log(stringISOfromDate);
     /*return(dispatch)=>{
@@ -43,7 +58,9 @@ export const fetchActivitats = (stringISOfromDate, stringISOtoDate) =>{
         const url4 = "&fromDate=";
         const url5 = "&toDate=";
         const url6 = "&forMe=true";
-        const finalurl = url1+url2+url3+url4+stringISOfromDate+url5+stringISOtoDate+url6;
+        const url7 = "&excludeOwn=true";
+        const url8 = "&&undecidedOnly=true";
+        const finalurl = url1+url2+url3+url4+stringISOfromDate+url5+stringISOtoDate+url6+url7+url8;
         console.log("finalurl: ", finalurl);
             fetch(finalurl, {
                 method: 'GET',

@@ -10,17 +10,6 @@ import ButtonBack from "../../components/basicComponents/ButtonBack";
 import NextButton from "../../components/basicComponents/NextButton";
 
 
-const botonsModificar= [
-    {
-        id:0,
-        typeName: 'KILOMETRAGE', path: ()=>Actions.km(), icon: 'location'
-    },
-    {
-        id:1,
-        typeName: 'INTERESES PERSONALES', path: ()=>Actions.interessos(), icon: 'heart'
-    }
-]
-
 
 export default class modificarPerfilScreen extends React.Component {
     constructor(props) {
@@ -28,8 +17,18 @@ export default class modificarPerfilScreen extends React.Component {
 
         this.dibuixarBotons = this.dibuixarBotons.bind(this);
     }
+
     dibuixarBotons = () => {
-        //el num es per distingir a quina columna aniran, la dreta es per tots aquells que tenen id parell i lesquerra pels ids imparells
+        const botonsModificar= [
+            {
+                id:0,
+                typeName: 'KILOMETRAGE', path: this.props.pathkm, icon: 'location'
+            },
+            {
+                id:1,
+                typeName: 'INTERESES PERSONALES', path: this.props.pathinteressos, icon: 'heart'
+            }
+        ];
         return botonsModificar.map((totsID)=> {
                 return  (
                     <ConfigurationButton key = {totsID.id} iconName={totsID.icon}
@@ -47,11 +46,10 @@ export default class modificarPerfilScreen extends React.Component {
     }
     render() {
         const {viewStyle, viewButtons,container,container1} = styles;
-        console.log('render modificar')
         return (
             <View style = {viewStyle}>
 
-                <HeaderIcon headerText = { 'Modificar Perfil'}
+                <HeaderIcon headerText = {this.props.textExpl}
                             iconName={ 'home'}
                             colorName={ APP_COLORS.color_neutral}
                             path={() => Actions.home()}
@@ -59,14 +57,13 @@ export default class modificarPerfilScreen extends React.Component {
                             textSize = {31}
                             isEvilType = {true}
                 />
-                <Description textExpl = {'Que quieres modificar de tu perfil?'}/>
+                <Description textExpl = {this.props.fraseExpl}/>
 
                 <View style = {viewButtons}>
                     <View style = {container}>
                         {this.dibuixarBotons()}
                     </View>
-                    
-                        
+         
                 </View>
                 <View style = {container1}>
                     <ButtonBack buttonText = {'Finalizar'}

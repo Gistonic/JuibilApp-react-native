@@ -31,7 +31,9 @@ export const listActivitiesReducer = (state = INITIAL_STATE, action) => {
         case LIST_ACTIVITIES_ACTIONS.FetchActivities:
             return state
         case LIST_ACTIVITIES_ACTIONS.ReceiveActivities:
-            const activities = action.payload.map(activity=>{
+            return {...state, activities: action.payload, isFetching: false};
+
+            /*const activities = action.payload.map(activity=>{
                 const {typeName,path}=activitiesTranslate[activity.type]
 
                 return {
@@ -45,7 +47,7 @@ export const listActivitiesReducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 isFetching: false,
                 activities: activities
-            }
+            }*/
         case LIST_ACTIVITIES_ACTIONS.DeleteActivity:
             return state
         case LIST_ACTIVITIES_ACTIONS.RequestActivities:
