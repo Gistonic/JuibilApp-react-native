@@ -4,6 +4,7 @@ import {View, Text,Alert} from 'react-native';
 import {APP_COLORS} from "../constants/colors";
 import {EvilIcons} from "@expo/vector-icons";
 import {Actions} from "react-native-router-flux";
+import Moment from 'react-moment';
 
 class ActivitatItem extends React.Component {
     constructor(props) {
@@ -29,13 +30,18 @@ class ActivitatItem extends React.Component {
         return (
             <View style={styles.viewStyle}>
                 <View>
-                    <Text style={styles.textStyle}>
+                    <Moment parse="YYYY-MM-DD HH:mm">
                         {this.props.dataIni}
+
+
+                    </Moment>
+                    <Text style={styles.textStyle}>
+
                         {this.props.dataEnd}
                         {this.props.nomActivitat}
 
 
-                        </Text>
+                    </Text>
                 </View>
                 <View style={styles.viewIconStyle}>
                     <EvilIcons name='eye' size={60} color={APP_COLORS.color_button_1} style={styles.iconStyle}

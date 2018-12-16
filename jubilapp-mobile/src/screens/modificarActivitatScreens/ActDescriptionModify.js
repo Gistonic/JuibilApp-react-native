@@ -20,7 +20,7 @@ class ActDescriptionModify extends React.Component {
                                       description = {this.props.description}
                                       buttonNext = "Aceptar"
                                       previousScreen={() => Actions.modificaractivitat()}
-                                      nextScreen={() => this.props.patchActivityDescription(this.props.id, this.props.name)}/>
+                                      nextScreen={() => this.props.patchActivityDescription(this.props.id, this.props.description)}/>
 
         );
     }
