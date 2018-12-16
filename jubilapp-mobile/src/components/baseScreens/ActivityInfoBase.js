@@ -3,7 +3,8 @@ import {View, Text, ImageBackground} from 'react-native';
 import {APP_COLORS} from "../../constants/colors";
 import Header from "../../components/basicComponents/Header";
 import CardActionCreades from "../CardActionCreades";
-import {Actions} from "react-native-router-flux";
+import CardActionApuntades from "../CardActionApuntades";
+import CardActionCancelades from "../CardActionCancelades";
 
 
 export default class ActivityInfoBase extends React.Component {
@@ -15,11 +16,14 @@ export default class ActivityInfoBase extends React.Component {
         if (type === 'workshops') return require('../../images/talleresPES2.jpg');
         if (type === 'leisure') return require('../../images/ocioPES3.jpg');
     }
-    _cardActionSelector(screen) {
-        if (screen === 'Creades') return <CardActionCreades deleteAct = {this.props.deleteAct} id = {this.props.id}/>
-        //if (screen === 'Apuntades')
-        //if (screen === 'Cancelades')
+    _cardActionSelector(screen,att) {
+        if (screen === '/own') return <CardActionCreades deleteAct = {this.props.deleteAct} id = {this.props.id}/>;
+        else {
+            if (att === 'yes') return <CardActionApuntades notAttend = {this.props.notAttend} id = {this.props.id}/>;
+            else return <CardActionCancelades attend = {this.props.attend} id = {this.props.id}/>
+        }
     }
+
     render() {
         const {viewStyle,textStyle,viewImageStyle, titleStyle} = styles;
         return (
@@ -34,9 +38,9 @@ export default class ActivityInfoBase extends React.Component {
                 <Text style = {titleStyle}>
                     {this.props.nomActivitat}
                 </Text>
-                <Text style = {textStyle}>{`C/Jordi Girona 21, Barcelona${"\n"}Data Inici: ${this.props.dataIni}${"\n"}Data Fi: ${this.props.dataFi}${"\n"}${"\n"}${this.props.descripcio}`}</Text>
+                <Text style = {textStyle}>{`${this.props.ubicacioactual}${"\n"}Data Inici: ${this.props.dataIni}${"\n"}Data Fi: ${this.props.dataFi}${"\n"}${"\n"}${this.props.descripcio}`}</Text>
 
-                {this._cardActionSelector(this.props.screen)}
+                {this._cardActionSelector(this.props.screen, this.props.att)}
 
             </View>
         );

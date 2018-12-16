@@ -25,6 +25,44 @@ class ActivitatItem extends React.Component {
         );    
         Actions.home();
     }
+    choosefirstIcon() {
+        if (this.props.screen === "/own") {
+            return (
+                    <EvilIcons name='pencil' size={60} color={APP_COLORS.color_next} style={styles.iconStyle}
+                               onPress={() => {
+                                   Actions.modificaractivitat();
+                                   this.props.setModifyActivityId(this.props.id)}}/>
+            );
+        }
+        else {
+            if (this.props.att === "yes") {
+                return (
+                    <EvilIcons name='close-o' size={60} color={APP_COLORS.color_header}
+                           style={styles.iconStyle}
+                           onPress = {() => {
+                               this.props.notAttend(this.props.id);
+                               Actions.llistesActs()}}/>
+                );
+            }
+            else {
+                return (
+                    <EvilIcons name='check' size={60} color={APP_COLORS.color_next}
+                           style={styles.iconStyle}
+                           onPress = {() => {
+                               this.props.attend(this.props.id);
+                               Actions.llistesActs()}}/>
+                );
+            }
+        }
+    }
+    choosesecondIcon() {
+        if (this.props.screen === "/own") {
+            return (
+                    <EvilIcons name='trash' size={60} color={APP_COLORS.color_header} style={styles.iconStyle}
+                               onPress = {this._onPress}/>
+            );
+        }
+    }
     render ()
     {
         return (
@@ -46,15 +84,10 @@ class ActivitatItem extends React.Component {
                 <View style={styles.viewIconStyle}>
                     <EvilIcons name='eye' size={60} color={APP_COLORS.color_button_1} style={styles.iconStyle}
                                onPress={() => {
-                                   Actions.info({id: this.props.id, screen: this.props.screen})
+                                   Actions.info({id: this.props.id, screen: this.props.screen, att: this.props.att})
                                }}/>
-                    <EvilIcons name='pencil' size={60} color={APP_COLORS.color_next} style={styles.iconStyle}
-                               onPress={() => {
-                                   Actions.modificaractivitat()
-                                   this.props.setModifyActivityId(this.props.id)
-                               }}/>
-                    <EvilIcons name='trash' size={60} color={APP_COLORS.color_header} style={styles.iconStyle}
-                               onPress = {this._onPress}/>
+                    {this.choosefirstIcon()}
+                    {this.choosesecondIcon()}
                 </View>
             </View>
         );

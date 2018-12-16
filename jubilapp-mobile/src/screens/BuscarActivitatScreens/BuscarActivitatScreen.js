@@ -6,9 +6,17 @@ import {Actions} from "react-native-router-flux";
 import HeaderIcon from "../../components/basicComponents/HeaderIcon";
 import CardModified from "../../components/CardModified";
 import { EvilIcons, Ionicons } from '@expo/vector-icons';
-import {fetchActivitats,changeIterador, changeBuscarActivityForm} from "../../actions/index";
+import {
+    fetchActivitats,
+    changeIterador,
+    changeBuscarActivityForm,
+    changeBuscarActivityFormProperty,
+    attend,
+    notAttend
+} from "../../actions/index";
 import Description from '../../components/basicComponents/Description';
 import { Constants, Location, Permissions } from 'expo';
+import Geocoder from 'react-native-geocoding';
 
 class BuscarActivitatScreen extends React.Component {
 
@@ -18,7 +26,6 @@ class BuscarActivitatScreen extends React.Component {
         this._onPressAcceptar = this._onPressAcceptar.bind(this);
         this.esTres = this.esTres.bind(this);
     }
-
     componentWillMount() {
         /*if (Platform.OS === 'android' && !Constants.isDevice) {
             console.log('Oops, this will not work on Sketch in an Android emulator. Try it on your device!');
@@ -29,8 +36,9 @@ class BuscarActivitatScreen extends React.Component {
         const stringISOtoDate = new Date(this.props.toDate.year, this.props.toDate.month, this.props.toDate.day).toISOString();
         console.log(stringISOtoDate);
         console.log(stringISOfromDate);
-
+        Geocoder.init('YOUR API KEY', {language: 'es'});
         this.props.fetchActivitats(stringISOfromDate, stringISOtoDate);
+
 
     }
     _getLocationAsync = async () => {
@@ -42,27 +50,36 @@ class BuscarActivitatScreen extends React.Component {
         let location = await Location.getCurrentPositionAsync({});
         this.props.changeBuscarActivityForm(location);
     };
+    getLocationfromCoords() {
+        Geocoder.from({lat: this.props.activitats_trobades[this.props.iterador].latitude, lng: this.props.activitats_trobades[this.props.iterador].longitude})
+            .then(json => {
+                this.props.changeUbicacioActual(json.results[0].formatted_address);
+            })
+            .catch(error => console.warn(error));
+    }
     
     _onPressDenegar(){
         Alert.alert(
             'Denegar Actividad',
-            'La actividad '+ this.props.activitats_trobades[this.props.iterador].nom +' se añadira a la lista de NO APUNTADAS.',
-            [
-              {text: 'OK', onPress: () => this.props.changeIterador()},
-            ],
-            { cancelable: false }
-        );    
-    }
-
-    _onPressAcceptar(){
-        Alert.alert(
-            'Aceptar Actividad',
-            'La actividad '+ this.props.activitats_trobades[this.props.iterador].nom +' se añadira a la lista de APUNTADAS.',
+            'La actividad '+ this.props.activitats_trobades[this.props.iterador].name +' se añadira a la lista de NO APUNTADAS.',
             [
               {text: 'OK', onPress: () => this.props.changeIterador()},
             ],
             { cancelable: false }
         );
+        this.props.notAttend(this.props.activitats_trobades[this.props.iterador].id);
+    }
+
+    _onPressAcceptar(){
+        Alert.alert(
+            'Aceptar Actividad',
+            'La actividad '+ this.props.activitats_trobades[this.props.iterador].name +' se añadira a la lista de APUNTADAS.',
+            [
+              {text: 'OK', onPress: () => this.props.changeIterador()},
+            ],
+            { cancelable: false }
+        );
+        this.props.attend(this.props.activitats_trobades[this.props.iterador].id);
     }
     
     esTres(){
@@ -82,16 +99,17 @@ class BuscarActivitatScreen extends React.Component {
             )
         }
         else {
+            this.getLocationfromCoords();
             return(
                 <View>
                 <View style = {styles.viewCard}>
-                    <CardModified image = {activitatsTranslate[this.props.activitats_trobades[this.props.iterador].tipus].source}
-                            nom =  {this.props.activitats_trobades[this.props.iterador].nom}
-                            ubicacio = {this.props.activitats_trobades[this.props.iterador].ubicacio}
-                            dataIni = {this.props.activitats_trobades[this.props.iterador].dataIni}
-                            dataFi = {this.props.activitats_trobades[this.props.iterador].dataFi}
-                            horaIni = {this.props.activitats_trobades[this.props.iterador].horaIni}
-                            horaFi = {this.props.activitats_trobades[this.props.iterador].horaFi}/>
+                    <CardModified image = {activitatsTranslate[this.props.activitats_trobades[this.props.iterador].type].source}
+                            nom =  {this.props.activitats_trobades[this.props.iterador].name}
+                            ubicacio = {this.props.ubicacioactual}
+                            dataIni = {this.props.activitats_trobades[this.props.iterador].startDate}
+                            dataFi = {this.props.activitats_trobades[this.props.iterador].endDate}
+                            horaIni = {this.props.activitats_trobades[this.props.iterador].startDate}
+                            horaFi = {this.props.activitats_trobades[this.props.iterador].endDate}/>
                 </View>
                 <View style={styles.footer}>
                     <View style={styles.circle} backgroundColor = {APP_COLORS.color_header}>
@@ -214,6 +232,7 @@ const mapStateToProps = (state) => {
         location: state.buscarActivity.location,
         fromDate: state.buscarActivity.fromDate,
         toDate: state.buscarActivity.toDate,
+        ubicacioactual: state.buscarActivity.ubicacioactual,
     }
 }
 
@@ -222,6 +241,9 @@ const  mapDispatchToProps = (dispatch)=>{
         fetchActivitats: (stringISOfromDate, stringISOtoDate)=>dispatch(fetchActivitats(stringISOfromDate, stringISOtoDate)),
         changeIterador: ()=>dispatch(changeIterador()),
         changeBuscarActivityForm: (value)=> dispatch(changeBuscarActivityForm(value)),
+        changeUbicacioActual: (value) => dispatch(changeBuscarActivityFormProperty("ubicacioactual",value)),
+        attend: (value) => dispatch(attend(value)),
+        notAttend: (value) => dispatch(notAttend(value))
     }
 }
 

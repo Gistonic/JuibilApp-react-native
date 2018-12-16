@@ -32,8 +32,10 @@ import BuscarActivitatScreen from "./screens/BuscarActivitatScreens/BuscarActivi
 import ListsActivitiesScreen from "./screens/LlistarActivitatsScreens/ListsActivitiesScreen";
 import modificarPerfilScreen from "./screens/Profile/modificarPerfilScreen";
 import PerfilScreen from "./screens/Profile/PerfilScreen";
+import veureInteressosPerfilScreen from "./screens/Profile/veureInteressosPerfilScreen";
 import SelectFromDate from "./screens/BuscarActivitatScreens/SelectFromDate";
 import SelectToDate from "./screens/BuscarActivitatScreens/SelectToDate";
+import veureKilometresScreen from './screens/Profile/veureKilometresScreen';
 
 
 const Scenes = Actions.create(
@@ -69,8 +71,10 @@ const Scenes = Actions.create(
 		<Scene key="modperfil" component={modificarPerfilScreen}/>
 		<Scene key="perfil" component={PerfilScreen}/>
 		<Scene key="ubi" component={UbiCreate}/>
+		<Scene key="veureinteressosperfil" component={veureInteressosPerfilScreen}/>
         <Scene key="toDate" component={SelectToDate}/>
         <Scene key="fromDate" component={SelectFromDate}/>
+		<Scene key="veurekm" component={veureKilometresScreen}/>
 
 
 	</Scene>

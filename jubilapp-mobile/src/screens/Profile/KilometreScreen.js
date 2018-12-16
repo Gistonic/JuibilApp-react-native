@@ -53,7 +53,7 @@ class KilometreScreen extends React.Component {
         const {viewStyle, container, container2,containerColumna,containerPrincipal} = styles;
         return (
             <View style = {viewStyle}>
-              <HeaderIcon headerText = {'Perfil'}
+              <HeaderIcon headerText = {'Modificar kilometros'}
                     iconName={ 'home'}
                     colorName={ APP_COLORS.color_neutral}
                         size = {75}

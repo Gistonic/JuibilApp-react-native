@@ -16,8 +16,6 @@ class Interessos2 extends React.Component {
     constructor(props) {
         super(props)
         this.onNextPressed = this.onNextPressed.bind(this)
-
-
     }
 
     componentWillMount() {

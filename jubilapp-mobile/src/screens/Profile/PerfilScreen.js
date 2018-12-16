@@ -4,7 +4,6 @@ import { Font } from 'expo';
 import { Actions } from 'react-native-router-flux';
 import {APP_COLORS} from "../../constants/colors";
 import connect from "react-redux/es/connect/connect";
-import {changeLoginFormProperty, login} from "../../actions/loginFormActions";
 import Description from "../../components/basicComponents/Description";
 import HeaderIcon from "../../components/basicComponents/HeaderIcon";
 import { Ionicons, EvilIcons } from '@expo/vector-icons';
@@ -17,13 +16,13 @@ class PerfilScreen extends React.Component {
     }
 
     componentWillMount() {
-        this.props.fetchName()
+        this.props.fetchName();
     }
 
 
     render() {
         const {viewStyle, viewStyle1,container,circle,textStyle} = styles;
-        const saludos = "Hola "+this.props.name+"!!";
+        const saludos = "Hola "+this.props.name+"!";
         return (
             <View style = {viewStyle}>
                 <HeaderIcon headerText = {'JubilApp'}
@@ -40,11 +39,11 @@ class PerfilScreen extends React.Component {
                 </View>
                 <View style = {container}>
                     <View style = {circle} backgroundColor = {APP_COLORS.color_button_1}>
-                        <EvilIcons name='gear' size={95} color= {APP_COLORS.color_neutral} onPress = {()=>Actions.modperfil()} />
+                        <EvilIcons name='gear' size={95} color= {APP_COLORS.color_neutral} onPress = {()=>Actions.modperfil({textExpl: 'Modificar perfil', pathinteressos: () => Actions.interessos(), pathkm: () => Actions.km(), fraseExpl: 'Que quieres modificar de tu perfil?'})} />
                         <Text style={textStyle}>Modificar</Text>
                     </View>
                     <View style = {circle} backgroundColor = {APP_COLORS.color_button_1}>
-                        <EvilIcons name='eye' size={95} color= {APP_COLORS.color_neutral} />
+                        <EvilIcons name='eye' size={95} color= {APP_COLORS.color_neutral} onPress = {()=>Actions.modperfil({textExpl: 'Ver perfil', pathinteressos: () => Actions.veureinteressosperfil(), pathkm: () => Actions.veurekm(), fraseExpl: 'Que quieres ver de tu perfil?'})}/>
                         <Text style={textStyle}>Ver</Text>
                     </View>
                 </View>
