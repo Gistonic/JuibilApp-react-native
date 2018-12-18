@@ -4,12 +4,12 @@ import Formulari from '../basicComponents/Formulari';
 import HeaderIcon from '../basicComponents/HeaderIcon';
 import NextButton from '../basicComponents/NextButton';
 import ButtonBack from '../basicComponents/ButtonBack';
-import {APP_COLORS} from "../../constants/colors";
+import {APP_COLORS, MAPS_KEY} from "../../constants/";
 import { Actions } from 'react-native-router-flux';
 import {pressPopup} from "../../pressPopup";
 import Description from "../basicComponents/Description";
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
-
+import
 export default class NameScreenBase extends React.Component {
     render() {
         const {viewStyle, vista1Style, container, formStyle, viewStyle1} = styles;
@@ -40,7 +40,7 @@ export default class NameScreenBase extends React.Component {
                                 }}
                                 query={{
                                     // available options: https://developers.google.com/places/web-service/autocomplete
-                                    key: 'YOUR API KEY',
+                                    key: MAPS_KEY.key,
                                     language: 'es', // language of the results
                                 }}
                                 styles={{

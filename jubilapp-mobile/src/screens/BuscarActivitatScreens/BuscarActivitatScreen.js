@@ -17,6 +17,7 @@ import {
 import Description from '../../components/basicComponents/Description';
 import { Constants, Location, Permissions } from 'expo';
 import Geocoder from 'react-native-geocoding';
+import {MAPS_KEY} from "../../constants";
 
 class BuscarActivitatScreen extends React.Component {
 
@@ -36,7 +37,7 @@ class BuscarActivitatScreen extends React.Component {
         const stringISOtoDate = new Date(this.props.toDate.year, this.props.toDate.month, this.props.toDate.day).toISOString();
         console.log(stringISOtoDate);
         console.log(stringISOfromDate);
-        Geocoder.init('YOUR API KEY', {language: 'es'});
+        Geocoder.init(MAPS_KEY.key, {language: 'es'});
         this.props.fetchActivitats(stringISOfromDate, stringISOtoDate);
 
 

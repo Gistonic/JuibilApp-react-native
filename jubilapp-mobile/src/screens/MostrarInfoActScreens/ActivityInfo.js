@@ -4,12 +4,13 @@ import {changeActivityIDProperty, fetchActivity, deleteAct} from "../../actions/
 import {attend, notAttend} from "../../actions/buscarActivityActions";
 import connect from "react-redux/es/connect/connect";
 import Geocoder from "react-native-geocoding";
+import {MAPS_KEY} from "../../constants";
 
 class ActivityInfo extends React.Component {
     componentWillMount(){
         this.props.changeID(this.props.id);
         this.props.fetchActivity(this.props.id);
-        Geocoder.init('YOUR API KEY', {language: 'es'});
+        Geocoder.init(MAPS_KEY.key, {language: 'es'});
     }
     getLocationfromCoords() {
         Geocoder.from({lat: this.props.activityReceived.latitude, lng: this.props.activityReceived.longitude})
