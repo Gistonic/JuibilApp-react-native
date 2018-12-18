@@ -1,3 +1,3 @@
 export const MAPS_KEY={
-    key: 'KEY'
+    key: 'KEYp'
 }
