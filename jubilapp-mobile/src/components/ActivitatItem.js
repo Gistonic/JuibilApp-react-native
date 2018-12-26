@@ -5,6 +5,7 @@ import {APP_COLORS} from "../constants/colors";
 import {EvilIcons} from "@expo/vector-icons";
 import {Actions} from "react-native-router-flux";
 import Moment from 'react-moment';
+import 'moment-timezone';
 
 class ActivitatItem extends React.Component {
     constructor(props) {
@@ -68,12 +69,12 @@ class ActivitatItem extends React.Component {
         return (
             <View style={styles.viewStyle}>
                 <View>
-                    <Moment parse="YYYY-MM-DD HH:mm">
+                    <Moment style={styles.textStyle} element={Text} format="DD/MM/YYYY hh:mm">
                         {this.props.dataIni}
-
-
                     </Moment>
+
                     <Text style={styles.textStyle}>
+
 
                         {this.props.dataEnd}
                         {this.props.nomActivitat}

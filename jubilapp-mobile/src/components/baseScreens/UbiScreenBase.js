@@ -40,7 +40,7 @@ export default class NameScreenBase extends React.Component {
                                 }}
                                 query={{
                                     // available options: https://developers.google.com/places/web-service/autocomplete
-                                    key: 'YOUR API KEY',
+                                    key: 'AIzaSyADybdmzGYAujVWU2y7zDr1jQpr596D6x4',
                                     language: 'es', // language of the results
                                 }}
                                 styles={{
