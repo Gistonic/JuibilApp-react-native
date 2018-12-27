@@ -14,12 +14,13 @@ export default class HomeScreen extends React.Component {
             <HeaderIcon headerText = {'JubilApp'}
                     iconName={ 'user'}
                     colorName={ APP_COLORS.color_neutral}
-                        size = {75}
-                        textSize = {35}
-                        path={() => Actions.perfil()}
-                        iconName2 = {'star'}
-                        size2 = {67}
-                        iconSecond = {true}
+                    size = {75}
+                    textSize = {35}
+                    path={() => Actions.perfil()}
+                    iconName2 = {'star'}
+                    path2={() => Actions.veurevaloracions()}
+                    size2 = {67}
+                    iconSecond = {true}
             />
                 <View style = {viewButtons}>
                     <ConfigurationButton iconName={ 'md-search'}

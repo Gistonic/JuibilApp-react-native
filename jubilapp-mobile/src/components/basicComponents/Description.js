@@ -16,7 +16,7 @@ const styles ={
         fontSize: 35,
         fontWeight: 'bold',
         textAlign: 'center',
-        marginTop: 30,
+        marginTop: '5%',
     }
 }
 export default Description;

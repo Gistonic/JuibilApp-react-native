@@ -21,7 +21,6 @@ export const deleteActivity = (id) => {
         const url = '/event/';
         const final = url + id;
         request(final, 'DELETE');
-        Actions.home();
     }
 }
 

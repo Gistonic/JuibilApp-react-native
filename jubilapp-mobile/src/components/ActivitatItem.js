@@ -22,7 +22,8 @@ class ActivitatItem extends React.Component {
             ],
             { cancelable: false }
         );    
-        Actions.home();
+        
+        Actions.llistesActs();
     }
     choosefirstIcon() {
         if (this.props.screen === "/own") {

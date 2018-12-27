@@ -49,7 +49,6 @@ class ActivitatListScreen extends React.Component {
 
     render() {
         const {viewStyle} = styles;
-        //console.log('IsFetching: ' + this.props)
         return (
             <View style = {viewStyle}>
 
