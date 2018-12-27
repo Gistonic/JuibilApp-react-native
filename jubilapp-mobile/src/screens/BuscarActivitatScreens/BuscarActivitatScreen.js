@@ -113,7 +113,8 @@ class BuscarActivitatScreen extends React.Component {
                             dataIni = {this.props.activitats_trobades[this.props.iterador].startDate}
                             dataFi = {this.props.activitats_trobades[this.props.iterador].endDate}
                             horaIni = {this.props.activitats_trobades[this.props.iterador].startDate}
-                            horaFi = {this.props.activitats_trobades[this.props.iterador].endDate}/>
+                            horaFi = {this.props.activitats_trobades[this.props.iterador].endDate}
+                            preu = {this.props.activitats_trobades[this.props.iterador].price}/>
                 </View>
                 <View style={styles.footer}>
                     <View style={styles.circle} backgroundColor = {APP_COLORS.color_header}>
