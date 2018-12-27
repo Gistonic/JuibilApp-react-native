@@ -60,7 +60,8 @@ class veureInteressosPerfilScreen extends React.Component {
 
                     <View style = {container1}>
                     <ButtonBack buttonText = {'Finalizar'}
-                                path = {() => Actions.modperfil({textExpl: 'Ver perfil', pathinteressos: () => Actions.veureinteressosperfil(), pathkm: () => Actions.veurekm(), fraseExpl: 'Que quieres ver de tu perfil?'})}/>
+                                path = {() => Actions.modperfil({textExpl: 'Ver perfil', pathinteressos: () => Actions.veureinteressosperfil(), pathkm: () => Actions.veurekm(), fraseExpl: 'Que quieres ver de tu perfil?'})}
+                                colorBoto = {APP_COLORS.color_header}/>
 
                     </View>
             </View>

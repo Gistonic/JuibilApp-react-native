@@ -7,7 +7,6 @@ import { FontAwesome } from '@expo/vector-icons';
 import HeaderIcon from '../basicComponents/HeaderIcon';
 import Description from "../basicComponents/Description";
 import ButtonBack from "../basicComponents/ButtonBack";
-import NextButton from "../basicComponents/NextButton";
 import { Actions } from 'react-native-router-flux';
 import {pressPopup} from "../../pressPopup";
 
@@ -79,9 +78,11 @@ export default class HourScreenBase extends React.Component {
                 </View>
                 <View style = {container}>
                     <ButtonBack buttonText = {'Atrás'}
-                                path = {this.props.previousScreen}/>
-                    <NextButton buttonText = {this.props.buttonNext}
-                                path = {this.props.nextScreen}/>
+                                path = {this.props.previousScreen}
+                                colorBoto = {APP_COLORS.color_back}/>
+                    <ButtonBack buttonText = {this.props.buttonText}
+                                path = {this.props.nextScreen}
+                                colorBoto = {APP_COLORS.color_next}/>
                 </View>
             </View>
         );

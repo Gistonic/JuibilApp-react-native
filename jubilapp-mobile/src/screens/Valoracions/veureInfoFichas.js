@@ -8,7 +8,7 @@ import connect from "react-redux/es/connect/connect";
 import {Actions} from 'react-native-router-flux';
 import { Ionicons } from '@expo/vector-icons';
 
-class verFichasScreen extends React.Component {
+class veureInfoFichas extends React.Component {
 
     constructor(props) {
         super(props)
@@ -18,28 +18,20 @@ class verFichasScreen extends React.Component {
         const {viewStyle, container, textStyle,viewkmStyle,iconStyle} = styles;
         return (
             <View style = {viewStyle}>
-                <HeaderIcon headerText = {'Ver fichas'}
+                <HeaderIcon headerText = {'Info fichas'}
                 iconName={ 'home'}
                 colorName={ APP_COLORS.color_neutral}
                 size = {75}
                 textSize = {35}
                 path={() => Actions.home()}/>
-                
-                
-                
-                <Description textExpl= {'Tienes 4 fichas!'}/>
-                <View style = {viewkmStyle}>
-                    <View style = {styles.circle} backgroundColor = {APP_COLORS.color_button_1}>
-                        <Text style = {textStyle}>4</Text>
-                    </View>
-                </View>
 
-                <Description textExpl= {'Quieres más información sobre como funcionan las fichas?'}/>
-                <Ionicons style = {iconStyle} name={'ios-information-circle-outline'} size={75} 
-                            color= {APP_COLORS.color_button_1} onPress = {() => {Actions.verinfofichas()}}/>
+                <Description textExpl= {'Pantalla per explicar que son les fichas, perque serveixen, com van els descomptes, etc.'}/>
+                <Description textExpl= {'Segurament caldra algun tipo de paginacio, lscroll no anava qquan ho vaig intentar'}/>
+                
+                
                 <View style = {container}>
-                    <ButtonBack buttonText = {'Finalizar'}
-                        path = {() => Actions.veurevaloracions()}
+                    <ButtonBack buttonText = {'Atrás'}
+                        path = {() => Actions.verfichas()}
                         colorBoto = {APP_COLORS.color_header}/>
                 </View>
             </View>   
@@ -98,4 +90,4 @@ class verFichasScreen extends React.Component {
   }
 
 
-export default verFichasScreen;
+export default veureInfoFichas;

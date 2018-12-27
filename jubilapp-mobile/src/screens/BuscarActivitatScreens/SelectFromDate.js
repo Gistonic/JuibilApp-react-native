@@ -10,7 +10,7 @@ class SelectFromDate extends React.Component {
         return(
             <DateScreenBase date={this.props.fromDate}
                             changeFormDate={this.props.changeFormfromDate}
-                            buttonNext = "Siguiente"
+                            buttonText = "Siguiente"
                             previousScreen={() => Actions.home()}
                             nextScreen={() => Actions.toDate()}
                             titleName="Selecciona la fecha de inicio de búsqueda"

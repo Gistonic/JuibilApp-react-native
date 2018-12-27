@@ -38,6 +38,7 @@ import SelectToDate from "./screens/BuscarActivitatScreens/SelectToDate";
 import veureKilometresScreen from './screens/Profile/veureKilometresScreen';
 import veureValoracionsFichas from './screens/Valoracions/veureValoracionsFichas';
 import verFichasScreen from './screens/Valoracions/verFichasScreen';
+import veureInfoFichas from './screens/Valoracions/veureInfoFichas';
 
 
 const Scenes = Actions.create(
@@ -79,6 +80,7 @@ const Scenes = Actions.create(
 		<Scene key="veurekm" component={veureKilometresScreen}/>
 		<Scene key="veurevaloracions" component={veureValoracionsFichas}/>
 		<Scene key="verfichas" component={verFichasScreen}/>
+		<Scene key="verinfofichas" component={veureInfoFichas}/>
 
 
 	</Scene>

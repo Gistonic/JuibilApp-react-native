@@ -3,9 +3,7 @@ import {TouchableOpacity, View, Text} from 'react-native';
 import {APP_COLORS} from "../../constants/colors";
 import HeaderIcon from '../../components/basicComponents/HeaderIcon';
 import Description from '../../components/basicComponents/Description';
-import NextButton from '../../components/basicComponents/NextButton';
 import ButtonBack from '../../components/basicComponents/ButtonBack';
-import Numbers from '../../components/basicComponents/Numbers';
 import connect from "react-redux/es/connect/connect";
 import {Actions} from 'react-native-router-flux';
 
@@ -39,7 +37,8 @@ class veureKilometresScreen extends React.Component {
 
                 <View style = {container}>
                     <ButtonBack buttonText = {'Finalizar'}
-                        path = {() => Actions.modperfil({textExpl: 'Ver perfil', pathinteressos: () => Actions.veureinteressosperfil(), pathkm: () => Actions.veurekm(), fraseExpl: 'Que quieres ver de tu perfil?'})}/>
+                        path = {() => Actions.modperfil({textExpl: 'Ver perfil', pathinteressos: () => Actions.veureinteressosperfil(), pathkm: () => Actions.veurekm(), fraseExpl: 'Que quieres ver de tu perfil?'})}
+                        colorBoto = {APP_COLORS.color_header}/>
                 </View>
             </View>   
         );

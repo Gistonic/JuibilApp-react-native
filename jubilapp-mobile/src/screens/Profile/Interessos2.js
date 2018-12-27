@@ -7,7 +7,6 @@ import HeaderIcon from '../../components/basicComponents/HeaderIcon';
 import { Actions } from 'react-native-router-flux';
 import Description from "../../components/basicComponents/Description";
 import ButtonBack from "../../components/basicComponents/ButtonBack";
-import NextButton from "../../components/basicComponents/NextButton";
 import {interessosProfileRegistre,fetchInteressos, interessosProfile,changeInteressosProfileProperty} from "../../actions/index";
 import connect from "react-redux/es/connect/connect";
 
@@ -76,8 +75,9 @@ class Interessos2 extends React.Component {
             console.log("HOLA");
             return(
                 <View style = {styles.container1}>
-                        <NextButton buttonText = {'Aceptar'}
-                                    path = {() => this.onNextPressed()}/>
+                        <ButtonBack buttonText = {'Aceptar'}
+                                    path = {() => this.onNextPressed()}
+                                    colorBoto = {APP_COLORS.color_next}/>
                     </View>
             )
         }
@@ -85,9 +85,11 @@ class Interessos2 extends React.Component {
             return(
                 <View style = {styles.container1}>
                         <ButtonBack buttonText = {'Atras'}
-                                    path = {() => Actions.modperfil({textExpl: 'Modificar perfil', pathinteressos: () => Actions.interessos(), pathkm: () => Actions.km(), fraseExpl: 'Que quieres modificar de tu perfil?'})}/>
-                        <NextButton buttonText = {'Aceptar'}
-                                    path = {() => this.onNextPressed()}/>
+                                    path = {() => Actions.modperfil({textExpl: 'Modificar perfil', pathinteressos: () => Actions.interessos(), pathkm: () => Actions.km(), fraseExpl: 'Que quieres modificar de tu perfil?'})}
+                                    colorBoto = {APP_COLORS.color_back}/>
+                        <ButtonBack buttonText = {'Aceptar'}
+                                    path = {() => this.onNextPressed()}
+                                    colorBoto = {APP_COLORS.color_next}/>
                     </View>
                     
             )

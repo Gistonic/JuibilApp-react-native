@@ -2,7 +2,6 @@ import React from 'react';
 import {View, KeyboardAvoidingView,Alert} from 'react-native';
 import Formulari from '../basicComponents/Formulari';
 import HeaderIcon from '../basicComponents/HeaderIcon';
-import NextButton from '../basicComponents/NextButton';
 import ButtonBack from '../basicComponents/ButtonBack';
 import {APP_COLORS} from "../../constants/colors";
 import { Actions } from 'react-native-router-flux';
@@ -34,9 +33,11 @@ export default class NameScreenBase extends React.Component {
                             </View>
                         <View style = {container}>
                             <ButtonBack buttonText = {'Atrás'}
-                                        path = {this.props.previousScreen}/>
-                            <NextButton buttonText = {this.props.buttonNext}
-                                        path = {this.props.nextScreen}/>
+                                        path = {this.props.previousScreen}
+                                        colorBoto = {APP_COLORS.color_back}/>
+                            <ButtonBack buttonText = {this.props.buttonText}
+                                        path = {this.props.nextScreen}
+                                        colorBoto = {APP_COLORS.color_next}/>
                         </View>
                     </View>
                 </View>

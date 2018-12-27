@@ -3,8 +3,7 @@ import { Actions } from 'react-native-router-flux';
 import {changeCreateActivityFormProperty} from "../../actions/index";
 import connect from "react-redux/es/connect/connect";
 import NameScreenBase from "../../components/baseScreens/NameScreenBase";
-import {View, Text,TouchableOpacity} from 'react-native';
-import NextButton from '../../components/basicComponents/NextButton';
+import { Text} from 'react-native';
 
 class NameCreate extends React.Component {
     visibleModal = false;
@@ -17,7 +16,7 @@ class NameCreate extends React.Component {
         return (
             <NameScreenBase changeFormName = {this.props.changeFormName}
                             name = {this.props.name}
-                            buttonNext = "Siguiente"
+                            buttonText = "Siguiente"
                             nextScreen={() => Actions.ubi()}
                             previousScreen={() => Actions.home()}
                             enabledLocation = {true}

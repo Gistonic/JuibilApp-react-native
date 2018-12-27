@@ -3,7 +3,6 @@ import {TouchableOpacity, View} from 'react-native';
 import {APP_COLORS} from "../../constants/colors";
 import HeaderIcon from '../../components/basicComponents/HeaderIcon';
 import Description from '../../components/basicComponents/Description';
-import NextButton from '../../components/basicComponents/NextButton';
 import ButtonBack from '../../components/basicComponents/ButtonBack';
 import Numbers from '../../components/basicComponents/Numbers';
 import connect from "react-redux/es/connect/connect";
@@ -58,8 +57,9 @@ class KilometreScreen extends React.Component {
         if(this.props.pantalla == "Registre"){
             return(
                 <View style = {styles.container}>
-                    <NextButton buttonText = {'Aceptar'}
-                    path = {() => this.onNextPressed()}/>
+                    <ButtonBack buttonText = {'Aceptar'}
+                    path = {() => this.onNextPressed()}
+                    colorBoto = {APP_COLORS.color_next}/>
                 </View>
             )
         }
@@ -68,9 +68,11 @@ class KilometreScreen extends React.Component {
             return(
                 <View style = {styles.container}>
                     <ButtonBack buttonText = {'Atras'}
-                    path = {() => Actions.modperfil({textExpl: 'Modificar perfil', pathinteressos: () => Actions.interessos(), pathkm: () => Actions.km(), fraseExpl: 'Que quieres modificar de tu perfil?'})}/>
-                    <NextButton buttonText = {'Aceptar'}
-                    path = {() => this.onNextPressed()}/>
+                    path = {() => Actions.modperfil({textExpl: 'Modificar perfil', pathinteressos: () => Actions.interessos(), pathkm: () => Actions.km(), fraseExpl: 'Que quieres modificar de tu perfil?'})}
+                    colorBoto = {APP_COLORS.color_back}/>
+                    <ButtonBack buttonText = {'Aceptar'}
+                    path = {() => this.onNextPressed()}
+                    colorBoto = {APP_COLORS.color_next}/>
                 </View>
             )
         }

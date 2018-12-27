@@ -3,11 +3,9 @@ import {View} from 'react-native';
 import HeaderIcon from '../../components/basicComponents/HeaderIcon';
 import {APP_COLORS} from "../../constants/colors";
 import ConfigurationButton from '../../components/basicComponents/ConfigurationButton';
-
 import { Actions } from 'react-native-router-flux';
 import Description from "../../components/basicComponents/Description";
 import ButtonBack from "../../components/basicComponents/ButtonBack";
-import NextButton from "../../components/basicComponents/NextButton";
 
 
 
@@ -67,7 +65,8 @@ export default class modificarPerfilScreen extends React.Component {
                 </View>
                 <View style = {container1}>
                     <ButtonBack buttonText = {'Finalizar'}
-                                path = {() => Actions.perfil()}/>
+                                path = {() => Actions.perfil()}
+                                colorBoto = {APP_COLORS.color_header}/>
 
                 </View>
             </View>

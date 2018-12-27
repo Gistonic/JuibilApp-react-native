@@ -2,11 +2,11 @@ import React from 'react';
 import {View, KeyboardAvoidingView} from 'react-native';
 import Formulari from '../../components/basicComponents/Formulari';
 import Header from '../../components/basicComponents/Header';
-import NextButton from '../../components/basicComponents/NextButton';
 import ButtonBack from '../../components/basicComponents/ButtonBack';
 import { Actions } from 'react-native-router-flux';
 import {changeRegisterFormProperty} from "../../actions/index";
 import connect from "react-redux/es/connect/connect";
+import {APP_COLORS} from "../../constants/colors";
 
 class RegistrePsswScreen extends React.Component {
     constructor(props) {
@@ -49,9 +49,11 @@ class RegistrePsswScreen extends React.Component {
                     </View>
                     <View style = {container}>
                         <ButtonBack buttonText = {'Atrás'}
-                                        path = {() => Actions.r2()}/>
-                        <NextButton buttonText = {'Siguiente'}
-                                        path = {() => this.nextScreen()}/>
+                                        path = {() => Actions.r2()}
+                                        colorBoto = {APP_COLORS.color_back}/>
+                        <ButtonBack buttonText = {'Siguiente'}
+                                        path = {() => this.nextScreen()}
+                                        colorBoto = {APP_COLORS.color_next}/>
                     </View>
                 </View>
             </View>

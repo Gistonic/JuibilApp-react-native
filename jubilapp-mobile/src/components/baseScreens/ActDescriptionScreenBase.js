@@ -1,7 +1,6 @@
 import React from 'react';
 import {KeyboardAvoidingView, View, TextInput, Alert} from 'react-native';
 import HeaderIcon from '../../components/basicComponents/HeaderIcon';
-import NextButton from '../../components/basicComponents/NextButton';
 import ButtonBack from '../../components/basicComponents/ButtonBack';
 import Description from "../../components/basicComponents/Description";
 import {APP_COLORS} from "../../constants/colors";
@@ -10,8 +9,6 @@ import {pressPopup} from "../../pressPopup";
 
 
 export default class ActDescriptionScreenBase extends React.Component {
-    
-
     render() {
         const {viewStyle, container, viewStyle1, textStyle} = styles;
         return (
@@ -34,9 +31,11 @@ export default class ActDescriptionScreenBase extends React.Component {
                         />
                         <View style = {container}>
                             <ButtonBack buttonText = {'Atrás'}
-                                        path = {this.props.previousScreen}/>
-                            <NextButton buttonText = {this.props.buttonNext}
-                                        path = {this.props.nextScreen}/>
+                                        path = {this.props.previousScreen}
+                                        colorBoto = {APP_COLORS.color_back}/>
+                            <ButtonBack buttonText = {this.props.buttonText}
+                                        path = {this.props.nextScreen}
+                                        colorBoto = {APP_COLORS.color_next}/>
                         </View>
                     </View>
                 </View>

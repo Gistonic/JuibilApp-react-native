@@ -13,7 +13,7 @@ class FinDateCreate extends React.Component {
                             nextScreen ={() => Actions.modificaractivitat()}
                             previousScreen={() => Actions.iniDateMod()}
                             titleName="Modifica el final de la actividad"
-                            buttonNext = "Aceptar"/>
+                            buttonText = "Aceptar"/>
         )
     }
 }

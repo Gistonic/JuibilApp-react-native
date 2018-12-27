@@ -15,7 +15,7 @@ class NameModify extends React.Component {
             <NameScreenBase changeFormName = {this.props.changeActivityName}
                             changeFormLocation = {()=>{}}
                             name = {this.props.name}
-                            buttonNext= "Aceptar"
+                            buttonText= "Aceptar"
                             nextScreen={() => this.props.patchActivityName(this.props.id, this.props.name)}
                             previousScreen={() => Actions.modificaractivitat()}
                             enabledName = {!this.props.isFetching && !this.props.isPatching}

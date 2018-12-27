@@ -7,7 +7,7 @@ const ButtonBack = (props) => {
         <View style = {styles.container}>
            <TouchableOpacity onPress= {props.path} style = {styles.touchableStyle}>
                 <View style = {styles.btnContainer}>
-                    <Text style = {styles.button}>
+                    <Text style = {[styles.button,{backgroundColor:props.colorBoto},{borderColor:props.colorBoto}]}>
                         {props.buttonText}
                     </Text>
                 </View>

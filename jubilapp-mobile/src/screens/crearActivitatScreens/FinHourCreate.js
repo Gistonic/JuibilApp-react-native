@@ -12,7 +12,7 @@ class FinHourCreate extends React.Component {
                             _hour={(this.props.hourEnd)%24}
                             _minute={this.props.minuteEnd}
                             titleName="fin"
-                            buttonNext = "Siguiente"
+                            buttonText = "Siguiente"
                             headerName = "Crear Actividad"
                             previousScreen={() => Actions.iniHour()}
                             nextScreen={() => Actions.actdescr()}/>

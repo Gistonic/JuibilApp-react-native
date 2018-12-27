@@ -13,7 +13,7 @@ class IniHourCreate extends React.Component {
                             _hour={this.props.hourIni}
                             _minute={this.props.minuteIni}
                             titleName="inicio"
-                            buttonNext = "Siguiente"
+                            buttonText = "Siguiente"
                             headerName = "Crear Actividad"
                             nextScreen={() => Actions.finHour()}
                             previousScreen={() => Actions.finDate()}/>

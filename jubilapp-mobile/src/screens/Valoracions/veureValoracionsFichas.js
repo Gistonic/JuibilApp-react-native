@@ -7,7 +7,6 @@ import ConfigurationButton from '../../components/basicComponents/ConfigurationB
 import { Actions } from 'react-native-router-flux';
 import Description from "../../components/basicComponents/Description";
 import ButtonBack from "../../components/basicComponents/ButtonBack";
-import NextButton from "../../components/basicComponents/NextButton";
 
 
 
@@ -67,7 +66,9 @@ export default class veureValoracionsFichas extends React.Component {
                 </View>
                 <View style = {container1}>
                     <ButtonBack buttonText = {'Salir'}
-                                path = {() => Actions.home()}/>
+                                path = {() => Actions.home()}
+                                colorBoto = {APP_COLORS.color_header}/>
+                                
 
                 </View>
             </View>
