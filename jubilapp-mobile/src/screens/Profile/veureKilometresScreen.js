@@ -39,7 +39,7 @@ class veureKilometresScreen extends React.Component {
 
                 <View style = {container}>
                     <ButtonBack buttonText = {'Finalizar'}
-                        path = {() => Actions.modperfil()}/>
+                        path = {() => Actions.modperfil({textExpl: 'Ver perfil', pathinteressos: () => Actions.veureinteressosperfil(), pathkm: () => Actions.veurekm(), fraseExpl: 'Que quieres ver de tu perfil?'})}/>
                 </View>
             </View>   
         );

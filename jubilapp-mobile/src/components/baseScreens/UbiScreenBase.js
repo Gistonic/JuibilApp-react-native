@@ -9,7 +9,7 @@ import { Actions } from 'react-native-router-flux';
 import {pressPopup} from "../../pressPopup";
 import Description from "../basicComponents/Description";
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
-import
+
 export default class NameScreenBase extends React.Component {
     render() {
         const {viewStyle, vista1Style, container, formStyle, viewStyle1} = styles;

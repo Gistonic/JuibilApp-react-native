@@ -71,10 +71,18 @@ export const fetchInteressosOld = () => {
 
     }
 }
+
+export const interessosProfileRegistre = (interessosInfo) =>{
+    return () => {
+        request('/profile', 'PATCH', {interests: interessosInfo});
+        Actions.km({pantalla: "Registre"});
+    }
+}
+
 export const interessosProfile = (interessosInfo) => {
     return () => {
         request('/profile', 'PATCH', {interests: interessosInfo});
-        Actions.modperfil();
+        Actions.modperfil({textExpl: 'Modificar perfil', pathinteressos: () => Actions.interessos(), pathkm: () => Actions.km(), fraseExpl: 'Que quieres modificar de tu perfil?'});
     }
 }
 

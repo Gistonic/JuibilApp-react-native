@@ -120,7 +120,7 @@ class BuscarActivitatScreen extends React.Component {
                     <View style={styles.circle} backgroundColor = {APP_COLORS.color_back}>
                         <Ionicons name="md-information" size={70} color={APP_COLORS.color_neutral}/>
                     </View>
-                    <View style={styles.circle} backgroundColor = "#125E38">
+                    <View style={styles.circle} backgroundColor = {APP_COLORS.color_checked}>
                         <Ionicons name="md-checkmark" size={70} color={APP_COLORS.color_neutral} 
                         onPress = {this._onPressAcceptar}/>
                     </View>

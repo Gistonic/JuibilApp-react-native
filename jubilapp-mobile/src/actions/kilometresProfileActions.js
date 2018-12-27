@@ -43,6 +43,7 @@ export const fetchKilometres = () => {
                 resp.json().then((body) => dispatch(requestKilometres(body.searchDistance))))
         });
     }
+
 }
 
 export const fetchKilometresOld = () => {
@@ -98,10 +99,39 @@ export const kilometresProfile = (km_num) => {
                 console.log(err)
             })
         });
-            Actions.modperfil();
+            Actions.modperfil({textExpl: 'Modificar perfil', pathinteressos: () => Actions.interessos(), pathkm: () => Actions.km(), fraseExpl: 'Que quieres modificar de tu perfil?'})
         
         }
     }
+    export const kilometresProfileRegistre = (km_num) => {
+        return () => {
+            AsyncStorage.getItem('token').then((token) => {
+                fetch('http://ordinadorcasa.no-ip.org:4100/profile', {
+                    method: 'PATCH',
+                    headers: {
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json',
+                        Authorization: 'Bearer ' + token
+                    },
+                    body: JSON.stringify({searchDistance: km_num}) //CANVIAR
+                }).then(response => {
+                    console.log(response)
+                    if (response.ok) {
+                        console.log(response.ok)
+    
+                        return response.json()
+    
+                    } else {
+                        console.log('Error sending kilometres profile')
+                    }
+                }).catch(err => {
+                    console.log(err)
+                })
+            });
+                Actions.home();
+            
+            }
+        }
 
 
 const kilometresMock = '25';
