@@ -64,19 +64,22 @@ class BuscarActivitatScreen extends React.Component {
             'Denegar Actividad',
             'La actividad '+ this.props.activitats_trobades[this.props.iterador].name +' se añadira a la lista de NO APUNTADAS.',
             [
-              {text: 'OK', onPress: () => this.props.changeIterador()},
+                {text: 'Cancelar'},
+                {text: 'OK', onPress: () => this.props.changeIterador()},
             ],
             { cancelable: false }
         );
         this.props.notAttend(this.props.activitats_trobades[this.props.iterador].id);
     }
 
+
     _onPressAcceptar(){
         Alert.alert(
             'Aceptar Actividad',
             'La actividad '+ this.props.activitats_trobades[this.props.iterador].name +' se añadira a la lista de APUNTADAS.',
             [
-              {text: 'OK', onPress: () => this.props.changeIterador()},
+                {text: 'Cancelar'},
+                {text: 'OK', onPress: () => this.props.changeIterador()},
             ],
             { cancelable: false }
         );
@@ -194,11 +197,6 @@ const styles ={
         paddingRight: '5%',
         paddingLeft: '5%',
         paddingTop: '5%'
-    },
-    overlay: {
-        flex:1,
-        justifyContent: "space-between",
-        padding:16
     },
     activitatStyle: {
         paddingTop: '5%'

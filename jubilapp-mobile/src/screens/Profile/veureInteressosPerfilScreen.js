@@ -63,7 +63,6 @@ class veureInteressosPerfilScreen extends React.Component {
                                 path = {() => Actions.modperfil({textExpl: 'Ver perfil', pathinteressos: () => Actions.veureinteressosperfil(), pathkm: () => Actions.veurekm(), fraseExpl: 'Que quieres ver de tu perfil?'})}/>
 
                     </View>
-                    
             </View>
             
         );
