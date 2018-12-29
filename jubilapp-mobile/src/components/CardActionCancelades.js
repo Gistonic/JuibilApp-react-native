@@ -23,6 +23,7 @@ class CardActionCancelades extends React.Component {
                   separator={true}
                   inColumn={false}>
                 <ButtonBack buttonText="Atrás"
+                            colorBoto= {APP_COLORS.color_back}
                             path={() => Actions.activitatlist({url: "/attending", att: "no", headerText: "Canceladas"})}
                 />
                 <EvilIcons name='check' size={60} color={APP_COLORS.color_next}
