@@ -26,7 +26,7 @@ const styles ={
         height: 40,
         fontSize: 30,
         width: 200,
-        marginTop: 20
+        marginTop: 20,
     }
 }
 export default Formulari;

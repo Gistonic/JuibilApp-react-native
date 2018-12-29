@@ -44,7 +44,8 @@ const ButtonBack = (props) => {
             fontSize: 25,
              height: 55,
              width: 125,
-            textAlign:'center'
+            textAlign:'center',
+            fontFamily: 'open-sans-bold',
         }
     }
 export default ButtonBack;

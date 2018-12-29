@@ -12,7 +12,7 @@ const Description = (props) => {
 const styles ={
     textStyle:{
         color:APP_COLORS.text_color ,
-        fontFamily: 'sans-serif-condensed',
+        fontFamily: 'open-sans-bold',
         fontSize: 35,
         fontWeight: 'bold',
         textAlign: 'center',

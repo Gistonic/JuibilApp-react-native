@@ -31,7 +31,8 @@ const StartButton = (props) => {
         fontSize: 30,
         height: 60,
         width: 300,
-         marginTop: 15
+         marginTop: 15,
+         fontFamily: 'open-sans-bold',
      }
   }
 export default StartButton;
