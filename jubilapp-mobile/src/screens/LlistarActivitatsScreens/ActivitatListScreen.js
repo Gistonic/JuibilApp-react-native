@@ -24,7 +24,7 @@ class ActivitatListScreen extends React.Component {
         const { activities, isFetching } = this.props;
         if (isFetching) {
             return (
-                <View>
+                <View style = {{justifyContent: 'center', alignContent: 'center', width: '100%', height: '100%'}}>
                     <ActivityIndicator size="large"/>
                 </View>
             );
