@@ -25,7 +25,7 @@ export default class NameScreenBase extends React.Component {
                             <Description textExpl = "Introduce la ubicación"/>
 
                             <GooglePlacesAutocomplete
-                                placeholder='Ubicación'
+                                placeholder={this.props.ubic}
                                 minLength={2}
                                 autoFocus={false}
                                 returnKeyType={'search'}
@@ -70,7 +70,7 @@ export default class NameScreenBase extends React.Component {
                             <ButtonBack buttonText = {'Atrás'}
                                         path = {this.props.previousScreen}
                                         colorBoto = {APP_COLORS.color_back}/>
-                            <ButtonBack buttonText = {this.props.buttonText}
+                            <ButtonBack buttonText = {'Siguiente'}
                                         path = {this.props.nextScreen}
                                         colorBoto = {APP_COLORS.color_next}/>
                         </View>

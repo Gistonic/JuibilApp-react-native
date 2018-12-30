@@ -35,7 +35,7 @@ class PerfilScreen extends React.Component {
                 />
                 <View style = {viewStyle1}>
                     <Description textExpl={saludos}/>
-                    <Description textExpl={'Que deseas hacer con tu perfil?'}/>
+                    <Description textExpl={`Que deseas hacer con${"\n"}tu perfil?`}/>
                 </View>
                 <View style = {container}>
                     <View style = {circle} backgroundColor = {APP_COLORS.color_button_1}>
@@ -54,7 +54,7 @@ class PerfilScreen extends React.Component {
 const styles ={
     textStyle:{
         color: APP_COLORS.color_neutral,
-        fontFamily: 'sans-serif-condensed',
+        fontFamily: 'open-sans-bold',
         fontSize: 18
     },
     viewStyle: {
@@ -84,7 +84,7 @@ const styles ={
         justifyContent: 'space-between',
     },
     viewStyle1: {
-        paddingTop: '25%'
+        paddingTop: '20%'
     }
   }
 

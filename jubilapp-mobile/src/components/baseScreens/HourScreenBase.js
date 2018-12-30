@@ -11,6 +11,13 @@ import { Actions } from 'react-native-router-flux';
 import {pressPopup} from "../../pressPopup";
 
 export default class HourScreenBase extends React.Component {
+    componentWillMount () {
+        if (this.props.changeFormFinHour != null) {
+            console.log("Hora ini ", this.props._inih);
+            this.props.changeFormFinHour(this.props._inih);
+            this.props.changeFormFinMin(this.props._inim);
+        }
+    }
 
     onPressUpHour = () => {
         const { changeFormHour, _hour} = this.props;

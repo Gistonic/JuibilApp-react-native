@@ -23,7 +23,8 @@ export default class NameScreenBase extends React.Component {
                 />
                     <View style = {viewStyle1}>
                             <View style = {formStyle}>
-                                <Formulari textExplicatiu = {'Introduce el nombre de la actividad'}
+                                <Formulari textExplicatiu = {`Introduce el nombre de la${"\n"}actividad`}
+                                           altura = {150}
                                            textPlaceHolder = {'Nombre'}
                                            tipusTeclat = {'default'}
                                            value = {this.props.name}
@@ -72,7 +73,6 @@ const styles ={
         marginTop: '40%',
         paddingLeft: '10%',
         paddingRight: '10%',
-        paddingBottom: '10%',
     }
 }
 

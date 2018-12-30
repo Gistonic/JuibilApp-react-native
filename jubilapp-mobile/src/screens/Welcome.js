@@ -12,7 +12,7 @@ export default class Welcome extends React.Component {
         return (
             <View style = {viewBig}>
                 <View style = {viewStyle}>
-                <Description textExpl = {'¡Bienvenido a JubilApp!'}/>
+                <Description textExpl = {`¡Bienvenido a${"\n"}JubilApp!`}/>
                 </View>   
                 <View style = {viewStyle}>
                     <ButtonBack buttonText = {this.props.textExpl}

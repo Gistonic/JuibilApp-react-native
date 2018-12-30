@@ -36,7 +36,7 @@ class RegistreTelfScreen extends React.Component {
                 <View style = {viewStyle1}>
                     <View style = {vista1Style}>
                         <View style = {formStyle}>
-                              <Formulari textExplicatiu = {'Introduce tu número de teléfono (es opcional)'}
+                              <Formulari textExplicatiu = {`Introduce tu número de${"\n"}teléfono (es opcional)`}
                                          textPlaceHolder = {'Teléfono'}
                                          tipusTeclat = {'phone-pad'}
 
@@ -72,7 +72,7 @@ class RegistreTelfScreen extends React.Component {
       },
       vista1Style: {
           flex:1,
-          paddingTop: '45%',
+          paddingTop: '30%',
       },
       container: {
           flexDirection: 'row',

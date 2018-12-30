@@ -73,7 +73,6 @@ class RegistrePsswScreen extends React.Component {
       },
       vista1Style: {
           flex:1,
-          paddingTop: '10%',
       },
       container: {
           flexDirection: 'row',
@@ -86,8 +85,8 @@ class RegistrePsswScreen extends React.Component {
       formStyle: {
           paddingLeft: '10%',
           paddingRight: '10%',
-          paddingBottom: '10%',
-          paddingTop: '10%'
+          paddingBottom: '5%',
+          paddingTop: '5%'
       },
   }
 const mapStateToProps = (state) => {

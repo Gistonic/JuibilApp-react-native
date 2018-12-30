@@ -33,6 +33,7 @@ const StartButton = (props) => {
         width: 300,
          marginTop: 15,
          fontFamily: 'open-sans-bold',
+         overflow: "hidden",
      }
   }
 export default StartButton;

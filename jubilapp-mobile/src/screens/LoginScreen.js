@@ -62,7 +62,7 @@ class LoginScreen extends React.Component {
             height: '100%',
         },
         viewStyle1: {
-            paddingTop: '25%'
+            paddingTop: '15%'
         }
 
   }

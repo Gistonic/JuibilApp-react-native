@@ -21,7 +21,8 @@ const INITIAL_STATE ={
     selected_Ocio: false,
     type: "",
     startDate: null,
-    endDate: null
+    endDate: null,
+    ubi: "",
 }
 const createActivityFormReducer = (state = INITIAL_STATE, action)=>{
     switch (action.type) {

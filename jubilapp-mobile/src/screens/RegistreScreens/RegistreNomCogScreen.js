@@ -67,11 +67,10 @@ const styles ={
         justifyContent: 'space-between',
         paddingRight: '5%',
         paddingLeft: '5%',
-
     },
     formStyle: {
         paddingLeft: '10%',
-        paddingRight: '10%'
+        paddingRight: '10%',
     }
 }
 const mapStateToProps = (state) => {

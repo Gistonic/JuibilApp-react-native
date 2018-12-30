@@ -51,7 +51,8 @@ const styles = {
     iconStyle: {
         backgroundColor: '#D9D9D9',
         borderRadius: 10,
-        marginRight: '8%'
+        marginRight: '8%',
+        overflow: "hidden",
     },
 }
 

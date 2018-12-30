@@ -36,7 +36,6 @@ const styles ={
     textStyle:{
         color: APP_COLORS.color_neutral,
         fontFamily: 'open-sans-bold',
-        fontWeight: 'bold',
         alignItems: 'flex-start'
     },
     iconStyle: {

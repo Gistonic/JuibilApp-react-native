@@ -116,7 +116,8 @@ const styles = {
     iconStyle: {
         backgroundColor: '#D9D9D9',
 
-        borderRadius: 10
+        borderRadius: 10,
+        overflow: "hidden",
 
     },
     textStyle: {
@@ -124,7 +125,7 @@ const styles = {
         paddingRight: '8%',
         backgroundColor: APP_COLORS.color_neutral,
         color: APP_COLORS.text_color,
-        fontFamily: 'sans-serif-condensed',
+        fontFamily: 'open-sans-bold',
         fontSize: 18,
         fontWeight: 'bold',
         textAlign: 'center'

@@ -84,7 +84,7 @@ const styles ={
     },
     textStyle:{
         color: APP_COLORS.text_color,
-        fontFamily: 'sans-serif-condensed',
+        fontFamily: 'open-sans-bold',
         fontSize: 23,
         fontWeight: 'bold'
     },

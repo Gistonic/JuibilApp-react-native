@@ -46,6 +46,7 @@ const ButtonBack = (props) => {
              width: 125,
             textAlign:'center',
             fontFamily: 'open-sans-bold',
+            overflow: "hidden",
         }
     }
 export default ButtonBack;

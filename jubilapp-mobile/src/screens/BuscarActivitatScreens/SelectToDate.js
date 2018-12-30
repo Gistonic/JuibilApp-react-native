@@ -13,7 +13,7 @@ class SelectToDate extends React.Component {
                             buttonText = "Siguiente"
                             previousScreen={() => Actions.fromDate()}
                             nextScreen={() => Actions.buscar()}
-                            titleName="Selecciona la fecha de fin de búsqueda"
+                            titleName="Selecciona el fin de búsqueda"
                             headerName = "Buscar Actividad"/>
         )
     }

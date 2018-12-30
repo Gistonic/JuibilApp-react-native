@@ -15,7 +15,12 @@ class FinHourCreate extends React.Component {
                             buttonText = "Siguiente"
                             headerName = "Crear Actividad"
                             previousScreen={() => Actions.iniHour()}
-                            nextScreen={() => Actions.actdescr()}/>
+                            nextScreen={() => Actions.actdescr()}
+                            changeFormFinHour={this.props.changeFormHourEnd}
+                            changeFormFinMin={this.props.changeFormMinuteEnd}
+                            _inih = {this.props.hourIni}
+                            _inim = {this.props.minuteIni}
+            />
 
         );
     }
@@ -23,8 +28,6 @@ class FinHourCreate extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        hourIni: state.createActivityForm.hourIni,
-        minuteIni: state.createActivityForm.minuteIni,
         hourEnd: state.createActivityForm.hourEnd,
         minuteEnd: state.createActivityForm.minuteEnd,
     }

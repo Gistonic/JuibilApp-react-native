@@ -1,5 +1,5 @@
 import React from 'react';
-import {KeyboardAvoidingView, View, TextInput, Alert} from 'react-native';
+import {KeyboardAvoidingView, View, TextInput, Alert, ScrollView} from 'react-native';
 import HeaderIcon from '../../components/basicComponents/HeaderIcon';
 import ButtonBack from '../../components/basicComponents/ButtonBack';
 import Description from "../../components/basicComponents/Description";
@@ -12,7 +12,7 @@ export default class ActDescriptionScreenBase extends React.Component {
     render() {
         const {viewStyle, container, viewStyle1, textStyle} = styles;
         return (
-            <KeyboardAvoidingView behavior = 'position'>
+            <KeyboardAvoidingView behavior="position">
                 <View style = {viewStyle}>
                     <HeaderIcon headerText = {this.props.headerName}
                                 iconName={ 'home'}
@@ -24,6 +24,7 @@ export default class ActDescriptionScreenBase extends React.Component {
                     <View style = {viewStyle1}>
                         <Description textExpl = "Describe la actividad"/>
                         <TextInput multiline = {true}
+                                   placeholder = "Escribe aquí..."
                                    style = {textStyle}
                                    maxLength = {180}
                                    value = {this.props.description}
@@ -63,7 +64,7 @@ const styles ={
     },
     textStyle: {
         color: 'black',
-        fontFamily: 'sans-serif-condensed',
+        fontFamily: 'open-sans-bold',
         fontSize: 30,
         fontWeight: 'bold',
         textAlign: 'center',
