@@ -30,6 +30,8 @@ const mapStateToProps = (state) => {
     return {
         hourEnd: state.createActivityForm.hourEnd,
         minuteEnd: state.createActivityForm.minuteEnd,
+        hourIni: state.createActivityForm.hourIni,
+        minuteIni: state.createActivityForm.minuteIni,
     }
 }
 
