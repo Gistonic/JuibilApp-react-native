@@ -1,5 +1,4 @@
 node_modules/**/*
 .expo/*
 .idea/
-.src/constants/key.js
 npm-debug.*
