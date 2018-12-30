@@ -12,11 +12,11 @@ const Description = (props) => {
 const styles ={
     textStyle:{
         color:APP_COLORS.text_color ,
-        fontFamily: 'sans-serif-condensed',
+        fontFamily: 'open-sans-bold',
         fontSize: 35,
         fontWeight: 'bold',
         textAlign: 'center',
-        marginTop: 30,
+        marginTop: '5%',
     }
 }
 export default Description;

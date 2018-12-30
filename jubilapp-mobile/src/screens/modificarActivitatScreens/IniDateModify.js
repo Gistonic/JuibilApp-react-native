@@ -12,7 +12,7 @@ class IniDateCreate extends React.Component {
         return(
             <DateScreenBase date={this.props.dateIni}
                             changeFormDate={this.props.changeFormDateIni}
-                            buttonNext = "Siguiente"
+                            buttonText = "Siguiente"
                             previousScreen={() => Actions.home()}
                             nextScreen={() => Actions.finDateMod()}
                             titleName="Modifica el inicio de la actividad"/>

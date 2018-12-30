@@ -49,7 +49,6 @@ export const fetchActivitats = (stringISOfromDate, stringISOtoDate) =>{
     /*return(dispatch)=>{
         dispatch(recieveActivitats(activitatsMock));
     }*/
-    //demanar crida Biel
     return (dispatch) => {
         AsyncStorage.getItem('token').then((token) => {
         const url1 = "http://ordinadorcasa.no-ip.org:4100/event?";

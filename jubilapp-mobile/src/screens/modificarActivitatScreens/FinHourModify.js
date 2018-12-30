@@ -19,7 +19,7 @@ class FinHourModify extends React.Component {
                             _hour={ new Date(this.props.endDate).getHours()+1%24}
                             _minute={ new Date(this.props.endDate).getMinutes()}
                             titleName="fin"
-                            buttonNext = "Aceptar"
+                            buttonText = "Aceptar"
                             previousScreen={() => this.props.patchActivityEndDate(this.props.id, this.props.startDate)}
                             nextScreen={() => Actions.modificaractivitat()}/>
 

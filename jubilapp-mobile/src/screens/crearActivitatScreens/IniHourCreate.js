@@ -13,10 +13,11 @@ class IniHourCreate extends React.Component {
                             _hour={this.props.hourIni}
                             _minute={this.props.minuteIni}
                             titleName="inicio"
-                            buttonNext = "Siguiente"
+                            buttonText = "Siguiente"
                             headerName = "Crear Actividad"
                             nextScreen={() => Actions.finHour()}
-                            previousScreen={() => Actions.finDate()}/>
+                            previousScreen={() => Actions.finDate()}
+            />
 
         )
     }
@@ -27,8 +28,6 @@ const mapStateToProps = (state) => {
     return {
         hourIni: state.createActivityForm.hourIni,
         minuteIni: state.createActivityForm.minuteIni,
-        hourEnd: state.createActivityForm.hourIni,
-        minuteEnd: state.createActivityForm.minuteIni,
     }
 }
 

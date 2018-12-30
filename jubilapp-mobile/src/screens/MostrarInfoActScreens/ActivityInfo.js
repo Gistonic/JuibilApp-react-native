@@ -16,8 +16,7 @@ class ActivityInfo extends React.Component {
         Geocoder.from({lat: this.props.activityReceived.latitude, lng: this.props.activityReceived.longitude})
             .then(json => {
                 this.props.changeUbicacioActual(json.results[0].formatted_address);
-            })
-            .catch(error => console.warn(error));
+            });
     }
     render() {
         this.getLocationfromCoords();

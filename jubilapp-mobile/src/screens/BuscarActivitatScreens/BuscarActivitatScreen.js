@@ -64,19 +64,22 @@ class BuscarActivitatScreen extends React.Component {
             'Denegar Actividad',
             'La actividad '+ this.props.activitats_trobades[this.props.iterador].name +' se añadira a la lista de NO APUNTADAS.',
             [
-              {text: 'OK', onPress: () => this.props.changeIterador()},
+                {text: 'Cancelar'},
+                {text: 'OK', onPress: () => this.props.changeIterador()},
             ],
             { cancelable: false }
         );
         this.props.notAttend(this.props.activitats_trobades[this.props.iterador].id);
     }
 
+
     _onPressAcceptar(){
         Alert.alert(
             'Aceptar Actividad',
             'La actividad '+ this.props.activitats_trobades[this.props.iterador].name +' se añadira a la lista de APUNTADAS.',
             [
-              {text: 'OK', onPress: () => this.props.changeIterador()},
+                {text: 'Cancelar'},
+                {text: 'OK', onPress: () => this.props.changeIterador()},
             ],
             { cancelable: false }
         );
@@ -110,7 +113,8 @@ class BuscarActivitatScreen extends React.Component {
                             dataIni = {this.props.activitats_trobades[this.props.iterador].startDate}
                             dataFi = {this.props.activitats_trobades[this.props.iterador].endDate}
                             horaIni = {this.props.activitats_trobades[this.props.iterador].startDate}
-                            horaFi = {this.props.activitats_trobades[this.props.iterador].endDate}/>
+                            horaFi = {this.props.activitats_trobades[this.props.iterador].endDate}
+                            preu = {this.props.activitats_trobades[this.props.iterador].price}/>
                 </View>
                 <View style={styles.footer}>
                     <View style={styles.circle} backgroundColor = {APP_COLORS.color_header}>
@@ -120,7 +124,7 @@ class BuscarActivitatScreen extends React.Component {
                     <View style={styles.circle} backgroundColor = {APP_COLORS.color_back}>
                         <Ionicons name="md-information" size={70} color={APP_COLORS.color_neutral}/>
                     </View>
-                    <View style={styles.circle} backgroundColor = "#125E38">
+                    <View style={styles.circle} backgroundColor = {APP_COLORS.color_checked}>
                         <Ionicons name="md-checkmark" size={70} color={APP_COLORS.color_neutral} 
                         onPress = {this._onPressAcceptar}/>
                     </View>
@@ -194,11 +198,6 @@ const styles ={
         paddingRight: '5%',
         paddingLeft: '5%',
         paddingTop: '5%'
-    },
-    overlay: {
-        flex:1,
-        justifyContent: "space-between",
-        padding:16
     },
     activitatStyle: {
         paddingTop: '5%'

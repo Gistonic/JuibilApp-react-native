@@ -7,6 +7,7 @@ import connect from "react-redux/es/connect/connect";
 import Description from "../../components/basicComponents/Description";
 import HeaderIcon from "../../components/basicComponents/HeaderIcon";
 import ButtonBack from "../../components/basicComponents/ButtonBack";
+import { Ionicons, AntDesign,Feather,FontAwesome } from '@expo/vector-icons';
 
 
 
@@ -24,7 +25,11 @@ class veureInteressosPerfilScreen extends React.Component {
                 return  (<View key={totsID.id} style={styles.buttonStyle}>
                             {totsID.estat ? <ImageBackground source={totsID.icon} style={styles.imageStyle}/>:
                                             <ImageBackground source={totsID.iconBlancNegre} style={styles.imageStyle}/>}
-                            <Text style={styles.textStyle}>{totsID.nom}</Text>
+                            {totsID.estat ? <View style={styles.viewIconStyle}>
+                                                <Text style={styles.textStyle}>{totsID.nom}</Text>
+                                                <FontAwesome name='check-square-o' size={25} color= {APP_COLORS.color_checked} style = {styles.iconStyle}/>
+                                            </View>:
+                                            <Text style={styles.textStyle}>{totsID.nom}</Text>}
                         </View>
                         );
             }
@@ -55,17 +60,20 @@ class veureInteressosPerfilScreen extends React.Component {
 
                     <View style = {container1}>
                     <ButtonBack buttonText = {'Finalizar'}
-                                path = {() => Actions.perfil()}/>
+                                path = {() => Actions.modperfil({textExpl: 'Ver perfil', pathinteressos: () => Actions.veureinteressosperfil(), pathkm: () => Actions.veurekm(), fraseExpl: 'Que quieres ver de tu perfil?'})}
+                                colorBoto = {APP_COLORS.color_header}/>
 
                     </View>
-                    
             </View>
             
         );
     }
   }
 const styles ={
-    
+    iconStyle: {
+        marginTop: '2%',
+        marginStart: '5%'
+    },
     container1: {
         flexDirection: 'row',
         paddingBottom: '7%',
@@ -76,7 +84,7 @@ const styles ={
     },
     textStyle:{
         color: APP_COLORS.text_color,
-        fontFamily: 'sans-serif-condensed',
+        fontFamily: 'open-sans-bold',
         fontSize: 23,
         fontWeight: 'bold'
     },
@@ -90,6 +98,11 @@ const styles ={
         flex:1,
         flexDirection: 'row',
         marginTop: '5%'
+    },
+    viewIconStyle: {
+        flexDirection: 'row',
+        marginTop: '5%',
+        justifyContent: 'space-between'
     },
     imageStyle: {
         flex: 1,

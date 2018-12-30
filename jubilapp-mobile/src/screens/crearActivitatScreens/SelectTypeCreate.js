@@ -8,7 +8,6 @@ import HeaderIcon from '../../components/basicComponents/HeaderIcon';
 import { Actions } from 'react-native-router-flux';
 import Description from "../../components/basicComponents/Description";
 import ButtonBack from "../../components/basicComponents/ButtonBack";
-import NextButton from "../../components/basicComponents/NextButton";
 import {changeCreateActivityFormProperty} from "../../actions/index";
 import connect from "react-redux/es/connect/connect";
 import { createActivity } from '../../actions/index';
@@ -148,9 +147,11 @@ class SelectTypeCreate extends React.Component {
 
                 <View style = {container1}>
                     <ButtonBack buttonText = {'Atrás'}
-                                path = {() => Actions.actdescr()}/>
-                    <NextButton buttonText = {'Finalizar'}
-                                path = {this.onNextPressed}/>
+                                path = {() => Actions.actdescr()}
+                                colorBoto = {APP_COLORS.color_back}/>
+                    <ButtonBack buttonText = {'Finalizar'}
+                                path = {this.onNextPressed}
+                                colorBoto = {APP_COLORS.color_next}/>
                 </View>
             </View>
         );

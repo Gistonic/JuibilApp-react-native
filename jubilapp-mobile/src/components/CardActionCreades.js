@@ -23,6 +23,7 @@ class CardActionCreades extends React.Component {
                   separator={true}
                   inColumn={false}>
                 <ButtonBack buttonText="Atrás"
+                            colorBoto= {APP_COLORS.color_back}
                             path={() => Actions.activitatlist({url: "/own", headerText: "Creadas"})}
                 />
                 <EvilIcons name='pencil' size={60} color={APP_COLORS.color_next}
@@ -50,7 +51,8 @@ const styles = {
     iconStyle: {
         backgroundColor: '#D9D9D9',
         borderRadius: 10,
-        marginRight: '8%'
+        marginRight: '8%',
+        overflow: "hidden",
     },
 }
 

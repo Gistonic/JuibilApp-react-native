@@ -1,7 +1,7 @@
 import React from 'react';
 import {View} from 'react-native';
 import Description from '../components/basicComponents/Description';
-import NextButton from '../components/basicComponents/NextButton';
+import ButtonBack from '../components/basicComponents/ButtonBack';
 import {APP_COLORS} from "../constants/colors";
 
 import { Actions } from 'react-native-router-flux';
@@ -12,11 +12,12 @@ export default class Welcome extends React.Component {
         return (
             <View style = {viewBig}>
                 <View style = {viewStyle}>
-                <Description textExpl = {'¡Bienvenido a JubilApp!'}/>
+                <Description textExpl = {`¡Bienvenido a${"\n"}JubilApp!`}/>
                 </View>   
                 <View style = {viewStyle}>
-                    <NextButton buttonText = {this.props.textExpl}
-                                path = {this.props.paths}/>
+                    <ButtonBack buttonText = {this.props.textExpl}
+                                path = {this.props.paths}
+                                colorBoto = {APP_COLORS.color_next}/>
                 </View> 
             </View>
         );

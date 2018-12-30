@@ -2,11 +2,11 @@ import React from 'react';
 import {KeyboardAvoidingView, View} from 'react-native';
 import Formulari from '../../components/basicComponents/Formulari';
 import Header from '../../components/basicComponents/Header';
-import NextButton from '../../components/basicComponents/NextButton';
 import ButtonBack from '../../components/basicComponents/ButtonBack';
 import { Actions } from 'react-native-router-flux';
 import {changeRegisterFormProperty} from "../../actions/index";
 import connect from "react-redux/es/connect/connect";
+import {APP_COLORS} from "../../constants/colors";
 
 class RegistreCorreoScreen extends React.Component {
 
@@ -29,9 +29,11 @@ class RegistreCorreoScreen extends React.Component {
                     </View>
                   <View style = {container}>
                     <ButtonBack buttonText = {'Atrás'}
-                                path = {() => Actions.r1()}/>
-                    <NextButton buttonText = {'Siguiente'}
-                                path = {() => Actions.r3()}/>
+                                path = {() => Actions.r1()}
+                                colorBoto = {APP_COLORS.color_back}/>
+                    <ButtonBack buttonText = {'Siguiente'}
+                                path = {() => Actions.r3()}
+                                colorBoto = {APP_COLORS.color_next}/>
                   </View>
                 </View>
             </View>

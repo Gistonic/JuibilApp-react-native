@@ -2,7 +2,6 @@ import React from 'react';
 import {View, KeyboardAvoidingView,Alert} from 'react-native';
 import Formulari from '../basicComponents/Formulari';
 import HeaderIcon from '../basicComponents/HeaderIcon';
-import NextButton from '../basicComponents/NextButton';
 import ButtonBack from '../basicComponents/ButtonBack';
 import {APP_COLORS} from "../../constants/colors";
 import { Actions } from 'react-native-router-flux';
@@ -24,7 +23,8 @@ export default class NameScreenBase extends React.Component {
                 />
                     <View style = {viewStyle1}>
                             <View style = {formStyle}>
-                                <Formulari textExplicatiu = {'Introduce el nombre de la actividad'}
+                                <Formulari textExplicatiu = {`Introduce el nombre de la${"\n"}actividad`}
+                                           altura = {150}
                                            textPlaceHolder = {'Nombre'}
                                            tipusTeclat = {'default'}
                                            value = {this.props.name}
@@ -34,9 +34,11 @@ export default class NameScreenBase extends React.Component {
                             </View>
                         <View style = {container}>
                             <ButtonBack buttonText = {'Atrás'}
-                                        path = {this.props.previousScreen}/>
-                            <NextButton buttonText = {this.props.buttonNext}
-                                        path = {this.props.nextScreen}/>
+                                        path = {this.props.previousScreen}
+                                        colorBoto = {APP_COLORS.color_back}/>
+                            <ButtonBack buttonText = {this.props.buttonText}
+                                        path = {this.props.nextScreen}
+                                        colorBoto = {APP_COLORS.color_next}/>
                         </View>
                     </View>
                 </View>
@@ -71,7 +73,6 @@ const styles ={
         marginTop: '40%',
         paddingLeft: '10%',
         paddingRight: '10%',
-        paddingBottom: '10%',
     }
 }
 

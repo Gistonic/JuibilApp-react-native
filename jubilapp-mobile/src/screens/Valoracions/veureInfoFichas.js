@@ -6,38 +6,32 @@ import Description from '../../components/basicComponents/Description';
 import ButtonBack from '../../components/basicComponents/ButtonBack';
 import connect from "react-redux/es/connect/connect";
 import {Actions} from 'react-native-router-flux';
+import { Ionicons } from '@expo/vector-icons';
 
-
-
-
-class veureKilometresScreen extends React.Component {
+class veureInfoFichas extends React.Component {
 
     constructor(props) {
         super(props)
     }
 
     render() {
-        const {viewStyle, container, textStyle,viewkmStyle,containerPrincipal} = styles;
+        const {viewStyle, container, textStyle,viewkmStyle,iconStyle} = styles;
         return (
             <View style = {viewStyle}>
-                <HeaderIcon headerText = {'Ver perfil'}
+                <HeaderIcon headerText = {'Info fichas'}
                 iconName={ 'home'}
                 colorName={ APP_COLORS.color_neutral}
                 size = {75}
                 textSize = {35}
                 path={() => Actions.home()}/>
+
+                <Description textExpl= {'Pantalla per explicar que son les fichas, perque serveixen, com van els descomptes, etc.'}/>
+                <Description textExpl= {'Segurament caldra algun tipo de paginacio, lscroll no anava qquan ho vaig intentar'}/>
                 
-                <Description textExpl= {'Tu radio de kilómetros seleccionado es:'}/>
-
-                <View style = {viewkmStyle}>
-                <View style = {styles.circle} backgroundColor = {APP_COLORS.color_button_1}>
-                    <Text style = {textStyle}>{this.props.km}</Text>
-                </View>
-                </View>
-
+                
                 <View style = {container}>
-                    <ButtonBack buttonText = {'Finalizar'}
-                        path = {() => Actions.modperfil({textExpl: 'Ver perfil', pathinteressos: () => Actions.veureinteressosperfil(), pathkm: () => Actions.veurekm(), fraseExpl: 'Que quieres ver de tu perfil?'})}
+                    <ButtonBack buttonText = {'Atrás'}
+                        path = {() => Actions.verfichas()}
                         colorBoto = {APP_COLORS.color_header}/>
                 </View>
             </View>   
@@ -45,12 +39,16 @@ class veureKilometresScreen extends React.Component {
     }
 }
   const styles ={
+    iconStyle: {
+        paddingLeft: '41%'
+    },
     viewkmStyle: {
         width: '100%', 
-        height: '50%',
+        height: '25%',
         alignContent: 'center',
-        paddingTop: '20%',
-        paddingLeft: '25%'
+        paddingTop: '5%',
+        paddingLeft: '37%',
+        paddingBottom: '1%'
     },
     textStyle: {
         color: 'white',
@@ -60,12 +58,11 @@ class veureKilometresScreen extends React.Component {
     viewStyle: {
         backgroundColor: APP_COLORS.color_neutral,
         width: '100%', 
-        height: '100%',
-        alignContent: 'center'
+        height: '100%'
     },
     circle:{
-        width: 200,
-        height: 200,
+        width: 100,
+        height: 100,
         borderRadius: 100,
         padding: 12,
         justifyContent: "center",
@@ -92,16 +89,5 @@ class veureKilometresScreen extends React.Component {
     }
   }
 
-  const mapStateToProps = (state) => {
-    return {
-        km: state.modifyPerfil.km
-    }
-}
 
-const  mapDispatchToProps = (dispatch)=>{
-    return {
-        fetchName: ()=>dispatch(fetchName())
-    }
-}
-
-  export default connect (mapStateToProps,mapDispatchToProps)(veureKilometresScreen);
+export default veureInfoFichas;

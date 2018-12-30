@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, ActivityIndicator } from 'react-native';
+import {View, ActivityIndicator, ScrollView} from 'react-native';
 import {APP_COLORS} from "../../constants/colors";
 import ActivitatItem from "../../components/ActivitatItem";
 import connect from "react-redux/es/connect/connect";
@@ -24,7 +24,7 @@ class ActivitatListScreen extends React.Component {
         const { activities, isFetching } = this.props;
         if (isFetching) {
             return (
-                <View>
+                <View style = {{justifyContent: 'center', alignContent: 'center', width: '100%', height: '100%'}}>
                     <ActivityIndicator size="large"/>
                 </View>
             );
@@ -49,9 +49,8 @@ class ActivitatListScreen extends React.Component {
 
     render() {
         const {viewStyle} = styles;
-        //console.log('IsFetching: ' + this.props)
         return (
-            <View style = {viewStyle}>
+            <ScrollView style = {viewStyle}>
 
                 <HeaderIcon headerText = {this.props.headerText}
                             iconName={ 'home'}
@@ -66,7 +65,7 @@ class ActivitatListScreen extends React.Component {
                 }
 
 
-            </View>
+            </ScrollView>
         );
     }
 }

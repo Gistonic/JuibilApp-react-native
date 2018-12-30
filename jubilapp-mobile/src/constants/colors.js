@@ -6,5 +6,6 @@ export const APP_COLORS={
     color_back:'#B07310',
     color_next: '#125243',
     black: '#000',
+    color_checked: '#125E38'
 }
 //'#22563a',

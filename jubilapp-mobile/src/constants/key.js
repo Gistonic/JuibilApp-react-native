@@ -1,3 +1,3 @@
 export const MAPS_KEY={
-    key: 'KEYs'
+    key: 'AIzaSyADybdmzGYAujVWU2y7zDr1jQpr596D6x4'
 }

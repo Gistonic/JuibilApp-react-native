@@ -9,58 +9,46 @@ import Description from "../../components/basicComponents/Description";
 import ButtonBack from "../../components/basicComponents/ButtonBack";
 
 
-const botonsModificar= [
-    {
-        id:0,
-        typeName: 'NOMBRE ACTIVIDAD', path: ()=>Actions.nameMod(), icon: 'pencil'
-    },
-    {
-        id:1,
-        typeName: 'DESCRIPCION ACTIVIDAD', path: ()=>Actions.actdescrMod(), icon: 'comment'
-    },
 
-    {
-        id:2,
-        typeName: 'HORA INICIAL ACTIVIDAD', path: ()=>Actions.iniHourMod(), icon: 'clock'
-    },
-    {
-        id:3,
-        typeName: 'HORA FINAL ACTIVIDAD', path: ()=>Actions.finHourMod(), icon: 'clock'
-    }
-]
-
-
-export default class ModificarActivitatScreen extends React.Component {
+export default class veureValoracionsFichas extends React.Component {
     constructor(props) {
         super(props)
 
         this.dibuixarBotons = this.dibuixarBotons.bind(this);
     }
-    dibuixarBotons = (num) => {
-        //el num es per distingir a quina columna aniran, la dreta es per tots aquells que tenen id parell i lesquerra pels ids imparells
+
+    dibuixarBotons = () => {
+        const botonsModificar= [
+            {
+                id:0,
+                typeName: 'VER FICHAS', path: () => Actions.verfichas(), icon: 'eye'
+            },
+            {
+                id:1,
+                typeName: 'VALORAR ACTIVIDADES', path: () => Actions.home(), icon: 'star'
+            }
+        ];
         return botonsModificar.map((totsID)=> {
-            if((totsID.id %2) === num) {
                 return  (
                     <ConfigurationButton key = {totsID.id} iconName={totsID.icon}
                         colorName={ APP_COLORS.color_button_1}
                         colorIconName={ APP_COLORS.color_button_1}
                         heightStyle={150}
                         fontsizeStyle= {19}
-                        widthStyle = {'63%'}
+                        widthStyle = {'43%'}
                         buttonText = {totsID.typeName}
                         isEvilType = {true}
                         path={totsID.path}/>
                 );
-            }
+            
         });
     }
     render() {
         const {viewStyle, viewButtons,container,container1} = styles;
-        console.log('render modificar')
         return (
             <View style = {viewStyle}>
 
-                <HeaderIcon headerText = { 'Modificar Activitat'}
+                <HeaderIcon headerText = {'Valorar'}
                             iconName={ 'home'}
                             colorName={ APP_COLORS.color_neutral}
                             path={() => Actions.home()}
@@ -68,22 +56,19 @@ export default class ModificarActivitatScreen extends React.Component {
                             textSize = {31}
                             isEvilType = {true}
                 />
-                <Description textExpl = {'Que quieres modificar?'}/>
+                <Description textExpl = {'Que quieres hacer?'}/>
 
                 <View style = {viewButtons}>
                     <View style = {container}>
-                        {this.dibuixarBotons(0)}
+                        {this.dibuixarBotons()}
                     </View>
-                    <View style = {container}>
-                        {this.dibuixarBotons(1)}
-                    </View>
-                    
-                        
+         
                 </View>
                 <View style = {container1}>
-                    <ButtonBack buttonText = {'Volver'}
-                                path = {() => Actions.activitatlist()}
+                    <ButtonBack buttonText = {'Salir'}
+                                path = {() => Actions.home()}
                                 colorBoto = {APP_COLORS.color_header}/>
+                                
 
                 </View>
             </View>

@@ -21,7 +21,7 @@ class IniHourModify extends React.Component {
                             _hour={ new Date(this.props.startDate).getHours()}
                             _minute={ new Date(this.props.startDate).getMinutes()}
                             titleName="inicio"
-                            buttonNext = "Aceptar"
+                            buttonText = "Aceptar"
                             nextScreen={() => this.props.patchActivityStartDate(this.props.id, this.props.startDate)}
                             previousScreen={() => Actions.modificaractivitat()}/>
         )

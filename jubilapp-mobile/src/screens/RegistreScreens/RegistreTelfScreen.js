@@ -2,12 +2,12 @@ import React from 'react';
 import {KeyboardAvoidingView, View} from 'react-native';
 import Formulari from '../../components/basicComponents/Formulari';
 import Header from '../../components/basicComponents/Header';
-import NextButton from '../../components/basicComponents/NextButton';
 import ButtonBack from '../../components/basicComponents/ButtonBack';
 import { Actions } from 'react-native-router-flux';
 import {changeRegisterFormProperty} from "../../actions/index";
 import connect from "react-redux/es/connect/connect";
-import { register } from '../../actions/index'
+import { register } from '../../actions/index';
+import {APP_COLORS} from "../../constants/colors";
 
 class RegistreTelfScreen extends React.Component {
     constructor(props) {
@@ -36,7 +36,7 @@ class RegistreTelfScreen extends React.Component {
                 <View style = {viewStyle1}>
                     <View style = {vista1Style}>
                         <View style = {formStyle}>
-                              <Formulari textExplicatiu = {'Introduce tu número de teléfono (es opcional)'}
+                              <Formulari textExplicatiu = {`Introduce tu número de${"\n"}teléfono (es opcional)`}
                                          textPlaceHolder = {'Teléfono'}
                                          tipusTeclat = {'phone-pad'}
 
@@ -48,9 +48,11 @@ class RegistreTelfScreen extends React.Component {
                     </View>
                           <View style = {container}>
                             <ButtonBack buttonText = {'Atrás'}
-                                        path = {() => Actions.r3()}/>
-                            <NextButton buttonText = {'Siguiente'}
-                                        path = {this.onNextPressed}/>
+                                        path = {() => Actions.r3()}
+                                        colorBoto = {APP_COLORS.color_back}/>
+                            <ButtonBack buttonText = {'Siguiente'}
+                                        path = {this.onNextPressed}
+                                        colorBoto = {APP_COLORS.color_next}/>
                           </View>
                 </View>
             </View>
@@ -70,7 +72,7 @@ class RegistreTelfScreen extends React.Component {
       },
       vista1Style: {
           flex:1,
-          paddingTop: '45%',
+          paddingTop: '30%',
       },
       container: {
           flexDirection: 'row',
