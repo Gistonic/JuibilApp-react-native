@@ -15,7 +15,7 @@ const HeaderIcon = (props) => {
                 style={ styles.iconStyle}/>
             </TouchableOpacity>
             <Text style = {[styles.textStyle, {fontSize: props.textSize}]}> {props.headerText} </Text>
-            <TouchableOpacity onPress= {props.path2} disabled = {props.iconSecond}>
+            <TouchableOpacity onPress= {props.path2} disabled = {!props.iconSecond}>
                 <FontAwesome name={props.iconName2} size={props.size2} color= {props.colorName}
                 style={ styles.icon2Style}/>
             </TouchableOpacity>
