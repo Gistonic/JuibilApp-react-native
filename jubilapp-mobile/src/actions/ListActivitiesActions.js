@@ -37,7 +37,12 @@ export const fetchActivities = (tipus, att) => {
         AsyncStorage.getItem('token').then((token) => {
             console.log('Token: ' + token);
             const baseUrl = 'http://ordinadorcasa.no-ip.org:4100/event';
-            const finalPath = baseUrl + tipus;
+            let finalPath;
+            if (tipus === "/own") {
+                const url1 = "?ownOnly=true&past=false"
+                finalPath = baseUrl + url1;
+            }
+            else finalPath = baseUrl + tipus;
 
             dispatch(requestActivities())
 
