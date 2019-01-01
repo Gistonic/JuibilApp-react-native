@@ -12,24 +12,27 @@ class CardModified extends React.Component {
     }
 
     pintar_preu(){
-        if(this.props.preu == 0){
-            return(
-                <View style = {styles.viewpriceStyle}>
-                    <Text style = {styles.text2Style}>GRATIS!</Text>
-                </View>
-            )
-        }
-        else{
-            return(
-                <View style = {styles.viewpriceStyle}>
-                    <Text style = {styles.text2Style}>{this.props.preu}</Text>
-                </View>
-            )
+        if(this.props.valorar == false){
+            if(this.props.preu == 0){
+                return(
+                    <View style = {styles.viewpriceStyle}>
+                        <Text style = {styles.text2Style}>GRATIS!</Text>
+                    </View>
+                )
+            }
+            else{
+                var preu_txt = this.props.preu + ' €';
+                return(
+                    <View style = {styles.viewpriceStyle}>
+                        <Text style = {styles.text2Style}>{preu_txt}</Text>
+                    </View>
+                )
+            }
         }
     }
 
     render() {
-        const {viewpriceStyle,textStyle,text2Style, titleStyle, imatgeStyle, texticonStyle, cardStyle, iconStyle,titlepriceStyle} = styles;
+        const {textStyle, titleStyle, imatgeStyle, texticonStyle, cardStyle, iconStyle,titlepriceStyle} = styles;
         return (
             <Card image = {this.props.image} style = {cardStyle}
                 imageStyle = {imatgeStyle} >
@@ -45,10 +48,10 @@ class CardModified extends React.Component {
                     <EvilIcons name="calendar" size={40} color = {APP_COLORS.text_color} style = {iconStyle}/>
                     <Text style = {textStyle}> {this.props.dataIni}-{this.props.dataFi}</Text>
                 </View>
-                <View style = {texticonStyle}>
+                {this.props.valorar ? null:<View style = {texticonStyle}>
                     <EvilIcons name="clock" size={40} color = {APP_COLORS.text_color} style = {iconStyle}/>
                     <Text style = {textStyle}> {this.props.horaIni}-{this.props.horaFi}</Text>
-                </View>
+                </View>}
             </Card>
         )
     }
@@ -64,7 +67,7 @@ const styles = {
         width: '25%',
         borderWidth: 3,
         borderRadius: 15,
-        marginLeft: '30%',
+        marginLeft: '22%',
         borderColor: APP_COLORS.text_color
     },
     texticonStyle: {
@@ -91,7 +94,7 @@ const styles = {
         color:APP_COLORS.text_color
     },
     cardStyle: {
-        height: '100%',
+        height: '90%',
         borderRadius: 15,
         paddingRight: '5%'
     },

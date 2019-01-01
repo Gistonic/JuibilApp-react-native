@@ -25,7 +25,7 @@ export default class veureValoracionsFichas extends React.Component {
             },
             {
                 id:1,
-                typeName: 'VALORAR ACTIVIDADES', path: () => Actions.home(), icon: 'star'
+                typeName: 'VALORAR ACTIVIDADES', path: () => Actions.fervaloracions(), icon: 'star'
             }
         ];
         return botonsModificar.map((totsID)=> {

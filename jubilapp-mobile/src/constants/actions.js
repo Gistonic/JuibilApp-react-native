@@ -65,3 +65,9 @@ export const PROFILE_ACTIONS = {
     ReceiveInterests: 'RECEIVE_INTERESTS',
     ReceiveKilometres: 'RECEIVE_KILOMETRES',
 }
+
+export const VALORAR_ACTIVITY_ACTIONS={
+    FetchActivitats: 'FETCH_ACTIVITATS',
+    RecieveActivitats: 'RECIEVE_ACTIVITATS',
+    ChangeIterador: 'CHANGE_ITERADOR'
+}
