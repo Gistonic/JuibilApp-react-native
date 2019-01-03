@@ -29,7 +29,6 @@ class Interessos2 extends React.Component {
     {
         //el num es per distingir a quina columna aniran, la dreta es per tots aquells que tenen id parell i lesquerra pels ids imparells
         return this.props.interessos_info.map((totsID)=> {
-            console.log(totsID.estat);
             if((totsID.id %2) == num) {
                 return  (<TouchableOpacity key={totsID.id} style={styles.buttonStyle} onPress={this._onPressButton.bind(this,totsID)}>
                             <ImageBackground source={totsID.icon} style={styles.imageStyle}/>

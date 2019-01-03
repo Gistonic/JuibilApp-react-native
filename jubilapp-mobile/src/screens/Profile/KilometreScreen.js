@@ -9,16 +9,11 @@ import connect from "react-redux/es/connect/connect";
 import {kilometresProfileRegistre,fetchKilometres,changeKilometresProfileProperty,kilometresProfile} from "../../actions/index";
 import {Actions} from 'react-native-router-flux';
 
-
-
-
 class KilometreScreen extends React.Component {
 
     constructor(props) {
         super(props)
         this.onNextPressed = this.onNextPressed.bind(this)
-
-
     }
 
     componentWillMount() {
