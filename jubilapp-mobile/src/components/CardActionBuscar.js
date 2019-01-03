@@ -36,7 +36,7 @@ class CardActionBuscar extends React.Component {
                            onPress = {this._onPressY}/>
                 <EvilIcons name='close-o' size={52} color={APP_COLORS.color_header}
                            style={[styles.iconStyle, {marginLeft: '0%'}]}
-                           onPress = {this._onPress}/>
+                           onPress = {this._onPressN}/>
             </View>
         )
     }
