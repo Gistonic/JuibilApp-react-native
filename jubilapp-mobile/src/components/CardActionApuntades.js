@@ -26,7 +26,7 @@ class CardActionApuntades extends React.Component {
                             colorBoto= {APP_COLORS.color_back}
                             path={() => Actions.activitatlist({url: "/attending", att: "yes", headerText: "Apuntadas"})}
                 />
-                <EvilIcons name='close-o' size={60} color={APP_COLORS.color_header}
+                <EvilIcons name='close-o' size={52} color={APP_COLORS.color_header}
                            style={[styles.iconStyle, {marginLeft: '0%'}]}
                            onPress = {this._onPress}/>
             </View>
@@ -47,7 +47,7 @@ const styles = {
     iconStyle: {
         backgroundColor: '#D9D9D9',
         borderRadius: 10,
-        marginRight: '8%',
+        marginRight: '15%',
         overflow: "hidden",
     },
 }

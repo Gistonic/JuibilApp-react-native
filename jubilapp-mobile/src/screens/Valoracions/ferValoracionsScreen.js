@@ -165,9 +165,8 @@ const styles ={
         backgroundColor: APP_COLORS.color_neutral,
     },
     descrStyle: {
-        fontFamily: 'sans-serif-condensed',
+        fontFamily: 'open-sans-bold',
         fontSize: 27,
-        fontWeight: 'bold',
         color:APP_COLORS.text_color,
         textAlignVertical: "center",
         textAlign: "center"
@@ -193,9 +192,8 @@ const styles ={
         paddingLeft: '2%'
     },
     titleStyle: {
-        fontFamily: 'sans-serif-condensed',
+        fontFamily: 'open-sans-bold',
         fontSize: 27,
-        fontWeight: 'bold',
         color:APP_COLORS.text_color
     },
     cardStyle: {
@@ -203,7 +201,7 @@ const styles ={
         borderRadius: 15
     },
     textStyle: {
-        fontFamily: 'sans-serif-condensed',
+        fontFamily: 'open-sans',
         fontSize: 21,
         color:APP_COLORS.text_color
     },

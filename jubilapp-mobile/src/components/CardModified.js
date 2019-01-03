@@ -64,7 +64,7 @@ const styles = {
         height: '72%'
     },
     viewpriceStyle: {
-        width: '25%',
+        width: '30%',
         borderWidth: 3,
         borderRadius: 15,
         marginLeft: '22%',
@@ -88,9 +88,8 @@ const styles = {
         paddingLeft: '2%'
     },
     titleStyle: {
-        fontFamily: 'sans-serif-condensed',
+        fontFamily: 'open-sans-bold',
         fontSize: 27,
-        fontWeight: 'bold',
         color:APP_COLORS.text_color
     },
     cardStyle: {
@@ -99,14 +98,13 @@ const styles = {
         paddingRight: '5%'
     },
     textStyle: {
-        fontFamily: 'sans-serif-condensed',
+        fontFamily: 'open-sans',
         fontSize: 21,
         color:APP_COLORS.text_color
     },
     text2Style: {
-        fontFamily: 'sans-serif-condensed',
+        fontFamily: 'open-sans-bold',
         fontSize: 21,
-        fontWeight: 'bold',
         textAlign: 'center',
         color:APP_COLORS.text_color
     },

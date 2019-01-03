@@ -5,6 +5,7 @@ import Header from "../../components/basicComponents/Header";
 import CardActionCreades from "../CardActionCreades";
 import CardActionApuntades from "../CardActionApuntades";
 import CardActionCancelades from "../CardActionCancelades";
+import CardActionBuscar from "../CardActionBuscar";
 
 
 export default class ActivityInfoBase extends React.Component {
@@ -18,9 +19,12 @@ export default class ActivityInfoBase extends React.Component {
     }
     _cardActionSelector(screen,att) {
         if (screen === '/own') return <CardActionCreades deleteAct = {this.props.deleteAct} id = {this.props.id}/>;
-        else {
+        else if (screen === "/attending") {
             if (att === 'yes') return <CardActionApuntades notAttend = {this.props.notAttend} id = {this.props.id}/>;
             else return <CardActionCancelades attend = {this.props.attend} id = {this.props.id}/>
+        }
+        else {
+            return <CardActionBuscar notAttend = {this.props.notAttend} id = {this.props.id} attend = {this.props.attend}/>
         }
     }
 

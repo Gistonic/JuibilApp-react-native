@@ -123,7 +123,12 @@ class BuscarActivitatScreen extends React.Component {
                             onPress = {this._onPressDenegar} />
                         </View>
                         <View style={styles.circle} backgroundColor = {APP_COLORS.color_back}>
-                            <Ionicons name="md-information" size={70} color={APP_COLORS.color_neutral}/>
+                            <Ionicons name="md-information" size={70}
+                                      color={APP_COLORS.color_neutral}
+                                      onPress={() => {
+                                          Actions.info({id: this.props.activitats_trobades[this.props.iterador].id, screen: "buscar"})
+                                      }}
+                            />
                         </View>
                         <View style={styles.circle} backgroundColor = {APP_COLORS.color_checked}>
                             <Ionicons name="md-checkmark" size={70} color={APP_COLORS.color_neutral} 
@@ -207,9 +212,8 @@ const styles ={
         paddingLeft: '2%'
     },
     titleStyle: {
-        fontFamily: 'sans-serif-condensed',
+        fontFamily: 'open-sans-bold',
         fontSize: 27,
-        fontWeight: 'bold',
         color:APP_COLORS.text_color
     },
     cardStyle: {
@@ -217,7 +221,7 @@ const styles ={
         borderRadius: 15
     },
     textStyle: {
-        fontFamily: 'sans-serif-condensed',
+        fontFamily: 'open-sans-bold',
         fontSize: 21,
         color:APP_COLORS.text_color
     },
