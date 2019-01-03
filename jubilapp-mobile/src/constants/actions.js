@@ -66,8 +66,10 @@ export const PROFILE_ACTIONS = {
     ReceiveKilometres: 'RECEIVE_KILOMETRES',
 }
 
-export const VALORAR_ACTIVITY_ACTIONS={
-    FetchActivitats: 'FETCH_ACTIVITATS',
-    RecieveActivitats: 'RECIEVE_ACTIVITATS',
-    ChangeIterador: 'CHANGE_ITERADOR'
+export const VALORAR_ACTIVITY_ACTIONS = {
+    FetchActivitatsValorar: 'FETCH_ACTIVITATS_VALORAR',
+    RebreActivitats: 'REBRE_ACTIVITATS',
+    ChangeStar: 'CHANGE_STAR',
+    ReiniciarStars: 'REINICIAR_STARS',
+    ChangeIterator: 'CHANGE_ITERATOR'
 }

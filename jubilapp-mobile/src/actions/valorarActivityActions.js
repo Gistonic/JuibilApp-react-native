@@ -1,9 +1,42 @@
 import {Actions} from "react-native-router-flux";
-import {VALORAR_ACTIVITY_ACTIONS} from "../constants/actions";
-import { AsyncStorage } from "react-native";
-import {request} from "../request";
+import {VALORAR_ACTIVITY_ACTIONS} from '../constants/actions'
+
+const rebreActivitats = (activitats) =>{
+    return {
+        type: VALORAR_ACTIVITY_ACTIONS.RebreActivitats,
+        payload: activitats
+    }
+}
+
+export const changeStar = (i) =>{
+    return {
+        type: VALORAR_ACTIVITY_ACTIONS.ChangeStar,
+        payload: i
+    }
+}
+
+export const changeIterator = () =>{
+    return{
+        type: VALORAR_ACTIVITY_ACTIONS.ChangeIterator
+    }
+}
+
+export const reiniciarStars = () =>{
+    return{
+        type: VALORAR_ACTIVITY_ACTIONS.ReiniciarStars
+    }
+}
 
 
+export const fetchActivitatsValorar = () =>{
+    //dispatch(rebreActivitats(activitatsMock));
+    return(dispatch)=>{
+          setTimeout(() => {
+              dispatch(rebreActivitats(activitatsMock))
+          }, 2000)
+        }
+    
+}
 
 const activitatsMock=[
     {

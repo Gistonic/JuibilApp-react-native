@@ -1,43 +1,56 @@
 import React from 'react';
-import {View, Alert, Text} from 'react-native';
+import {View, Text, Alert} from 'react-native';
 import {APP_COLORS} from "../../constants/colors";
 import connect from "react-redux/es/connect/connect";
 import {Actions} from "react-native-router-flux";
 import HeaderIcon from "../../components/basicComponents/HeaderIcon";
 import ButtonBack from '../../components/basicComponents/ButtonBack';
+import Description from '../../components/basicComponents/Description';
 import CardModified from "../../components/CardModified";
 import { FontAwesome,Ionicons } from '@expo/vector-icons';
-import { Button } from 'react-native-elements';
-
+import {fetchActivitatsValorar,changeStar,changeIterator,reiniciarStars} from '../../actions/index';
 
 class ferValoracionsScreen extends React.Component {
     constructor(props) {
-        super(props)
-        this.onStarPressed = this.onStarPressed.bind(this)
-        this.state = {
-            estrelles : [
-                {id:0,marcada: false},
-                {id:1,marcada: false},
-                {id:2,marcada: false},
-                {id:3,marcada: false},
-                {id:4,marcada: false}
-            ]
-        }
+        super(props);
+        this.onValorarPressed = this.onValorarPressed.bind(this);
     }
-    
+
+    componentWillMount(){
+        this.props.fetchActivitatsValorar();
+    }
     onStarPressed(i){
-        new_estrelles = this.state.estrelles;
-        var y;
-        for(y = 0; y < 5; y++){
-            if(y <= i){
-                new_estrelles[y].marcada = true;
-            }
-            else new_estrelles[y].marcada = false;
+        this.props.changeStar(i);
+    }
+    onValorarPressed(){
+        if(this.props.num_estrelles == 0){
+            Alert.alert(
+                'Valorar Actividad',
+                'Se tiene que valorar la actividad con un mínimo de 1 estrella',
+                [
+                    {text: 'OK'}
+                ],
+                { cancelable: false}
+            );
         }
-        this.setState({estrelles: new_estrelles});
+        else{
+            Alert.alert(
+                'Valorar Actividad',
+                'La actividad '+ this.props.activitats_valorar[this.props.iterador].nom +' se valorará con '+this.props.num_estrelles+' estrellas.',
+                [
+                    {text: 'Cancelar'},
+                    {text: 'OK', onPress: () => {this.props.changeIterator();
+                                                this.props.reiniciarStars();
+                                                }
+                    },
+                ],
+                { cancelable: false }
+            );
+        }
+        
     }
     pintar_estrelles(){
-            return this.state.estrelles.map((estrella)=> {
+            return this.props.estrelles.map((estrella)=> {
                 if(!estrella.marcada){
                     return(
                         <FontAwesome key = {estrella.id} name='star' size={65} color= {APP_COLORS.text_color}
@@ -55,44 +68,51 @@ class ferValoracionsScreen extends React.Component {
 
     pintarCard(){
         const activitatsTranslate= {
-            art: {source: require('../../images/artPES2.jpg')},
+            art: {id:1,source: require('../../images/artPES2.jpg')},
             sports: {source: require('../../images/esportPES2.jpg')},
             culture: {source: require('../../images/culturaPES2.jpg')},
             trips: {source: require('../../images/excursionesPES2.jpg')},
             workshops: {source: require('../../images/talleresPES2.jpg')},
             leisure: {source: require('../../images/ocioPES3.jpg')}
         };
-        /*if(this.props.iterador == this.props.activitats_trobades.length){
+        if(this.props.iterador == this.props.activitats_valorar.length){
             return(
                 <View style = {styles.viewbuitStyle}>
-                    <Description textExpl = "No se encuentran más actividades"/>
+                    <Description textExpl = "No hay más actividades pendientes de valorar"/>
                 </View>
             )
-        }*/
-        //else {
+        }
+        else{
             return(
-                <View style = {styles.viewCardStarStyle}>
-                    <View style = {styles.viewCard}>
-                        <CardModified image = {activitatsTranslate['art'].source}
-                                nom =  {'Clase pintura'}
-                                ubicacio = {'Casal avis Eixample'}
-                                dataIni = {'24/01/2018'}
-                                dataFi = {'24/01/2018'}
-                                valorar = {true}/>
+                <View>
+                    <View style = {styles.descrView}>
+                        <Text adjustsFontSizeToFit={true}  style = {styles.descrStyle}>Puntua la actividad del 1 al 5 con ayuda de las estrellas</Text>
                     </View>
-                    <View style= {styles.iconview2Style}>
-                        <View style = {styles.iconviewStyle}>
-                            {this.pintar_estrelles()}
+                    <View style = {styles.viewCardStarStyle}>
+                        <View style = {styles.viewCard}>
+                            <CardModified image = {activitatsTranslate[this.props.activitats_valorar[this.props.iterador].tipus].source}
+                                            nom =  {this.props.activitats_valorar[this.props.iterador].nom}
+                                            ubicacio = {this.props.activitats_valorar[this.props.iterador].ubicacio}
+                                            dataIni = {this.props.activitats_valorar[this.props.iterador].dataIni}
+                                            dataFi = {this.props.activitats_valorar[this.props.iterador].dataFi}
+                                            valorar = {true}/>
+                        </View>
+                        <View style= {styles.iconview2Style}>
+                            <View style = {styles.iconviewStyle}>
+                                {this.pintar_estrelles()}
+                            </View>
+                        </View>
+                        <View style = {styles.buttonviewStyle}>
+                            <Ionicons name={'ios-information-circle-outline'} size={75} 
+                                color= {APP_COLORS.color_back} />
+                            <ButtonBack buttonText = {'Valorar'} colorBoto = {APP_COLORS.color_next}
+                                    path = {this.onValorarPressed}/>
                         </View>
                     </View>
-                    <View style = {styles.buttonviewStyle}>
-                        <Ionicons name={'ios-information-circle-outline'} size={75} 
-                            color= {APP_COLORS.color_back} />
-                        <ButtonBack buttonText = {'Valorar'} colorBoto = {APP_COLORS.color_next}/>
-                    </View>
                 </View>
-            ); 
-        //}
+            );
+        }
+        
     }
 
     render(){
@@ -107,9 +127,7 @@ class ferValoracionsScreen extends React.Component {
                                 textSize = {35}
                                 path={() => Actions.veurevaloracions()}
                 />
-                <View style = {styles.descrView}>
-                    <Text adjustsFontSizeToFit={true}  style = {styles.descrStyle}>Puntua la actividad del 1 al 5 con ayuda de las estrellas</Text>
-                </View>
+                
                 {this.pintarCard()} 
             </View>         
         );
@@ -118,6 +136,10 @@ class ferValoracionsScreen extends React.Component {
 }
 
 const styles ={
+    viewbuitStyle: {
+        alignItems: 'center',
+        paddingTop: '50%'
+    },
     iconview2Style: {
         paddingLeft: '8%',
         paddingRight: '8%',
@@ -189,5 +211,29 @@ const styles ={
         height: '42%'
     }
 }
+const mapStateToProps = (state) => {
+    return {
+        activitats_valorar: state.valorarActivity.activitats_valorar,
+        estrelles: state.valorarActivity.estrelles,
+        iterador: state.valorarActivity.iterador,
+        num_estrelles: state.valorarActivity.num_estrelles
+    }
+}
 
-export default ferValoracionsScreen;
+const  mapDispatchToProps = (dispatch)=>{
+    return {
+        fetchActivitatsValorar: ()=>dispatch(fetchActivitatsValorar()),
+        changeStar: (i)=>dispatch(changeStar(i)),
+        changeIterator: ()=>dispatch(changeIterator()),
+        reiniciarStars: ()=>dispatch(reiniciarStars())
+    }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(ferValoracionsScreen)
+
+/*<CardModified image = {activitatsTranslate[this.props.activitats_trobades[this.props.iterador].type].source}
+                                nom =  {this.props.activitats_trobades[this.props.iterador].name}
+                                ubicacio = {this.props.ubicacioactual}
+                                dataIni = {this.props.activitats_trobades[this.props.iterador].startDate}
+                                dataFi = {this.props.activitats_trobades[this.props.iterador].endDate}
+                                valorar = {false}/>*/

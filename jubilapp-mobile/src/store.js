@@ -3,6 +3,7 @@ import {registerFormReducer, modifyActivityReducer, modificarProfileReducer, aut
 import thunk from 'redux-thunk'
 import logger from 'redux-logger'
 import { kilometresProfileReducer } from './reducers/kilometresProfileReducer';
+import { valorarActivityReducer } from './reducers/valorarActivityReducer';
 const rootReducer = combineReducers({
     auth: authReducer,
     registerForm:registerFormReducer,
@@ -14,7 +15,8 @@ const rootReducer = combineReducers({
     kilometresProfile: kilometresProfileReducer,
     buscarActivity: buscarActivityReducer,
     modifyActivity: modifyActivityReducer,
-    modifyPerfil: modificarProfileReducer
+    modifyPerfil: modificarProfileReducer,
+    valorarActivity: valorarActivityReducer
 })
 
 const store= createStore(
