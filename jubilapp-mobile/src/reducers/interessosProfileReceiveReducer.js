@@ -11,44 +11,12 @@ const interessosTranslate= {
 
 const INITIAL_STATE ={
     interessos_info: [
-        {
-            id:0,
-            estat:false,
-            icon: require('../images/artPES2.jpg'),
-            nom:'Arte',
-        },
-        {
-            id:1,
-            estat:false,
-            icon: require('../images/esportPES2.jpg'),
-            nom:'Deporte',
-        },
-        {
-            id:2,
-            estat:false,
-            icon: require('../images/culturaPES2.jpg'),
-            nom:'Cultura',
-        },
-        {
-            id:3,
-            estat:false,
-            icon: require('../images/excursionesPES2.jpg'),
-            nom:'Excursiones',
-        },
-        {
-            id:4,
-            estat:false,
-            icon: require('../images/talleresPES2.jpg'),
-            nom:'Talleres',
-        },
-        {
-            id:5,
-            estat:false,
-            icon: require('../images/ocioPES3.jpg'),
-            nom:'Ocio',
-        }
-        
-
+        {id:0,estat:false,icon: require('../images/artPES2.jpg'),nom:'Arte',},
+        {id:1,estat:false,icon: require('../images/esportPES2.jpg'),nom:'Deporte',},
+        {id:2,estat:false,icon: require('../images/culturaPES2.jpg'),nom:'Cultura',},
+        {id:3,estat:false,icon: require('../images/excursionesPES2.jpg'),nom:'Excursiones',},
+        {id:4,estat:false,icon: require('../images/talleresPES2.jpg'),nom:'Talleres',},
+        {id:5,estat:false,icon: require('../images/ocioPES3.jpg'),nom:'Ocio',}
     ]
 }
 const interessosProfileReceiveReducer = (state = INITIAL_STATE, action)=>{

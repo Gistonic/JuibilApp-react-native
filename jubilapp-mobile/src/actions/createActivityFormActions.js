@@ -12,6 +12,13 @@ export const changeCreateActivityFormProperty=(propertyName, value) =>{
     }
 };
 
+export const changeType = (id) =>{
+    return{
+        type: CREATE_ACTIVITY_FORM_ACTIONS.ChangeType,
+        payload: id
+    }
+}
+
 export const createActivity = (activityInfo) => {
     return () => {
         request('/event', 'POST', activityInfo);
