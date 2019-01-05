@@ -6,7 +6,15 @@ import Description from '../../components/basicComponents/Description';
 import ButtonBack from '../../components/basicComponents/ButtonBack';
 import connect from "react-redux/es/connect/connect";
 import {Actions} from 'react-native-router-flux';
+import ProgressCircle from 'react-native-progress-circle'
 import { Ionicons } from '@expo/vector-icons';
+
+/*<View style = {viewkmStyle}>
+    <View style = {styles.circle} backgroundColor = {APP_COLORS.color_button_1}>
+        <Text style = {textStyle}>4</Text>
+    </View>
+</View>*/
+
 
 class verFichasScreen extends React.Component {
 
@@ -15,7 +23,7 @@ class verFichasScreen extends React.Component {
     }
 
     render() {
-        const {viewStyle, container, textStyle,viewkmStyle,iconStyle} = styles;
+        const {viewStyle, container, textStyle,viewkmStyle,iconStyle, progressCircleStyle} = styles;
         return (
             <View style = {viewStyle}>
                 <HeaderIcon headerText = {'Ver fichas'}
@@ -27,12 +35,23 @@ class verFichasScreen extends React.Component {
                 
                 
                 
-                <Description textExpl= {'Tienes 4 fichas!'}/>
-                <View style = {viewkmStyle}>
-                    <View style = {styles.circle} backgroundColor = {APP_COLORS.color_button_1}>
-                        <Text style = {textStyle}>4</Text>
-                    </View>
+                <Description textExpl= {'Tienes 30 fichas!'}/>
+
+                <View style={progressCircleStyle }>
+                    <ProgressCircle
+
+                        percent={30}
+                        radius={50}
+                        borderWidth={8}
+                        color="#3399FF"
+                        shadowColor="#999"
+                        bgColor="#fff"
+                    >
+                        <Text style={{ fontSize: 50 }}>{'5 €'}</Text>
+                    </ProgressCircle>
+
                 </View>
+
 
                 <Description textExpl= {'Quieres más información sobre como funcionan las fichas?'}/>
                 <Ionicons style = {iconStyle} name={'ios-information-circle-outline'} size={75} 
@@ -58,6 +77,9 @@ class verFichasScreen extends React.Component {
         paddingLeft: '37%',
         paddingBottom: '1%'
     },
+      progressCircleStyle:{
+        alignItems:'center'
+      },
     textStyle: {
         color: 'white',
        fontSize: 50,
