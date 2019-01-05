@@ -8,7 +8,8 @@ import CardActionCancelades from "../CardActionCancelades";
 import CardActionBuscar from "../CardActionBuscar";
 
 
-export default class ActivityInfoBase extends React.Component {
+export default class
+ActivityInfoBase extends React.Component {
     _selectSource(type) {
         if (type === 'art') return require('../../images/artPES2.jpg');
         if (type === 'sports') return require('../../images/esportPES2.jpg');

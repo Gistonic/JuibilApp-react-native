@@ -82,7 +82,7 @@ export default class ModificarActivitatScreen extends React.Component {
                 </View>
                 <View style = {container1}>
                     <ButtonBack buttonText = {'Volver'}
-                                path = {() => Actions.activitatlist()}
+                                path = {() => this.props.navigation.goBack()}
                                 colorBoto = {APP_COLORS.color_header}/>
 
                 </View>

@@ -18,7 +18,6 @@ const requestPatchActivityValue = () => {
 };
 
 const receivePatchActivityValue = () => {
-    Actions.modificaractivitat();
     return {
         type: MODIFICAR_ACTIVITY_ACTIONS.ReceivePatchActivityValue
     }

@@ -5,7 +5,7 @@ import {
     fetchActivityValue,
     patchActivityValue
 } from "../../actions/index";
-import connect from "react-redux/es/connect/connect";
+import { connect } from "react-redux";
 import HourScreenBase from "../../components/baseScreens/HourScreenBase";
 
 class FinHourModify extends React.Component {
@@ -14,14 +14,17 @@ class FinHourModify extends React.Component {
     }
     render() {
         return (
-            <HourScreenBase changeFormHour={this.props.changeActivityHourEnd}
-                            changeFormMinute={this.props.changeActivityMinuteEnd}
-                            _hour={ new Date(this.props.endDate).getHours()+1%24}
+            <HourScreenBase changeFormHour={(value) => this.props.changeActivityHourEnd(value, this.props.endDate)}
+                            changeFormMinute={(value) => this.props.changeActivityMinuteEnd(value, this.props.endDate)}
+                            _hour={ new Date(this.props.endDate).getHours()}
                             _minute={ new Date(this.props.endDate).getMinutes()}
                             titleName="fin"
                             buttonText = "Aceptar"
-                            previousScreen={() => this.props.patchActivityEndDate(this.props.id, this.props.startDate)}
-                            nextScreen={() => Actions.modificaractivitat()}/>
+                            previousScreen={() => this.props.navigation.goBack()}
+                            nextScreen={() => {
+                                this.props.patchActivityEndDate(this.props.id, this.props.endDate)
+                                this.props.navigation.goBack() // TODO: Do for other modify screens
+                            }}/>
 
         );
     }
@@ -39,15 +42,16 @@ const mapStateToProps = (state) => {
 
 const  mapDispatchToProps = (dispatch)=>{
     return {
-        changeActivityHourEnd: (value, startDate)=>{
-            let date=new Date(startDate)
+        changeActivityHourEnd: (value, endDate)=>{
+            console.log('EndDate: ' + endDate + ', New Hour: ' + value)
+            let date=new Date(endDate)
             date.setHours(value)
-            dispatch(changeActivityValue(value))
+            dispatch(changeActivityValue(date))
         },
-        changeActivityMinuteEnd: (value, startDate)=>{
-            let date=new Date(startDate)
+        changeActivityMinuteEnd: (value, endDate)=>{
+            let date=new Date(endDate)
             date.setMinutes(value)
-            dispatch(changeActivityValue(value))
+            dispatch(changeActivityValue(date))
         },
         patchActivityEndDate: (id, value) => dispatch(patchActivityValue("endDate", id, value)),
         fetchActivityEndDate: (id) => dispatch(fetchActivityValue("endDate",id))

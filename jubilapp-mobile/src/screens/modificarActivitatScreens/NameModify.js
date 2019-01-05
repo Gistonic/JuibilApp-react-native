@@ -16,8 +16,9 @@ class NameModify extends React.Component {
                             changeFormLocation = {()=>{}}
                             name = {this.props.name}
                             buttonText= "Aceptar"
-                            nextScreen={() => this.props.patchActivityName(this.props.id, this.props.name)}
-                            previousScreen={() => Actions.modificaractivitat()}
+                            nextScreen={() => {this.props.patchActivityName(this.props.id, this.props.name)
+                                                this.props.navigation.goBack()}}
+                            previousScreen={() => this.props.navigation.goBack()}
                             enabledName = {!this.props.isFetching && !this.props.isPatching}
             />
         )
