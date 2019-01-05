@@ -69,19 +69,13 @@ class ActivitatItem extends React.Component {
     {
         return (
             <View style={styles.viewStyle}>
-                <View>
-                    <Moment style={styles.textStyle} element={Text} format="DD/MM/YYYY hh:mm">
+                <View style={styles.itemHeaderStyle}>
+                    <Text style={styles.textStyle}>
+                        {this.props.nomActivitat}
+                    </Text>
+                    <Moment style={styles.textStyle} element={Text} format="hh:mm">
                         {this.props.dataIni}
                     </Moment>
-
-                    <Text style={styles.textStyle}>
-
-
-                        {this.props.dataEnd}
-                        {this.props.nomActivitat}
-
-
-                    </Text>
                 </View>
                 <View style={styles.viewIconStyle}>
                     <EvilIcons name='eye' size={60} color={APP_COLORS.color_button_1} style={styles.iconStyle}
@@ -118,6 +112,10 @@ const styles = {
         marginTop: 20
 
 
+    },
+    itemHeaderStyle: {
+        flexDirection: 'row',
+        justifyContent: 'space-between'
     },
 
     iconStyle: {
