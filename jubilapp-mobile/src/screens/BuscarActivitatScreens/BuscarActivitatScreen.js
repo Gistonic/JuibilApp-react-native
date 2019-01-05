@@ -5,7 +5,7 @@ import connect from "react-redux/es/connect/connect";
 import {Actions} from "react-native-router-flux";
 import HeaderIcon from "../../components/basicComponents/HeaderIcon";
 import CardModified from "../../components/CardModified";
-import { EvilIcons, Ionicons } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 import {
     fetchActivitats,
     changeIterador,
@@ -106,29 +106,35 @@ class BuscarActivitatScreen extends React.Component {
             this.getLocationfromCoords();
             return(
                 <View>
-                <View style = {styles.viewCard}>
-                    <CardModified image = {activitatsTranslate[this.props.activitats_trobades[this.props.iterador].type].source}
-                            nom =  {this.props.activitats_trobades[this.props.iterador].name}
-                            ubicacio = {this.props.ubicacioactual}
-                            dataIni = {this.props.activitats_trobades[this.props.iterador].startDate}
-                            dataFi = {this.props.activitats_trobades[this.props.iterador].endDate}
-                            horaIni = {this.props.activitats_trobades[this.props.iterador].startDate}
-                            horaFi = {this.props.activitats_trobades[this.props.iterador].endDate}
-                            preu = {this.props.activitats_trobades[this.props.iterador].price}/>
-                </View>
-                <View style={styles.footer}>
-                    <View style={styles.circle} backgroundColor = {APP_COLORS.color_header}>
-                        <Ionicons name="md-close" size={70} color={APP_COLORS.color_neutral}
-                        onPress = {this._onPressDenegar} />
+                    <View style = {styles.viewCard}>
+                        <CardModified image = {activitatsTranslate[this.props.activitats_trobades[this.props.iterador].type].source}
+                                nom =  {this.props.activitats_trobades[this.props.iterador].name}
+                                ubicacio = {this.props.ubicacioactual}
+                                dataIni = {this.props.activitats_trobades[this.props.iterador].startDate}
+                                dataFi = {this.props.activitats_trobades[this.props.iterador].endDate}
+                                horaIni = {this.props.activitats_trobades[this.props.iterador].startDate}
+                                horaFi = {this.props.activitats_trobades[this.props.iterador].endDate}
+                                preu = {this.props.activitats_trobades[this.props.iterador].price}
+                                valorar = {false}/>
                     </View>
-                    <View style={styles.circle} backgroundColor = {APP_COLORS.color_back}>
-                        <Ionicons name="md-information" size={70} color={APP_COLORS.color_neutral}/>
+                    <View style={styles.footer}>
+                        <View style={styles.circle} backgroundColor = {APP_COLORS.color_header}>
+                            <Ionicons name="md-close" size={70} color={APP_COLORS.color_neutral}
+                            onPress = {this._onPressDenegar} />
+                        </View>
+                        <View style={styles.circle} backgroundColor = {APP_COLORS.color_back}>
+                            <Ionicons name="md-information" size={70}
+                                      color={APP_COLORS.color_neutral}
+                                      onPress={() => {
+                                          Actions.info({id: this.props.activitats_trobades[this.props.iterador].id, screen: "buscar"})
+                                      }}
+                            />
+                        </View>
+                        <View style={styles.circle} backgroundColor = {APP_COLORS.color_checked}>
+                            <Ionicons name="md-checkmark" size={70} color={APP_COLORS.color_neutral} 
+                            onPress = {this._onPressAcceptar}/>
+                        </View>
                     </View>
-                    <View style={styles.circle} backgroundColor = {APP_COLORS.color_checked}>
-                        <Ionicons name="md-checkmark" size={70} color={APP_COLORS.color_neutral} 
-                        onPress = {this._onPressAcceptar}/>
-                    </View>
-                </View>
             </View>
             ); 
         }
@@ -206,9 +212,8 @@ const styles ={
         paddingLeft: '2%'
     },
     titleStyle: {
-        fontFamily: 'sans-serif-condensed',
+        fontFamily: 'open-sans-bold',
         fontSize: 27,
-        fontWeight: 'bold',
         color:APP_COLORS.text_color
     },
     cardStyle: {
@@ -216,7 +221,7 @@ const styles ={
         borderRadius: 15
     },
     textStyle: {
-        fontFamily: 'sans-serif-condensed',
+        fontFamily: 'open-sans-bold',
         fontSize: 21,
         color:APP_COLORS.text_color
     },

@@ -7,7 +7,8 @@ import connect from "react-redux/es/connect/connect";
 import Description from "../../components/basicComponents/Description";
 import HeaderIcon from "../../components/basicComponents/HeaderIcon";
 import ButtonBack from "../../components/basicComponents/ButtonBack";
-import { Ionicons, AntDesign,Feather,FontAwesome } from '@expo/vector-icons';
+import {fetchInteressos} from "../../actions/index";
+import { FontAwesome } from '@expo/vector-icons';
 
 
 
@@ -16,11 +17,15 @@ class veureInteressosPerfilScreen extends React.Component {
         super(props);
         
     }
+
+    componentWillMount() {
+        this.props.fetchInteressos()
+    }
     
     dibuixarInteressos(num)
     {
         //el num es per distingir a quina columna aniran, la dreta es per tots aquells que tenen id parell i lesquerra pels ids imparells
-        return this.props.interessos.map((totsID)=> {
+        return this.props.interessos_info.map((totsID)=> {
             if((totsID.id %2) == num) {
                 return  (<View key={totsID.id} style={styles.buttonStyle}>
                             {totsID.estat ? <ImageBackground source={totsID.icon} style={styles.imageStyle}/>:
@@ -130,13 +135,13 @@ const styles ={
   }
 const mapStateToProps = (state) => {
     return {
-        interessos: state.modifyPerfil.interessos
+        interessos_info: state.interessosProfile.interessos_info
     }
 }
 
 const  mapDispatchToProps = (dispatch)=>{
     return {
-        fetchName: ()=>dispatch(fetchName())
+        fetchInteressos: ()=>dispatch(fetchInteressos())
     }
 }
 

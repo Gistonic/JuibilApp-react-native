@@ -6,16 +6,21 @@ import {Actions} from "react-native-router-flux";
 import {EvilIcons} from "@expo/vector-icons";
 
 
-class CardActionCancelades extends React.Component {
+class CardActionBuscar extends React.Component {
     constructor(props) {
-        super(props)
-        this._onPress = this._onPress.bind(this)
+        super(props);
+        this._onPressN = this._onPressN.bind(this);
+        this._onPressY = this._onPressY.bind(this);
 
 
     }
-    _onPress() {
+    _onPressN() {
+        this.props.notAttend(this.props.id);
+        Actions.buscar();
+    }
+    _onPressY() {
         this.props.attend(this.props.id);
-        Actions.llistesActs();
+        Actions.buscar();
     }
     render() {
         return (
@@ -24,11 +29,14 @@ class CardActionCancelades extends React.Component {
                   inColumn={false}>
                 <ButtonBack buttonText="Atrás"
                             colorBoto= {APP_COLORS.color_back}
-                            path={() => Actions.activitatlist({url: "/attending", att: "no", headerText: "Canceladas"})}
+                            path={() => Actions.buscar()}
                 />
                 <EvilIcons name='check' size={52} color={APP_COLORS.color_next}
+                           style={[styles.iconStyle, {marginLeft: '7%'}]}
+                           onPress = {this._onPressY}/>
+                <EvilIcons name='close-o' size={52} color={APP_COLORS.color_header}
                            style={[styles.iconStyle, {marginLeft: '0%'}]}
-                           onPress = {this._onPress}/>
+                           onPress = {this._onPressN}/>
             </View>
         )
     }
@@ -47,9 +55,9 @@ const styles = {
     iconStyle: {
         backgroundColor: '#D9D9D9',
         borderRadius: 10,
-        marginRight: '15%',
+        marginRight: '10%',
         overflow: "hidden",
     },
 }
 
-export default CardActionCancelades;
+export default CardActionBuscar;
