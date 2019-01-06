@@ -95,7 +95,7 @@ class BuscarActivitatScreen extends React.Component {
             workshops: {source: require('../../images/talleresPES2.jpg')},
             leisure: {source: require('../../images/ocioPES3.jpg')}
         };
-        if(this.props.iterador == this.props.activitats_trobades.length){
+        if(this.props.iterador === this.props.activitats_trobades.length){
             return(
                 <View style = {styles.viewbuitStyle}>
                     <Description textExpl = "No se encuentran más actividades"/>
