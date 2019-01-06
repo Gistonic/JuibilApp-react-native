@@ -41,13 +41,14 @@ class verFichasScreen extends React.Component {
                     <ProgressCircle
 
                         percent={30}
-                        radius={50}
-                        borderWidth={8}
-                        color="#3399FF"
+                        radius={70}
+                        borderWidth={10}
+                        color={APP_COLORS.color_header}
                         shadowColor="#999"
                         bgColor="#fff"
                     >
-                        <Text style={{ fontSize: 50 }}>{'5 €'}</Text>
+                        <Text style={{ fontSize: 50 ,
+                        color: APP_COLORS.color_next}}>{'5 €'}</Text>
                     </ProgressCircle>
 
                 </View>
