@@ -16,7 +16,7 @@ export default class Welcome extends React.Component {
                 </View>   
                 <View style = {viewStyle}>
                     <ButtonBack buttonText = {this.props.textExpl}
-                                path = {this.props.paths}
+                                path =  {this.props.paths}
                                 colorBoto = {APP_COLORS.color_next}/>
                 </View> 
             </View>

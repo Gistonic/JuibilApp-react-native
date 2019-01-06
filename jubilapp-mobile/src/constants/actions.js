@@ -18,7 +18,7 @@ export const LIST_ACTIVITIES_ACTIONS={
     ReceiveActivities: 'RECEIVE_ACTIVITIES',
     RequestActivities: 'REQUEST_ACTIVITIES',
     DeleteActivity: 'DELETE_ACTIVITY',
-    SetModifyActivityId:'SET_MODIFY_ACTIVITY_ID'
+    SetModifyActivityId:'SET_MODIFY_ACTIVITY_ID',
 }
 
 export const INTERESSOS_PROFILE_ACTIONS={
