@@ -5,8 +5,16 @@ import {APP_COLORS} from "../constants/colors";
 
 import { Actions } from 'react-native-router-flux';
 import ConfigurationButton from "../components/basicComponents/ConfigurationButton";
+import {
+    changeBuscarActivityFormProperty,
+} from "../actions";
+import connect from "react-redux/es/connect/connect";
 
-export default class HomeScreen extends React.Component {
+class HomeScreen extends React.Component {
+    componentDidMount() {
+        this.props.changeProp("fromDate", {});
+        this.props.changeProp("toDate", {});
+    }
     render() {
         const {viewStyle, viewButtons} = styles;
         return (
@@ -73,3 +81,17 @@ const styles ={
         justifyContent: 'space-between'
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        fromDate: state.buscarActivity.fromDate,
+        toDate: state.buscarActivity.toDate,
+    }
+}
+
+const  mapDispatchToProps = (dispatch)=>{
+    return {
+        changeProp: (name,value) => dispatch(changeBuscarActivityFormProperty(name, value)),
+    }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(HomeScreen)

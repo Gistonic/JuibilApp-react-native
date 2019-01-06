@@ -254,7 +254,6 @@ const  mapDispatchToProps = (dispatch)=>{
         changeIterador: ()=>dispatch(changeIterador()),
         changeBuscarActivityForm: (value)=> dispatch(changeBuscarActivityForm(value)),
         changeUbicacioActual: (value) => dispatch(changeBuscarActivityFormProperty("ubicacioactual",value)),
-        changeProp: (name,value) => dispatch(changeBuscarActivityFormProperty(name, value)),
         attend: (value) => dispatch(attend(value)),
         notAttend: (value) => dispatch(notAttend(value))
     }
