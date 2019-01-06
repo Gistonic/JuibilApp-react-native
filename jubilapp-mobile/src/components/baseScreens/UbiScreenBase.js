@@ -51,16 +51,16 @@ export default class NameScreenBase extends React.Component {
                                         marginRight: '5%',
                                     },
                                     textInput: {
-                                        height: 35,
+                                        height: 36,
                                         color: '#5d5d5d',
-                                        fontSize: 27,
+                                        fontSize: 25,
                                     },
                                     listView: {
                                         marginLeft: '5%',
                                         marginRight: '5%',
                                     },
                                     description: {
-                                        fontSize: 16,
+                                        fontSize: 15,
                                     }
                                 }}
                                 currentLocation={false}

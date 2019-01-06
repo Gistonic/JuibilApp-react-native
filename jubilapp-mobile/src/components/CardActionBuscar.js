@@ -48,7 +48,7 @@ const styles = {
         justifyContent: 'space-between',
         alignItems: 'center',
         alignContent: 'center',
-        paddingTop: '5%',
+        paddingTop: '4%',
         borderTopColor: '#E9E9E9',
         borderTopWidth: 1,
     },

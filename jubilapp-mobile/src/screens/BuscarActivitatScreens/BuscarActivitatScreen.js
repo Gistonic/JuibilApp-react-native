@@ -105,7 +105,7 @@ class BuscarActivitatScreen extends React.Component {
         else {
             this.getLocationfromCoords();
             return(
-                <View>
+                <View style = {{width: '100%', height: '100%', paddingBottom: '3%'}}>
                     <View style = {styles.viewCard}>
                         <CardModified image = {activitatsTranslate[this.props.activitats_trobades[this.props.iterador].type].source}
                                 nom =  {this.props.activitats_trobades[this.props.iterador].name}
@@ -118,30 +118,30 @@ class BuscarActivitatScreen extends React.Component {
                                 valorar = {false}/>
                     </View>
                     <View style={styles.footer}>
-                        <TouchableOpacity onPress = {this._onPressDenegar}>
                             <View style={styles.circle} backgroundColor = {APP_COLORS.color_header}>
+                                <TouchableOpacity onPress = {this._onPressDenegar} style = {{width:'100%', height: '100%', alignItems: 'center'}}>
                                     <Ionicons name="md-close" size={60} color={APP_COLORS.color_neutral}
                                     onPress = {this._onPressDenegar} />
+                                </TouchableOpacity>
                             </View>
-                        </TouchableOpacity>
-                        <TouchableOpacity onPress={() => {
-                            Actions.info({id: this.props.activitats_trobades[this.props.iterador].id, screen: "buscar"})
-                        }}>
-                            <View style={styles.circle} backgroundColor = {APP_COLORS.color_back}>
-                                <Ionicons name="md-information" size={60}
-                                          color={APP_COLORS.color_neutral}
-                                          onPress={() => {
-                                              Actions.info({id: this.props.activitats_trobades[this.props.iterador].id, screen: "buscar"})
-                                          }}
-                                />
+                            <View style={styles.circle} backgroundColor = {APP_COLORS.color_back} >
+                                <TouchableOpacity onPress={() => {
+                                    Actions.info({id: this.props.activitats_trobades[this.props.iterador].id, screen: "buscar"})
+                                }} style = {{width:'100%', height: '100%', alignItems: 'center'}}>
+                                    <Ionicons name="md-information" size={60}
+                                              color={APP_COLORS.color_neutral}
+                                              onPress={() => {
+                                                  Actions.info({id: this.props.activitats_trobades[this.props.iterador].id, screen: "buscar"})
+                                              }}
+                                    />
+                                </TouchableOpacity>
                             </View>
-                        </TouchableOpacity>
-                        <TouchableOpacity onPress = {this._onPressAcceptar}>
-                            <View style={styles.circle} backgroundColor = {APP_COLORS.color_checked} onPress = {this._onPressAcceptar}>
-                                <Ionicons name="md-checkmark" size={60} color={APP_COLORS.color_neutral}
-                                onPress = {this._onPressAcceptar}/>
+                            <View backgroundColor = {APP_COLORS.color_checked} style={styles.circle}>
+                                <TouchableOpacity onPress = {this._onPressAcceptar} style = {{width:'100%', height: '100%', alignItems: 'center'}}>
+                                    <Ionicons name="md-checkmark" size={60} color={APP_COLORS.color_neutral}
+                                    onPress = {this._onPressAcceptar}/>
+                                </TouchableOpacity>
                             </View>
-                        </TouchableOpacity>
                     </View>
             </View>
             ); 
