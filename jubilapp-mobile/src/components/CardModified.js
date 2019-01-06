@@ -4,6 +4,8 @@ import {View, Image, Text} from 'react-native';
 import React from "react";
 import { Card } from 'react-native-elements';
 import { EvilIcons } from '@expo/vector-icons';
+import Moment from 'react-moment';
+import 'moment-timezone';
 
 
 class CardModified extends React.Component {
@@ -12,8 +14,8 @@ class CardModified extends React.Component {
     }
 
     pintar_preu(){
-        if(this.props.valorar == false){
-            if(this.props.preu == 0){
+        if(this.props.valorar === false){
+            if(this.props.preu === 0){
                 return(
                     <View style = {styles.viewpriceStyle}>
                         <Text style = {styles.text2Style}>GRATIS!</Text>
@@ -32,7 +34,7 @@ class CardModified extends React.Component {
     }
 
     render() {
-        const {textStyle, titleStyle, imatgeStyle, texticonStyle, cardStyle, iconStyle,titlepriceStyle} = styles;
+        const {textStyle, titleStyle, imatgeStyle, texticonStyle, cardStyle, iconStyle,titlepriceStyle, ViewRow} = styles;
         return (
             <Card image = {this.props.image} style = {cardStyle}
                 imageStyle = {imatgeStyle} >
@@ -46,11 +48,29 @@ class CardModified extends React.Component {
                 </View>
                 <View style = {texticonStyle}>
                     <EvilIcons name="calendar" size={40} color = {APP_COLORS.text_color} style = {iconStyle}/>
-                    <Text style = {textStyle}> {this.props.dataIni}-{this.props.dataFi}</Text>
+                    <View style={ViewRow}>
+
+                        <Moment style = {textStyle} element={Text} format="DD/MM/YYYY">
+                            {this.props.dataIni}
+                        </Moment>
+                        <Text style = {textStyle}> - </Text>
+                        <Moment style = {textStyle} element={Text} format="DD/MM/YYYY">
+                            {this.props.dataFi}
+                        </Moment>
+                    </View>
                 </View>
                 {this.props.valorar ? null:<View style = {texticonStyle}>
                     <EvilIcons name="clock" size={40} color = {APP_COLORS.text_color} style = {iconStyle}/>
-                    <Text style = {textStyle}> {this.props.horaIni}-{this.props.horaFi}</Text>
+                    <View style={ViewRow}>
+
+                        <Moment style = {textStyle} element={Text} format="hh:mm">
+                            {this.props.horaIni}
+                        </Moment>
+                        <Text style = {textStyle}> - </Text>
+                        <Moment style = {textStyle} element={Text} format="hh:mm">
+                            {this.props.horaFi}
+                        </Moment>
+                    </View>
                 </View>}
             </Card>
         )
@@ -110,6 +130,9 @@ const styles = {
     },
     imageStyle: {
         height: '48%'
+    },
+    ViewRow:{
+        flexDirection: 'row',
     }
 }
 

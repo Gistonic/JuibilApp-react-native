@@ -8,12 +8,7 @@ import CardActionCancelades from "../CardActionCancelades";
 import CardActionBuscar from "../CardActionBuscar";
 import Moment from 'react-moment';
 import 'moment-timezone';
-/*<Text style = {textStyle}> Data Fi:</Text>
-                <Moment element={Text} format="DD/MM/YYYY hh:mm">
-                    {this.props.dataFi}
-                </Moment>
-             //="DD/MM/YYYY hh:mm" <Text style = {textStyle}>{`${this.props.ubicacioactual}${"\n"}Data Inici: ${this.props.dataIni}${"\n"}Data Fi: ${this.props.dataFi}${"\n"}${"\n"}${this.props.descripcio}`}</Text>
- */
+
 export default class
 ActivityInfoBase extends React.Component {
     _selectSource(type) {
