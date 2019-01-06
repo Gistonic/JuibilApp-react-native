@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Alert, Text} from 'react-native';
+import {View, Alert, Text, TouchableOpacity} from 'react-native';
 import {APP_COLORS} from "../../constants/colors";
 import connect from "react-redux/es/connect/connect";
 import {Actions} from "react-native-router-flux";
@@ -118,22 +118,30 @@ class BuscarActivitatScreen extends React.Component {
                                 valorar = {false}/>
                     </View>
                     <View style={styles.footer}>
-                        <View style={styles.circle} backgroundColor = {APP_COLORS.color_header}>
-                            <Ionicons name="md-close" size={70} color={APP_COLORS.color_neutral}
-                            onPress = {this._onPressDenegar} />
-                        </View>
-                        <View style={styles.circle} backgroundColor = {APP_COLORS.color_back}>
-                            <Ionicons name="md-information" size={70}
-                                      color={APP_COLORS.color_neutral}
-                                      onPress={() => {
-                                          Actions.info({id: this.props.activitats_trobades[this.props.iterador].id, screen: "buscar"})
-                                      }}
-                            />
-                        </View>
-                        <View style={styles.circle} backgroundColor = {APP_COLORS.color_checked}>
-                            <Ionicons name="md-checkmark" size={70} color={APP_COLORS.color_neutral} 
-                            onPress = {this._onPressAcceptar}/>
-                        </View>
+                        <TouchableOpacity onPress = {this._onPressDenegar}>
+                            <View style={styles.circle} backgroundColor = {APP_COLORS.color_header}>
+                                    <Ionicons name="md-close" size={60} color={APP_COLORS.color_neutral}
+                                    onPress = {this._onPressDenegar} />
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => {
+                            Actions.info({id: this.props.activitats_trobades[this.props.iterador].id, screen: "buscar"})
+                        }}>
+                            <View style={styles.circle} backgroundColor = {APP_COLORS.color_back}>
+                                <Ionicons name="md-information" size={60}
+                                          color={APP_COLORS.color_neutral}
+                                          onPress={() => {
+                                              Actions.info({id: this.props.activitats_trobades[this.props.iterador].id, screen: "buscar"})
+                                          }}
+                                />
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress = {this._onPressAcceptar}>
+                            <View style={styles.circle} backgroundColor = {APP_COLORS.color_checked} onPress = {this._onPressAcceptar}>
+                                <Ionicons name="md-checkmark" size={60} color={APP_COLORS.color_neutral}
+                                onPress = {this._onPressAcceptar}/>
+                            </View>
+                        </TouchableOpacity>
                     </View>
             </View>
             ); 
@@ -142,7 +150,6 @@ class BuscarActivitatScreen extends React.Component {
 
     render(){
         const {viewStyle} = styles;
-        
         return(
             <View style = {viewStyle}>
                 <HeaderIcon headerText = "Buscar Actividad"
@@ -152,7 +159,7 @@ class BuscarActivitatScreen extends React.Component {
                                 textSize = {35}
                                 path={() => Actions.home()}
                 />
-                {this.esTres()} 
+                {this.esTres()}
             </View>         
         );
     }
@@ -247,6 +254,7 @@ const  mapDispatchToProps = (dispatch)=>{
         changeIterador: ()=>dispatch(changeIterador()),
         changeBuscarActivityForm: (value)=> dispatch(changeBuscarActivityForm(value)),
         changeUbicacioActual: (value) => dispatch(changeBuscarActivityFormProperty("ubicacioactual",value)),
+        changeProp: (name,value) => dispatch(changeBuscarActivityFormProperty(name, value)),
         attend: (value) => dispatch(attend(value)),
         notAttend: (value) => dispatch(notAttend(value))
     }

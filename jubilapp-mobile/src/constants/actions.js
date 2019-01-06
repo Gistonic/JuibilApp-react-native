@@ -10,7 +10,7 @@ export const LOGIN_FORM_ACTIONS={
 export const CREATE_ACTIVITY_FORM_ACTIONS={
     ChangeProperty: "CHANGE_CREATE_ACTIVITY_PROPERTY",
     ReceiveLogin: "RECEIVE_CREATE_ACTIVITY",
-    ChangeType: "CHANGE_TYPE"
+    ChangeType: "CHANGE_TYPE",
 }
 
 export const LIST_ACTIVITIES_ACTIONS={

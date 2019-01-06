@@ -20,12 +20,10 @@ class ActivitatItem extends React.Component {
             'Seguro que desea eliminar la actividad '+this.props.nomActivitat+'?',
             [
                 {text: 'No'},
-                {text: 'Sí', onPress: () => this.props.deleteActivity(this.props.id)},
+                {text: 'Sí', onPress: () => {this.props.deleteActivity(this.props.id), Actions.activitatlist({url: "/own", headerText: "Creadas"})}},
             ],
             { cancelable: false }
-        );    
-        
-        Actions.llistesActs();
+        );
     }
     choosefirstIcon() {
         if (this.props.screen === "/own") {
@@ -43,7 +41,7 @@ class ActivitatItem extends React.Component {
                            style={styles.iconStyle}
                            onPress = {() => {
                                this.props.notAttend(this.props.id);
-                               Actions.llistesActs()}}/>
+                               Actions.activitatlist({url: "/attending", att: "yes", headerText: "Apuntadas"})}}/>
                 );
             }
             else {
@@ -52,7 +50,7 @@ class ActivitatItem extends React.Component {
                            style={styles.iconStyle}
                            onPress = {() => {
                                this.props.attend(this.props.id);
-                               Actions.llistesActs()}}/>
+                               Actions.activitatlist({url: "/attending", att: "no", headerText: "Rechazadas"})}}/>
                 );
             }
         }

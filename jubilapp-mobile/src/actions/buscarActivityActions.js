@@ -53,7 +53,7 @@ export const fetchActivitats = (stringISOfromDate, stringISOtoDate) =>{
         AsyncStorage.getItem('token').then((token) => {
         const url1 = "http://ordinadorcasa.no-ip.org:4100/event?";
         const url2 = "lat=41.3892";
-        const url3 = "&lng=2.1175024";
+        const url3 = "&long=2.1175024";
         const url4 = "&fromDate=";
         const url5 = "&toDate=";
         const url6 = "&forMe=true";
