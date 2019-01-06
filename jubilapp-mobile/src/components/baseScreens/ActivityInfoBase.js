@@ -6,8 +6,14 @@ import CardActionCreades from "../CardActionCreades";
 import CardActionApuntades from "../CardActionApuntades";
 import CardActionCancelades from "../CardActionCancelades";
 import CardActionBuscar from "../CardActionBuscar";
-
-
+import Moment from 'react-moment';
+import 'moment-timezone';
+/*<Text style = {textStyle}> Data Fi:</Text>
+                <Moment element={Text} format="DD/MM/YYYY hh:mm">
+                    {this.props.dataFi}
+                </Moment>
+             //="DD/MM/YYYY hh:mm" <Text style = {textStyle}>{`${this.props.ubicacioactual}${"\n"}Data Inici: ${this.props.dataIni}${"\n"}Data Fi: ${this.props.dataFi}${"\n"}${"\n"}${this.props.descripcio}`}</Text>
+ */
 export default class
 ActivityInfoBase extends React.Component {
     _selectSource(type) {
@@ -28,9 +34,8 @@ ActivityInfoBase extends React.Component {
             return <CardActionBuscar notAttend = {this.props.notAttend} id = {this.props.id} attend = {this.props.attend}/>
         }
     }
-
-    render() {
-        const {viewStyle,textStyle,viewImageStyle, titleStyle} = styles;
+   render() {
+        const {viewStyle,textStyle,viewImageStyle, titleStyle, textStyleDescription} = styles;
         return (
             <View style = {viewStyle}>
                 <Header headerText = {'JubilApp'}/>
@@ -43,7 +48,21 @@ ActivityInfoBase extends React.Component {
                 <Text style = {titleStyle}>
                     {this.props.nomActivitat}
                 </Text>
-                <Text style = {textStyle}>{`${this.props.ubicacioactual}${"\n"}Data Inici: ${this.props.dataIni}${"\n"}Data Fi: ${this.props.dataFi}${"\n"}${"\n"}${this.props.descripcio}`}</Text>
+                <View >
+                    <Text style = {textStyle}>{`${this.props.ubicacioactual}${"\n"}Data Inici:`}</Text>
+                    <Moment style = {textStyle} element={Text} format="DD/MM/YYYY hh:mm">
+                        {this.props.dataIni}
+                    </Moment>
+                    <Text style = {textStyle}> Data Fi:</Text>
+                    <Moment style = {textStyle} element={Text} format="DD/MM/YYYY hh:mm">
+                        {this.props.dataFi}
+                    </Moment>
+                    <Text style = {textStyleDescription}>{this.props.descripcio}</Text>
+
+
+                </View>
+
+
 
                 {this._cardActionSelector(this.props.screen, this.props.att)}
 
@@ -57,13 +76,21 @@ const styles ={
         width: '100%',
         height: '100%'
     },
+
     textStyle: {
         fontSize: 20,
-        paddingBottom: '4%',
-        paddingLeft: '3%',
+        marginLeft: '3%',
+        paddingBottom: '2%',
         paddingRight: '3%',
-        height: '35%',
-        width: '100%',
+        color: APP_COLORS.text_color,
+    },
+    textStyleDescription: {
+        fontSize: 20,
+        paddingTop:'5%',
+        marginLeft: '3%',
+        paddingBottom: '2%',
+        paddingRight: '3%',
+
         color: APP_COLORS.text_color,
     },
     viewImageStyle: {
