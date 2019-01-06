@@ -42,8 +42,8 @@ class ActivitatListScreen extends React.Component {
         activities.forEach((activity) => {
             const { startDate } = activity
 
-            const startDateDay = moment(startDate).format("YYYY/MM/DD");
-            const index = this.indexOfByProperty(sections, "date", startDateDay);
+            const startDateDay = moment(startDate).format("DD/MM/YYYY");
+            const index = this.indexOfByProperty(sections, "title", startDateDay);
 
             if (index < 0) {
                 sections.push({
@@ -55,11 +55,13 @@ class ActivitatListScreen extends React.Component {
             }
         })
 
+        console.log(sections)
+
         return sections
     }
 
     renderActivities() {
-        const { activitatStyle } = styles;
+        const { activitatStyle, sectionHeaderStyle, textStyle } = styles;
         const { isFetching, activities } = this.props;
 
         if (isFetching) {
@@ -93,29 +95,18 @@ class ActivitatListScreen extends React.Component {
                                                setModifyActivityId={this.props.setModifyActivityId}/>
                             )
                         }}
-                        renderSectionHeader={({section: {title}}) => (
-                            <Text style={{fontWeight: 'bold'}}>{title}</Text>
-                        )}
+                        renderSectionHeader={({section: {title}}) => {
+                            return (
+                                <View style={sectionHeaderStyle}>
+                                    <Text style={textStyle}>{title}</Text>
+                                </View>
+                            )
+                        }}
                         sections={this.getActivitySections()}
                         keyExtractor={(activity, index) => activity.id}
                     />
                 )
             }
-            /*return activities.map((activity) => {
-                return (
-                    <ActivitatItem key={activity.id}
-                                   dataIni ={activity.startDate}
-                                   dataEnd ={activity.endDate}
-                                   nomActivitat = {activity.name}
-                                   style = {activitatStyle}
-                                   id={activity.id} screen = {this.props.url}
-                                   att = {this.props.att}
-                                   deleteActivity = {this.props.deleteActivity}
-                                   attend = {this.props.attend}
-                                   notAttend = {this.props.notAttend}
-                                   setModifyActivityId={this.props.setModifyActivityId}/>
-                )
-            });*/
         }
     }
 
@@ -147,13 +138,20 @@ const styles ={
         width: '100%',
         height: '100%'
     },
+    textStyle: {
+        backgroundColor: APP_COLORS.color_neutral,
+        color: APP_COLORS.color_button_1,
+        fontFamily: 'open-sans-bold',
+        fontSize: 18,
+        fontWeight: 'bold'
+    },
+    sectionHeaderStyle: {
+        paddingTop: '5%',
+        paddingLeft: '5%'
+    },
     activitatStyle: {
         paddingTop: '5%'
-    },
-    viewbuitStyle:{
-        alignItems: 'center',
-        paddingTop: '50%'
-    },
+    }
 }
 
 const mapStateToProps = (state) => {

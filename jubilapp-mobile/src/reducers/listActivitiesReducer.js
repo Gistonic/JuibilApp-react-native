@@ -32,22 +32,6 @@ export const listActivitiesReducer = (state = INITIAL_STATE, action) => {
             return state
         case LIST_ACTIVITIES_ACTIONS.ReceiveActivities:
             return {...state, activities: action.payload, isFetching: false};
-
-            /*const activities = action.payload.map(activity=>{
-                const {typeName,path}=activitiesTranslate[activity.type]
-
-                return {
-                    ...activity,// agafam la activity copia el mateix per no ser amb referencia i afegeix les dos noves propietats
-                    typeName: typeName,
-                    path: path
-                }
-            });
-            console.log(activities)
-            return {
-                ...state,
-                isFetching: false,
-                activities: activities
-            }*/
         case LIST_ACTIVITIES_ACTIONS.DeleteActivity:
             return state
         case LIST_ACTIVITIES_ACTIONS.RequestActivities:

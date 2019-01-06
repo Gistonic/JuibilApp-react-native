@@ -5,6 +5,8 @@ import Scenes from './src/Scenes';
 import { store } from './src/store';
 import { Font } from 'expo';
 
+console.disableYellowBox = true
+
 const ConnectedRouter = connect()(Router);
 
 export default class App extends React.Component {
