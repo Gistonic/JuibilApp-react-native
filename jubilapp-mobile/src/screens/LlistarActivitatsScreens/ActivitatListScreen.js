@@ -8,6 +8,7 @@ import {Actions} from "react-native-router-flux";
 import HeaderIcon from "../../components/basicComponents/HeaderIcon";
 import { fetchActivities , deleteActivity, setModifyActivityId} from "../../actions/ListActivitiesActions";
 import {attend, notAttend} from "../../actions/buscarActivityActions";
+import Description from "../../components/basicComponents/Description";
 
 class ActivitatListScreen extends React.Component {
     constructor(props) {
@@ -68,30 +69,38 @@ class ActivitatListScreen extends React.Component {
                 </View>
             );
         } else {
-            return (
-                <SectionList
-                    renderItem={({item, index, section}) => {
-                        const activity = { ...item }
-                        return (
-                            <ActivitatItem dataIni={activity.startDate}
-                                           dataEnd={activity.endDate}
-                                           nomActivitat={activity.name}
-                                           style={activitatStyle}
-                                           id={activity.id} screen={this.props.url}
-                                           att={this.props.att}
-                                           deleteActivity={this.props.deleteActivity}
-                                           attend={this.props.attend}
-                                           notAttend={this.props.notAttend}
-                                           setModifyActivityId={this.props.setModifyActivityId}/>
-                        )
-                    }}
-                    renderSectionHeader={({section: {title}}) => (
-                        <Text style={{fontWeight: 'bold'}}>{title}</Text>
-                    )}
-                    sections={this.getActivitySections()}
-                    keyExtractor={(activity, index) => activity.id}
-                />
-            )
+            if (activities.length === 0) {
+                return  (
+                    <Description textExpl = "No hay actividades en esta lista"/>
+                )
+
+            }
+            else {
+                return (
+                    <SectionList
+                        renderItem={({item, index, section}) => {
+                            const activity = {...item}
+                            return (
+                                <ActivitatItem dataIni={activity.startDate}
+                                               dataEnd={activity.endDate}
+                                               nomActivitat={activity.name}
+                                               style={activitatStyle}
+                                               id={activity.id} screen={this.props.url}
+                                               att={this.props.att}
+                                               deleteActivity={this.props.deleteActivity}
+                                               attend={this.props.attend}
+                                               notAttend={this.props.notAttend}
+                                               setModifyActivityId={this.props.setModifyActivityId}/>
+                            )
+                        }}
+                        renderSectionHeader={({section: {title}}) => (
+                            <Text style={{fontWeight: 'bold'}}>{title}</Text>
+                        )}
+                        sections={this.getActivitySections()}
+                        keyExtractor={(activity, index) => activity.id}
+                    />
+                )
+            }
             /*return activities.map((activity) => {
                 return (
                     <ActivitatItem key={activity.id}
@@ -116,9 +125,9 @@ class ActivitatListScreen extends React.Component {
             <View style = {viewStyle}>
 
                 <HeaderIcon headerText = {this.props.headerText}
-                            iconName={ 'home'}
+                            iconName={ 'list-ul'}
                             colorName={ APP_COLORS.color_neutral}
-                            path={() => Actions.home()}
+                            path={() => Actions.llistesActs()}
                             size = {60}
                             textSize = {31}
                             isEvilType = {true}
@@ -140,7 +149,11 @@ const styles ={
     },
     activitatStyle: {
         paddingTop: '5%'
-    }
+    },
+    viewbuitStyle:{
+        alignItems: 'center',
+        paddingTop: '50%'
+    },
 }
 
 const mapStateToProps = (state) => {

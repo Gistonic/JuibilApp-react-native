@@ -6,6 +6,7 @@ import {APP_COLORS} from "../../constants/colors";
 
 import { Actions } from 'react-native-router-flux';
 import ConfigurationButton from "../../components/basicComponents/ConfigurationButton";
+import ButtonBack from "../../components/basicComponents/ButtonBack";
 
 export default class ListsActivitiesScreen extends React.Component {
     render() {
@@ -23,7 +24,7 @@ export default class ListsActivitiesScreen extends React.Component {
                     <ConfigurationButton iconName={ 'ios-checkmark-circle'}
                                          colorName={ APP_COLORS.color_next}
                                          colorIconName={ APP_COLORS.color_next}
-                                         heightStyle={150}
+                                         heightStyle={120}
                                          fontsizeStyle= {28}
                                          widthStyle = {200}
                                          isEvilType = {false}
@@ -33,7 +34,7 @@ export default class ListsActivitiesScreen extends React.Component {
                     <ConfigurationButton iconName={ 'ios-close-circle'}
                                          colorName={ APP_COLORS.color_header}
                                          colorIconName={ APP_COLORS.color_header}
-                                         heightStyle={150}
+                                         heightStyle={120}
                                          fontsizeStyle= {28}
                                          widthStyle = {200}
                                          isEvilType = {false}
@@ -44,12 +45,16 @@ export default class ListsActivitiesScreen extends React.Component {
                     <ConfigurationButton iconName={'ios-add-circle'}
                                          colorName={ APP_COLORS.color_button_1}
                                          colorIconName={ APP_COLORS.color_button_1}
-                                         heightStyle={150}
+                                         heightStyle={120}
                                          fontsizeStyle= {28}
                                          widthStyle = {200}
                                          buttonText = {'CREADAS'}
                                          path={() => Actions.activitatlist({url: "/own", headerText: "Creadas"})}
                                          isEvilType = {false}
+                    />
+                    <ButtonBack path = {() => Actions.home()}
+                                colorBoto = {APP_COLORS.color_back}
+                                buttonText = {"Atrás"}
                     />
                 </View>
             </View>
@@ -64,10 +69,10 @@ const styles ={
     },
     viewButtons: {
         flexDirection: 'column',
-        flex: 2,
         backgroundColor: APP_COLORS.color_neutral,
         width: '100%',
         height: '100%',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        paddingBottom: '5%'
     }
 }
