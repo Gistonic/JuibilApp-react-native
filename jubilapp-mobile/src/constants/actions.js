@@ -21,6 +21,11 @@ export const LIST_ACTIVITIES_ACTIONS={
     SetModifyActivityId:'SET_MODIFY_ACTIVITY_ID'
 }
 
+export const FICHAS_ACTIONS={
+    FetchFichas: 'FETCH_ACTIVITIES',
+    ReceiveFichas: 'RECEIVE_FICHAS'
+}
+
 export const INTERESSOS_PROFILE_ACTIONS={
     ChangeProperty: 'CHANGE_INTERESSOS_PROPERTY',
     FetchInteressos: 'FETCH_INTERESSOS',

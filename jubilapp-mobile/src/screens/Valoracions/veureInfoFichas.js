@@ -15,7 +15,7 @@ class veureInfoFichas extends React.Component {
     }
 
     render() {
-        const {viewStyle, container, textStyle,viewkmStyle,iconStyle} = styles;
+        const {viewStyle, container, explStyle} = styles;
         return (
             <View style = {viewStyle}>
                 <HeaderIcon headerText = {'Info fichas'}
@@ -25,8 +25,7 @@ class veureInfoFichas extends React.Component {
                 textSize = {35}
                 path={() => Actions.home()}/>
 
-                <Description textExpl= {'Pantalla per explicar que son les fichas, perque serveixen, com van els descomptes, etc.'}/>
-                <Description textExpl= {'Segurament caldra algun tipo de paginacio, lscroll no anava qquan ho vaig intentar'}/>
+                <Description style={explStyle} textExpl= {'Por cada valoración que hagas te daremos una ficha. Cuando tengas 20 fichas, descontaremos 5€ a la siguiente actividad con precio que te apuntes.'}/>
                 
                 
                 <View style = {container}>
@@ -49,6 +48,12 @@ class veureInfoFichas extends React.Component {
         paddingTop: '5%',
         paddingLeft: '37%',
         paddingBottom: '1%'
+    },
+      explStyle: {
+          marginTop: '5%',
+          marginLeft: '5%',
+          marginRight: '5%',
+          marginBottom: '3%'
     },
     textStyle: {
         color: 'white',

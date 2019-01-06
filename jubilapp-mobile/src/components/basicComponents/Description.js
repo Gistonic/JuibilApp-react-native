@@ -3,9 +3,10 @@ import { View, TextInput, Text}  from 'react-native';
 import {APP_COLORS} from "../../constants/colors"
 
 const Description = (props) => {
-    const {textStyle} = styles;
+    const {textStyle } = styles;
+    const {style}=props;
     return (
-        <Text style = {textStyle}>{props.textExpl}</Text>
+        <Text style = {[textStyle, style]}>{props.textExpl}</Text>
     );
 
 };

@@ -9,3 +9,4 @@ export * from "./buscarActivityReducer";
 export * from "./modifyActivityReducer";
 export * from "./modificarProfileReducer";
 export * from "./valorarActivityReducer";
+export * from "./fichasReducer";

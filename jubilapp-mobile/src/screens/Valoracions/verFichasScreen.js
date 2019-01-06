@@ -8,13 +8,7 @@ import connect from "react-redux/es/connect/connect";
 import {Actions} from 'react-native-router-flux';
 import ProgressCircle from 'react-native-progress-circle'
 import { Ionicons } from '@expo/vector-icons';
-
-/*<View style = {viewkmStyle}>
-    <View style = {styles.circle} backgroundColor = {APP_COLORS.color_button_1}>
-        <Text style = {textStyle}>4</Text>
-    </View>
-</View>*/
-
+import { fetchFichas} from "../../actions";
 
 class verFichasScreen extends React.Component {
 
@@ -22,8 +16,15 @@ class verFichasScreen extends React.Component {
         super(props)
     }
 
+    componentWillMount() {
+        this.props.fetchFichas();
+    }
+
     render() {
-        const {viewStyle, container, textStyle,viewkmStyle,iconStyle, progressCircleStyle} = styles;
+        const {viewStyle, container, explStyle,iconStyle, progressCircleStyle} = styles;
+        const fichas= this.props.fichas ? this.props.fichas:0
+        const info = "Tienes "+fichas+" fichas!";
+
         return (
             <View style = {viewStyle}>
                 <HeaderIcon headerText = {'Ver fichas'}
@@ -35,12 +36,11 @@ class verFichasScreen extends React.Component {
                 
                 
                 
-                <Description textExpl= {'Tienes 30 fichas!'}/>
+                <Description textExpl= {info}/>
 
                 <View style={progressCircleStyle }>
                     <ProgressCircle
-
-                        percent={30}
+                        percent={(fichas * 100)/20}
                         radius={70}
                         borderWidth={10}
                         color={APP_COLORS.color_header}
@@ -54,7 +54,7 @@ class verFichasScreen extends React.Component {
                 </View>
 
 
-                <Description textExpl= {'Quieres más información sobre como funcionan las fichas?'}/>
+                <Description style={explStyle} textExpl= {'Quieres más información sobre como funcionan las fichas?'}/>
                 <Ionicons style = {iconStyle} name={'ios-information-circle-outline'} size={75} 
                             color= {APP_COLORS.color_button_1} onPress = {() => {Actions.verinfofichas()}}/>
                 <View style = {container}>
@@ -81,6 +81,7 @@ class verFichasScreen extends React.Component {
       progressCircleStyle:{
         alignItems:'center'
       },
+
     textStyle: {
         color: 'white',
        fontSize: 50,
@@ -117,8 +118,26 @@ class verFichasScreen extends React.Component {
         paddingRight: '5%',
         paddingLeft: '5%',
         paddingTop: '8%'
-    }
+    },
+      explStyle: {
+          marginTop: '5%',
+          marginLeft: '5%',
+          marginRight: '5%',
+          marginBottom: '3%'
+      }
   }
 
+const mapStateToProps = (state) => {
+    return {
+        fichas: state._fichas.fichas,
+        isFetching: state._fichas.isFetching
+    }
+}
 
-export default verFichasScreen;
+const  mapDispatchToProps = (dispatch)=>{
+    return {
+        fetchFichas: ()=>dispatch(fetchFichas()),
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps) (verFichasScreen);
