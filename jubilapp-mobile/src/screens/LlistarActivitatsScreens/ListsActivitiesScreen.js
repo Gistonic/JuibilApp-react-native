@@ -53,8 +53,8 @@ export default class ListsActivitiesScreen extends React.Component {
                                          isEvilType = {false}
                     />
                     <ButtonBack path = {() => Actions.home()}
-                                colorBoto = {APP_COLORS.color_back}
-                                buttonText = {"Atrás"}
+                                colorBoto = {APP_COLORS.color_header}
+                                buttonText = {"Finalizar"}
                     />
                 </View>
             </View>
