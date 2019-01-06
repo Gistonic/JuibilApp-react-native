@@ -35,7 +35,7 @@ ActivityInfoBase extends React.Component {
         }
     }
    render() {
-        const {viewStyle,textStyle,viewImageStyle, titleStyle, textStyleDescription} = styles;
+        const {viewStyle,textStyle,viewImageStyle, titleStyle, textStyleDescription, ViewRow} = styles;
         return (
             <View style = {viewStyle}>
                 <Header headerText = {'JubilApp'}/>
@@ -49,14 +49,21 @@ ActivityInfoBase extends React.Component {
                     {this.props.nomActivitat}
                 </Text>
                 <View >
-                    <Text style = {textStyle}>{`${this.props.ubicacioactual}${"\n"}Data Inici:`}</Text>
-                    <Moment style = {textStyle} element={Text} format="DD/MM/YYYY hh:mm">
-                        {this.props.dataIni}
-                    </Moment>
-                    <Text style = {textStyle}> Data Fi:</Text>
-                    <Moment style = {textStyle} element={Text} format="DD/MM/YYYY hh:mm">
-                        {this.props.dataFi}
-                    </Moment>
+                    <Text style = {textStyle}>{this.props.ubicacioactual}</Text>
+                    <View style={ViewRow}>
+                        <Text style = {textStyle}> Fecha inicio: </Text>
+                        <Moment style = {textStyle} element={Text} format="DD/MM/YYYY hh:mm">
+                            {this.props.dataIni}
+                        </Moment>
+                    </View>
+
+                    <View style={ViewRow}>
+                        <Text style = {textStyle}> Fecha fin: </Text>
+                        <Moment style = {textStyle} element={Text} format="DD/MM/YYYY hh:mm">
+                            {this.props.dataFi}
+                        </Moment>
+                    </View>
+
                     <Text style = {textStyleDescription}>{this.props.descripcio}</Text>
 
 
@@ -108,5 +115,8 @@ const styles ={
         marginBottom: '2%',
         color: APP_COLORS.text_color,
         fontWeight: 'bold',
+    },
+    ViewRow:{
+        flexDirection: 'row',
     }
 }
