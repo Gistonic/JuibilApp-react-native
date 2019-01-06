@@ -44,34 +44,37 @@ ActivityInfoBase extends React.Component {
                         source={this._selectSource(this.props.tipus)}
                         style={{width: '100%', height: '100%'}}
                     />
-                </View>
-                <Text style = {titleStyle}>
-                    {this.props.nomActivitat}
-                </Text>
-                <View >
-                    <Text style = {textStyle}>{this.props.ubicacioactual}</Text>
-                    <View style={ViewRow}>
-                        <Text style = {textStyle}> Fecha inicio: </Text>
-                        <Moment style = {textStyle} element={Text} format="DD/MM/YYYY hh:mm">
-                            {this.props.dataIni}
-                        </Moment>
+                    </View>
+                    <View>
+                    <Text style = {titleStyle}>
+                        {this.props.nomActivitat}
+                    </Text>
+                    <View >
+                        <Text style = {textStyle}>{this.props.ubicacioactual}</Text>
+                        <View style={ViewRow}>
+                            <Text style = {textStyle}> Fecha inicio: </Text>
+                            <Moment style = {textStyle} element={Text} format="DD/MM/YYYY hh:mm">
+                                {this.props.dataIni}
+                            </Moment>
+                        </View>
+
+                        <View style={ViewRow}>
+                            <Text style = {textStyle}> Fecha fin: </Text>
+                            <Moment style = {textStyle} element={Text} format="DD/MM/YYYY hh:mm">
+                                {this.props.dataFi}
+                            </Moment>
+                        </View>
+
+                        <Text style = {textStyleDescription}>{this.props.descripcio}</Text>
+
+
                     </View>
 
-                    <View style={ViewRow}>
-                        <Text style = {textStyle}> Fecha fin: </Text>
-                        <Moment style = {textStyle} element={Text} format="DD/MM/YYYY hh:mm">
-                            {this.props.dataFi}
-                        </Moment>
+
+                    <View style = {{height: 70, paddingBottom: '25%'}}>
+                        {this._cardActionSelector(this.props.screen, this.props.att)}
                     </View>
-
-                    <Text style = {textStyleDescription}>{this.props.descripcio}</Text>
-
-
                 </View>
-
-
-
-                {this._cardActionSelector(this.props.screen, this.props.att)}
 
             </View>
         );
@@ -81,7 +84,8 @@ const styles ={
     viewStyle: {
         backgroundColor: APP_COLORS.color_neutral,
         width: '100%',
-        height: '100%'
+        height: '100%',
+        justifyContent: 'space-between',
     },
 
     textStyle: {
@@ -103,7 +107,6 @@ const styles ={
     viewImageStyle: {
         width: '100%',
         height: '27%',
-        paddingBottom: '3%'
     },
     titleStyle: {
         fontSize: 35,
