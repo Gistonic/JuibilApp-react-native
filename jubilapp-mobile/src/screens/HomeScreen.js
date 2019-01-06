@@ -6,14 +6,32 @@ import {APP_COLORS} from "../constants/colors";
 import { Actions } from 'react-native-router-flux';
 import ConfigurationButton from "../components/basicComponents/ConfigurationButton";
 import {
-    changeBuscarActivityFormProperty,
+    changeBuscarActivityFormProperty, changeCreateActivityFormProperty,
 } from "../actions";
 import connect from "react-redux/es/connect/connect";
+
+const date = new Date();
+const initial_hour = date.getHours();
+const initial_minute = date.getMinutes() - (date.getMinutes() % 5);
 
 class HomeScreen extends React.Component {
     componentDidMount() {
         this.props.changeProp("fromDate", {});
         this.props.changeProp("toDate", {});
+        this.props.changeFormCreateActProp("name","");
+        this.props.changeFormCreateActProp("latitude", null);
+        this.props.changeFormCreateActProp("longitude", null);
+        this.props.changeFormCreateActProp("dateIni", {});
+        this.props.changeFormCreateActProp("dateEnd", {});
+        this.props.changeFormCreateActProp("hourIni", initial_hour);
+        this.props.changeFormCreateActProp("hourEnd", initial_hour);
+        this.props.changeFormCreateActProp("minuteIni", initial_minute);
+        this.props.changeFormCreateActProp("minuteEnd", initial_minute);
+        this.props.changeFormCreateActProp("description", "");
+        this.props.changeFormCreateActProp("type", "");
+        this.props.changeFormCreateActProp("startDate", null);
+        this.props.changeFormCreateActProp("endDate", null);
+        this.props.changeFormCreateActProp("ubi", "");
     }
     render() {
         const {viewStyle, viewButtons} = styles;
@@ -86,12 +104,14 @@ const mapStateToProps = (state) => {
     return {
         fromDate: state.buscarActivity.fromDate,
         toDate: state.buscarActivity.toDate,
+
     }
 }
 
 const  mapDispatchToProps = (dispatch)=>{
     return {
         changeProp: (name,value) => dispatch(changeBuscarActivityFormProperty(name, value)),
+        changeFormCreateActProp: (name, value) => dispatch(changeCreateActivityFormProperty(name,value))
     }
 }
 export default connect(mapStateToProps,mapDispatchToProps)(HomeScreen)

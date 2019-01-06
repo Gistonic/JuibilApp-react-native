@@ -12,10 +12,6 @@ import connect from "react-redux/es/connect/connect";
 import { createActivity, changeType } from '../../actions/index';
 import {pressPopup} from "../../pressPopup";
 
-const date = new Date();
-const initial_hour = date.getHours();
-const initial_minute = date.getMinutes() - (date.getMinutes() % 5);
-
 class SelectTypeCreate extends React.Component {
     constructor(props) {
         super(props)
@@ -40,23 +36,6 @@ class SelectTypeCreate extends React.Component {
         };
         this.props.createActivity(activityInfo)
     }
-    componentDidMount () {
-        this.props.changeFormCreateActProp("name","");
-        this.props.changeFormCreateActProp("latitude", null);
-        this.props.changeFormCreateActProp("longitude", null);
-        this.props.changeFormCreateActProp("dateIni", {});
-        this.props.changeFormCreateActProp("dateEnd", {});
-        this.props.changeFormCreateActProp("hourIni", initial_hour);
-        this.props.changeFormCreateActProp("hourEnd", initial_hour);
-        this.props.changeFormCreateActProp("minuteIni", initial_minute);
-        this.props.changeFormCreateActProp("minuteEnd", initial_minute);
-        this.props.changeFormCreateActProp("description", "");
-        this.props.changeFormCreateActProp("type", "");
-        this.props.changeFormCreateActProp("startDate", null);
-        this.props.changeFormCreateActProp("endDate", null);
-        this.props.changeFormCreateActProp("ubi", "");
-    }
-
     dibuixarInteressos(num)
     {
         //el num es per distingir a quina columna aniran, la dreta es per tots aquells que tenen id parell i lesquerra pels ids imparells

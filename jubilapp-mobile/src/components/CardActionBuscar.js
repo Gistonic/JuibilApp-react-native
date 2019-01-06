@@ -44,13 +44,12 @@ class CardActionBuscar extends React.Component {
 
 const styles = {
     container: {
+        height: '100%',
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
         alignContent: 'center',
-        paddingTop: '4%',
-        borderTopColor: '#E9E9E9',
-        borderTopWidth: 1,
+        paddingTop: '3%',
     },
     iconStyle: {
         backgroundColor: '#D9D9D9',
