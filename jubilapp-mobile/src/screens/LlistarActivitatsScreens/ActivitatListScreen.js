@@ -118,7 +118,7 @@ class ActivitatListScreen extends React.Component {
             <View style = {viewStyle}>
 
                 <HeaderIcon headerText = {this.props.headerText}
-                            iconName={ 'list-ul'}
+                            iconName={ 'arrow-left'}
                             colorName={ APP_COLORS.color_neutral}
                             path={() => Actions.llistesActs()}
                             size = {60}

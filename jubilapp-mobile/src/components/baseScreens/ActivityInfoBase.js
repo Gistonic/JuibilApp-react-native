@@ -66,7 +66,7 @@ ActivityInfoBase extends React.Component {
                     </View>
 
 
-                    <View style = {{height: 70, paddingBottom: '25%'}}>
+                    <View style = {{height: 70, paddingBottom: '5%'}}>
                         {this._cardActionSelector(this.props.screen, this.props.att)}
                     </View>
                 </View>
