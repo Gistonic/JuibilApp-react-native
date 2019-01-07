@@ -11,6 +11,7 @@ import {APP_COLORS} from "../constants/colors";
 import connect from "react-redux/es/connect/connect";
 import {changeLoginFormProperty, login} from "../actions/loginFormActions";
 import ButtonBack from "../components/basicComponents/ButtonBack";
+import AlertError from '../components/AlertError'
 
 class LoginScreen extends React.Component {
     constructor(props) {
@@ -28,29 +29,34 @@ class LoginScreen extends React.Component {
     }
     render() {
         const {viewStyle, viewStyle1} = styles;
-        const {email, changeFormEmail, password, changeFormPassword}=this.props;
+        const {email, changeFormEmail, password, error, changeFormPassword}=this.props;
+
+        console.log('Error: ' + error)
         return (
             <KeyboardAvoidingView behavior = 'position'>
-            <View style = {viewStyle}>
-              <Header headerText = {'JubilApp'}/>
-                <View style = {viewStyle1}>
-                  <Formulari textExplicatiu = {'Introduce correo y contraseña'}
-                             textPlaceHolder = {'correo'}
-                             tipusTeclat = {'email-address'}
-                             value = {email}
-                             onChangeText={(text) => changeFormEmail(text)}/>
-                  <Formulari textPlaceHolder = {'contraseña'}
-                             tipusTeclat = {'default'}
-                             psswCodificada = {true}
-                             value = {password}
-                             onChangeText={(text) => changeFormPassword(text)}/>
+                <View style = {viewStyle}>
+                    <Header headerText = {'JubilApp'}/>
+                    <View style = {viewStyle1}>
+                        <Formulari textExplicatiu = {'Introduce correo y contraseña'}
+                                   textPlaceHolder = {'correo'}
+                                   tipusTeclat = {'email-address'}
+                                   value = {email}
+                                   onChangeText={(text) => changeFormEmail(text)}/>
+                        <Formulari textPlaceHolder = {'contraseña'}
+                                   tipusTeclat = {'default'}
+                                   psswCodificada = {true}
+                                   value = {password}
+                                   onChangeText={(text) => changeFormPassword(text)}/>
+                    </View>
+                    <StartButton buttonText = {'Entrar'}
+                                 path = {this.onLoginPressed}/>
+                    <Description textExpl = {'No tienes cuenta?'}/>
+                    <StartButton buttonText = {'Regístrate!'}
+                                 path = {() => Actions.r1()}/>
+                    { error &&
+                        <AlertError message="Usuario y/o contraseña incorrectos" />
+                    }
                 </View>
-                  <StartButton buttonText = {'Entrar'}
-                               path = {this.onLoginPressed}/>
-                  <Description textExpl = {'No tienes cuenta?'}/>
-                  <StartButton buttonText = {'Regístrate!'}
-                               path = {() => Actions.r1()}/>
-            </View>
             </KeyboardAvoidingView>
         );
     }
@@ -69,7 +75,8 @@ class LoginScreen extends React.Component {
 const mapStateToProps = (state) => {
     return {
         email: state.loginForm.email,
-        password: state.loginForm.password
+        password: state.loginForm.password,
+        error: state.loginForm.error
     }
 }
 

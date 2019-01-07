@@ -36,10 +36,24 @@ const receiveLogin = (token) => {
     }
 };
 
+const receiveLoginError = () => {
+    return {
+        type: LOGIN_FORM_ACTIONS.ReceiveLoginError
+    }
+}
+
+const resetLoginError = () => {
+    return {
+        type: LOGIN_FORM_ACTIONS.ResetLoginError
+    }
+}
+
 
 export const login = (userInfo) => {
     return (dispatch) => {
-        fetch('http://ordinadorcasa.no-ip.org:4100/auth/login/', {
+        //const url = 'http://ordinadorcasa.no-ip.org:4100/auth/login/';
+        const url = 'http://httpstat.us/401';
+        fetch(url, {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -51,15 +65,14 @@ export const login = (userInfo) => {
                 return response.json().then(json => {
                     dispatch(receiveLogin(json.token))
                 })
-                /*
-                {
-                    "token": "123nahibrih123g13ugi217g"
-                }
-
-                */
             } else {
-                console.log('Error sending login')
-                console.log(response)
+                console.log('Error sending login. Status: ' + response.status);
+
+                dispatch(receiveLoginError())
+
+                setTimeout(() => {
+                    dispatch(resetLoginError())
+                }, 5000)
             }
         }).catch(err => {
             console.log(err)

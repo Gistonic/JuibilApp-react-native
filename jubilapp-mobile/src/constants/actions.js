@@ -5,7 +5,9 @@ export const REGISTER_FORM_ACTIONS={
 
 export const LOGIN_FORM_ACTIONS={
     ChangeProperty: "CHANGE_LOGIN_PROPERTY",
-    ReceiveLogin: "RECEIVE_LOGIN"
+    ReceiveLogin: "RECEIVE_LOGIN",
+    ReceiveLoginError: "RECEIVE_LOGIN_ERROR",
+    ResetLoginError: "RESET_LOGIN_ERROR"
 }
 export const CREATE_ACTIVITY_FORM_ACTIONS={
     ChangeProperty: "CHANGE_CREATE_ACTIVITY_PROPERTY",

@@ -22,6 +22,7 @@ class verFichasScreen extends React.Component {
 
     render() {
         const {viewStyle, container, explStyle,iconStyle, progressCircleStyle} = styles;
+        const {isFetching}=this.props;
         const fichas= this.props.fichas ? this.props.fichas:0
         const info = "Tienes "+fichas+" fichas!";
 
