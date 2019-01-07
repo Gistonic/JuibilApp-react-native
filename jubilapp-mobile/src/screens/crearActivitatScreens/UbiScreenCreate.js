@@ -1,6 +1,7 @@
 import React from 'react';
 import { Actions } from 'react-native-router-flux';
-import {changeCreateActivityFormProperty} from "../../actions/index";
+import {changeCreateActivityFormProperty,errorCreateActivityFormProperty,
+    resetErrorCreateActivityFormProperty} from "../../actions/index";
 import connect from "react-redux/es/connect/connect";
 import UbiScreenBase from "../../components/baseScreens/UbiScreenBase";
 import Geocoder from "react-native-geocoding";
@@ -16,6 +17,24 @@ class UbiCreate extends React.Component {
                 });
         }
     }
+    constructor(props) {
+        super(props)
+
+        this.changeFormUbiHandler = this.changeFormUbiHandler.bind(this)
+    }
+
+    changeFormUbiHandler() {
+
+        const { ubi, longitude, latitude } = this.props
+        if ( longitude == null||typeof longitude === "undefined" || latitude==null ||typeof longitude === "undefined") {
+            this.props.errorFormUbi('La ubicación no puede estar vacía')
+            setTimeout(() => {
+                this.props.resetErrorFormUbi()
+            }, 3000)
+        } else {
+            Actions.iniDate()
+        }
+    }
     ubi () {
         if (this.props.ubi !== "") return this.props.ubi;
         else return "Ubicación";
@@ -27,9 +46,10 @@ class UbiCreate extends React.Component {
                             latitude = {this.props.latitude}
                             longitude = {this.props.longitude}
                             buttonNext = "Siguiente"
-                            nextScreen={() => Actions.iniDate()}
+                            nextScreen= {this.changeFormUbiHandler}
                             previousScreen={() => Actions.name()}
                             headerName = "Crear Actividad"
+                           error={this.props.error}
                            ubic = {this.ubi()}
             />
         )
@@ -40,6 +60,7 @@ const mapStateToProps = (state) => {
         latitude: state.createActivityForm.latitude,
         longitude: state.createActivityForm.longitude,
         ubi: state.createActivityForm.ubi,
+        error: state.createActivityForm.errors.ubi
     }
 }
 
@@ -47,7 +68,9 @@ const  mapDispatchToProps = (dispatch)=>{
     return {
         changeFormLatitude: (value)=>dispatch(changeCreateActivityFormProperty("latitude", value)),
         changeFormLongitude: (value)=>dispatch(changeCreateActivityFormProperty("longitude", value)),
-        changeFormUbi: (value) => dispatch(changeCreateActivityFormProperty("ubi",value))
+        changeFormUbi: (value) => dispatch(changeCreateActivityFormProperty("ubi",value)),
+        errorFormUbi: (error) => dispatch(errorCreateActivityFormProperty("ubi", error)),
+        resetErrorFormUbi: () => dispatch(resetErrorCreateActivityFormProperty("ubi"))
     }
 }
 
