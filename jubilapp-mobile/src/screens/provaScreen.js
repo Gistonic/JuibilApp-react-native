@@ -2,7 +2,6 @@ import React from 'react';
 import {View, Text,TouchableOpacity} from 'react-native';
 import Description from '../components/basicComponents/Description';
 import ButtonBack from '../components/basicComponents/ButtonBack';
-import PopUp from '../components/basicComponents/PopUp';
 import {APP_COLORS} from "../constants/colors";
 import Modal from 'react-native-modal';
 

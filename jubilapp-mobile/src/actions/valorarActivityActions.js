@@ -34,7 +34,22 @@ export const fetchActivitatsValorar = () =>{
           setTimeout(() => {
               dispatch(rebreActivitats(activitatsMock))
           }, 2000)
-        }
+    }
+    /*return (dispatch) => {
+        AsyncStorage.getItem('token').then((token) => {
+            fetch('http://ordinadorcasa.no-ip.org:4100/event/ratingPending', {
+                method: 'GET',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                    Authorization: 'Bearer ' + token,
+
+                },
+                dataType: 'json',
+            }).then((resp) =>
+                resp.json().then((body) => dispatch(rebreActivitats(body.events))))
+        });
+    }*/
     
 }
 

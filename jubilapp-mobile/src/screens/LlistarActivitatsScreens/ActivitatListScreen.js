@@ -73,7 +73,9 @@ class ActivitatListScreen extends React.Component {
         } else {
             if (activities.length === 0) {
                 return  (
-                    <Description textExpl = "No hay actividades en esta lista"/>
+                    <View style = {styles.viewbuitStyle}>
+                        <Description textExpl = "No hay actividades en esta lista"/>
+                    </View>
                 )
 
             }
