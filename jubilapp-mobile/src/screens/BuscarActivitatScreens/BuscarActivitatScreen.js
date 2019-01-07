@@ -48,8 +48,6 @@ class BuscarActivitatScreen extends React.Component {
         }
         const stringISOfromDate = new Date(this.props.fromDate.year, this.props.fromDate.month, this.props.fromDate.day, hour, minute).toISOString();
         const stringISOtoDate = new Date(this.props.toDate.year, this.props.toDate.month, this.props.toDate.day).toISOString();
-        console.log(stringISOtoDate);
-        console.log(stringISOfromDate);
         Geocoder.init(MAPS_KEY.key, {language: 'es'});
         this.props.fetchActivitats(stringISOfromDate, stringISOtoDate);
 
