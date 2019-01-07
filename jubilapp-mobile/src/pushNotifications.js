@@ -17,9 +17,11 @@ export const reportPushToken = async () => {
   }
 
   let token = await Notifications.getExpoPushTokenAsync();
+  console.log(`[PUSH NOTIFICATIONS] About to send push token ${token}`);
 
   // POST the token to your backend server from where you can retrieve it to send push notifications.
-  return await request('/profile', 'PATCH', {
+  await request('/profile', 'PATCH', {
     pushToken: token
   });
+  console.log(`[PUSH NOTIFICATIONS] Sent push token ${token}`);
 }
