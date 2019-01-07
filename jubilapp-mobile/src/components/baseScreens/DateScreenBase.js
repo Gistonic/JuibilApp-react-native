@@ -28,6 +28,7 @@ export default class DateScreenBase extends React.Component {
         const { changeFormDate} = this.props;
         let aux = day.month;
         day.month = aux-1;
+        if (this.props.to) day.day = day.day+1;
         changeFormDate(day)
     }
 

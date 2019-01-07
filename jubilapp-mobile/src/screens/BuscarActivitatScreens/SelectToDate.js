@@ -14,7 +14,9 @@ class SelectToDate extends React.Component {
                             previousScreen={() => Actions.fromDate()}
                             nextScreen={() => Actions.buscar()}
                             titleName="Selecciona el fin de búsqueda"
-                            headerName = "Buscar Actividad"/>
+                            headerName = "Buscar Actividad"
+                            to = {true}
+            />
         )
     }
 }
