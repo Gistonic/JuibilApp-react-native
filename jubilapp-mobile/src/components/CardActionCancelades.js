@@ -23,9 +23,10 @@ class CardActionCancelades extends React.Component {
                   separator={true}
                   inColumn={false}>
                 <ButtonBack buttonText="Atrás"
+                            colorBoto= {APP_COLORS.color_back}
                             path={() => Actions.activitatlist({url: "/attending", att: "no", headerText: "Canceladas"})}
                 />
-                <EvilIcons name='check' size={60} color={APP_COLORS.color_next}
+                <EvilIcons name='check' size={52} color={APP_COLORS.color_next}
                            style={[styles.iconStyle, {marginLeft: '0%'}]}
                            onPress = {this._onPress}/>
             </View>
@@ -39,14 +40,12 @@ const styles = {
         justifyContent: 'space-between',
         alignItems: 'center',
         alignContent: 'center',
-        paddingTop: '5%',
-        borderTopColor: '#E9E9E9',
-        borderTopWidth: 1,
     },
     iconStyle: {
         backgroundColor: '#D9D9D9',
         borderRadius: 10,
-        marginRight: '8%'
+        marginRight: '15%',
+        overflow: "hidden",
     },
 }
 

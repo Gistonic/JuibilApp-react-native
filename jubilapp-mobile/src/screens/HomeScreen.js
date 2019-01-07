@@ -5,8 +5,34 @@ import {APP_COLORS} from "../constants/colors";
 
 import { Actions } from 'react-native-router-flux';
 import ConfigurationButton from "../components/basicComponents/ConfigurationButton";
+import {
+    changeBuscarActivityFormProperty, changeCreateActivityFormProperty,
+} from "../actions";
+import connect from "react-redux/es/connect/connect";
 
-export default class HomeScreen extends React.Component {
+const date = new Date();
+const initial_hour = date.getHours();
+const initial_minute = date.getMinutes() - (date.getMinutes() % 5);
+
+class HomeScreen extends React.Component {
+    componentDidMount() {
+        this.props.changeProp("fromDate", {});
+        this.props.changeProp("toDate", {});
+        this.props.changeFormCreateActProp("name","");
+        this.props.changeFormCreateActProp("latitude", null);
+        this.props.changeFormCreateActProp("longitude", null);
+        this.props.changeFormCreateActProp("dateIni", {});
+        this.props.changeFormCreateActProp("dateEnd", {});
+        this.props.changeFormCreateActProp("hourIni", initial_hour);
+        this.props.changeFormCreateActProp("hourEnd", initial_hour);
+        this.props.changeFormCreateActProp("minuteIni", initial_minute);
+        this.props.changeFormCreateActProp("minuteEnd", initial_minute);
+        this.props.changeFormCreateActProp("description", "");
+        this.props.changeFormCreateActProp("type", "");
+        this.props.changeFormCreateActProp("startDate", null);
+        this.props.changeFormCreateActProp("endDate", null);
+        this.props.changeFormCreateActProp("ubi", "");
+    }
     render() {
         const {viewStyle, viewButtons} = styles;
         return (
@@ -14,12 +40,13 @@ export default class HomeScreen extends React.Component {
             <HeaderIcon headerText = {'JubilApp'}
                     iconName={ 'user'}
                     colorName={ APP_COLORS.color_neutral}
-                        size = {75}
-                        textSize = {35}
-                        path={() => Actions.perfil()}
-                        iconName2 = {'star'}
-                        size2 = {67}
-                        iconSecond = {true}
+                    size = {75}
+                    textSize = {35}
+                    path={() => Actions.perfil()}
+                    iconName2 = {'star'}
+                    path2={() => Actions.veurevaloracions()}
+                    size2 = {67}
+                    iconSecond = {true}
             />
                 <View style = {viewButtons}>
                     <ConfigurationButton iconName={ 'md-search'}
@@ -72,3 +99,19 @@ const styles ={
         justifyContent: 'space-between'
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        fromDate: state.buscarActivity.fromDate,
+        toDate: state.buscarActivity.toDate,
+
+    }
+}
+
+const  mapDispatchToProps = (dispatch)=>{
+    return {
+        changeProp: (name,value) => dispatch(changeBuscarActivityFormProperty(name, value)),
+        changeFormCreateActProp: (name, value) => dispatch(changeCreateActivityFormProperty(name,value))
+    }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(HomeScreen)

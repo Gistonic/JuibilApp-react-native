@@ -19,7 +19,9 @@ const styles = {
         // Set border Hex Color Code Here.
         borderColor: APP_COLORS.color_neutral,
 
-        borderRadius: 150
+        borderRadius: 75,
+        overflow: "hidden",
+        position: "absolute"
     }
 
 }

@@ -6,7 +6,7 @@ const Formulari = (props) => {
     const {viewStyle, textInputStyle} = styles;
     const { value, onChangeText } = props
     return (
-        <View style = {viewStyle}>
+        <View style = {[viewStyle, {height: props.altura}]}>
             <Description textExpl = {props.textExplicatiu}/>
             <TextInput placeholder = {props.textPlaceHolder} keyboardType= {props.tipusTeclat} underlineColorAndroid='black'
                        secureTextEntry={props.psswCodificada}
@@ -18,7 +18,6 @@ const Formulari = (props) => {
 };
 const styles ={
     viewStyle: {
-        height: 120,
         justifyContent: 'center',
         alignItems: 'center'
     },
@@ -26,7 +25,7 @@ const styles ={
         height: 40,
         fontSize: 30,
         width: 200,
-        marginTop: 20
+        marginTop: 20,
     }
 }
 export default Formulari;

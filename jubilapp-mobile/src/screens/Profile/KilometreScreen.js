@@ -3,23 +3,17 @@ import {TouchableOpacity, View} from 'react-native';
 import {APP_COLORS} from "../../constants/colors";
 import HeaderIcon from '../../components/basicComponents/HeaderIcon';
 import Description from '../../components/basicComponents/Description';
-import NextButton from '../../components/basicComponents/NextButton';
 import ButtonBack from '../../components/basicComponents/ButtonBack';
 import Numbers from '../../components/basicComponents/Numbers';
 import connect from "react-redux/es/connect/connect";
-import {fetchKilometres,changeKilometresProfileProperty,kilometresProfile} from "../../actions/index";
+import {kilometresProfileRegistre,fetchKilometres,changeKilometresProfileProperty,kilometresProfile} from "../../actions/index";
 import {Actions} from 'react-native-router-flux';
-
-
-
 
 class KilometreScreen extends React.Component {
 
     constructor(props) {
         super(props)
         this.onNextPressed = this.onNextPressed.bind(this)
-
-
     }
 
     componentWillMount() {
@@ -46,7 +40,37 @@ class KilometreScreen extends React.Component {
     }
 
     onNextPressed(){
-        this.props.kilometresProfile(this.props.km_selected);
+        if(this.props.pantalla == "Registre"){
+            this.props.kilometresProfileRegistre(this.props.km_selected);
+        }
+        else{
+            this.props.kilometresProfile(this.props.km_selected);
+        }
+    }
+
+    pintarBotons(){
+        if(this.props.pantalla == "Registre"){
+            return(
+                <View style = {styles.container}>
+                    <ButtonBack buttonText = {'Aceptar'}
+                    path = {() => this.onNextPressed()}
+                    colorBoto = {APP_COLORS.color_next}/>
+                </View>
+            )
+        }
+        else{
+            console.log("HOLA");
+            return(
+                <View style = {styles.container}>
+                    <ButtonBack buttonText = {'Atras'}
+                    path = {() => Actions.modperfil({textExpl: 'Modificar perfil', pathinteressos: () => Actions.interessos(), pathkm: () => Actions.km(), fraseExpl: 'Que quieres modificar de tu perfil?'})}
+                    colorBoto = {APP_COLORS.color_back}/>
+                    <ButtonBack buttonText = {'Aceptar'}
+                    path = {() => this.onNextPressed()}
+                    colorBoto = {APP_COLORS.color_next}/>
+                </View>
+            )
+        }
     }
 
     render() {
@@ -71,12 +95,8 @@ class KilometreScreen extends React.Component {
                             {this.dibuixarKilometres(1)}
                         </View>
                 </View>
-              <View style = {container}>
-                <ButtonBack buttonText = {'Atras'}
-                            path = {() => Actions.modperfil()}/>
-                <NextButton buttonText = {'Aceptar'}
-                            path = {() => this.onNextPressed()}/>
-              </View>
+                {this.pintarBotons()}
+              
             </View>   
         );
     }
@@ -133,7 +153,8 @@ const  mapDispatchToProps = (dispatch)=>{
     return {
         changeEstat: (km_num)=>dispatch(changeKilometresProfileProperty(km_num)),
         kilometresProfile: (km_num)=> dispatch(kilometresProfile(km_num)),
-        fetchKilometres: ()=>dispatch(fetchKilometres())
+        fetchKilometres: ()=>dispatch(fetchKilometres()),
+        kilometresProfileRegistre: (km_num)=> dispatch(kilometresProfileRegistre(km_num)),
     }
 }
 

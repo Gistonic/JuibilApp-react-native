@@ -17,7 +17,7 @@ const receiveRegister = (token) => {
         if (err) {
             console.log('Error saving token: ' + token)
         }
-        Actions.welcome({textExpl: 'Empezar', paths: () => Actions.interessos()});
+        Actions.welcome({textExpl: 'Empezar', paths: () => Actions.interessos({pantalla: "Registre"})});
     });
     return {
         type: REGISTER_FORM_ACTIONS.ReceiveRegister,

@@ -18,9 +18,10 @@ class ActDescriptionModify extends React.Component {
         return (
             <ActDescriptionScreenBase changeFormDescription={this.props.changeActivityDescription}
                                       description = {this.props.description}
-                                      buttonNext = "Aceptar"
-                                      previousScreen={() => Actions.modificaractivitat()}
-                                      nextScreen={() => this.props.patchActivityDescription(this.props.id, this.props.name)}/>
+                                      buttonText = "Aceptar"
+                                      previousScreen={() => this.props.navigation.goBack()}
+                                      nextScreen={() => {this.props.patchActivityDescription(this.props.id, this.props.description)
+                                                        this.props.navigation.goBack()}}/>
 
         );
     }

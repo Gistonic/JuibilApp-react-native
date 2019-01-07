@@ -4,6 +4,8 @@ import {View, Text,Alert} from 'react-native';
 import {APP_COLORS} from "../constants/colors";
 import {EvilIcons} from "@expo/vector-icons";
 import {Actions} from "react-native-router-flux";
+import Moment from 'react-moment';
+import 'moment-timezone';
 
 class ActivitatItem extends React.Component {
     constructor(props) {
@@ -18,11 +20,10 @@ class ActivitatItem extends React.Component {
             'Seguro que desea eliminar la actividad '+this.props.nomActivitat+'?',
             [
                 {text: 'No'},
-                {text: 'Sí', onPress: () => this.props.deleteActivity(this.props.id)},
+                {text: 'Sí', onPress: () => {this.props.deleteActivity(this.props.id), Actions.activitatlist({url: "/own", headerText: "Creadas"})}},
             ],
             { cancelable: false }
-        );    
-        Actions.home();
+        );
     }
     choosefirstIcon() {
         if (this.props.screen === "/own") {
@@ -40,7 +41,7 @@ class ActivitatItem extends React.Component {
                            style={styles.iconStyle}
                            onPress = {() => {
                                this.props.notAttend(this.props.id);
-                               Actions.llistesActs()}}/>
+                               Actions.activitatlist({url: "/attending", att: "yes", headerText: "Apuntadas"})}}/>
                 );
             }
             else {
@@ -49,7 +50,7 @@ class ActivitatItem extends React.Component {
                            style={styles.iconStyle}
                            onPress = {() => {
                                this.props.attend(this.props.id);
-                               Actions.llistesActs()}}/>
+                               Actions.activitatlist({url: "/attending", att: "no", headerText: "Rechazadas"})}}/>
                 );
             }
         }
@@ -66,14 +67,13 @@ class ActivitatItem extends React.Component {
     {
         return (
             <View style={styles.viewStyle}>
-                <View>
+                <View style={styles.itemHeaderStyle}>
                     <Text style={styles.textStyle}>
-                        {this.props.dataIni}
-                        {this.props.dataEnd}
                         {this.props.nomActivitat}
-
-
-                        </Text>
+                    </Text>
+                    <Moment style={styles.textStyle} element={Text} format="HH:mm">
+                        {this.props.dataIni}
+                    </Moment>
                 </View>
                 <View style={styles.viewIconStyle}>
                     <EvilIcons name='eye' size={60} color={APP_COLORS.color_button_1} style={styles.iconStyle}
@@ -111,11 +111,16 @@ const styles = {
 
 
     },
+    itemHeaderStyle: {
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
 
     iconStyle: {
         backgroundColor: '#D9D9D9',
 
-        borderRadius: 10
+        borderRadius: 10,
+        overflow: "hidden",
 
     },
     textStyle: {
@@ -123,7 +128,7 @@ const styles = {
         paddingRight: '8%',
         backgroundColor: APP_COLORS.color_neutral,
         color: APP_COLORS.text_color,
-        fontFamily: 'sans-serif-condensed',
+        fontFamily: 'open-sans-bold',
         fontSize: 18,
         fontWeight: 'bold',
         textAlign: 'center'

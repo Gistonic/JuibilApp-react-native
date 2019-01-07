@@ -49,17 +49,16 @@ export const fetchActivitats = (stringISOfromDate, stringISOtoDate) =>{
     /*return(dispatch)=>{
         dispatch(recieveActivitats(activitatsMock));
     }*/
-    //demanar crida Biel
     return (dispatch) => {
         AsyncStorage.getItem('token').then((token) => {
         const url1 = "http://ordinadorcasa.no-ip.org:4100/event?";
         const url2 = "lat=41.3892";
-        const url3 = "&lng=2.1175024";
+        const url3 = "&long=2.1175024";
         const url4 = "&fromDate=";
         const url5 = "&toDate=";
         const url6 = "&forMe=true";
         const url7 = "&excludeOwn=true";
-        const url8 = "&&undecidedOnly=true";
+        const url8 = "&undecidedOnly=true";
         const finalurl = url1+url2+url3+url4+stringISOfromDate+url5+stringISOtoDate+url6+url7+url8;
         console.log("finalurl: ", finalurl);
             fetch(finalurl, {

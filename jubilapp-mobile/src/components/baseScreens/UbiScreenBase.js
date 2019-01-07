@@ -1,10 +1,8 @@
 import React from 'react';
 import {View, KeyboardAvoidingView,Alert} from 'react-native';
-import Formulari from '../basicComponents/Formulari';
 import HeaderIcon from '../basicComponents/HeaderIcon';
-import NextButton from '../basicComponents/NextButton';
 import ButtonBack from '../basicComponents/ButtonBack';
-import {APP_COLORS} from "../../constants/colors";
+import {APP_COLORS, MAPS_KEY} from "../../constants/";
 import { Actions } from 'react-native-router-flux';
 import {pressPopup} from "../../pressPopup";
 import Description from "../basicComponents/Description";
@@ -27,7 +25,7 @@ export default class NameScreenBase extends React.Component {
                             <Description textExpl = "Introduce la ubicación"/>
 
                             <GooglePlacesAutocomplete
-                                placeholder='Ubicación'
+                                placeholder={this.props.ubic}
                                 minLength={2}
                                 autoFocus={false}
                                 returnKeyType={'search'}
@@ -40,7 +38,7 @@ export default class NameScreenBase extends React.Component {
                                 }}
                                 query={{
                                     // available options: https://developers.google.com/places/web-service/autocomplete
-                                    key: 'YOUR API KEY',
+                                    key: MAPS_KEY.key,
                                     language: 'es', // language of the results
                                 }}
                                 styles={{
@@ -53,16 +51,16 @@ export default class NameScreenBase extends React.Component {
                                         marginRight: '5%',
                                     },
                                     textInput: {
-                                        height: 35,
+                                        height: 36,
                                         color: '#5d5d5d',
-                                        fontSize: 27,
+                                        fontSize: 25,
                                     },
                                     listView: {
                                         marginLeft: '5%',
                                         marginRight: '5%',
                                     },
                                     description: {
-                                        fontSize: 16,
+                                        fontSize: 15,
                                     }
                                 }}
                                 currentLocation={false}
@@ -70,9 +68,11 @@ export default class NameScreenBase extends React.Component {
                         </View>
                         <View style = {container}>
                             <ButtonBack buttonText = {'Atrás'}
-                                        path = {this.props.previousScreen}/>
-                            <NextButton buttonText = {this.props.buttonNext}
-                                        path = {this.props.nextScreen}/>
+                                        path = {this.props.previousScreen}
+                                        colorBoto = {APP_COLORS.color_back}/>
+                            <ButtonBack buttonText = {'Siguiente'}
+                                        path = {this.props.nextScreen}
+                                        colorBoto = {APP_COLORS.color_next}/>
                         </View>
                     </View>
             </View>

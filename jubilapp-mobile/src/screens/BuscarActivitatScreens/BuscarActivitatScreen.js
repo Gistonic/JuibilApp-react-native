@@ -1,11 +1,11 @@
 import React from 'react';
-import {View, Alert, Text} from 'react-native';
+import {View, Alert, Text, TouchableOpacity} from 'react-native';
 import {APP_COLORS} from "../../constants/colors";
 import connect from "react-redux/es/connect/connect";
 import {Actions} from "react-native-router-flux";
 import HeaderIcon from "../../components/basicComponents/HeaderIcon";
 import CardModified from "../../components/CardModified";
-import { EvilIcons, Ionicons } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 import {
     fetchActivitats,
     changeIterador,
@@ -17,6 +17,11 @@ import {
 import Description from '../../components/basicComponents/Description';
 import { Constants, Location, Permissions } from 'expo';
 import Geocoder from 'react-native-geocoding';
+import {MAPS_KEY} from "../../constants";
+
+const date1 = new Date();
+const initial_hour = date1.getHours();
+const initial_minute = date1.getMinutes()
 
 class BuscarActivitatScreen extends React.Component {
 
@@ -32,11 +37,20 @@ class BuscarActivitatScreen extends React.Component {
         } else {
             this._getLocationAsync();
         }*/
-        const stringISOfromDate = new Date(this.props.fromDate.year, this.props.fromDate.month, this.props.fromDate.day).toISOString();
+        let hour = 0;
+        let minute = 0;
+        console.log("dia avui", date1.getDate().toString(), date1.getMonth().toString(), date1.getFullYear().toString());
+        console.log("dia triat", this.props.fromDate.day, this.props.fromDate.month, this.props.fromDate.year);
+
+        if ((this.props.fromDate.day === date1.getDate()) && (this.props.fromDate.month === date1.getMonth()) && (this.props.fromDate.year === date1.getFullYear())) {
+            hour = initial_hour;
+            minute = initial_minute;
+        }
+        const stringISOfromDate = new Date(this.props.fromDate.year, this.props.fromDate.month, this.props.fromDate.day, hour, minute).toISOString();
         const stringISOtoDate = new Date(this.props.toDate.year, this.props.toDate.month, this.props.toDate.day).toISOString();
         console.log(stringISOtoDate);
         console.log(stringISOfromDate);
-        Geocoder.init('YOUR API KEY', {language: 'es'});
+        Geocoder.init(MAPS_KEY.key, {language: 'es'});
         this.props.fetchActivitats(stringISOfromDate, stringISOtoDate);
 
 
@@ -63,19 +77,22 @@ class BuscarActivitatScreen extends React.Component {
             'Denegar Actividad',
             'La actividad '+ this.props.activitats_trobades[this.props.iterador].name +' se añadira a la lista de NO APUNTADAS.',
             [
-              {text: 'OK', onPress: () => this.props.changeIterador()},
+                {text: 'Cancelar'},
+                {text: 'OK', onPress: () => this.props.changeIterador()},
             ],
             { cancelable: false }
         );
         this.props.notAttend(this.props.activitats_trobades[this.props.iterador].id);
     }
 
+
     _onPressAcceptar(){
         Alert.alert(
             'Aceptar Actividad',
             'La actividad '+ this.props.activitats_trobades[this.props.iterador].name +' se añadira a la lista de APUNTADAS.',
             [
-              {text: 'OK', onPress: () => this.props.changeIterador()},
+                {text: 'Cancelar'},
+                {text: 'OK', onPress: () => this.props.changeIterador()},
             ],
             { cancelable: false }
         );
@@ -91,7 +108,7 @@ class BuscarActivitatScreen extends React.Component {
             workshops: {source: require('../../images/talleresPES2.jpg')},
             leisure: {source: require('../../images/ocioPES3.jpg')}
         };
-        if(this.props.iterador == this.props.activitats_trobades.length){
+        if(this.props.iterador === this.props.activitats_trobades.length){
             return(
                 <View style = {styles.viewbuitStyle}>
                     <Description textExpl = "No se encuentran más actividades"/>
@@ -101,29 +118,44 @@ class BuscarActivitatScreen extends React.Component {
         else {
             this.getLocationfromCoords();
             return(
-                <View>
-                <View style = {styles.viewCard}>
-                    <CardModified image = {activitatsTranslate[this.props.activitats_trobades[this.props.iterador].type].source}
-                            nom =  {this.props.activitats_trobades[this.props.iterador].name}
-                            ubicacio = {this.props.ubicacioactual}
-                            dataIni = {this.props.activitats_trobades[this.props.iterador].startDate}
-                            dataFi = {this.props.activitats_trobades[this.props.iterador].endDate}
-                            horaIni = {this.props.activitats_trobades[this.props.iterador].startDate}
-                            horaFi = {this.props.activitats_trobades[this.props.iterador].endDate}/>
-                </View>
-                <View style={styles.footer}>
-                    <View style={styles.circle} backgroundColor = {APP_COLORS.color_header}>
-                        <Ionicons name="md-close" size={70} color={APP_COLORS.color_neutral}
-                        onPress = {this._onPressDenegar} />
+                <View style = {{width: '100%', height: '100%', paddingBottom: '3%'}}>
+                    <View style = {styles.viewCard}>
+                        <CardModified image = {activitatsTranslate[this.props.activitats_trobades[this.props.iterador].type].source}
+                                nom =  {this.props.activitats_trobades[this.props.iterador].name}
+                                ubicacio = {this.props.ubicacioactual}
+                                dataIni = {this.props.activitats_trobades[this.props.iterador].startDate}
+                                dataFi = {this.props.activitats_trobades[this.props.iterador].endDate}
+                                horaIni = {this.props.activitats_trobades[this.props.iterador].startDate}
+                                horaFi = {this.props.activitats_trobades[this.props.iterador].endDate}
+                                preu = {this.props.activitats_trobades[this.props.iterador].price}
+                                valorar = {false}/>
                     </View>
-                    <View style={styles.circle} backgroundColor = {APP_COLORS.color_back}>
-                        <Ionicons name="md-information" size={70} color={APP_COLORS.color_neutral}/>
+                    <View style={styles.footer}>
+                            <View style={styles.circle} backgroundColor = {APP_COLORS.color_header}>
+                                <TouchableOpacity onPress = {this._onPressDenegar} style = {{width:'100%', height: '100%', alignItems: 'center'}}>
+                                    <Ionicons name="md-close" size={60} color={APP_COLORS.color_neutral}
+                                    onPress = {this._onPressDenegar} />
+                                </TouchableOpacity>
+                            </View>
+                            <View style={styles.circle} backgroundColor = {APP_COLORS.color_back} >
+                                <TouchableOpacity onPress={() => {
+                                    Actions.info({id: this.props.activitats_trobades[this.props.iterador].id, screen: "buscar"})
+                                }} style = {{width:'100%', height: '100%', alignItems: 'center'}}>
+                                    <Ionicons name="md-information" size={60}
+                                              color={APP_COLORS.color_neutral}
+                                              onPress={() => {
+                                                  Actions.info({id: this.props.activitats_trobades[this.props.iterador].id, screen: "buscar"})
+                                              }}
+                                    />
+                                </TouchableOpacity>
+                            </View>
+                            <View backgroundColor = {APP_COLORS.color_checked} style={styles.circle}>
+                                <TouchableOpacity onPress = {this._onPressAcceptar} style = {{width:'100%', height: '100%', alignItems: 'center'}}>
+                                    <Ionicons name="md-checkmark" size={60} color={APP_COLORS.color_neutral}
+                                    onPress = {this._onPressAcceptar}/>
+                                </TouchableOpacity>
+                            </View>
                     </View>
-                    <View style={styles.circle} backgroundColor = "#125E38">
-                        <Ionicons name="md-checkmark" size={70} color={APP_COLORS.color_neutral} 
-                        onPress = {this._onPressAcceptar}/>
-                    </View>
-                </View>
             </View>
             ); 
         }
@@ -131,7 +163,6 @@ class BuscarActivitatScreen extends React.Component {
 
     render(){
         const {viewStyle} = styles;
-        
         return(
             <View style = {viewStyle}>
                 <HeaderIcon headerText = "Buscar Actividad"
@@ -141,7 +172,7 @@ class BuscarActivitatScreen extends React.Component {
                                 textSize = {35}
                                 path={() => Actions.home()}
                 />
-                {this.esTres()} 
+                {this.esTres()}
             </View>         
         );
     }
@@ -194,11 +225,6 @@ const styles ={
         paddingLeft: '5%',
         paddingTop: '5%'
     },
-    overlay: {
-        flex:1,
-        justifyContent: "space-between",
-        padding:16
-    },
     activitatStyle: {
         paddingTop: '5%'
     },
@@ -206,9 +232,8 @@ const styles ={
         paddingLeft: '2%'
     },
     titleStyle: {
-        fontFamily: 'sans-serif-condensed',
+        fontFamily: 'open-sans-bold',
         fontSize: 27,
-        fontWeight: 'bold',
         color:APP_COLORS.text_color
     },
     cardStyle: {
@@ -216,7 +241,7 @@ const styles ={
         borderRadius: 15
     },
     textStyle: {
-        fontFamily: 'sans-serif-condensed',
+        fontFamily: 'open-sans-bold',
         fontSize: 21,
         color:APP_COLORS.text_color
     },

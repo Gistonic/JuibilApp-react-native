@@ -10,11 +10,13 @@ class SelectToDate extends React.Component {
         return(
             <DateScreenBase date={this.props.toDate}
                             changeFormDate={this.props.changeFormtoDate}
-                            buttonNext = "Siguiente"
+                            buttonText = "Siguiente"
                             previousScreen={() => Actions.fromDate()}
                             nextScreen={() => Actions.buscar()}
-                            titleName="Selecciona la fecha de fin de búsqueda"
-                            headerName = "Buscar Actividad"/>
+                            titleName="Selecciona el fin de búsqueda"
+                            headerName = "Buscar Actividad"
+                            to = {true}
+            />
         )
     }
 }

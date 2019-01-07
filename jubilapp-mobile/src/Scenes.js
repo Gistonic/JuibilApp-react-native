@@ -36,6 +36,10 @@ import veureInteressosPerfilScreen from "./screens/Profile/veureInteressosPerfil
 import SelectFromDate from "./screens/BuscarActivitatScreens/SelectFromDate";
 import SelectToDate from "./screens/BuscarActivitatScreens/SelectToDate";
 import veureKilometresScreen from './screens/Profile/veureKilometresScreen';
+import veureValoracionsFichas from './screens/Valoracions/veureValoracionsFichas';
+import verFichasScreen from './screens/Valoracions/verFichasScreen';
+import veureInfoFichas from './screens/Valoracions/veureInfoFichas';
+import ferValoracionsScreen from './screens/Valoracions/ferValoracionsScreen';
 
 
 const Scenes = Actions.create(
@@ -75,6 +79,10 @@ const Scenes = Actions.create(
         <Scene key="toDate" component={SelectToDate}/>
         <Scene key="fromDate" component={SelectFromDate}/>
 		<Scene key="veurekm" component={veureKilometresScreen}/>
+		<Scene key="veurevaloracions" component={veureValoracionsFichas}/>
+		<Scene key="verfichas" component={verFichasScreen}/>
+		<Scene key="verinfofichas" component={veureInfoFichas}/>
+		<Scene key="fervaloracions" component={ferValoracionsScreen}/>
 
 
 	</Scene>

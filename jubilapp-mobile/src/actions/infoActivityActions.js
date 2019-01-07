@@ -1,12 +1,19 @@
 import {ACTIVITY_INFO_ACTIONS} from "../constants/actions";
 import {AsyncStorage} from "react-native";
+import moment from "moment-timezone";
 import {request} from "../request";
-import {Actions} from "react-native-router-flux";
 
 const receiveActivity =(activity)=>{
+    console.log(activity.startDate);
+    const activityWithTimezone = {
+        ...activity,
+        startDate: moment(activity.startDate).tz('Europe/Madrid'),
+        endDate: moment(activity.endDate).tz('Europe/Madrid')
+    };
+    console.log(activityWithTimezone.startDate);
     return {
         type: ACTIVITY_INFO_ACTIONS.ReceiveActivity,
-        payload: activity
+        payload: activityWithTimezone
     }
 }
 

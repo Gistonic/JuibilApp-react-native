@@ -9,7 +9,8 @@ export const LOGIN_FORM_ACTIONS={
 }
 export const CREATE_ACTIVITY_FORM_ACTIONS={
     ChangeProperty: "CHANGE_CREATE_ACTIVITY_PROPERTY",
-    ReceiveLogin: "RECEIVE_CREATE_ACTIVITY"
+    ReceiveLogin: "RECEIVE_CREATE_ACTIVITY",
+    ChangeType: "CHANGE_TYPE",
 }
 
 export const LIST_ACTIVITIES_ACTIONS={
@@ -17,7 +18,12 @@ export const LIST_ACTIVITIES_ACTIONS={
     ReceiveActivities: 'RECEIVE_ACTIVITIES',
     RequestActivities: 'REQUEST_ACTIVITIES',
     DeleteActivity: 'DELETE_ACTIVITY',
-    SetModifyActivityId:'SET_MODIFY_ACTIVITY_ID'
+    SetModifyActivityId:'SET_MODIFY_ACTIVITY_ID',
+}
+
+export const FICHAS_ACTIONS={
+    FetchFichas: 'FETCH_ACTIVITIES',
+    ReceiveFichas: 'RECEIVE_FICHAS'
 }
 
 export const INTERESSOS_PROFILE_ACTIONS={
@@ -64,4 +70,12 @@ export const PROFILE_ACTIONS = {
     ReceiveName: 'RECEIVE_NAME',
     ReceiveInterests: 'RECEIVE_INTERESTS',
     ReceiveKilometres: 'RECEIVE_KILOMETRES',
+}
+
+export const VALORAR_ACTIVITY_ACTIONS = {
+    FetchActivitatsValorar: 'FETCH_ACTIVITATS_VALORAR',
+    RebreActivitats: 'REBRE_ACTIVITATS',
+    ChangeStar: 'CHANGE_STAR',
+    ReiniciarStars: 'REINICIAR_STARS',
+    ChangeIterator: 'CHANGE_ITERATOR'
 }

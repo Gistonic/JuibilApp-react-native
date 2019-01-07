@@ -7,8 +7,7 @@ import HeaderIcon from '../../components/basicComponents/HeaderIcon';
 import { Actions } from 'react-native-router-flux';
 import Description from "../../components/basicComponents/Description";
 import ButtonBack from "../../components/basicComponents/ButtonBack";
-import NextButton from "../../components/basicComponents/NextButton";
-import {fetchInteressos, interessosProfile,changeInteressosProfileProperty} from "../../actions/index";
+import {interessosProfileRegistre,fetchInteressos, interessosProfile,changeInteressosProfileProperty} from "../../actions/index";
 import connect from "react-redux/es/connect/connect";
 
 class Interessos2 extends React.Component {
@@ -30,7 +29,6 @@ class Interessos2 extends React.Component {
     {
         //el num es per distingir a quina columna aniran, la dreta es per tots aquells que tenen id parell i lesquerra pels ids imparells
         return this.props.interessos_info.map((totsID)=> {
-            console.log(totsID.estat);
             if((totsID.id %2) == num) {
                 return  (<TouchableOpacity key={totsID.id} style={styles.buttonStyle} onPress={this._onPressButton.bind(this,totsID)}>
                             <ImageBackground source={totsID.icon} style={styles.imageStyle}/>
@@ -53,17 +51,53 @@ class Interessos2 extends React.Component {
         }
 
         if(interessosInfo.length == 0){
-            this.props.interessosProfile(interessosName)
+            if(this.props.pantalla == "Registre"){
+                this.props.interessosProfileRegistre(interessosName)
+            }
+            else{
+                this.props.interessosProfile(interessosName)
+            }
         }
         else{
-            this.props.interessosProfile(interessosInfo)
+            if(this.props.pantalla == "Registre"){
+                this.props.interessosProfileRegistre(interessosInfo)
+            }
+            else{
+                this.props.interessosProfile(interessosInfo)
+            }
+            
         }
+    }
 
-
+    pintarBotons(){
+        if(this.props.pantalla == "Registre"){
+            console.log("HOLA");
+            return(
+                <View style = {styles.container1}>
+                        <ButtonBack buttonText = {'Aceptar'}
+                                    path = {() => this.onNextPressed()}
+                                    colorBoto = {APP_COLORS.color_next}/>
+                    </View>
+            )
+        }
+        else{
+            return(
+                <View style = {styles.container1}>
+                        <ButtonBack buttonText = {'Atras'}
+                                    path = {() => Actions.modperfil({textExpl: 'Modificar perfil', pathinteressos: () => Actions.interessos(), pathkm: () => Actions.km(), fraseExpl: 'Que quieres modificar de tu perfil?'})}
+                                    colorBoto = {APP_COLORS.color_back}/>
+                        <ButtonBack buttonText = {'Aceptar'}
+                                    path = {() => this.onNextPressed()}
+                                    colorBoto = {APP_COLORS.color_next}/>
+                    </View>
+                    
+            )
+        }
     }
 
     render() {
         console.log("Render Interessos");
+        console.log("HOLA",this.props.pantalla);
             const {viewStyle, container, container1, viewInteressos, containerColumna} = styles;
             return (
                 <View style={viewStyle}>
@@ -84,12 +118,8 @@ class Interessos2 extends React.Component {
                             {this.dibuixarInteressos(1)}
                         </View>
                     </View>
-                    <View style = {container1}>
-                        <ButtonBack buttonText = {'Atras'}
-                                    path = {() => Actions.modperfil()}/>
-                        <NextButton buttonText = {'Aceptar'}
-                                    path = {() => this.onNextPressed()}/>
-                    </View>
+                    {this.pintarBotons()}
+                    
                 </View>
             );
         }
@@ -153,6 +183,7 @@ const  mapDispatchToProps = (dispatch)=>{
 
         changeEstat: (interes)=>dispatch(changeInteressosProfileProperty(interes)),
         interessosProfile: (interessosInfo)=> dispatch(interessosProfile(interessosInfo)),
+        interessosProfileRegistre: (interessosInfo)=> dispatch(interessosProfileRegistre(interessosInfo)),
         fetchInteressos: ()=>dispatch(fetchInteressos())
     }
 }

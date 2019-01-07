@@ -13,7 +13,7 @@ class FinDateCreate extends React.Component {
                             nextScreen ={() => Actions.iniHour()}
                             previousScreen={() => Actions.iniDate()}
                             titleName="Define el final de la actividad"
-                            buttonNext = "Siguiente"
+                            buttonText = "Siguiente"
                             headerName = "Crear Actividad"/>
         )
     }

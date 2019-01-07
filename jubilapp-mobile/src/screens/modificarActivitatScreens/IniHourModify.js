@@ -21,9 +21,10 @@ class IniHourModify extends React.Component {
                             _hour={ new Date(this.props.startDate).getHours()}
                             _minute={ new Date(this.props.startDate).getMinutes()}
                             titleName="inicio"
-                            buttonNext = "Aceptar"
-                            nextScreen={() => this.props.patchActivityStartDate(this.props.id, this.props.startDate)}
-                            previousScreen={() => Actions.modificaractivitat()}/>
+                            buttonText = "Aceptar"
+                            nextScreen={() => {this.props.patchActivityStartDate(this.props.id, this.props.startDate)
+                                               this.props.navigation.goBack() }}
+                            previousScreen={() => this.props.navigation.goBack() }/>
         )
     }
 
@@ -42,14 +43,15 @@ const mapStateToProps = (state) => {
 const  mapDispatchToProps = (dispatch)=>{
     return {
         changeActivityHourIni: (value, startDate)=>{
+            console.log('StartDate: ' + startDate + ', New hour: ' + value)
             let date=new Date(startDate)
             date.setHours(value)
-            dispatch(changeActivityValue(value))
+            dispatch(changeActivityValue(date))
         },
         changeActivityMinuteIni: (value, startDate)=>{
             let date=new Date(startDate)
             date.setMinutes(value)
-            dispatch(changeActivityValue(value))
+            dispatch(changeActivityValue(date))
         },
         patchActivityStartDate: (id, value) => dispatch(patchActivityValue("startDate", id, value)),
         fetchActivityStartDate: (id) => dispatch(fetchActivityValue("startDate",id))
