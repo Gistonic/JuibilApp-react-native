@@ -1,5 +1,7 @@
 import {Actions} from "react-native-router-flux";
 import {VALORAR_ACTIVITY_ACTIONS} from '../constants/actions'
+import { AsyncStorage } from "react-native";
+import {request} from "../request";
 
 const rebreActivitats = (activitats) =>{
     return {
@@ -27,17 +29,25 @@ export const reiniciarStars = () =>{
     }
 }
 
+export const valorarActivitat = (id) =>{
+    return () => {
+        const url1 = '/event/';
+        const url2 = '/rate';
+        request(url1+id+url2, 'POST');
+    }
+}
+
 
 export const fetchActivitatsValorar = () =>{
     //dispatch(rebreActivitats(activitatsMock));
-    return(dispatch)=>{
+    /*return(dispatch)=>{
           setTimeout(() => {
               dispatch(rebreActivitats(activitatsMock))
           }, 2000)
-    }
-    /*return (dispatch) => {
+    }*/
+    return (dispatch) => {
         AsyncStorage.getItem('token').then((token) => {
-            fetch('http://ordinadorcasa.no-ip.org:4100/event/ratingPending', {
+            fetch('http://ordinadorcasa.no-ip.org:4100/event?ratingPending=true', {
                 method: 'GET',
                 headers: {
                     Accept: 'application/json',
@@ -49,7 +59,7 @@ export const fetchActivitatsValorar = () =>{
             }).then((resp) =>
                 resp.json().then((body) => dispatch(rebreActivitats(body.events))))
         });
-    }*/
+    }
     
 }
 

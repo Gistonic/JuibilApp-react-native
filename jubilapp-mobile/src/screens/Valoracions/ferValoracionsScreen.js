@@ -8,7 +8,7 @@ import ButtonBack from '../../components/basicComponents/ButtonBack';
 import Description from '../../components/basicComponents/Description';
 import CardModified from "../../components/CardModified";
 import { FontAwesome,Ionicons } from '@expo/vector-icons';
-import {fetchActivitatsValorar,changeStar,changeIterator,reiniciarStars} from '../../actions/index';
+import {fetchActivitatsValorar,changeStar,changeIterator,reiniciarStars,valorarActivitat} from '../../actions/index';
 
 class ferValoracionsScreen extends React.Component {
     constructor(props) {
@@ -46,6 +46,7 @@ class ferValoracionsScreen extends React.Component {
                 ],
                 { cancelable: false }
             );
+            this.props.valorarActivitat(this.props.activitats_valorar[this.props.iterador].id);
         }
         
     }
@@ -104,7 +105,10 @@ class ferValoracionsScreen extends React.Component {
                         </View>
                         <View style = {styles.buttonviewStyle}>
                             <Ionicons name={'ios-information-circle-outline'} size={75} 
-                                color= {APP_COLORS.color_back} />
+                                color= {APP_COLORS.color_back} 
+                                onPress={() => {
+                                    Actions.info({id: this.props.activitats_trobades[this.props.iterador].id, screen: "buscar"})
+                                }}/>
                             <ButtonBack buttonText = {'Valorar'} colorBoto = {APP_COLORS.color_next}
                                     path = {this.onValorarPressed}/>
                         </View>
@@ -223,7 +227,8 @@ const  mapDispatchToProps = (dispatch)=>{
         fetchActivitatsValorar: ()=>dispatch(fetchActivitatsValorar()),
         changeStar: (i)=>dispatch(changeStar(i)),
         changeIterator: ()=>dispatch(changeIterator()),
-        reiniciarStars: ()=>dispatch(reiniciarStars())
+        reiniciarStars: ()=>dispatch(reiniciarStars()),
+        valorarActivitat: (id)=>dispatch(valorarActivitat(id))
     }
 }
 
