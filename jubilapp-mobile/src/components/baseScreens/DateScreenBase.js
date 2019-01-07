@@ -3,15 +3,12 @@ import {View} from 'react-native';
 import {Calendar} from 'react-native-calendars';
 import {APP_COLORS} from "../../constants/colors";
 
-import {Actions} from 'react-native-router-flux';
-
 import HeaderIcon from '../basicComponents/HeaderIcon';
 import Description from "../basicComponents/Description";
 import ButtonBack from "../basicComponents/ButtonBack";
 import {LocaleConfig} from 'react-native-calendars';
-import {changeCreateActivityFormProperty} from "../../actions/index";
-import connect from "react-redux/es/connect/connect";
 import {pressPopup} from "../../pressPopup";
+import AlertError from '../AlertError';
 
 LocaleConfig.locales['es'] = {
     monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
@@ -34,7 +31,7 @@ export default class DateScreenBase extends React.Component {
 
     render() {
         const {viewStyle, viewButtons, container, calendarStyle} = styles;
-        const {date} = this.props;
+        const {date, minDate, error} = this.props;
         const markedDay = {
             [date.dateString]: {
                 selected: true,
@@ -49,6 +46,7 @@ export default class DateScreenBase extends React.Component {
                 },
             }
         }
+        const minDateCalendar = minDate ? minDate : new Date()
         return (
             <View style={viewStyle}>
                 <HeaderIcon headerText = {this.props.headerName}
@@ -66,7 +64,7 @@ export default class DateScreenBase extends React.Component {
                               onDayPress={this.select.bind(this)}
                               markingType={'custom'}
                               markedDates={markedDay}
-                              minDate={Date()}
+                              minDate={minDateCalendar}
                               theme={{
                                   textSectionTitleColor: 'black',
                                   selectedDayTextColor: '#ffffff',
@@ -91,6 +89,9 @@ export default class DateScreenBase extends React.Component {
                                 path={this.props.nextScreen}
                                 colorBoto = {APP_COLORS.color_next}/>
                 </View>
+                {error &&
+                    <AlertError message={error} />
+                }
             </View>
         );
     }
