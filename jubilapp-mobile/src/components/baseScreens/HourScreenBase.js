@@ -9,16 +9,9 @@ import Description from "../basicComponents/Description";
 import ButtonBack from "../basicComponents/ButtonBack";
 import { Actions } from 'react-native-router-flux';
 import {pressPopup} from "../../pressPopup";
+import AlertError from "../AlertError";
 
 export default class HourScreenBase extends React.Component {
-    componentWillMount () {
-        if (this.props.changeFormFinHour != null) {
-            console.log("Hora ini ", this.props._inih);
-            this.props.changeFormFinHour(this.props._inih);
-            this.props.changeFormFinMin(this.props._inim);
-        }
-    }
-
     onPressUpHour = () => {
         const { changeFormHour, _hour} = this.props;
         const hour = (_hour + 1) % 24;
@@ -41,7 +34,7 @@ export default class HourScreenBase extends React.Component {
     }
     render() {
         const {viewStyle, viewButtons, container, upsDownsStyle, fullHourStyle} = styles;
-        const { _hour, _minute } = this.props;
+        const { _hour, _minute, error } = this.props;
         return (
             <View style = {viewStyle}>
                 <HeaderIcon headerText = {this.props.headerName}
@@ -91,6 +84,9 @@ export default class HourScreenBase extends React.Component {
                                 path = {this.props.nextScreen}
                                 colorBoto = {APP_COLORS.color_next}/>
                 </View>
+                {error &&
+                    <AlertError message={error} />
+                }
             </View>
         );
     }

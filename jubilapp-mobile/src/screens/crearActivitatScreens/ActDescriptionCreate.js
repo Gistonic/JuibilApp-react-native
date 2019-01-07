@@ -11,7 +11,7 @@ class ActDescriptionCreate extends React.Component {
             <ActDescriptionScreenBase changeFormDescription={this.props.changeFormDescription}
                             description = {this.props.description}
                             buttonText = "Siguiente"
-                            previousScreen={() => Actions.finHour()}
+                            previousScreen={() => this.props.navigation.goBack()}
                             nextScreen={() => Actions.seltype()}
                             headerName = "Crear Actividad"/>
 
