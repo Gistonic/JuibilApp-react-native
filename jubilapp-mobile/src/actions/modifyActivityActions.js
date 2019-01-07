@@ -47,7 +47,6 @@ export const patchActivityValue = (propertyName, eventId, value) => {
 
             }).then((resp) => {
                 resp.json().then((body) => {
-                    console.log(body)
                     dispatch(receivePatchActivityValue())
                 })
             })

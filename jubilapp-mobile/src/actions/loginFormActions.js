@@ -51,8 +51,8 @@ const resetLoginError = () => {
 
 export const login = (userInfo) => {
     return (dispatch) => {
-        //const url = 'http://ordinadorcasa.no-ip.org:4100/auth/login/';
-        const url = 'http://httpstat.us/401';
+        const url = 'http://ordinadorcasa.no-ip.org:4100/auth/login/';
+        //const url = 'http://httpstat.us/401';
         fetch(url, {
             method: 'POST',
             headers: {

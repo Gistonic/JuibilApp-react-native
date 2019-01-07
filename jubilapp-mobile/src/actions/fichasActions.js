@@ -25,7 +25,7 @@ export const fetchFichas = () => {
                 dataType: 'json',
             }).then((resp) =>
 
-                resp.json().then((body) => { console.log(body); dispatch(recieveFichas(body.tokens))}))
+                resp.json().then((body) => dispatch(recieveFichas(body.tokens))))
         });
     }
 }

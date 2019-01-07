@@ -7,20 +7,22 @@ import {APP_COLORS} from "../../constants/colors";
 import { Actions } from 'react-native-router-flux';
 import {pressPopup} from "../../pressPopup";
 import Description from "../basicComponents/Description";
+import AlertError from '../../components/AlertError'
 
 export default class NameScreenBase extends React.Component {
     render() {
         const {viewStyle, vista1Style, container, formStyle, viewStyle1} = styles;
+
         return (
             <KeyboardAvoidingView behavior = 'position'>
                 <View style = {viewStyle}>
-                <HeaderIcon headerText = {this.props.headerName}
-                                iconName={ 'home'}
-                                colorName={ APP_COLORS.color_neutral}
-                                size = {75}
-                                textSize = {35}
-                                path={() => pressPopup('Salir', 'Desea ir al menú principal y perder todos los cambios?')}
-                />
+                    <HeaderIcon headerText = {this.props.headerName}
+                                    iconName={ 'home'}
+                                    colorName={ APP_COLORS.color_neutral}
+                                    size = {75}
+                                    textSize = {35}
+                                    path={() => pressPopup('Salir', 'Desea ir al menú principal y perder todos los cambios?')}
+                    />
                     <View style = {viewStyle1}>
                             <View style = {formStyle}>
                                 <Formulari textExplicatiu = {`Introduce el nombre de la${"\n"}actividad`}
@@ -41,6 +43,9 @@ export default class NameScreenBase extends React.Component {
                                         colorBoto = {APP_COLORS.color_next}/>
                         </View>
                     </View>
+                    {this.props.error &&
+                        <AlertError message={this.props.error} />
+                    }
                 </View>
             </KeyboardAvoidingView>
         );

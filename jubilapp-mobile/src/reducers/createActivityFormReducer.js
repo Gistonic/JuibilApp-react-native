@@ -41,7 +41,18 @@ const INITIAL_STATE ={
         {id:3,estat:false,icon: require('../images/excursionesPES2.jpg'),nom:'Excursiones',},
         {id:4,estat:false,icon: require('../images/talleresPES2.jpg'),nom:'Talleres',},
         {id:5,estat:false,icon: require('../images/ocioPES3.jpg'),nom:'Ocio',}
-    ]
+    ],
+    errors: {
+        name: null,
+        ubi: null,
+        dateIni: null,
+        dateEnd: null,
+        hourIni: null,
+        hourEnd: null,
+        minuteIni: null,
+        minuteEnd: null,
+        type: null
+    }
 }
 const createActivityFormReducer = (state = INITIAL_STATE, action)=>{
     switch (action.type) {
@@ -68,6 +79,19 @@ const createActivityFormReducer = (state = INITIAL_STATE, action)=>{
                 return{...state, interessos_info: newInteressosInfo, type:interes_nou_nom}
 
             }
+        case CREATE_ACTIVITY_FORM_ACTIONS.ErrorProperty:
+            let resultError = {
+                ...state
+            }
+
+            resultError.errors[action.payload.propertyName] = action.payload.error
+            return resultError
+        case CREATE_ACTIVITY_FORM_ACTIONS.ResetErrorProperty:
+            let resetError = {
+                ...state
+            }
+            resetError.errors[action.payload] = null
+            return resetError
         default: return state
 
     }

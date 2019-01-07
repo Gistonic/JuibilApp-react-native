@@ -31,7 +31,6 @@ class LoginScreen extends React.Component {
         const {viewStyle, viewStyle1} = styles;
         const {email, changeFormEmail, password, error, changeFormPassword}=this.props;
 
-        console.log('Error: ' + error)
         return (
             <KeyboardAvoidingView behavior = 'position'>
                 <View style = {viewStyle}>

@@ -19,7 +19,6 @@ class provaScreen extends React.Component {
       );
     
     _obrirModal(){
-        console.log("holaaaaaa ", this.state.visibleModal);
         if(this.state.visibleModal ===1){
             return(
                 <PopUp button1Text = {'Cancelar'}

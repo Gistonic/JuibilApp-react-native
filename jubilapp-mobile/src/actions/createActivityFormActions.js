@@ -12,6 +12,23 @@ export const changeCreateActivityFormProperty=(propertyName, value) =>{
     }
 };
 
+export const errorCreateActivityFormProperty = (propertyName, error) => {
+    return {
+        type: CREATE_ACTIVITY_FORM_ACTIONS.ErrorProperty,
+        payload: {
+            propertyName,
+            error
+        }
+    }
+};
+
+export const resetErrorCreateActivityFormProperty = (propertyName) => {
+    return {
+        type: CREATE_ACTIVITY_FORM_ACTIONS.ResetErrorProperty,
+        payload: propertyName
+    }
+};
+
 export const changeType = (id) =>{
     return{
         type: CREATE_ACTIVITY_FORM_ACTIONS.ChangeType,
