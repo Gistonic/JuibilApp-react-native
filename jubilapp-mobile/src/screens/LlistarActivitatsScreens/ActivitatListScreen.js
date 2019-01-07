@@ -135,6 +135,10 @@ class ActivitatListScreen extends React.Component {
     }
 }
 const styles ={
+    viewbuitStyle: {
+        alignItems: 'center',
+        paddingTop: '50%'
+    },
     viewStyle: {
         backgroundColor: APP_COLORS.color_neutral,
         width: '100%',
