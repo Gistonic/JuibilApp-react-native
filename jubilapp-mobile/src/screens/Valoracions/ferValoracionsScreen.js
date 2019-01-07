@@ -125,10 +125,11 @@ class ferValoracionsScreen extends React.Component {
         return(
             <View style = {viewStyle}>
                 <HeaderIcon headerText = "Valorar Actividad"
-                                iconName={ 'arrow-circle-left'}
+                                iconName={ 'arrow-left'}
                                 colorName={ APP_COLORS.color_neutral}
                                 size = {60}
-                                textSize = {35}
+                                textSize = {31}
+                                isEvilType = {true}
                                 path={() => Actions.veurevaloracions()}
                 />
                 

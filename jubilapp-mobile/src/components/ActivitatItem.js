@@ -71,7 +71,7 @@ class ActivitatItem extends React.Component {
                     <Text style={styles.textStyle}>
                         {this.props.nomActivitat}
                     </Text>
-                    <Moment style={styles.textStyle} element={Text} format="hh:mm">
+                    <Moment style={styles.textStyle} element={Text} format="HH:mm">
                         {this.props.dataIni}
                     </Moment>
                 </View>

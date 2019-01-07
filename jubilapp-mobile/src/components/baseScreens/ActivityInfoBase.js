@@ -48,14 +48,14 @@ ActivityInfoBase extends React.Component {
                         <Text style = {textStyle}>{this.props.ubicacioactual}</Text>
                         <View style={ViewRow}>
                             <Text style = {textStyle}> Fecha inicio: </Text>
-                            <Moment style = {textStyle} element={Text} format="DD/MM/YYYY hh:mm">
+                            <Moment style = {textStyle} element={Text} format="DD/MM/YYYY HH:mm">
                                 {this.props.dataIni}
                             </Moment>
                         </View>
 
                         <View style={ViewRow}>
                             <Text style = {textStyle}> Fecha fin: </Text>
-                            <Moment style = {textStyle} element={Text} format="DD/MM/YYYY hh:mm">
+                            <Moment style = {textStyle} element={Text} format="DD/MM/YYYY HH:mm">
                                 {this.props.dataFi}
                             </Moment>
                         </View>
