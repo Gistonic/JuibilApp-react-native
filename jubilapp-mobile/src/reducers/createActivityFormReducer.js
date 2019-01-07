@@ -45,12 +45,7 @@ const INITIAL_STATE ={
     errors: {
         name: null,
         ubi: null,
-        dateIni: null,
-        dateEnd: null,
-        hourIni: null,
         hourEnd: null,
-        minuteIni: null,
-        minuteEnd: null,
         type: null
     }
 }
