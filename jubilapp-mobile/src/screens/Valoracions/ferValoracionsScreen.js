@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Alert} from 'react-native';
+import {View, Text, Alert, ActivityIndicator} from 'react-native';
 import {APP_COLORS} from "../../constants/colors";
 import connect from "react-redux/es/connect/connect";
 import {Actions} from "react-native-router-flux";
@@ -8,8 +8,11 @@ import ButtonBack from '../../components/basicComponents/ButtonBack';
 import Description from '../../components/basicComponents/Description';
 import CardModified from "../../components/CardModified";
 import { FontAwesome,Ionicons } from '@expo/vector-icons';
-import {fetchActivitatsValorar,changeStar,changeIterator,reiniciarStars} from '../../actions/index';
+import {changePropietat,fetchActivitatsValorar,changeStar,changeIterator,reiniciarStars,valorarActivitat} from '../../actions/index';
 
+import { Constants, Location, Permissions } from 'expo';
+import Geocoder from 'react-native-geocoding';
+import {MAPS_KEY} from "../../constants";
 class ferValoracionsScreen extends React.Component {
     constructor(props) {
         super(props);
@@ -18,6 +21,7 @@ class ferValoracionsScreen extends React.Component {
 
     componentWillMount(){
         this.props.fetchActivitatsValorar();
+        Geocoder.init(MAPS_KEY.key, {language: 'es'});
     }
     onStarPressed(i){
         this.props.changeStar(i);
@@ -46,6 +50,9 @@ class ferValoracionsScreen extends React.Component {
                 ],
                 { cancelable: false }
             );
+            const rating = {rating: this.props.num_estrelles}
+            console.log("Hola estic enviant ", rating);
+            this.props.valorarActivitat(this.props.activitats_valorar[this.props.iterador].id, rating);
         }
         
     }
@@ -66,6 +73,16 @@ class ferValoracionsScreen extends React.Component {
             });      
     }
 
+    getLocationfromCoords() {
+        console.log("Entroooooooo");
+        Geocoder.from({lat: this.props.activitats_valorar[this.props.iterador].latitude, lng: this.props.activitats_valorar[this.props.iterador].longitude})
+            .then(json => {
+                console.log("UBI ", json.results[0].formatted_address);
+                this.props.changePropietat(json.results[0].formatted_address);
+            })
+            .catch(error => console.warn(error));
+    }
+
     pintarCard(){
         const activitatsTranslate= {
             art: {id:1,source: require('../../images/artPES2.jpg')},
@@ -75,43 +92,58 @@ class ferValoracionsScreen extends React.Component {
             workshops: {source: require('../../images/talleresPES2.jpg')},
             leisure: {source: require('../../images/ocioPES3.jpg')}
         };
-        if(this.props.iterador == this.props.activitats_valorar.length){
-            return(
-                <View style = {styles.viewbuitStyle}>
-                    <Description textExpl = "No hay más actividades pendientes de valorar"/>
-                </View>
-            )
-        }
-        else{
-            return(
-                <View>
-                    <View style = {styles.descrView}>
-                        <Text adjustsFontSizeToFit={true}  style = {styles.descrStyle}>Puntua la actividad del 1 al 5 con ayuda de las estrellas</Text>
-                    </View>
-                    <View style = {styles.viewCardStarStyle}>
-                        <View style = {styles.viewCard}>
-                            <CardModified image = {activitatsTranslate[this.props.activitats_valorar[this.props.iterador].tipus].source}
-                                            nom =  {this.props.activitats_valorar[this.props.iterador].nom}
-                                            ubicacio = {this.props.activitats_valorar[this.props.iterador].ubicacio}
-                                            dataIni = {this.props.activitats_valorar[this.props.iterador].dataIni}
-                                            dataFi = {this.props.activitats_valorar[this.props.iterador].dataFi}
-                                            valorar = {true}/>
-                        </View>
-                        <View style= {styles.iconview2Style}>
-                            <View style = {styles.iconviewStyle}>
-                                {this.pintar_estrelles()}
-                            </View>
-                        </View>
-                        <View style = {styles.buttonviewStyle}>
-                            <Ionicons name={'ios-information-circle-outline'} size={75} 
-                                color= {APP_COLORS.color_back} />
-                            <ButtonBack buttonText = {'Valorar'} colorBoto = {APP_COLORS.color_next}
-                                    path = {this.onValorarPressed}/>
-                        </View>
-                    </View>
+        if (this.props.isFetching) {
+            return (
+                <View style = {{justifyContent: 'center', alignContent: 'center', width: '100%', height: '100%'}}>
+                    <ActivityIndicator size="large"/>
                 </View>
             );
         }
+        else{
+            if(this.props.iterador == this.props.activitats_valorar.length){
+                return(
+                    <View style = {styles.viewbuitStyle}>
+                        <Description textExpl = "No hay más actividades pendientes de valorar"/>
+                    </View>
+                )
+            }
+            else{
+                console.log("HOA");
+                this.getLocationfromCoords();
+                return(
+                    <View>
+                        <View style = {styles.descrView}>
+                            <Text adjustsFontSizeToFit={true}  style = {styles.descrStyle}>Puntua la actividad del 1 al 5 con ayuda de las estrellas</Text>
+                        </View>
+                        <View style = {styles.viewCardStarStyle}>
+                            <View style = {styles.viewCard}>
+                                <CardModified image = {activitatsTranslate[this.props.activitats_valorar[this.props.iterador].type].source}
+                                                nom =  {this.props.activitats_valorar[this.props.iterador].name}
+                                                ubicacio = {this.props.ubicacioActual}
+                                                dataIni = {this.props.activitats_valorar[this.props.iterador].startDate}
+                                                dataFi = {this.props.activitats_valorar[this.props.iterador].endDate}
+                                                valorar = {true}/>
+                            </View>
+                            <View style= {styles.iconview2Style}>
+                                <View style = {styles.iconviewStyle}>
+                                    {this.pintar_estrelles()}
+                                </View>
+                            </View>
+                            <View style = {styles.buttonviewStyle}>
+                                <Ionicons name={'ios-information-circle-outline'} size={75} 
+                                    color= {APP_COLORS.color_back} 
+                                    onPress={() => {
+                                        Actions.info({id: this.props.activitats_trobades[this.props.iterador].id, screen: "buscar"})
+                                    }}/>
+                                <ButtonBack buttonText = {'Valorar'} colorBoto = {APP_COLORS.color_next}
+                                        path = {this.onValorarPressed}/>
+                            </View>
+                        </View>
+                    </View>
+                );
+            }
+        }
+        
         
     }
 
@@ -121,10 +153,11 @@ class ferValoracionsScreen extends React.Component {
         return(
             <View style = {viewStyle}>
                 <HeaderIcon headerText = "Valorar Actividad"
-                                iconName={ 'arrow-circle-left'}
+                                iconName={ 'arrow-left'}
                                 colorName={ APP_COLORS.color_neutral}
                                 size = {60}
-                                textSize = {35}
+                                textSize = {31}
+                                isEvilType = {true}
                                 path={() => Actions.veurevaloracions()}
                 />
                 
@@ -214,7 +247,9 @@ const mapStateToProps = (state) => {
         activitats_valorar: state.valorarActivity.activitats_valorar,
         estrelles: state.valorarActivity.estrelles,
         iterador: state.valorarActivity.iterador,
-        num_estrelles: state.valorarActivity.num_estrelles
+        num_estrelles: state.valorarActivity.num_estrelles,
+        isFetching: state.valorarActivity.isFetching,
+        ubicacioActual:state.valorarActivity.ubicacioActual
     }
 }
 
@@ -223,7 +258,9 @@ const  mapDispatchToProps = (dispatch)=>{
         fetchActivitatsValorar: ()=>dispatch(fetchActivitatsValorar()),
         changeStar: (i)=>dispatch(changeStar(i)),
         changeIterator: ()=>dispatch(changeIterator()),
-        reiniciarStars: ()=>dispatch(reiniciarStars())
+        reiniciarStars: ()=>dispatch(reiniciarStars()),
+        valorarActivitat: (id,rating)=>dispatch(valorarActivitat(id,rating)),
+        changePropietat: (a)=>dispatch(changePropietat(a))
     }
 }
 

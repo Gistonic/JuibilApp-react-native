@@ -73,7 +73,9 @@ class ActivitatListScreen extends React.Component {
         } else {
             if (activities.length === 0) {
                 return  (
-                    <Description textExpl = "No hay actividades en esta lista"/>
+                    <View style = {styles.viewbuitStyle}>
+                        <Description textExpl = "No hay actividades en esta lista"/>
+                    </View>
                 )
 
             }
@@ -116,7 +118,7 @@ class ActivitatListScreen extends React.Component {
             <View style = {viewStyle}>
 
                 <HeaderIcon headerText = {this.props.headerText}
-                            iconName={ 'list-ul'}
+                            iconName={ 'arrow-left'}
                             colorName={ APP_COLORS.color_neutral}
                             path={() => Actions.llistesActs()}
                             size = {60}
@@ -133,6 +135,10 @@ class ActivitatListScreen extends React.Component {
     }
 }
 const styles ={
+    viewbuitStyle: {
+        alignItems: 'center',
+        paddingTop: '50%'
+    },
     viewStyle: {
         backgroundColor: APP_COLORS.color_neutral,
         width: '100%',

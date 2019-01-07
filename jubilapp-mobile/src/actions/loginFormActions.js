@@ -1,6 +1,7 @@
 import {LOGIN_FORM_ACTIONS} from "../constants/actions";
 import {Actions} from "react-native-router-flux";
 import { AsyncStorage } from "react-native";
+import {reportPushToken} from "../pushNotifications";
 
 
 export const changeLoginFormProperty=(propertyName, value) =>{
@@ -24,10 +25,12 @@ const tokens = "";
 const receiveLogin = (token) => {
     //localstorage("token", token);
     //_storeData();
+
     AsyncStorage.setItem('token', token, (err) => {
         if (err) {
             console.log('Error saving token: ' + token)
         }
+        reportPushToken();
         Actions.welcome({textExpl: 'Continuar', paths: () => Actions.home()});
     });
     return {

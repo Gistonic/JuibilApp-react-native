@@ -63,11 +63,11 @@ class CardModified extends React.Component {
                     <EvilIcons name="clock" size={40} color = {APP_COLORS.text_color} style = {iconStyle}/>
                     <View style={ViewRow}>
 
-                        <Moment style = {textStyle} element={Text} format="hh:mm">
+                        <Moment style = {textStyle} element={Text} format="HH:mm">
                             {this.props.horaIni}
                         </Moment>
                         <Text style = {textStyle}> - </Text>
-                        <Moment style = {textStyle} element={Text} format="hh:mm">
+                        <Moment style = {textStyle} element={Text} format="HH:mm">
                             {this.props.horaFi}
                         </Moment>
                     </View>

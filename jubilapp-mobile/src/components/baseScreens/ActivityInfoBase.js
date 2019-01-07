@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, ImageBackground} from 'react-native';
+import {View, Text, ImageBackground, ScrollView} from 'react-native';
 import {APP_COLORS} from "../../constants/colors";
 import Header from "../../components/basicComponents/Header";
 import CardActionCreades from "../CardActionCreades";
@@ -40,38 +40,37 @@ ActivityInfoBase extends React.Component {
                         style={{width: '100%', height: '100%'}}
                     />
                     </View>
-                    <View>
                     <Text style = {titleStyle}>
                         {this.props.nomActivitat}
                     </Text>
-                    <View >
+                    <ScrollView >
+                        <View style = {{flex: 1}}>
                         <Text style = {textStyle}>{this.props.ubicacioactual}</Text>
                         <View style={ViewRow}>
                             <Text style = {textStyle}> Fecha inicio: </Text>
-                            <Moment style = {textStyle} element={Text} format="DD/MM/YYYY hh:mm">
+                            <Moment style = {textStyle} element={Text} format="DD/MM/YYYY HH:mm">
                                 {this.props.dataIni}
                             </Moment>
                         </View>
 
                         <View style={ViewRow}>
                             <Text style = {textStyle}> Fecha fin: </Text>
-                            <Moment style = {textStyle} element={Text} format="DD/MM/YYYY hh:mm">
+                            <Moment style = {textStyle} element={Text} format="DD/MM/YYYY HH:mm">
                                 {this.props.dataFi}
                             </Moment>
                         </View>
 
                         <Text style = {textStyleDescription}>{this.props.descripcio}</Text>
+                        </View>
 
 
-                    </View>
+                    </ScrollView>
 
 
-                    <View style = {{height: 70, paddingBottom: '25%'}}>
+                    <View style = {{height: 70, paddingBottom: '5%'}}>
                         {this._cardActionSelector(this.props.screen, this.props.att)}
                     </View>
                 </View>
-
-            </View>
         );
     }
 }
@@ -81,6 +80,7 @@ const styles ={
         width: '100%',
         height: '100%',
         justifyContent: 'space-between',
+        flex: 1,
     },
 
     textStyle: {
@@ -96,6 +96,7 @@ const styles ={
         marginLeft: '3%',
         paddingBottom: '2%',
         paddingRight: '3%',
+        marginBottom: '3%',
 
         color: APP_COLORS.text_color,
     },
@@ -107,10 +108,9 @@ const styles ={
         fontSize: 35,
         paddingLeft: '3%',
         paddingRight: '3%',
-        paddingBottom: '5%',
+        paddingBottom: '2%',
         borderBottomColor: APP_COLORS.color_header,
         borderBottomWidth: 3,
-        marginBottom: '2%',
         color: APP_COLORS.text_color,
         fontWeight: 'bold',
     },

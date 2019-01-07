@@ -58,7 +58,7 @@ export const fetchActivitats = (stringISOfromDate, stringISOtoDate) =>{
         const url5 = "&toDate=";
         const url6 = "&forMe=true";
         const url7 = "&excludeOwn=true";
-        const url8 = "&&undecidedOnly=true";
+        const url8 = "&undecidedOnly=true";
         const finalurl = url1+url2+url3+url4+stringISOfromDate+url5+stringISOtoDate+url6+url7+url8;
         console.log("finalurl: ", finalurl);
             fetch(finalurl, {

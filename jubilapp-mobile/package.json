@@ -9,7 +9,7 @@
     "eject": "expo eject"
   },
   "dependencies": {
-    "@expo/vector-icons": "latest",
+    "@expo/vector-icons": "^8.0.0",
     "@material-ui/core": "^3.3.1",
     "axios": "^0.18.0",
     "expo": "^30.0.1",

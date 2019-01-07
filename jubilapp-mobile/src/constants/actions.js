@@ -81,5 +81,7 @@ export const VALORAR_ACTIVITY_ACTIONS = {
     RebreActivitats: 'REBRE_ACTIVITATS',
     ChangeStar: 'CHANGE_STAR',
     ReiniciarStars: 'REINICIAR_STARS',
-    ChangeIterator: 'CHANGE_ITERATOR'
+    ChangeIterator: 'CHANGE_ITERATOR',
+    RequestActivitats: 'REQUEST_ACTIVITATS',
+    ChangePropietat: 'CHANGE_PROPIETAT'
 }

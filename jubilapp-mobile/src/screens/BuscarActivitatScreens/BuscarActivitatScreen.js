@@ -19,6 +19,10 @@ import { Constants, Location, Permissions } from 'expo';
 import Geocoder from 'react-native-geocoding';
 import {MAPS_KEY} from "../../constants";
 
+const date1 = new Date();
+const initial_hour = date1.getHours();
+const initial_minute = date1.getMinutes()
+
 class BuscarActivitatScreen extends React.Component {
 
     constructor(props){
@@ -33,10 +37,17 @@ class BuscarActivitatScreen extends React.Component {
         } else {
             this._getLocationAsync();
         }*/
-        const stringISOfromDate = new Date(this.props.fromDate.year, this.props.fromDate.month, this.props.fromDate.day).toISOString();
+        let hour = 0;
+        let minute = 0;
+        console.log("dia avui", date1.getDate().toString(), date1.getMonth().toString(), date1.getFullYear().toString());
+        console.log("dia triat", this.props.fromDate.day, this.props.fromDate.month, this.props.fromDate.year);
+
+        if ((this.props.fromDate.day === date1.getDate()) && (this.props.fromDate.month === date1.getMonth()) && (this.props.fromDate.year === date1.getFullYear())) {
+            hour = initial_hour;
+            minute = initial_minute;
+        }
+        const stringISOfromDate = new Date(this.props.fromDate.year, this.props.fromDate.month, this.props.fromDate.day, hour, minute).toISOString();
         const stringISOtoDate = new Date(this.props.toDate.year, this.props.toDate.month, this.props.toDate.day).toISOString();
-        console.log(stringISOtoDate);
-        console.log(stringISOfromDate);
         Geocoder.init(MAPS_KEY.key, {language: 'es'});
         this.props.fetchActivitats(stringISOfromDate, stringISOtoDate);
 

@@ -8,7 +8,7 @@ const receiveActivity =(activity)=>{
     const activityWithTimezone = {
         ...activity,
         startDate: moment(activity.startDate).tz('Europe/Madrid'),
-        endDate: moment(activity.startDate).tz('Europe/Madrid')
+        endDate: moment(activity.endDate).tz('Europe/Madrid')
     };
     console.log(activityWithTimezone.startDate);
     return {

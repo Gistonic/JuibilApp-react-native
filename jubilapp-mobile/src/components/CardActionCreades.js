@@ -44,7 +44,6 @@ const styles = {
         justifyContent: 'space-between',
         alignItems: 'center',
         alignContent: 'center',
-        paddingTop: '3%',
     },
     iconStyle: {
         backgroundColor: '#D9D9D9',

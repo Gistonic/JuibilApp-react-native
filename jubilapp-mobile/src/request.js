@@ -10,6 +10,7 @@ export const request = async (path = "", method = "GET", body) => {
           if(token != null)headers.Authorization = 'Bearer ' + token;
           const finalPath = baseUrl + path;
           const bodyString = JSON.stringify(body);
+          console.log(`Sending ${method} to ${finalPath} with ${bodyString}. Token present: ${token != null}`);
           fetch(finalPath, {
                 method,
                 headers,
@@ -21,7 +22,6 @@ export const request = async (path = "", method = "GET", body) => {
                     console.log(res(response))
                     return res(response)
                 } else {
-                    console.log('Error sending create activity')
                     rej(new Error('Server responded with ' + response.code))
                 }
             }).catch(err => {
