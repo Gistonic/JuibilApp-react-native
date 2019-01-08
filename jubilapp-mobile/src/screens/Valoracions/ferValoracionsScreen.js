@@ -176,7 +176,7 @@ const styles ={
         paddingBottom: '20%',
     },
     iconview2Style: {
-        paddingTop:'7%',
+        paddingTop:'3%',
         paddingLeft: '8%',
         paddingRight: '8%',
         margin: '2%',
