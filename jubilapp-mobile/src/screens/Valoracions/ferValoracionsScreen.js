@@ -107,7 +107,7 @@ class ferValoracionsScreen extends React.Component {
             else{
                 this.getLocationfromCoords();
                 return(
-                    <View style = {{width:'100%', height:'100%', paddingBottom: '7%'}}>
+                    <View style = {{width:'100%', height:'100%', paddingBottom: '7%',paddingTop:'5%'}}>
                         <View style = {styles.descrView}>
                             <Text adjustsFontSizeToFit={true}  style = {styles.descrStyle}>Puntua la actividad del 1 al 5 con ayuda de las estrellas</Text>
                         </View>
@@ -119,8 +119,8 @@ class ferValoracionsScreen extends React.Component {
                                                 dataIni = {this.props.activitats_valorar[this.props.iterador].startDate}
                                                 dataFi = {this.props.activitats_valorar[this.props.iterador].endDate}
                                                 valorar = {true}
-                                                fontsizeTitleStyle = {22}
-                                                fontsizeTextStyle = {18}/>
+                                                fontsizeTitleStyle = {25}
+                                                fontsizeTextStyle = {23}/>
                             </View>
                             <View style= {styles.iconview2Style}>
                                 <View style = {styles.iconviewStyle}>
@@ -200,7 +200,7 @@ const styles ={
     },
     descrStyle: {
         fontFamily: 'open-sans-bold',
-        fontSize: 23,
+        fontSize: 25,
         color:APP_COLORS.text_color,
         textAlignVertical: "center",
         textAlign: "center"
