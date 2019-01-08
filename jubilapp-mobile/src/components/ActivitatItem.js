@@ -16,8 +16,8 @@ class ActivitatItem extends React.Component {
     }
     _onPressTrash() {
         Alert.alert(
-            'Denegar Actividad',
-            'La actividad '+ this.props.nomActivitat +' se añadira a la lista de NO APUNTADAS.',
+            'Eliminar Actividad',
+            'Está seguro que quiere elimminar la actividad '+ this.props.nomActivitat +'?',
             [
                 {text: 'No'},
                 {text: 'Sí', onPress: () => {this.props.deleteActivity(this.props.id), 

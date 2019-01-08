@@ -20,7 +20,7 @@ ActivityInfoBase extends React.Component {
         if (type === 'leisure') return require('../../images/ocioPES3.jpg');
     }
     _cardActionSelector(screen,att) {
-        if (screen === '/own') return <CardActionCreades deleteAct = {this.props.deleteAct} id = {this.props.id}/>;
+        if (screen === '/own') return <CardActionCreades deleteAct = {this.props.deleteAct} id = {this.props.id} nom = {this.props.nomActivitat}/>;
         else if (screen === "/attending") {
             if (att === 'yes') return <CardActionApuntades notAttend = {this.props.notAttend} id = {this.props.id} nom = {this.props.nomActivitat}/>;
             else return <CardActionCancelades attend = {this.props.attend} id = {this.props.id} nom = {this.props.nomActivitat}/>
