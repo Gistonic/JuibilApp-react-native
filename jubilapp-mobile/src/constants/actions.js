@@ -53,12 +53,14 @@ export const KILOMETRES_PROFILE_ACTIONS={
 }
 
 export const BUSCAR_ACTIVITY_ACTIONS={
-    FetchActivitats: 'FETCH_ACTIVITATS',
-    RecieveActivitats: 'RECIEVE_ACTIVITATS',
-    ChangeIterador: 'CHANGE_ITERADOR',
-    ChangeProperty: 'CHANGE_PROPERTY',
-    ChangeProperty2: 'CHANGE_PROPERTY2',
-    Attend: 'ATTEND',
+    FetchActivitats: 'BUSCAR_FETCH_ACTIVITATS',
+    RecieveActivitats: 'BUSCAR_RECIEVE_ACTIVITATS',
+    ChangeIterador: 'BUSCAR_CHANGE_ITERADOR',
+    ChangeProperty: 'BUSCAR_CHANGE_PROPERTY',
+    ChangeProperty2: 'BUSCAR_CHANGE_PROPERTY2',
+    Attend: 'BUSCAR_ATTEND',
+    ErrorProperty: 'BUSCAR_ERROR_PROPERTY',
+    ResetErrorProperty: 'BUSCAR_RESET_ERROR_PROPERTY'
 }
 
 export const MODIFICAR_ACTIVITY_ACTIONS = {

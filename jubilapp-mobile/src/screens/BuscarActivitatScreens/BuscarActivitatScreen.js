@@ -39,9 +39,6 @@ class BuscarActivitatScreen extends React.Component {
         }*/
         let hour = 0;
         let minute = 0;
-        console.log("dia avui", date1.getDate().toString(), date1.getMonth().toString(), date1.getFullYear().toString());
-        console.log("dia triat", this.props.fromDate.day, this.props.fromDate.month, this.props.fromDate.year);
-
         if ((this.props.fromDate.day === date1.getDate()) && (this.props.fromDate.month === date1.getMonth()) && (this.props.fromDate.year === date1.getFullYear())) {
             hour = initial_hour;
             minute = initial_minute;
