@@ -29,6 +29,23 @@ export const changeBuscarActivityFormProperty=(propertyName, value) =>{
     }
 };
 
+export const errorBuscarActivityFormProperty=(propertyName, error) => {
+    return {
+        type: BUSCAR_ACTIVITY_ACTIONS.ErrorProperty,
+        payload: {
+            propertyName,
+            error
+        }
+    }
+}
+
+export const resetErrorBuscarActivityFormProperty=(propertyName) => {
+    return {
+        type: BUSCAR_ACTIVITY_ACTIONS.ResetErrorProperty,
+        payload: propertyName
+    }
+}
+
 export const attend = (id) => {
     return () => {
         const url1 = '/event/';
