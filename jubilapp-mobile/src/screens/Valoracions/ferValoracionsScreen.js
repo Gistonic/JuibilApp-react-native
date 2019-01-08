@@ -40,7 +40,7 @@ class ferValoracionsScreen extends React.Component {
         else{
             Alert.alert(
                 'Valorar Actividad',
-                'La actividad '+ this.props.activitats_valorar[this.props.iterador].nom +' se valorará con '+this.props.num_estrelles+' estrellas.',
+                'La actividad '+ this.props.activitats_valorar[this.props.iterador].name +' se valorará con '+this.props.num_estrelles+' estrellas.',
                 [
                     {text: 'Cancelar'},
                     {text: 'OK', onPress: () => {this.props.changeIterator();
@@ -51,7 +51,6 @@ class ferValoracionsScreen extends React.Component {
                 { cancelable: false }
             );
             const rating = {rating: this.props.num_estrelles}
-            console.log("Hola estic enviant ", rating);
             this.props.valorarActivitat(this.props.activitats_valorar[this.props.iterador].id, rating);
         }
         
@@ -74,10 +73,8 @@ class ferValoracionsScreen extends React.Component {
     }
 
     getLocationfromCoords() {
-        console.log("Entroooooooo");
         Geocoder.from({lat: this.props.activitats_valorar[this.props.iterador].latitude, lng: this.props.activitats_valorar[this.props.iterador].longitude})
             .then(json => {
-                console.log("UBI ", json.results[0].formatted_address);
                 this.props.changePropietat(json.results[0].formatted_address);
             })
             .catch(error => console.warn(error));
@@ -108,10 +105,9 @@ class ferValoracionsScreen extends React.Component {
                 )
             }
             else{
-                console.log("HOA");
                 this.getLocationfromCoords();
                 return(
-                    <View>
+                    <View style = {{width:'100%', height:'100%', paddingBottom: '7%',paddingTop:'5%'}}>
                         <View style = {styles.descrView}>
                             <Text adjustsFontSizeToFit={true}  style = {styles.descrStyle}>Puntua la actividad del 1 al 5 con ayuda de las estrellas</Text>
                         </View>
@@ -122,8 +118,12 @@ class ferValoracionsScreen extends React.Component {
                                                 ubicacio = {this.props.ubicacioActual}
                                                 dataIni = {this.props.activitats_valorar[this.props.iterador].startDate}
                                                 dataFi = {this.props.activitats_valorar[this.props.iterador].endDate}
-                                                valorar = {true}/>
+                                                valorar = {true}
+                                                margin = '0%'
+                                                fontsizeTitleStyle = {25}
+                                                fontsizeTextStyle = {23}/>
                             </View>
+                            <View style = {{justifyContent: 'space-between', paddingTop: '2%'}}>
                             <View style= {styles.iconview2Style}>
                                 <View style = {styles.iconviewStyle}>
                                     {this.pintar_estrelles()}
@@ -133,10 +133,12 @@ class ferValoracionsScreen extends React.Component {
                                 <Ionicons name={'ios-information-circle-outline'} size={75} 
                                     color= {APP_COLORS.color_back} 
                                     onPress={() => {
-                                        Actions.info({id: this.props.activitats_trobades[this.props.iterador].id, screen: "buscar"})
-                                    }}/>
+                                        Actions.info({id: this.props.activitats_valorar[this.props.iterador].id, screen: "valorar"})
+                                    }}
+                                    style = {styles.iconInfoStyle}/>
                                 <ButtonBack buttonText = {'Valorar'} colorBoto = {APP_COLORS.color_next}
                                         path = {this.onValorarPressed}/>
+                            </View>
                             </View>
                         </View>
                     </View>
@@ -169,11 +171,15 @@ class ferValoracionsScreen extends React.Component {
 }
 
 const styles ={
-    viewbuitStyle: {
+    viewbuitStyle:{
+        height: '100%',
+        width: '100%',
         alignItems: 'center',
-        paddingTop: '50%'
+        justifyContent: 'center',
+        paddingBottom: '20%',
     },
     iconview2Style: {
+        paddingTop:'3%',
         paddingLeft: '8%',
         paddingRight: '8%',
         margin: '2%',
@@ -186,7 +192,9 @@ const styles ={
     buttonviewStyle: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        paddingLeft: '15%'
+        paddingLeft: '15%',
+        alignContent: 'center',
+        alignItems: 'center'
     },
     iconviewStyle: {
         flexDirection: 'row',
@@ -194,12 +202,11 @@ const styles ={
     },
     viewCardStarStyle: {
         paddingTop:'1%',
-        margin:'1%',
         backgroundColor: APP_COLORS.color_neutral,
     },
     descrStyle: {
         fontFamily: 'open-sans-bold',
-        fontSize: 27,
+        fontSize: 25,
         color:APP_COLORS.text_color,
         textAlignVertical: "center",
         textAlign: "center"
@@ -207,6 +214,7 @@ const styles ={
     viewCard: { 
         paddingTop: '1%',
         height: '58%'
+        
     },
     viewStyle: {
         backgroundColor: APP_COLORS.color_neutral,

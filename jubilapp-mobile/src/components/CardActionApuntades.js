@@ -1,5 +1,5 @@
 import {APP_COLORS} from "../constants/colors";
-import {View} from 'react-native';
+import {View, Alert} from 'react-native';
 import React from "react";
 import ButtonBack from "./basicComponents/ButtonBack";
 import {Actions} from "react-native-router-flux";
@@ -14,8 +14,16 @@ class CardActionApuntades extends React.Component {
 
     }
     _onPress() {
-        this.props.notAttend(this.props.id);
-        Actions.llistesActs();
+        Alert.alert(
+            'Denegar Actividad',
+            'La actividad '+ this.props.nom +' se añadira a la lista de NO APUNTADAS.',
+            [
+                {text: 'No'},
+                {text: 'Sí', onPress: () => {this.props.notAttend(this.props.id);
+                                            Actions.llistesActs();}},
+            ],
+            { cancelable: false }
+        );
     }
     render() {
         return (

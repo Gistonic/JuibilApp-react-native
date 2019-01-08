@@ -15,7 +15,7 @@ class CardModified extends React.Component {
 
     pintar_preu(){
         if(this.props.valorar === false){
-            if(this.props.preu === 0){
+            if(this.props.preu == 0 || this.props.preu == null){
                 return(
                     <View style = {styles.viewpriceStyle}>
                         <Text style = {styles.text2Style}>GRATIS!</Text>
@@ -39,35 +39,37 @@ class CardModified extends React.Component {
             <Card image = {this.props.image} style = {cardStyle}
                 imageStyle = {imatgeStyle} >
                 <View style = {titlepriceStyle}>
-                    <Text style = {titleStyle}> {this.props.nom}  </Text>
-                    {this.pintar_preu()}    
+                    <Text style = {[titleStyle,{fontSize: this.props.fontsizeTitleStyle}]}> {this.props.nom}  </Text>
                 </View>
-                <View style = {texticonStyle}>
+                <View style = {{justifyContent: 'flex-end', flexDirection: 'row' }}>
+                {this.pintar_preu()}
+                </View>
+                <View style = {[texticonStyle, {margin: this.props.margin}]}>
                     <EvilIcons name="location" size={40} color = {APP_COLORS.text_color} style = {iconStyle}/>
-                    <Text style = {textStyle}> {this.props.ubicacio} </Text>
+                    <Text style = {[textStyle,{fontSize: this.props.fontsizeTextStyle}]}> {this.props.ubicacio} </Text>
                 </View>
-                <View style = {texticonStyle}>
+                <View style = {[texticonStyle, {margin: this.props.margin}]}>
                     <EvilIcons name="calendar" size={40} color = {APP_COLORS.text_color} style = {iconStyle}/>
                     <View style={ViewRow}>
 
-                        <Moment style = {textStyle} element={Text} format="DD/MM/YYYY">
+                        <Moment style = {[textStyle, {fontSize: this.props.fontsizeTextStyle}]} element={Text} format="DD/MM/YYYY">
                             {this.props.dataIni}
                         </Moment>
-                        <Text style = {textStyle}> - </Text>
-                        <Moment style = {textStyle} element={Text} format="DD/MM/YYYY">
+                        <Text style = {[textStyle,{fontSize: this.props.fontsizeTextStyle}]}> - </Text>
+                        <Moment style = {[textStyle,{fontSize: this.props.fontsizeTextStyle}]} element={Text} format="DD/MM/YYYY">
                             {this.props.dataFi}
                         </Moment>
                     </View>
                 </View>
-                {this.props.valorar ? null:<View style = {texticonStyle}>
+                {this.props.valorar ? null:<View style = {[texticonStyle, {margin: this.props.margin}]}>
                     <EvilIcons name="clock" size={40} color = {APP_COLORS.text_color} style = {iconStyle}/>
                     <View style={ViewRow}>
 
-                        <Moment style = {textStyle} element={Text} format="HH:mm">
+                        <Moment style = {[textStyle,{fontSize: this.props.fontsizeTextStyle}]} element={Text} format="HH:mm">
                             {this.props.horaIni}
                         </Moment>
-                        <Text style = {textStyle}> - </Text>
-                        <Moment style = {textStyle} element={Text} format="HH:mm">
+                        <Text style = {[textStyle,{fontSize: this.props.fontsizeTextStyle}]}> - </Text>
+                        <Moment style = {[textStyle,{fontSize: this.props.fontsizeTextStyle}]} element={Text} format="HH:mm">
                             {this.props.horaFi}
                         </Moment>
                     </View>
@@ -79,7 +81,6 @@ class CardModified extends React.Component {
 
 const styles = {
     viewCard: { 
-        paddingTop: '5%',
         backgroundColor: APP_COLORS.color_neutral,
         height: '72%'
     },
@@ -87,13 +88,12 @@ const styles = {
         width: '30%',
         borderWidth: 3,
         borderRadius: 15,
-        marginLeft: '22%',
-        borderColor: APP_COLORS.text_color
+        marginRight: '2%',
+        borderColor: APP_COLORS.text_color,
     },
     texticonStyle: {
         flexDirection: 'row',
-        margin: '2%',
-        paddingRight: '5%'
+        paddingRight: '5%',
     },
     titlepriceStyle: {
         flexDirection: 'row',
@@ -109,7 +109,6 @@ const styles = {
     },
     titleStyle: {
         fontFamily: 'open-sans-bold',
-        fontSize: 27,
         color:APP_COLORS.text_color
     },
     cardStyle: {
@@ -120,7 +119,8 @@ const styles = {
     textStyle: {
         fontFamily: 'open-sans',
         fontSize: 21,
-        color:APP_COLORS.text_color
+        color:APP_COLORS.text_color,
+        paddingRight: '3%',
     },
     text2Style: {
         fontFamily: 'open-sans-bold',
@@ -133,6 +133,7 @@ const styles = {
     },
     ViewRow:{
         flexDirection: 'row',
+        paddingRight: '2%'
     }
 }
 

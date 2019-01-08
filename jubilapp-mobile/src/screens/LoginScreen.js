@@ -1,5 +1,5 @@
 import React from 'react';
-import {KeyboardAvoidingView, View} from 'react-native';
+import {KeyboardAvoidingView, View, ScrollView} from 'react-native';
 import Formulari from '../components/basicComponents/Formulari';
 import Logo from '../components/basicComponents/Logo';
 import Header from '../components/basicComponents/Header';
@@ -32,9 +32,10 @@ class LoginScreen extends React.Component {
         const {email, changeFormEmail, password, error, changeFormPassword}=this.props;
 
         return (
-            <KeyboardAvoidingView behavior = 'position'>
                 <View style = {viewStyle}>
                     <Header headerText = {'JubilApp'}/>
+                    <ScrollView>
+                        <View style = {{paddingBottom: '13%'}}>
                     <View style = {viewStyle1}>
                         <Formulari textExplicatiu = {'Introduce correo y contraseña'}
                                    textPlaceHolder = {'correo'}
@@ -49,28 +50,33 @@ class LoginScreen extends React.Component {
                     </View>
                     <StartButton buttonText = {'Entrar'}
                                  path = {this.onLoginPressed}/>
+                        </View>
+                    <View style = {{paddingBottom: '5%'}}>
                     <Description textExpl = {'No tienes cuenta?'}/>
                     <StartButton buttonText = {'Regístrate!'}
                                  path = {() => Actions.r1()}/>
+                    </View>
+                    </ScrollView>
                     { error &&
-                        <AlertError message="Usuario y/o contraseña incorrectos" />
+                    <AlertError message="Usuario y/o contraseña incorrectos" />
                     }
                 </View>
-            </KeyboardAvoidingView>
         );
     }
-  }
-  const styles ={
-        viewStyle: {
-            backgroundColor: APP_COLORS.color_neutral,
-            width: '100%',
-            height: '100%',
-        },
-        viewStyle1: {
-            paddingTop: '15%'
-        }
+}
+const styles ={
+    viewStyle: {
+        backgroundColor: APP_COLORS.color_neutral,
+        width: '100%',
+        height: '100%',
+        flex:1,
+    },
+    viewStyle1: {
+        paddingTop: '10%',
+        flex:1,
+    }
 
-  }
+}
 const mapStateToProps = (state) => {
     return {
         email: state.loginForm.email,

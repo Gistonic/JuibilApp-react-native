@@ -33,6 +33,7 @@ class ActivityInfo extends React.Component {
                              notAttend = {this.props.notAttend}
                              ubicacioactual = {this.props.ubicacioactual}
                              id = {this.props.id}
+                             nomCasal = "Casal de les Corts"
            />
         );
     }

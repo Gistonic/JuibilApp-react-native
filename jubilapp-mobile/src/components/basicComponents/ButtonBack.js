@@ -35,7 +35,6 @@ const ButtonBack = (props) => {
             borderRadius: 10,
         },
         button: {
-            borderWidth: 3,
             padding: 8,
             backgroundColor: APP_COLORS.color_back,
             borderColor: APP_COLORS.color_back,

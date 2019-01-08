@@ -31,7 +31,7 @@ const receiveLogin = (token) => {
             console.log('Error saving token: ' + token)
         }
         reportPushToken();
-        Actions.welcome({textExpl: 'Continuar', paths: () => Actions.home()});
+        Actions.welcome({textExpl: 'Siguiente', paths: () => Actions.home()});
     });
     return {
         type: LOGIN_FORM_ACTIONS.ReceiveLogin,

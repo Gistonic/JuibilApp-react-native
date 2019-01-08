@@ -39,9 +39,6 @@ class BuscarActivitatScreen extends React.Component {
         }*/
         let hour = 0;
         let minute = 0;
-        console.log("dia avui", date1.getDate().toString(), date1.getMonth().toString(), date1.getFullYear().toString());
-        console.log("dia triat", this.props.fromDate.day, this.props.fromDate.month, this.props.fromDate.year);
-
         if ((this.props.fromDate.day === date1.getDate()) && (this.props.fromDate.month === date1.getMonth()) && (this.props.fromDate.year === date1.getFullYear())) {
             hour = initial_hour;
             minute = initial_minute;
@@ -109,14 +106,17 @@ class BuscarActivitatScreen extends React.Component {
         if(this.props.iterador === this.props.activitats_trobades.length){
             return(
                 <View style = {styles.viewbuitStyle}>
-                    <Description textExpl = "No se encuentran más actividades"/>
+                    <View style = {styles.paddingViewStyle}>
+                        <Description textExpl = "No se encuentran más actividades"/>
+                    </View>
+                    <Ionicons name='ios-refresh' size={60} color={APP_COLORS.color_neutral}/>
                 </View>
             )
         }
         else {
             this.getLocationfromCoords();
             return(
-                <View style = {{width: '100%', height: '100%', paddingBottom: '3%'}}>
+                <View style = {{width: '100%', height: '100%', paddingBottom: '7%'}}>
                     <View style = {styles.viewCard}>
                         <CardModified image = {activitatsTranslate[this.props.activitats_trobades[this.props.iterador].type].source}
                                 nom =  {this.props.activitats_trobades[this.props.iterador].name}
@@ -126,7 +126,10 @@ class BuscarActivitatScreen extends React.Component {
                                 horaIni = {this.props.activitats_trobades[this.props.iterador].startDate}
                                 horaFi = {this.props.activitats_trobades[this.props.iterador].endDate}
                                 preu = {this.props.activitats_trobades[this.props.iterador].price}
-                                valorar = {false}/>
+                                valorar = {false}
+                                      margin = '3%'
+                                fontsizeTitleStyle = {27}
+                                fontsizeTextStyle = {21}/>
                     </View>
                     <View style={styles.footer}>
                             <View style={styles.circle} backgroundColor = {APP_COLORS.color_header}>
@@ -187,8 +190,16 @@ const styles ={
         margin: '2%'
     },
     viewbuitStyle:{
+        height: '100%',
+        width: '100%',
         alignItems: 'center',
-        paddingTop: '50%'
+        justifyContent: 'center',
+    },
+
+    paddingViewStyle: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingBottom: '20%',
     },
     circle:{
         width: 75,
@@ -217,7 +228,7 @@ const styles ={
     },
     footer: {
         flexDirection: 'row',
-        paddingBottom: '7%',
+        marginBottom: '15%',
         justifyContent: 'space-between',
         paddingRight: '5%',
         paddingLeft: '5%',

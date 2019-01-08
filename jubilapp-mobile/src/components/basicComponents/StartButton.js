@@ -20,8 +20,6 @@ const StartButton = (props) => {
         alignItems: 'center',
      },
      button: {
-
-        borderWidth: 1,
         padding: 8,
         textAlign:'center',
         backgroundColor: APP_COLORS.color_button_1,
