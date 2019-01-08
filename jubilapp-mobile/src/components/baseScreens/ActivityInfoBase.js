@@ -9,6 +9,7 @@ import CardActionBuscar from "../CardActionBuscar";
 import Moment from 'react-moment';
 import 'moment-timezone';
 import CardActionValorar from "../CardActionValorar";
+import { EvilIcons } from '@expo/vector-icons';
 
 export default class
 ActivityInfoBase extends React.Component {
@@ -34,7 +35,7 @@ ActivityInfoBase extends React.Component {
         }
     }
    render() {
-        const {viewStyle,textStyle,viewImageStyle, titleStyle, textStyleDescription, ViewRow} = styles;
+        const {momentStyle, iconStyle, viewStyle,textStyle,viewImageStyle, subtitleStyle, titleStyle, textStyleDescription, ViewRow} = styles;
         return (
             <View style = {viewStyle}>
                 <Header headerText = {'JubilApp'}/>
@@ -49,17 +50,28 @@ ActivityInfoBase extends React.Component {
                     </Text>
                     <ScrollView >
                         <View style = {{flex: 1}}>
-                        <Text style = {textStyle}>{this.props.ubicacioactual}</Text>
+                            <View style = {ViewRow}>
+                                <EvilIcons name="user" size={40} color = {APP_COLORS.text_color} style = {iconStyle}/>
+                                <Text style = {subtitleStyle}>{this.props.nomCasal}</Text>
+                            </View>
+                            
+                            <View style = {ViewRow}>
+                                <EvilIcons name="location" size={40} color = {APP_COLORS.text_color} style = {iconStyle}/>
+                                <Text style = {textStyle}>{this.props.ubicacioactual}</Text>
+                            </View>
+                            
                         <View style={ViewRow}>
+                            <EvilIcons name="calendar" size={40} color = {APP_COLORS.text_color} style = {iconStyle}/>
                             <Text style = {textStyle}> Fecha inicio: </Text>
-                            <Moment style = {textStyle} element={Text} format="DD/MM/YYYY HH:mm">
+                            <Moment style = {momentStyle} element={Text} format="DD/MM/YYYY HH:mm">
                                 {this.props.dataIni}
                             </Moment>
                         </View>
 
                         <View style={ViewRow}>
+                            <EvilIcons name="calendar" size={40} color = {APP_COLORS.text_color} style = {iconStyle}/>
                             <Text style = {textStyle}> Fecha fin: </Text>
-                            <Moment style = {textStyle} element={Text} format="DD/MM/YYYY HH:mm">
+                            <Moment style = {momentStyle} element={Text} format="DD/MM/YYYY HH:mm">
                                 {this.props.dataFi}
                             </Moment>
                         </View>
@@ -79,6 +91,23 @@ ActivityInfoBase extends React.Component {
     }
 }
 const styles ={
+    momentStyle: {
+        fontSize: 20,
+        paddingBottom: '2%',
+        paddingRight: '3%',
+        color: APP_COLORS.text_color,
+    },
+    iconStyle: {
+        paddingLeft: '2%'
+    },
+    subtitleStyle: {
+        fontSize: 26,
+        marginLeft: '3%',
+        paddingBottom: '2%',
+        paddingRight: '3%',
+        fontWeight: 'bold',
+        color: APP_COLORS.text_color,
+    },
     viewStyle: {
         backgroundColor: APP_COLORS.color_neutral,
         width: '100%',
