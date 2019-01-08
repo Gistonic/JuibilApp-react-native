@@ -8,6 +8,7 @@ import CardActionCancelades from "../CardActionCancelades";
 import CardActionBuscar from "../CardActionBuscar";
 import Moment from 'react-moment';
 import 'moment-timezone';
+import CardActionValorar from "../CardActionValorar";
 
 export default class
 ActivityInfoBase extends React.Component {
@@ -25,8 +26,11 @@ ActivityInfoBase extends React.Component {
             if (att === 'yes') return <CardActionApuntades notAttend = {this.props.notAttend} id = {this.props.id} nom = {this.props.nomActivitat}/>;
             else return <CardActionCancelades attend = {this.props.attend} id = {this.props.id} nom = {this.props.nomActivitat}/>
         }
-        else {
+        else if (screen === "buscar") {
             return <CardActionBuscar notAttend = {this.props.notAttend} id = {this.props.id} attend = {this.props.attend}/>
+        }
+        else {
+            return <CardActionValorar/>
         }
     }
    render() {
