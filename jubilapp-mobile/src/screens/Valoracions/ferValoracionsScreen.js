@@ -133,7 +133,7 @@ class ferValoracionsScreen extends React.Component {
                                 <Ionicons name={'ios-information-circle-outline'} size={75} 
                                     color= {APP_COLORS.color_back} 
                                     onPress={() => {
-                                        Actions.info({id: this.props.activitats_valorar[this.props.iterador].id, screen: "buscar"})
+                                        Actions.info({id: this.props.activitats_valorar[this.props.iterador].id, screen: "valorar"})
                                     }}
                                     style = {styles.iconInfoStyle}/>
                                 <ButtonBack buttonText = {'Valorar'} colorBoto = {APP_COLORS.color_next}
