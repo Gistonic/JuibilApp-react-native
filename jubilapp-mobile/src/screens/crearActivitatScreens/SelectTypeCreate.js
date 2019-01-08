@@ -7,15 +7,38 @@ import HeaderIcon from '../../components/basicComponents/HeaderIcon';
 import { Actions } from 'react-native-router-flux';
 import Description from "../../components/basicComponents/Description";
 import ButtonBack from "../../components/basicComponents/ButtonBack";
-import {changeCreateActivityFormProperty} from "../../actions/index";
+import {changeCreateActivityFormProperty,
+    errorCreateActivityFormProperty,
+    resetErrorCreateActivityFormProperty} from "../../actions/index";
 import connect from "react-redux/es/connect/connect";
 import { createActivity, changeType } from '../../actions/index';
 import {pressPopup} from "../../pressPopup";
+import AlertError from "../../components/AlertError";
 
 class SelectTypeCreate extends React.Component {
     constructor(props) {
         super(props)
         this.onNextPressed = this.onNextPressed.bind(this)
+        this.changeFormTypeHandler = this.changeFormTypeHandler.bind(this)
+    }
+    changeFormTypeHandler() {
+
+        const { interessos_info } = this.props;
+        let empty = true
+        for (var i = 0; i < interessos_info.length; i++) {
+
+            if(interessos_info[i].estat) empty = false;
+
+        }
+
+        if (empty) {
+            this.props.errorFormType('Has de escoger un tipo de la actividad')
+            setTimeout(() => {
+                this.props.resetErrorFormType()
+            }, 3000)
+        } else {
+            this.onNextPressed()
+        }
     }
     _onPressButton(interes) {
         this.props.changeType(interes.id);
@@ -77,9 +100,12 @@ class SelectTypeCreate extends React.Component {
                                 path = {() => Actions.actdescr()}
                                 colorBoto = {APP_COLORS.color_back}/>
                     <ButtonBack buttonText = {'Finalizar'}
-                                path = {this.onNextPressed}
+                                path = {this.changeFormTypeHandler}
                                 colorBoto = {APP_COLORS.color_next}/>
                 </View>
+                {this.props.error &&
+                <AlertError message={this.props.error} />
+                }
             </View>
         );
     }
@@ -163,7 +189,8 @@ const mapStateToProps = (state) => {
         description:state.createActivityForm.description,
         token:state.auth.token,
         interessos_info: state.createActivityForm.interessos_info,
-        type: state.createActivityForm.type
+        type: state.createActivityForm.type,
+        error: state.createActivityForm.errors.type
 
     }
 }
@@ -172,6 +199,8 @@ const mapDispatchToProps = (dispatch) => {
         createActivity: (activityInfo)=> dispatch(createActivity(activityInfo)),
         changeType: (id) => dispatch(changeType(id)),
         changeFormCreateActProp: (prop,value)=>dispatch(changeCreateActivityFormProperty(prop, value)),
+        errorFormType: (error) => dispatch(errorCreateActivityFormProperty("type", error)),
+        resetErrorFormType: () => dispatch(resetErrorCreateActivityFormProperty("type"))
     }
 }
 
