@@ -106,7 +106,10 @@ class BuscarActivitatScreen extends React.Component {
             workshops: {source: require('../../images/talleresPES2.jpg')},
             leisure: {source: require('../../images/ocioPES3.jpg')}
         };
+        console.log("len", this.props.activitats_trobades.length);
+        console.log("it", this.props.iterador);
         if(this.props.iterador === this.props.activitats_trobades.length){
+            console.log("eoeoeoeoeo");
             return(
                 <View style = {styles.viewbuitStyle}>
                     <Description textExpl = "No se encuentran más actividades"/>
@@ -189,8 +192,11 @@ const styles ={
         margin: '2%'
     },
     viewbuitStyle:{
+        height: '100%',
+        width: '100%',
         alignItems: 'center',
-        paddingTop: '50%'
+        justifyContent: 'center',
+        paddingBottom: '20%',
     },
     circle:{
         width: 75,

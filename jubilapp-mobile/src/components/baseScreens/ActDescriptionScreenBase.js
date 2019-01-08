@@ -46,17 +46,17 @@ export default class ActDescriptionScreenBase extends React.Component {
 }
 const styles ={
     viewStyle: {
-        backgroundColor: '#FFF',
+        backgroundColor: APP_COLORS.color_neutral,
         width: '100%',
         height: '100%',
     },
     viewStyle1: {
         flex:1,
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        paddingTop: '10%',
     },
     container: {
         flexDirection: 'row',
-        paddingBottom: '7%',
         justifyContent: 'space-between',
         paddingRight: '5%',
         paddingLeft: '5%',
@@ -68,7 +68,7 @@ const styles ={
         fontSize: 30,
         fontWeight: 'bold',
         textAlign: 'center',
-        height: 330,
+        height: 300,
         paddingBottom: '10%',
         paddingRight: '5%',
         paddingLeft: '5%',
