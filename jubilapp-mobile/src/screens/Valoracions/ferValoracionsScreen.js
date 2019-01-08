@@ -107,7 +107,7 @@ class ferValoracionsScreen extends React.Component {
             else{
                 this.getLocationfromCoords();
                 return(
-                    <View>
+                    <View style = {{width:'100%', height:'100%', paddingBottom: '7%'}}>
                         <View style = {styles.descrView}>
                             <Text adjustsFontSizeToFit={true}  style = {styles.descrStyle}>Puntua la actividad del 1 al 5 con ayuda de las estrellas</Text>
                         </View>
@@ -131,7 +131,7 @@ class ferValoracionsScreen extends React.Component {
                                 <Ionicons name={'ios-information-circle-outline'} size={75} 
                                     color= {APP_COLORS.color_back} 
                                     onPress={() => {
-                                        Actions.info({id: this.props.activitats_trobades[this.props.iterador].id, screen: "buscar"})
+                                        Actions.info({id: this.props.activitats_valorar[this.props.iterador].id, screen: "buscar"})
                                     }}/>
                                 <ButtonBack buttonText = {'Valorar'} colorBoto = {APP_COLORS.color_next}
                                         path = {this.onValorarPressed}/>
@@ -208,6 +208,7 @@ const styles ={
     viewCard: { 
         paddingTop: '1%',
         height: '58%'
+        
     },
     viewStyle: {
         backgroundColor: APP_COLORS.color_neutral,
