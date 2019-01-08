@@ -22,8 +22,8 @@ ActivityInfoBase extends React.Component {
     _cardActionSelector(screen,att) {
         if (screen === '/own') return <CardActionCreades deleteAct = {this.props.deleteAct} id = {this.props.id}/>;
         else if (screen === "/attending") {
-            if (att === 'yes') return <CardActionApuntades notAttend = {this.props.notAttend} id = {this.props.id}/>;
-            else return <CardActionCancelades attend = {this.props.attend} id = {this.props.id}/>
+            if (att === 'yes') return <CardActionApuntades notAttend = {this.props.notAttend} id = {this.props.id} nom = {this.props.nomActivitat}/>;
+            else return <CardActionCancelades attend = {this.props.attend} id = {this.props.id} nom = {this.props.nomActivitat}/>
         }
         else {
             return <CardActionBuscar notAttend = {this.props.notAttend} id = {this.props.id} attend = {this.props.attend}/>

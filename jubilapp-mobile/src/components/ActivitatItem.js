@@ -10,17 +10,42 @@ import 'moment-timezone';
 class ActivitatItem extends React.Component {
     constructor(props) {
         super(props)
-        this._onPress = this._onPress.bind(this)
-
-
+        this._onPressTrash = this._onPressTrash.bind(this)
+        this._onPressCheck = this._onPressCheck.bind(this)
+        this._onPressCross = this._onPressCross.bind(this)
     }
-    _onPress() {
+    _onPressTrash() {
         Alert.alert(
-            'Eliminar actividad',
-            'Seguro que desea eliminar la actividad '+this.props.nomActivitat+'?',
+            'Denegar Actividad',
+            'La actividad '+ this.props.nomActivitat +' se añadira a la lista de NO APUNTADAS.',
             [
                 {text: 'No'},
-                {text: 'Sí', onPress: () => {this.props.deleteActivity(this.props.id), Actions.activitatlist({url: "/own", headerText: "Creadas"})}},
+                {text: 'Sí', onPress: () => {this.props.deleteActivity(this.props.id), 
+                                            Actions.activitatlist({url: "/own", headerText: "Creadas"})}},
+            ],
+            { cancelable: false }
+        );
+    }
+    _onPressCheck() {
+        Alert.alert(
+            'Aceptar Actividad',
+            'La actividad '+this.props.nomActivitat+' se añadira a la lista de APUNTADAS.',
+            [
+                {text: 'No'},
+                {text: 'Sí', onPress: () => {this.props.attend(this.props.id);
+                                            Actions.activitatlist({url: "/attending", att: "no", headerText: "Rechazadas"})}},
+            ],
+            { cancelable: false }
+        );
+    }
+    _onPressCross(){
+        Alert.alert(
+            'Denegar Actividad',
+            'La actividad '+ this.props.nomActivitat +' se añadira a la lista de NO APUNTADAS.',
+            [
+                {text: 'No'},
+                {text: 'Sí', onPress: () => {this.props.notAttend(this.props.id);
+                    Actions.activitatlist({url: "/attending", att: "yes", headerText: "Apuntadas"})}},
             ],
             { cancelable: false }
         );
@@ -39,18 +64,14 @@ class ActivitatItem extends React.Component {
                 return (
                     <EvilIcons name='close-o' size={60} color={APP_COLORS.color_header}
                            style={styles.iconStyle}
-                           onPress = {() => {
-                               this.props.notAttend(this.props.id);
-                               Actions.activitatlist({url: "/attending", att: "yes", headerText: "Apuntadas"})}}/>
+                           onPress = {this._onPressCross}/>
                 );
             }
             else {
                 return (
                     <EvilIcons name='check' size={60} color={APP_COLORS.color_next}
                            style={styles.iconStyle}
-                           onPress = {() => {
-                               this.props.attend(this.props.id);
-                               Actions.activitatlist({url: "/attending", att: "no", headerText: "Rechazadas"})}}/>
+                           onPress = {this._onPressCheck}/>
                 );
             }
         }
@@ -59,7 +80,7 @@ class ActivitatItem extends React.Component {
         if (this.props.screen === "/own") {
             return (
                     <EvilIcons name='trash' size={60} color={APP_COLORS.color_header} style={styles.iconStyle}
-                               onPress = {this._onPress}/>
+                               onPress = {this._onPressTrash}/>
             );
         }
     }
