@@ -79,7 +79,6 @@ class CardModified extends React.Component {
 
 const styles = {
     viewCard: { 
-        paddingTop: '5%',
         backgroundColor: APP_COLORS.color_neutral,
         height: '72%'
     },
@@ -92,8 +91,6 @@ const styles = {
     },
     texticonStyle: {
         flexDirection: 'row',
-        margin: '2%',
-        paddingRight: '5%'
     },
     titlepriceStyle: {
         flexDirection: 'row',
