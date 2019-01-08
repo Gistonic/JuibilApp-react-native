@@ -45,6 +45,8 @@ const INITIAL_STATE ={
     errors: {
         name: null,
         ubi: null,
+        dateIni: null,
+        dateEnd: null,
         hourEnd: null,
         type: null
     }
