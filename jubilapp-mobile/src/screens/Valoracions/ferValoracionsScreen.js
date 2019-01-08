@@ -51,7 +51,6 @@ class ferValoracionsScreen extends React.Component {
                 { cancelable: false }
             );
             const rating = {rating: this.props.num_estrelles}
-            console.log("Hola estic enviant ", rating);
             this.props.valorarActivitat(this.props.activitats_valorar[this.props.iterador].id, rating);
         }
         
@@ -74,10 +73,8 @@ class ferValoracionsScreen extends React.Component {
     }
 
     getLocationfromCoords() {
-        console.log("Entroooooooo");
         Geocoder.from({lat: this.props.activitats_valorar[this.props.iterador].latitude, lng: this.props.activitats_valorar[this.props.iterador].longitude})
             .then(json => {
-                console.log("UBI ", json.results[0].formatted_address);
                 this.props.changePropietat(json.results[0].formatted_address);
             })
             .catch(error => console.warn(error));
@@ -108,7 +105,6 @@ class ferValoracionsScreen extends React.Component {
                 )
             }
             else{
-                console.log("HOA");
                 this.getLocationfromCoords();
                 return(
                     <View>
@@ -122,7 +118,9 @@ class ferValoracionsScreen extends React.Component {
                                                 ubicacio = {this.props.ubicacioActual}
                                                 dataIni = {this.props.activitats_valorar[this.props.iterador].startDate}
                                                 dataFi = {this.props.activitats_valorar[this.props.iterador].endDate}
-                                                valorar = {true}/>
+                                                valorar = {true}
+                                                fontsizeTitleStyle = {22}
+                                                fontsizeTextStyle = {18}/>
                             </View>
                             <View style= {styles.iconview2Style}>
                                 <View style = {styles.iconviewStyle}>
@@ -199,7 +197,7 @@ const styles ={
     },
     descrStyle: {
         fontFamily: 'open-sans-bold',
-        fontSize: 27,
+        fontSize: 23,
         color:APP_COLORS.text_color,
         textAlignVertical: "center",
         textAlign: "center"

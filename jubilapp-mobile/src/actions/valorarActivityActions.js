@@ -31,7 +31,6 @@ export const reiniciarStars = () =>{
 }
 
 export const valorarActivitat = (id, rating) =>{
-    console.log("HOLA HOLA ", rating);
     return () => {
         const url1 = '/event/';
         const url2 = '/rate';

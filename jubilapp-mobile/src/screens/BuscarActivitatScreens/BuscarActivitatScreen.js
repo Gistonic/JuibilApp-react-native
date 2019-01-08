@@ -126,7 +126,9 @@ class BuscarActivitatScreen extends React.Component {
                                 horaIni = {this.props.activitats_trobades[this.props.iterador].startDate}
                                 horaFi = {this.props.activitats_trobades[this.props.iterador].endDate}
                                 preu = {this.props.activitats_trobades[this.props.iterador].price}
-                                valorar = {false}/>
+                                valorar = {false}
+                                fontsizeTitleStyle = {27}
+                                fontsizeTextStyle = {21}/>
                     </View>
                     <View style={styles.footer}>
                             <View style={styles.circle} backgroundColor = {APP_COLORS.color_header}>
