@@ -22,7 +22,7 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "org.oor"
+      "bundleIdentifier": "com.jubilapp"
     },
     "android": {
       "package": "com.jubilapp",
