@@ -119,7 +119,7 @@ class BuscarActivitatScreen extends React.Component {
         else {
             this.getLocationfromCoords();
             return(
-                <View style = {{width: '100%', height: '100%', paddingBottom: '3%'}}>
+                <View style = {{width: '100%', height: '100%', paddingBottom: '7%'}}>
                     <View style = {styles.viewCard}>
                         <CardModified image = {activitatsTranslate[this.props.activitats_trobades[this.props.iterador].type].source}
                                 nom =  {this.props.activitats_trobades[this.props.iterador].name}
@@ -225,7 +225,7 @@ const styles ={
     },
     footer: {
         flexDirection: 'row',
-        paddingBottom: '7%',
+        marginBottom: '15%',
         justifyContent: 'space-between',
         paddingRight: '5%',
         paddingLeft: '5%',

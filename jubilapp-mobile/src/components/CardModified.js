@@ -87,7 +87,7 @@ const styles = {
         width: '30%',
         borderWidth: 3,
         borderRadius: 15,
-        marginLeft: '22%',
+        marginRight: '2%',
         borderColor: APP_COLORS.text_color
     },
     texticonStyle: {
@@ -119,7 +119,8 @@ const styles = {
     textStyle: {
         fontFamily: 'open-sans',
         fontSize: 21,
-        color:APP_COLORS.text_color
+        color:APP_COLORS.text_color,
+        marginRight: '4%',
     },
     text2Style: {
         fontFamily: 'open-sans-bold',
