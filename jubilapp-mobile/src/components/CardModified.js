@@ -42,11 +42,11 @@ class CardModified extends React.Component {
                     <Text style = {[titleStyle,{fontSize: this.props.fontsizeTitleStyle}]}> {this.props.nom}  </Text>
                     {this.pintar_preu()}    
                 </View>
-                <View style = {texticonStyle}>
+                <View style = {[texticonStyle, {margin: this.props.margin}]}>
                     <EvilIcons name="location" size={40} color = {APP_COLORS.text_color} style = {iconStyle}/>
                     <Text style = {[textStyle,{fontSize: this.props.fontsizeTextStyle}]}> {this.props.ubicacio} </Text>
                 </View>
-                <View style = {texticonStyle}>
+                <View style = {[texticonStyle, {margin: this.props.margin}]}>
                     <EvilIcons name="calendar" size={40} color = {APP_COLORS.text_color} style = {iconStyle}/>
                     <View style={ViewRow}>
 
@@ -59,7 +59,7 @@ class CardModified extends React.Component {
                         </Moment>
                     </View>
                 </View>
-                {this.props.valorar ? null:<View style = {texticonStyle}>
+                {this.props.valorar ? null:<View style = {[texticonStyle, {margin: this.props.margin}]}>
                     <EvilIcons name="clock" size={40} color = {APP_COLORS.text_color} style = {iconStyle}/>
                     <View style={ViewRow}>
 
@@ -91,6 +91,7 @@ const styles = {
     },
     texticonStyle: {
         flexDirection: 'row',
+        paddingRight: '5%',
     },
     titlepriceStyle: {
         flexDirection: 'row',
@@ -117,7 +118,7 @@ const styles = {
         fontFamily: 'open-sans',
         fontSize: 21,
         color:APP_COLORS.text_color,
-        marginRight: '4%',
+        paddingRight: '3%',
     },
     text2Style: {
         fontFamily: 'open-sans-bold',
@@ -129,7 +130,8 @@ const styles = {
         height: '48%'
     },
     ViewRow:{
-        flexDirection: 'row'
+        flexDirection: 'row',
+        paddingRight: '2%'
     }
 }
 

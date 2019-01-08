@@ -130,6 +130,7 @@ class BuscarActivitatScreen extends React.Component {
                                 horaFi = {this.props.activitats_trobades[this.props.iterador].endDate}
                                 preu = {this.props.activitats_trobades[this.props.iterador].price}
                                 valorar = {false}
+                                      margin = '3%'
                                 fontsizeTitleStyle = {27}
                                 fontsizeTextStyle = {21}/>
                     </View>

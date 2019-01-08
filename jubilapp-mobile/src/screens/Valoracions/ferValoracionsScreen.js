@@ -119,9 +119,11 @@ class ferValoracionsScreen extends React.Component {
                                                 dataIni = {this.props.activitats_valorar[this.props.iterador].startDate}
                                                 dataFi = {this.props.activitats_valorar[this.props.iterador].endDate}
                                                 valorar = {true}
+                                                margin = '0%'
                                                 fontsizeTitleStyle = {25}
                                                 fontsizeTextStyle = {23}/>
                             </View>
+                            <View style = {{justifyContent: 'space-between', paddingTop: '2%'}}>
                             <View style= {styles.iconview2Style}>
                                 <View style = {styles.iconviewStyle}>
                                     {this.pintar_estrelles()}
@@ -136,6 +138,7 @@ class ferValoracionsScreen extends React.Component {
                                     style = {styles.iconInfoStyle}/>
                                 <ButtonBack buttonText = {'Valorar'} colorBoto = {APP_COLORS.color_next}
                                         path = {this.onValorarPressed}/>
+                            </View>
                             </View>
                         </View>
                     </View>
@@ -187,7 +190,6 @@ const styles ={
         paddingLeft:'5%'
     },
     buttonviewStyle: {
-        paddingTop: '5%',
         flexDirection: 'row',
         justifyContent: 'space-between',
         paddingLeft: '15%',
@@ -200,7 +202,6 @@ const styles ={
     },
     viewCardStarStyle: {
         paddingTop:'1%',
-        margin:'1%',
         backgroundColor: APP_COLORS.color_neutral,
     },
     descrStyle: {
