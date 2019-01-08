@@ -106,13 +106,13 @@ class BuscarActivitatScreen extends React.Component {
             workshops: {source: require('../../images/talleresPES2.jpg')},
             leisure: {source: require('../../images/ocioPES3.jpg')}
         };
-        console.log("len", this.props.activitats_trobades.length);
-        console.log("it", this.props.iterador);
         if(this.props.iterador === this.props.activitats_trobades.length){
-            console.log("eoeoeoeoeo");
             return(
                 <View style = {styles.viewbuitStyle}>
-                    <Description textExpl = "No se encuentran más actividades"/>
+                    <View style = {styles.paddingViewStyle}>
+                        <Description textExpl = "No se encuentran más actividades"/>
+                    </View>
+                    <Ionicons name='ios-refresh' size={60} color={APP_COLORS.color_neutral}/>
                 </View>
             )
         }
@@ -195,6 +195,11 @@ const styles ={
     viewbuitStyle:{
         height: '100%',
         width: '100%',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+
+    paddingViewStyle: {
         alignItems: 'center',
         justifyContent: 'center',
         paddingBottom: '20%',
