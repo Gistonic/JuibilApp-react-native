@@ -2,6 +2,7 @@ import {LOGIN_FORM_ACTIONS} from "../constants/actions";
 import {Actions} from "react-native-router-flux";
 import { AsyncStorage } from "react-native";
 import {reportPushToken} from "../pushNotifications";
+import { showError } from './errorActions'
 
 
 export const changeLoginFormProperty=(propertyName, value) =>{
@@ -39,18 +40,6 @@ const receiveLogin = (token) => {
     }
 };
 
-const receiveLoginError = () => {
-    return {
-        type: LOGIN_FORM_ACTIONS.ReceiveLoginError
-    }
-}
-
-const resetLoginError = () => {
-    return {
-        type: LOGIN_FORM_ACTIONS.ResetLoginError
-    }
-}
-
 
 export const login = (userInfo) => {
     return (dispatch) => {
@@ -71,11 +60,7 @@ export const login = (userInfo) => {
             } else {
                 console.log('Error sending login. Status: ' + response.status);
 
-                dispatch(receiveLoginError())
-
-                setTimeout(() => {
-                    dispatch(resetLoginError())
-                }, 5000)
+                dispatch(showError('Usuario y/o contraseña erróneos'))
             }
         }).catch(err => {
             console.log(err)

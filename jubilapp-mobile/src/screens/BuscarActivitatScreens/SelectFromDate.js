@@ -1,8 +1,7 @@
 import React from 'react';
 import {
     changeBuscarActivityFormProperty,
-    errorBuscarActivityFormProperty,
-    resetErrorBuscarActivityFormProperty
+    showError
 } from "../../actions/index";
 import connect from "react-redux/es/connect/connect";
 import DateScreenBase from "../../components/baseScreens/DateScreenBase";
@@ -19,9 +18,6 @@ class SelectFromDate extends React.Component {
     changeFromDateHandler() {
         if (!this.props.fromDate.dateString) {
             this.props.errorFormFromDate('Debes escoger una fecha')
-            setTimeout(() => {
-                this.props.resetErrorFormFromDate()
-            }, 3000)
         } else {
             Actions.toDate()
         }
@@ -35,23 +31,20 @@ class SelectFromDate extends React.Component {
                             previousScreen={() => Actions.home()}
                             nextScreen={this.changeFromDateHandler}
                             titleName="Selecciona el inicio de búsqueda"
-                            headerName = "Buscar Actividad"
-                            error={this.props.error}/>
+                            headerName = "Buscar Actividad"/>
         )
     }
 }
 const mapStateToProps = (state) => {
     return {
-        fromDate: state.buscarActivity.fromDate,
-        error: state.buscarActivity.errors.fromDate
+        fromDate: state.buscarActivity.fromDate
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
         changeFormfromDate: (value)=> dispatch(changeBuscarActivityFormProperty("fromDate",value)),
-        errorFormFromDate: (error) => dispatch(errorBuscarActivityFormProperty("fromDate", error)),
-        resetErrorFormFromDate: () => dispatch(resetErrorBuscarActivityFormProperty("fromDate"))
+        errorFormFromDate: (error) => dispatch(showError(error))
     }
 }
 

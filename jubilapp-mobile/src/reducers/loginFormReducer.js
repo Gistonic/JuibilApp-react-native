@@ -2,8 +2,7 @@ import {LOGIN_FORM_ACTIONS} from "../constants/actions";
 
 const INITIAL_STATE ={
     email: "",
-    password:"",
-    error: false
+    password:""
 }
 const loginFormReducer = (state = INITIAL_STATE, action)=>{
     switch (action.type) {
@@ -18,16 +17,6 @@ const loginFormReducer = (state = INITIAL_STATE, action)=>{
                 ...state,
                 error: false
             };
-        case LOGIN_FORM_ACTIONS.ReceiveLoginError:
-            return {
-                ...state,
-                error: true
-            };
-        case LOGIN_FORM_ACTIONS.ResetLoginError:
-            return {
-                ...state,
-                error: false
-            }
         default: return state
     }
 

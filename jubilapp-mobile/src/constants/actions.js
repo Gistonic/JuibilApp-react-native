@@ -5,16 +5,12 @@ export const REGISTER_FORM_ACTIONS={
 
 export const LOGIN_FORM_ACTIONS={
     ChangeProperty: "CHANGE_LOGIN_PROPERTY",
-    ReceiveLogin: "RECEIVE_LOGIN",
-    ReceiveLoginError: "RECEIVE_LOGIN_ERROR",
-    ResetLoginError: "RESET_LOGIN_ERROR"
+    ReceiveLogin: "RECEIVE_LOGIN"
 }
 export const CREATE_ACTIVITY_FORM_ACTIONS={
     ChangeProperty: "CHANGE_CREATE_ACTIVITY_PROPERTY",
     ReceiveLogin: "RECEIVE_CREATE_ACTIVITY",
-    ChangeType: "CHANGE_TYPE",
-    ErrorProperty: "ERROR_CREATE_ACTIVITY_PROPERTY",
-    ResetErrorProperty: "RESET_ERROR_CREATE_ACTIVITY_PROPERTY"
+    ChangeType: "CHANGE_TYPE"
 }
 
 export const LIST_ACTIVITIES_ACTIONS={
@@ -58,9 +54,7 @@ export const BUSCAR_ACTIVITY_ACTIONS={
     ChangeIterador: 'BUSCAR_CHANGE_ITERADOR',
     ChangeProperty: 'BUSCAR_CHANGE_PROPERTY',
     ChangeProperty2: 'BUSCAR_CHANGE_PROPERTY2',
-    Attend: 'BUSCAR_ATTEND',
-    ErrorProperty: 'BUSCAR_ERROR_PROPERTY',
-    ResetErrorProperty: 'BUSCAR_RESET_ERROR_PROPERTY'
+    Attend: 'BUSCAR_ATTEND'
 }
 
 export const MODIFICAR_ACTIVITY_ACTIONS = {
@@ -86,4 +80,9 @@ export const VALORAR_ACTIVITY_ACTIONS = {
     ChangeIterator: 'CHANGE_ITERATOR',
     RequestActivitats: 'REQUEST_ACTIVITATS',
     ChangePropietat: 'CHANGE_PROPIETAT'
+}
+
+export const ERROR_ACTIONS = {
+    ShowError: 'SHOW_ERROR',
+    ResetError: 'RESET_ERROR'
 }

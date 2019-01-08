@@ -1,8 +1,7 @@
 import React from 'react';
 import {
     changeCreateActivityFormProperty,
-    errorCreateActivityFormProperty,
-    resetErrorCreateActivityFormProperty
+    showError
 } from "../../actions/index";
 import connect from "react-redux/es/connect/connect";
 import DateScreenBase from "../../components/baseScreens/DateScreenBase";
@@ -19,9 +18,6 @@ class FinDateCreate extends React.Component {
     changeEndDateHandler() {
         if (!this.props.dateEnd.dateString) {
             this.props.errorFormDateEnd('Debes escojer un día')
-            setTimeout(() => {
-                this.props.resetErrorFormDateEnd()
-            }, 3000)
         } else {
             Actions.iniHour()
         }
@@ -37,24 +33,21 @@ class FinDateCreate extends React.Component {
                             titleName="Define el final de la actividad"
                             buttonText = "Siguiente"
                             headerName = "Crear Actividad"
-                            minDate = {this.props.dateIni}
-                            error = {this.props.error} />
+                            minDate = {this.props.dateIni} />
         )
     }
 }
 const mapStateToProps = (state) => {
     return {
         dateIni: state.createActivityForm.dateIni,
-        dateEnd: state.createActivityForm.dateEnd,
-        error: state.createActivityForm.errors.dateEnd
+        dateEnd: state.createActivityForm.dateEnd
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
         changeFormDateEnd: (value) => dispatch(changeCreateActivityFormProperty("dateEnd", value)),
-        errorFormDateEnd: (error) => dispatch(errorCreateActivityFormProperty("dateEnd", error)),
-        resetErrorFormDateEnd: () => dispatch(resetErrorCreateActivityFormProperty("dateEnd"))
+        errorFormDateEnd: (error) => dispatch(showError(error))
     }
 }
 

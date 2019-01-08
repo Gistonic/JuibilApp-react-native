@@ -6,11 +6,7 @@ const INITIAL_STATE ={
     location: null,
     fromDate: {},
     toDate: {},
-    ubicacioactual: "",
-    errors: {
-        fromDate: null,
-        toDate: null
-    }
+    ubicacioactual: ""
 }
 
 const buscarActivityReducer = (state = INITIAL_STATE, action)=>{
@@ -32,17 +28,7 @@ const buscarActivityReducer = (state = INITIAL_STATE, action)=>{
 
         case BUSCAR_ACTIVITY_ACTIONS.ChangeIterador:
             return { ...state, iterador: state.iterador+1};
-
-        case BUSCAR_ACTIVITY_ACTIONS.ErrorProperty:
-            let errorResult = { ...state }
-            errorResult.errors[action.payload.propertyName] = action.payload.error
-            return errorResult
-        
-        case BUSCAR_ACTIVITY_ACTIONS.ResetErrorProperty:
-            let resetResult = { ...state }
-            resetResult.errors[action.payload] = null
-            return resetResult
-
+            
         default: return state
     }
 }
