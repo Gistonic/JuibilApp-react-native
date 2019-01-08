@@ -40,7 +40,7 @@ class ferValoracionsScreen extends React.Component {
         else{
             Alert.alert(
                 'Valorar Actividad',
-                'La actividad '+ this.props.activitats_valorar[this.props.iterador].nom +' se valorará con '+this.props.num_estrelles+' estrellas.',
+                'La actividad '+ this.props.activitats_valorar[this.props.iterador].name +' se valorará con '+this.props.num_estrelles+' estrellas.',
                 [
                     {text: 'Cancelar'},
                     {text: 'OK', onPress: () => {this.props.changeIterator();
@@ -132,7 +132,8 @@ class ferValoracionsScreen extends React.Component {
                                     color= {APP_COLORS.color_back} 
                                     onPress={() => {
                                         Actions.info({id: this.props.activitats_valorar[this.props.iterador].id, screen: "buscar"})
-                                    }}/>
+                                    }}
+                                    style = {styles.iconInfoStyle}/>
                                 <ButtonBack buttonText = {'Valorar'} colorBoto = {APP_COLORS.color_next}
                                         path = {this.onValorarPressed}/>
                             </View>
@@ -175,6 +176,7 @@ const styles ={
         paddingBottom: '20%',
     },
     iconview2Style: {
+        paddingTop:'7%',
         paddingLeft: '8%',
         paddingRight: '8%',
         margin: '2%',
@@ -185,9 +187,12 @@ const styles ={
         paddingLeft:'5%'
     },
     buttonviewStyle: {
+        paddingTop: '5%',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        paddingLeft: '15%'
+        paddingLeft: '15%',
+        alignContent: 'center',
+        alignItems: 'center'
     },
     iconviewStyle: {
         flexDirection: 'row',
