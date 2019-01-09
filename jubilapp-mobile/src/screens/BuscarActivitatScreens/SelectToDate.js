@@ -33,7 +33,7 @@ class SelectToDate extends React.Component {
                             titleName="Selecciona el fin de búsqueda"
                             headerName = "Buscar Actividad"
                             to = {true}
-                            minDate={minDate}
+                            minDate={this.props.fromDate}
             />
         )
     }
