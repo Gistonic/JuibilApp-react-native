@@ -131,7 +131,8 @@ class BuscarActivitatScreen extends React.Component {
             if(this.props.iterador === this.props.activitats_trobades.length){
                 return(
                     <View style = {styles.viewbuitStyle}>
-                            <Description textExpl = "No se encuentran más actividades"/>
+                            <Description textExpl = {`No se encuentran más actividades`}/>
+                            <Description textExpl = {'Para volver a buscar pulsa el icono de las flechas'}/>
                         
                     </View>
                 )
@@ -199,7 +200,7 @@ class BuscarActivitatScreen extends React.Component {
                                 iconName2 = {'refresh'}
                                 size2 = {65}
                                 iconSecond = {true}
-                                path2 = {this._refresh()}
+                                path2 = {this._refresh}
                 />
                 {this.esTres()}
             </View>         
