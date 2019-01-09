@@ -8,7 +8,6 @@ import Description from "../basicComponents/Description";
 import ButtonBack from "../basicComponents/ButtonBack";
 import {LocaleConfig} from 'react-native-calendars';
 import {pressPopup} from "../../pressPopup";
-import AlertError from '../AlertError';
 
 LocaleConfig.locales['es'] = {
     monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
@@ -31,7 +30,7 @@ export default class DateScreenBase extends React.Component {
 
     render() {
         const {viewStyle, viewButtons, container, calendarStyle} = styles;
-        const {date, minDate, error} = this.props;
+        const {date, minDate} = this.props;
         const markedDay = {
             [date.dateString]: {
                 selected: true,
@@ -89,9 +88,6 @@ export default class DateScreenBase extends React.Component {
                                 path={this.props.nextScreen}
                                 colorBoto = {APP_COLORS.color_next}/>
                 </View>
-                {error &&
-                    <AlertError message={error} />
-                }
             </View>
         );
     }

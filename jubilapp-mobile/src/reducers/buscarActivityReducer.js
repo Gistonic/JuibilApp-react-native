@@ -6,7 +6,7 @@ const INITIAL_STATE ={
     location: null,
     fromDate: {},
     toDate: {},
-    ubicacioactual: "",
+    ubicacioactual: ""
 }
 
 const buscarActivityReducer = (state = INITIAL_STATE, action)=>{
@@ -28,7 +28,7 @@ const buscarActivityReducer = (state = INITIAL_STATE, action)=>{
 
         case BUSCAR_ACTIVITY_ACTIONS.ChangeIterador:
             return { ...state, iterador: state.iterador+1};
-
+            
         default: return state
     }
 }

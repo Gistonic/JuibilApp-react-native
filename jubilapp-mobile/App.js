@@ -1,9 +1,11 @@
 import React from 'react';
+import { View, Text } from 'react-native';
 import { Provider, connect } from 'react-redux';
 import { Router } from 'react-native-router-flux'
 import Scenes from './src/Scenes';
 import { store } from './src/store';
 import { Font } from 'expo';
+import AlertError from './src/components/AlertError'
 
 console.disableYellowBox = true
 
@@ -19,7 +21,10 @@ export default class App extends React.Component {
   render() {
     return (
         <Provider store={store}>
-            <ConnectedRouter scenes={Scenes}/>
+            <View style={{ flex: 1 }}>
+                <ConnectedRouter scenes={Scenes}/>
+                <AlertError />
+            </View>
         </Provider>
     );
   }

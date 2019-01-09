@@ -33,7 +33,7 @@ class ActivityInfo extends React.Component {
                              notAttend = {this.props.notAttend}
                              ubicacioactual = {this.props.ubicacioactual}
                              id = {this.props.id}
-                             nomCasal = "Casal de les Corts"
+                             nomCasal = {this.props.activityReceived.casalName}
            />
         );
     }
@@ -51,7 +51,7 @@ const  mapDispatchToProps = (dispatch)=>{
         changeID: (value)=>dispatch(changeActivityIDProperty("idActivity", value)),
         fetchActivity: (value) => dispatch(fetchActivity(value)),
         deleteAct: (value) => dispatch(deleteAct(value)),
-        attend: (value) => dispatch(attend(value)),
+        attend: (value, callback) => dispatch(attend(value, callback)),
         notAttend: (value) => dispatch(notAttend(value)),
         changeUbicacioActual: (value) => dispatch(changeActivityIDProperty("ubicacioactual", value))
 

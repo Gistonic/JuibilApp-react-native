@@ -1,7 +1,7 @@
-import {Actions} from "react-native-router-flux";
 import {BUSCAR_ACTIVITY_ACTIONS} from "../constants/actions";
+import { showError } from '../actions/errorActions'
 import { AsyncStorage } from "react-native";
-import {request} from "../request";
+import { request } from "../request";
 
 
 const recieveActivitats = (activitats) =>{
@@ -29,11 +29,18 @@ export const changeBuscarActivityFormProperty=(propertyName, value) =>{
     }
 };
 
-export const attend = (id) => {
-    return () => {
+export const attend = (id, callback) => {
+    return (dispatch) => {
         const url1 = '/event/';
         const url2 = '/attend';
-        request(url1+id+url2, 'POST');
+        request(url1+id+url2, 'POST')
+        //request('http://httpstat.us/409', 'POST')
+            .then(() => {
+                if (callback) callback()
+            })
+            .catch(error => {
+                dispatch(showError('No es posible apuntarse a más de una actividad a la vez'))
+            });
     }
 }
 export const notAttend = (id) => {
@@ -81,42 +88,4 @@ export const changeIterador = () => {
         type: BUSCAR_ACTIVITY_ACTIONS.ChangeIterador
     }
 }
-
-const activitatsMock=[
-    {
-        id:0,
-        nom: "Classe de Pintura",
-        ubicacio: "Casal avis les Corts",
-        dataIni: "22/12/2018",
-        dataFi: "22/12/2018",
-        horaIni: "17:30",
-        horaFi: "19:00",
-        descripcio: "Classe de pintura per aprendre els colors.",
-        tipus: "art"
-    },
-    {
-        id:1,
-        nom: "Classe de Yoga",
-        ubicacio: "Casal avis Sarria",
-        dataIni: "25/12/2018",
-        dataFi: "25/12/2018",
-        horaIni: "10:30",
-        horaFi: "12:00",
-        descripcio: "Classe de yoga per relaxarse de bon mati.",
-        tipus: "sports"
-    },
-    {
-        id:2,
-        nom: "Club de Lectura",
-        ubicacio: "Casal avis Eixample",
-        dataIni: "28/12/2018",
-        dataFi: "28/12/2018",
-        horaIni: "12:30",
-        horaFi: "14:00",
-        descripcio: "Comentem el llibre Acid House de Irvine Welsh.",
-        tipus: "culture"
-    }
-]
-
-
 

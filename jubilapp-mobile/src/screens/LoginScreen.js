@@ -1,17 +1,13 @@
 import React from 'react';
-import {KeyboardAvoidingView, View, ScrollView} from 'react-native';
+import {View, ScrollView} from 'react-native';
 import Formulari from '../components/basicComponents/Formulari';
-import Logo from '../components/basicComponents/Logo';
 import Header from '../components/basicComponents/Header';
 import StartButton from '../components/basicComponents/StartButton';
 import Description from '../components/basicComponents/Description';
-import { Font } from 'expo';
 import { Actions } from 'react-native-router-flux';
 import {APP_COLORS} from "../constants/colors";
 import connect from "react-redux/es/connect/connect";
-import {changeLoginFormProperty, login} from "../actions/loginFormActions";
-import ButtonBack from "../components/basicComponents/ButtonBack";
-import AlertError from '../components/AlertError'
+import {changeLoginFormProperty, login, showError} from "../actions";
 
 class LoginScreen extends React.Component {
     constructor(props) {
@@ -29,7 +25,7 @@ class LoginScreen extends React.Component {
     }
     render() {
         const {viewStyle, viewStyle1} = styles;
-        const {email, changeFormEmail, password, error, changeFormPassword}=this.props;
+        const {email, changeFormEmail, password, changeFormPassword}=this.props;
 
         return (
                 <View style = {viewStyle}>
@@ -57,9 +53,6 @@ class LoginScreen extends React.Component {
                                  path = {() => Actions.r1()}/>
                     </View>
                     </ScrollView>
-                    { error &&
-                    <AlertError message="Usuario y/o contraseña incorrectos" />
-                    }
                 </View>
         );
     }
@@ -80,8 +73,7 @@ const styles ={
 const mapStateToProps = (state) => {
     return {
         email: state.loginForm.email,
-        password: state.loginForm.password,
-        error: state.loginForm.error
+        password: state.loginForm.password
     }
 }
 

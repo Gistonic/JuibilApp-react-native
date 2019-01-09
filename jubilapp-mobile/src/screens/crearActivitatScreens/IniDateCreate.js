@@ -1,8 +1,7 @@
 import React from 'react';
 import {
     changeCreateActivityFormProperty,
-    errorCreateActivityFormProperty,
-    resetErrorCreateActivityFormProperty
+    showError
 } from "../../actions/index";
 import connect from "react-redux/es/connect/connect";
 import DateScreenBase from "../../components/baseScreens/DateScreenBase";
@@ -19,9 +18,6 @@ class IniDateCreate extends React.Component {
     changeIniDateHandler() {
         if (!this.props.dateIni.dateString) {
             this.props.errorFormDateIni('Debes escojer un día')
-            setTimeout(() => {
-                this.props.resetErrorFormDateIni()
-            }, 3000)
         } else {
             Actions.finDate()
         }
@@ -35,23 +31,20 @@ class IniDateCreate extends React.Component {
                             previousScreen={() => Actions.ubi()}
                             nextScreen={this.changeIniDateHandler}
                             titleName= "Define el inicio de la actividad"
-                            headerName = "Crear Actividad"
-                            error={this.props.error}/>
+                            headerName = "Crear Actividad" />
         )
     }
 }
 const mapStateToProps = (state) => {
     return {
-        dateIni: state.createActivityForm.dateIni,
-        error: state.createActivityForm.errors.dateIni
+        dateIni: state.createActivityForm.dateIni
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
         changeFormDateIni: (value) => dispatch(changeCreateActivityFormProperty("dateIni", value)),
-        errorFormDateIni: (error) => dispatch(errorCreateActivityFormProperty("dateIni", error)),
-        resetErrorFormDateIni: () => dispatch(resetErrorCreateActivityFormProperty("dateIni"))
+        errorFormDateIni: (error) => dispatch(showError(error))
     }
 }
 

@@ -1,11 +1,28 @@
 import React from 'react';
-import {changeBuscarActivityFormProperty} from "../../actions/index";
+import {
+    changeBuscarActivityFormProperty,
+    showError
+} from "../../actions/index";
 import connect from "react-redux/es/connect/connect";
 import DateScreenBase from "../../components/baseScreens/DateScreenBase";
 import {Actions} from "react-native-router-flux";
 
 
 class SelectFromDate extends React.Component {
+    constructor(props) {
+        super(props)
+
+        this.changeFromDateHandler = this.changeFromDateHandler.bind(this)
+    }
+
+    changeFromDateHandler() {
+        if (!this.props.fromDate.dateString) {
+            this.props.errorFormFromDate('Debes escoger una fecha')
+        } else {
+            Actions.toDate()
+        }
+    }
+
     render(){
         return(
             <DateScreenBase date={this.props.fromDate}
@@ -27,6 +44,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         changeFormfromDate: (value)=> dispatch(changeBuscarActivityFormProperty("fromDate",value)),
+        errorFormFromDate: (error) => dispatch(showError(error))
     }
 }
 

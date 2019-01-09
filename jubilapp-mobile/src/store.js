@@ -1,5 +1,5 @@
 import { combineReducers, createStore, applyMiddleware } from 'redux'
-import {registerFormReducer, modifyActivityReducer, modificarProfileReducer, authReducer, loginFormReducer, buscarActivityReducer, createActivityFormReducer,listActivitiesReducer, interessosProfileReceiveReducer, activityInfoReducer, fichasReducer} from "./reducers/";
+import {registerFormReducer, modifyActivityReducer, modificarProfileReducer, authReducer, loginFormReducer, buscarActivityReducer, createActivityFormReducer,listActivitiesReducer, interessosProfileReceiveReducer, activityInfoReducer, fichasReducer, errorReducer} from "./reducers/";
 import thunk from 'redux-thunk'
 import logger from 'redux-logger'
 import { kilometresProfileReducer } from './reducers/kilometresProfileReducer';
@@ -17,7 +17,8 @@ const rootReducer = combineReducers({
     modifyActivity: modifyActivityReducer,
     modifyPerfil: modificarProfileReducer,
     valorarActivity: valorarActivityReducer,
-    _fichas: fichasReducer
+    _fichas: fichasReducer,
+    error: errorReducer
 })
 
 const store= createStore(

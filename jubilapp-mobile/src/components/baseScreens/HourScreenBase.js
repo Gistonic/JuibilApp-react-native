@@ -7,9 +7,7 @@ import { FontAwesome } from '@expo/vector-icons';
 import HeaderIcon from '../basicComponents/HeaderIcon';
 import Description from "../basicComponents/Description";
 import ButtonBack from "../basicComponents/ButtonBack";
-import { Actions } from 'react-native-router-flux';
 import {pressPopup} from "../../pressPopup";
-import AlertError from "../AlertError";
 
 export default class HourScreenBase extends React.Component {
     onPressUpHour = () => {
@@ -34,7 +32,7 @@ export default class HourScreenBase extends React.Component {
     }
     render() {
         const {viewStyle, viewButtons, container, upsDownsStyle, fullHourStyle} = styles;
-        const { _hour, _minute, error } = this.props;
+        const { _hour, _minute } = this.props;
         return (
             <View style = {viewStyle}>
                 <HeaderIcon headerText = {this.props.headerName}
@@ -84,9 +82,6 @@ export default class HourScreenBase extends React.Component {
                                 path = {this.props.nextScreen}
                                 colorBoto = {APP_COLORS.color_next}/>
                 </View>
-                {error &&
-                    <AlertError message={error} />
-                }
             </View>
         );
     }

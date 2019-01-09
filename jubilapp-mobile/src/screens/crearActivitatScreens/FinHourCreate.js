@@ -2,9 +2,8 @@ import React from 'react';
 import { Actions } from 'react-native-router-flux';
 import {
     changeCreateActivityFormProperty,
-    errorCreateActivityFormProperty,
-    resetErrorCreateActivityFormProperty
-} from "../../actions/index";
+    showError
+} from "../../actions";
 import connect from "react-redux/es/connect/connect";
 import HourScreenBase from "../../components/baseScreens/HourScreenBase";
 
@@ -37,9 +36,6 @@ class FinHourCreate extends React.Component {
     changeFormHourEndHandler() {
         if (this.compareDates() >= 0) {
             this.props.errorFormHourEnd('La fecha de fin debe ser posterior a la de inicio')
-            setTimeout(() => {
-                this.props.resetErrorFormHourEnd()
-            }, 3000)
         } else {
             Actions.actdescr()
         }
@@ -60,7 +56,6 @@ class FinHourCreate extends React.Component {
                             changeFormFinMin={this.props.changeFormMinuteEnd}
                             _inih = {this.props.hourIni}
                             _inim = {this.props.minuteIni}
-                            error={this.props.error}
             />
 
         );
@@ -72,8 +67,7 @@ const mapStateToProps = (state) => {
         hourEnd: state.createActivityForm.hourEnd % 24,
         minuteEnd: state.createActivityForm.minuteEnd % 60,
         hourIni: state.createActivityForm.hourIni % 24,
-        minuteIni: state.createActivityForm.minuteIni % 60,
-        error: state.createActivityForm.errors.hourEnd
+        minuteIni: state.createActivityForm.minuteIni % 60
     }
 }
 
@@ -81,8 +75,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         changeFormHourEnd: (value) => dispatch(changeCreateActivityFormProperty("hourEnd", value)),
         changeFormMinuteEnd: (value) => dispatch(changeCreateActivityFormProperty("minuteEnd", value)),
-        errorFormHourEnd: (error) => dispatch(errorCreateActivityFormProperty("hourEnd", error)),
-        resetErrorFormHourEnd: () => dispatch(resetErrorCreateActivityFormProperty("hourEnd"))
+        errorFormHourEnd: (error) => dispatch(showError(error))
     }
 }
 

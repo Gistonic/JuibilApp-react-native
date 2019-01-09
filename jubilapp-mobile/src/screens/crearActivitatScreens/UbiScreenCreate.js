@@ -1,7 +1,6 @@
 import React from 'react';
 import { Actions } from 'react-native-router-flux';
-import {changeCreateActivityFormProperty,errorCreateActivityFormProperty,
-    resetErrorCreateActivityFormProperty} from "../../actions/index";
+import {changeCreateActivityFormProperty, showError} from "../../actions";
 import connect from "react-redux/es/connect/connect";
 import UbiScreenBase from "../../components/baseScreens/UbiScreenBase";
 import Geocoder from "react-native-geocoding";
@@ -28,9 +27,6 @@ class UbiCreate extends React.Component {
         const { ubi, longitude, latitude } = this.props
         if ( longitude == null||typeof longitude === "undefined" || latitude==null ||typeof longitude === "undefined") {
             this.props.errorFormUbi('La ubicación no puede estar vacía')
-            setTimeout(() => {
-                this.props.resetErrorFormUbi()
-            }, 3000)
         } else {
             Actions.iniDate()
         }
@@ -49,7 +45,6 @@ class UbiCreate extends React.Component {
                             nextScreen= {this.changeFormUbiHandler}
                             previousScreen={() => Actions.name()}
                             headerName = "Crear Actividad"
-                           error={this.props.error}
                            ubic = {this.ubi()}
             />
         )
@@ -59,8 +54,7 @@ const mapStateToProps = (state) => {
     return {
         latitude: state.createActivityForm.latitude,
         longitude: state.createActivityForm.longitude,
-        ubi: state.createActivityForm.ubi,
-        error: state.createActivityForm.errors.ubi
+        ubi: state.createActivityForm.ubi
     }
 }
 
@@ -69,8 +63,7 @@ const  mapDispatchToProps = (dispatch)=>{
         changeFormLatitude: (value)=>dispatch(changeCreateActivityFormProperty("latitude", value)),
         changeFormLongitude: (value)=>dispatch(changeCreateActivityFormProperty("longitude", value)),
         changeFormUbi: (value) => dispatch(changeCreateActivityFormProperty("ubi",value)),
-        errorFormUbi: (error) => dispatch(errorCreateActivityFormProperty("ubi", error)),
-        resetErrorFormUbi: () => dispatch(resetErrorCreateActivityFormProperty("ubi"))
+        errorFormUbi: (error) => dispatch(showError(error))
     }
 }
 

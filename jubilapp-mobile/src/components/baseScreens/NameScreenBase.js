@@ -7,7 +7,6 @@ import {APP_COLORS} from "../../constants/colors";
 import { Actions } from 'react-native-router-flux';
 import {pressPopup} from "../../pressPopup";
 import Description from "../basicComponents/Description";
-import AlertError from '../../components/AlertError'
 
 export default class NameScreenBase extends React.Component {
     render() {
@@ -43,9 +42,6 @@ export default class NameScreenBase extends React.Component {
                                         colorBoto = {APP_COLORS.color_next}/>
                         </View>
                     </View>
-                    {this.props.error &&
-                        <AlertError message={this.props.error} />
-                    }
                 </View>
             </KeyboardAvoidingView>
         );

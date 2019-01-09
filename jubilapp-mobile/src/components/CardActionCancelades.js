@@ -19,8 +19,7 @@ class CardActionCancelades extends React.Component {
             'La actividad '+this.props.nom+' se añadira a la lista de APUNTADAS.',
             [
                 {text: 'No'},
-                {text: 'Sí', onPress: () => {this.props.attend(this.props.id);
-                    Actions.llistesActs();}},
+                {text: 'Sí', onPress: () => {this.props.attend(this.props.id, () => Actions.llistesActs());}},
             ],
             { cancelable: false }
         );
