@@ -34,6 +34,7 @@ export const attend = (id, callback) => {
         const url1 = '/event/';
         const url2 = '/attend';
         request(url1+id+url2, 'POST')
+        //request('http://httpstat.us/409', 'POST')
             .then(() => {
                 if (callback) callback()
             })
