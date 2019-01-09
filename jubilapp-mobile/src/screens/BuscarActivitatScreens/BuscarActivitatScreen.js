@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Alert, Text, TouchableOpacity} from 'react-native';
+import {View, Alert, Text, TouchableOpacity,ActivityIndicator} from 'react-native';
 import {APP_COLORS} from "../../constants/colors";
 import connect from "react-redux/es/connect/connect";
 import {Actions} from "react-native-router-flux";
@@ -106,62 +106,71 @@ class BuscarActivitatScreen extends React.Component {
             workshops: {source: require('../../images/talleresPES2.jpg')},
             leisure: {source: require('../../images/ocioPES3.jpg')}
         };
-        if(this.props.iterador === this.props.activitats_trobades.length){
-            return(
-                <View style = {styles.viewbuitStyle}>
-                    <View style = {styles.paddingViewStyle}>
-                        <Description textExpl = "No se encuentran más actividades"/>
-                    </View>
-                    <Ionicons name='ios-refresh' size={60} color={APP_COLORS.color_neutral}/>
+        if (this.props.isFetching) {
+            return (
+                <View style = {{justifyContent: 'center', alignContent: 'center', width: '100%', height: '100%'}}>
+                    <ActivityIndicator size="large"/>
                 </View>
-            )
+            );
         }
-        else {
-            this.getLocationfromCoords();
-            return(
-                <View style = {{width: '100%', height: '100%', paddingBottom: '7%'}}>
-                    <View style = {styles.viewCard}>
-                        <CardModified image = {activitatsTranslate[this.props.activitats_trobades[this.props.iterador].type].source}
-                                nom =  {this.props.activitats_trobades[this.props.iterador].name}
-                                ubicacio = {this.props.ubicacioactual}
-                                dataIni = {this.props.activitats_trobades[this.props.iterador].startDate}
-                                dataFi = {this.props.activitats_trobades[this.props.iterador].endDate}
-                                horaIni = {this.props.activitats_trobades[this.props.iterador].startDate}
-                                horaFi = {this.props.activitats_trobades[this.props.iterador].endDate}
-                                preu = {this.props.activitats_trobades[this.props.iterador].price}
-                                valorar = {false}
-                                      margin = '3%'
-                                fontsizeTitleStyle = {27}
-                                fontsizeTextStyle = {21}/>
+        else{
+            if(this.props.iterador === this.props.activitats_trobades.length){
+                return(
+                    <View style = {styles.viewbuitStyle}>
+                        <View style = {styles.paddingViewStyle}>
+                            <Description textExpl = "No se encuentran más actividades"/>
+                        </View>
+                        <Ionicons name='ios-refresh' size={60} color={APP_COLORS.color_neutral}/>
                     </View>
-                    <View style={styles.footer}>
-                            <View style={styles.circle} backgroundColor = {APP_COLORS.color_header}>
-                                <TouchableOpacity onPress = {this._onPressDenegar} style = {{width:'100%', height: '100%', alignItems: 'center'}}>
-                                    <Ionicons name="md-close" size={60} color={APP_COLORS.color_neutral}
-                                    onPress = {this._onPressDenegar} />
-                                </TouchableOpacity>
-                            </View>
-                            <View style={styles.circle} backgroundColor = {APP_COLORS.color_back} >
-                                <TouchableOpacity onPress={() => {
-                                    Actions.info({id: this.props.activitats_trobades[this.props.iterador].id, screen: "buscar"})
-                                }} style = {{width:'100%', height: '100%', alignItems: 'center'}}>
-                                    <Ionicons name="md-information" size={60}
-                                              color={APP_COLORS.color_neutral}
-                                              onPress={() => {
-                                                  Actions.info({id: this.props.activitats_trobades[this.props.iterador].id, screen: "buscar"})
-                                              }}
-                                    />
-                                </TouchableOpacity>
-                            </View>
-                            <View backgroundColor = {APP_COLORS.color_checked} style={styles.circle}>
-                                <TouchableOpacity onPress = {this._onPressAcceptar} style = {{width:'100%', height: '100%', alignItems: 'center'}}>
-                                    <Ionicons name="md-checkmark" size={60} color={APP_COLORS.color_neutral}
-                                    onPress = {this._onPressAcceptar}/>
-                                </TouchableOpacity>
-                            </View>
-                    </View>
-            </View>
-            ); 
+                )
+            }
+            else {
+                this.getLocationfromCoords();
+                return(
+                    <View style = {{width: '100%', height: '100%', paddingBottom: '7%'}}>
+                        <View style = {styles.viewCard}>
+                            <CardModified image = {activitatsTranslate[this.props.activitats_trobades[this.props.iterador].type].source}
+                                    nom =  {this.props.activitats_trobades[this.props.iterador].name}
+                                    ubicacio = {this.props.ubicacioactual}
+                                    dataIni = {this.props.activitats_trobades[this.props.iterador].startDate}
+                                    dataFi = {this.props.activitats_trobades[this.props.iterador].endDate}
+                                    horaIni = {this.props.activitats_trobades[this.props.iterador].startDate}
+                                    horaFi = {this.props.activitats_trobades[this.props.iterador].endDate}
+                                    preu = {this.props.activitats_trobades[this.props.iterador].price}
+                                    valorar = {false}
+                                        margin = '3%'
+                                    fontsizeTitleStyle = {27}
+                                    fontsizeTextStyle = {21}/>
+                        </View>
+                        <View style={styles.footer}>
+                                <View style={styles.circle} backgroundColor = {APP_COLORS.color_header}>
+                                    <TouchableOpacity onPress = {this._onPressDenegar} style = {{width:'100%', height: '100%', alignItems: 'center'}}>
+                                        <Ionicons name="md-close" size={60} color={APP_COLORS.color_neutral}
+                                        onPress = {this._onPressDenegar} />
+                                    </TouchableOpacity>
+                                </View>
+                                <View style={styles.circle} backgroundColor = {APP_COLORS.color_back} >
+                                    <TouchableOpacity onPress={() => {
+                                        Actions.info({id: this.props.activitats_trobades[this.props.iterador].id, screen: "buscar"})
+                                    }} style = {{width:'100%', height: '100%', alignItems: 'center'}}>
+                                        <Ionicons name="md-information" size={60}
+                                                color={APP_COLORS.color_neutral}
+                                                onPress={() => {
+                                                    Actions.info({id: this.props.activitats_trobades[this.props.iterador].id, screen: "buscar"})
+                                                }}
+                                        />
+                                    </TouchableOpacity>
+                                </View>
+                                <View backgroundColor = {APP_COLORS.color_checked} style={styles.circle}>
+                                    <TouchableOpacity onPress = {this._onPressAcceptar} style = {{width:'100%', height: '100%', alignItems: 'center'}}>
+                                        <Ionicons name="md-checkmark" size={60} color={APP_COLORS.color_neutral}
+                                        onPress = {this._onPressAcceptar}/>
+                                    </TouchableOpacity>
+                                </View>
+                        </View>
+                </View>
+                ); 
+            }
         }
     }
 
@@ -270,6 +279,7 @@ const mapStateToProps = (state) => {
         fromDate: state.buscarActivity.fromDate,
         toDate: state.buscarActivity.toDate,
         ubicacioactual: state.buscarActivity.ubicacioactual,
+        isFetching: state.buscarActivity.isFetching
     }
 }
 

@@ -51,12 +51,18 @@ export const notAttend = (id) => {
     }
 }
 
+const requestActivitats = () =>{
+    return{
+        type: BUSCAR_ACTIVITY_ACTIONS.RequestActivitats
+    }
+}
+
 export const fetchActivitats = (stringISOfromDate, stringISOtoDate) =>{
-    console.log(stringISOfromDate);
     /*return(dispatch)=>{
         dispatch(recieveActivitats(activitatsMock));
     }*/
     return (dispatch) => {
+        dispatch(requestActivitats());
         AsyncStorage.getItem('token').then((token) => {
         const url1 = "http://ordinadorcasa.no-ip.org:4100/event?";
         const url2 = "lat=41.3892";

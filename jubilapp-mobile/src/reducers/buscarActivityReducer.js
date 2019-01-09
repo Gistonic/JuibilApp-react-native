@@ -6,6 +6,7 @@ const INITIAL_STATE ={
     location: null,
     fromDate: {},
     toDate: {},
+    isFetching: false,
     ubicacioactual: ""
 }
 
@@ -24,10 +25,12 @@ const buscarActivityReducer = (state = INITIAL_STATE, action)=>{
             return result
 
         case BUSCAR_ACTIVITY_ACTIONS.RecieveActivitats:
-            return {...state, activitats_trobades: action.payload}
+            return {...state, activitats_trobades: action.payload,isFetching:false}
 
         case BUSCAR_ACTIVITY_ACTIONS.ChangeIterador:
             return { ...state, iterador: state.iterador+1};
+        case BUSCAR_ACTIVITY_ACTIONS.RequestActivitats:
+            return{...state, isFetching:true}
             
         default: return state
     }
