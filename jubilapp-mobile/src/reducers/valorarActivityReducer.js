@@ -45,7 +45,7 @@ const valorarActivityReducer = (state = INITIAL_STATE, action) =>{
                 {id:3,marcada: false},
                 {id:4,marcada: false}
             ]
-            return{...state, estrelles: new_estrelles2}
+            return{...state, estrelles: new_estrelles2, num_estrelles: 0}
         case VALORAR_ACTIVITY_ACTIONS.RequestActivitats:
             return{...state,isFetching: true}
         default: return state

@@ -43,15 +43,16 @@ class ferValoracionsScreen extends React.Component {
                 'La actividad '+ this.props.activitats_valorar[this.props.iterador].name +' se valorará con '+this.props.num_estrelles+' estrellas.',
                 [
                     {text: 'Cancelar'},
-                    {text: 'OK', onPress: () => {this.props.changeIterator();
+                    {text: 'OK', onPress: () => {const rating = {rating: this.props.num_estrelles}
+                                                this.props.valorarActivitat(this.props.activitats_valorar[this.props.iterador].id, rating);
+                                                this.props.changeIterator();
                                                 this.props.reiniciarStars();
                                                 }
                     },
                 ],
                 { cancelable: false }
             );
-            const rating = {rating: this.props.num_estrelles}
-            this.props.valorarActivitat(this.props.activitats_valorar[this.props.iterador].id, rating);
+            
         }
         
     }

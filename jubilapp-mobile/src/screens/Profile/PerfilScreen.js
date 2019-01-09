@@ -21,7 +21,7 @@ class PerfilScreen extends React.Component {
 
 
     render() {
-        const {viewStyle, viewStyle1,container,circle,textStyle} = styles;
+        const {viewStyle, viewStyle1,container,circle,textStyle,viewLogOutStyle} = styles;
         const saludos = "Hola "+this.props.name+"!";
         return (
             <View style = {viewStyle}>
@@ -39,12 +39,19 @@ class PerfilScreen extends React.Component {
                 </View>
                 <View style = {container}>
                     <View style = {circle} backgroundColor = {APP_COLORS.color_button_1}>
-                        <EvilIcons name='gear' size={95} color= {APP_COLORS.color_neutral} onPress = {()=>Actions.modperfil({textExpl: 'Modificar perfil', pathinteressos: () => Actions.interessos(), pathkm: () => Actions.km(), fraseExpl: 'Que quieres modificar de tu perfil?'})} />
+                        <EvilIcons name='gear' size={85} color= {APP_COLORS.color_neutral} onPress = {()=>Actions.modperfil({textExpl: 'Modificar perfil', pathinteressos: () => Actions.interessos(), pathkm: () => Actions.km(), fraseExpl: 'Que quieres modificar de tu perfil?'})} />
                         <Text style={textStyle}>Modificar</Text>
                     </View>
+                   
                     <View style = {circle} backgroundColor = {APP_COLORS.color_button_1}>
-                        <EvilIcons name='eye' size={95} color= {APP_COLORS.color_neutral} onPress = {()=>Actions.modperfil({textExpl: 'Ver perfil', pathinteressos: () => Actions.veureinteressosperfil(), pathkm: () => Actions.veurekm(), fraseExpl: 'Que quieres ver de tu perfil?'})}/>
+                        <EvilIcons name='eye' size={85} color= {APP_COLORS.color_neutral} onPress = {()=>Actions.modperfil({textExpl: 'Ver perfil', pathinteressos: () => Actions.veureinteressosperfil(), pathkm: () => Actions.veurekm(), fraseExpl: 'Que quieres ver de tu perfil?'})}/>
                         <Text style={textStyle}>Ver</Text>
+                    </View>
+                </View>
+                <View style = {viewLogOutStyle}>
+                    <View style = {circle} backgroundColor = {APP_COLORS.color_header}>
+                        <EvilIcons name='exclamation' size={85} color= {APP_COLORS.color_neutral} onPress = {()=>Actions.login()} />
+                        <Text style={textStyle}>Salir</Text>
                     </View>
                 </View>
             </View>
@@ -52,10 +59,13 @@ class PerfilScreen extends React.Component {
     }
   }
 const styles ={
+    viewLogOutStyle: {
+        alignItems: 'center'
+    },
     textStyle:{
         color: APP_COLORS.color_neutral,
         fontFamily: 'open-sans-bold',
-        fontSize: 18
+        fontSize: 16
     },
     viewStyle: {
         backgroundColor: APP_COLORS.color_neutral,
@@ -63,8 +73,8 @@ const styles ={
         height: '100%',
     },
     circle:{
-        width: 120,
-        height: 120,
+        width: 100,
+        height: 100,
         borderRadius: 40,
         padding: 12,
         justifyContent: "center",
