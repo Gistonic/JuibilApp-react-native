@@ -1,6 +1,7 @@
 import {BUSCAR_ACTIVITY_ACTIONS} from "../constants/actions";
+import { showError } from '../actions/errorActions'
 import { AsyncStorage } from "react-native";
-import {request} from "../request";
+import { request } from "../request";
 
 
 const recieveActivitats = (activitats) =>{
@@ -28,11 +29,17 @@ export const changeBuscarActivityFormProperty=(propertyName, value) =>{
     }
 };
 
-export const attend = (id) => {
-    return () => {
+export const attend = (id, callback) => {
+    return (dispatch) => {
         const url1 = '/event/';
         const url2 = '/attend';
-        request(url1+id+url2, 'POST');
+        request(url1+id+url2, 'POST')
+            .then(() => {
+                if (callback) callback()
+            })
+            .catch(error => {
+                dispatch(showError('No es posible apuntarse a más de una actividad a la vez'))
+            });
     }
 }
 export const notAttend = (id) => {
