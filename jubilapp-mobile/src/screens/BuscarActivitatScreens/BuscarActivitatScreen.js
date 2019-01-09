@@ -30,6 +30,7 @@ class BuscarActivitatScreen extends React.Component {
         this._onPressDenegar = this._onPressDenegar.bind(this);
         this._onPressAcceptar = this._onPressAcceptar.bind(this);
         this.esTres = this.esTres.bind(this);
+        this._refresh = this._refresh.bind(this);
     }
     componentWillMount() {
         /*if (Platform.OS === 'android' && !Constants.isDevice) {
@@ -52,6 +53,19 @@ class BuscarActivitatScreen extends React.Component {
         this.props.fetchActivitats(stringISOfromDate, stringISOtoDate);
 
 
+    }
+    _refresh(){
+        let hour = 0;
+        let minute = 0;
+        
+        if ((this.props.fromDate.day === date1.getDate()) && (this.props.fromDate.month === date1.getMonth()) && (this.props.fromDate.year === date1.getFullYear())) {
+            hour = initial_hour;
+            minute = initial_minute;
+        }
+        const stringISOfromDate = new Date(this.props.fromDate.year, this.props.fromDate.month, this.props.fromDate.day, hour, minute).toISOString();
+        const stringISOtoDate = new Date(this.props.toDate.year, this.props.toDate.month, this.props.toDate.day).toISOString();
+        
+        this.props.fetchActivitats(stringISOfromDate, stringISOtoDate);
     }
     _getLocationAsync = async () => {
         let { status } = await Permissions.askAsync(Permissions.LOCATION);
@@ -117,10 +131,8 @@ class BuscarActivitatScreen extends React.Component {
             if(this.props.iterador === this.props.activitats_trobades.length){
                 return(
                     <View style = {styles.viewbuitStyle}>
-                        <View style = {styles.paddingViewStyle}>
                             <Description textExpl = "No se encuentran más actividades"/>
-                        </View>
-                        <Ionicons name='ios-refresh' size={60} color={APP_COLORS.color_neutral}/>
+                        
                     </View>
                 )
             }
@@ -178,12 +190,16 @@ class BuscarActivitatScreen extends React.Component {
         const {viewStyle} = styles;
         return(
             <View style = {viewStyle}>
-                <HeaderIcon headerText = "Buscar Actividad"
+                <HeaderIcon headerText = "Buscar"
                                 iconName={ 'home'}
                                 colorName={ APP_COLORS.color_neutral}
                                 size = {75}
                                 textSize = {35}
                                 path={() => Actions.home()}
+                                iconName2 = {'refresh'}
+                                size2 = {65}
+                                iconSecond = {true}
+                                path2 = {this._refresh()}
                 />
                 {this.esTres()}
             </View>         
@@ -206,6 +222,7 @@ const styles ={
         width: '100%',
         alignItems: 'center',
         justifyContent: 'center',
+        paddingBottom: '20%'
     },
 
     paddingViewStyle: {

@@ -48,12 +48,6 @@ class PerfilScreen extends React.Component {
                         <Text style={textStyle}>Ver</Text>
                     </View>
                 </View>
-                <View style = {viewLogOutStyle}>
-                    <View style = {circle} backgroundColor = {APP_COLORS.color_header}>
-                        <EvilIcons name='exclamation' size={85} color= {APP_COLORS.color_neutral} onPress = {()=>Actions.login()} />
-                        <Text style={textStyle}>Salir</Text>
-                    </View>
-                </View>
             </View>
         );
     }
