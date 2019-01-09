@@ -40,9 +40,7 @@ class CardModified extends React.Component {
                 imageStyle = {imatgeStyle} >
                 <View style = {titlepriceStyle}>
                     <Text style = {[titleStyle,{fontSize: this.props.fontsizeTitleStyle}]}> {this.props.nom}  </Text>
-                </View>
-                <View style = {{justifyContent: 'flex-end', flexDirection: 'row' }}>
-                {this.pintar_preu()}
+                    {this.pintar_preu()}    
                 </View>
                 <View style = {[texticonStyle, {margin: this.props.margin}]}>
                     <EvilIcons name="location" size={40} color = {APP_COLORS.text_color} style = {iconStyle}/>
@@ -89,7 +87,7 @@ const styles = {
         borderWidth: 3,
         borderRadius: 15,
         marginRight: '2%',
-        borderColor: APP_COLORS.text_color,
+        borderColor: APP_COLORS.text_color
     },
     texticonStyle: {
         flexDirection: 'row',
