@@ -34,6 +34,19 @@ ActivityInfoBase extends React.Component {
             return <CardActionValorar/>
         }
     }
+    pintar_usuari(){
+        if(this.props.nomCasal == ""){
+            return null;
+        }
+        else{
+            return(
+                <View style = {styles.ViewRow}>
+                    <EvilIcons name="user" size={40} color = {APP_COLORS.text_color} style = {styles.iconStyle}/>
+                    <Text style = {styles.subtitleStyle}>{this.props.nomCasal}</Text>
+                </View>
+            )
+        }
+    }
    render() {
         const {momentStyle, iconStyle, viewStyle,textStyle,viewImageStyle, subtitleStyle, titleStyle, textStyleDescription, ViewRow} = styles;
         return (
@@ -50,11 +63,7 @@ ActivityInfoBase extends React.Component {
                     </Text>
                     <ScrollView >
                         <View style = {{flex: 1}}>
-                            <View style = {ViewRow}>
-                                <EvilIcons name="user" size={40} color = {APP_COLORS.text_color} style = {iconStyle}/>
-                                <Text style = {subtitleStyle}>{this.props.nomCasal}</Text>
-                            </View>
-                            
+                            {this.pintar_usuari()}
                             <View style = {ViewRow}>
                                 <EvilIcons name="location" size={40} color = {APP_COLORS.text_color} style = {iconStyle}/>
                                 <Text style = {textStyle}>{this.props.ubicacioactual}</Text>
