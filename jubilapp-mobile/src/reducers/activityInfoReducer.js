@@ -4,6 +4,7 @@ const INITIAL_STATE ={
     idActivity: "",
     activityReceived: [],
     ubicacioactual: "",
+    isFetching: false
 }
 
 const activityInfoReducer = (state = INITIAL_STATE, action)=> {
@@ -19,10 +20,13 @@ const activityInfoReducer = (state = INITIAL_STATE, action)=> {
         case ACTIVITY_INFO_ACTIONS.ReceiveActivity:
             return {
                 ...state,
-                activityReceived: action.payload
+                activityReceived: action.payload,
+                isFetching:false
             }
         case ACTIVITY_INFO_ACTIONS.DeleteActivity:
             return state
+        case ACTIVITY_INFO_ACTIONS.RequestActivitats:
+            return {...state, isFetching:true}
         default: return state
     }
 }

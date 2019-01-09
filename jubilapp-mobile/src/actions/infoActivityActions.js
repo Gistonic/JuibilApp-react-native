@@ -35,8 +35,15 @@ export const deleteAct = (id) => {
     }
 }
 
+const requestActivitats = () =>{
+    return{
+        type: ACTIVITY_INFO_ACTIONS.RequestActivitats
+    }
+}
+
 export const fetchActivity = (id) => {
     return (dispatch) => {
+        dispatch(requestActivitats());
         AsyncStorage.getItem('token').then((token) => {
             const baseUrl = 'http://ordinadorcasa.no-ip.org:4100/event/';
             const finalPath = baseUrl + id;

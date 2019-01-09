@@ -38,6 +38,7 @@ export const ACTIVITY_INFO_ACTIONS= {
     ChangeProperty: 'CHANGE_ACTIVITY_ID_PROPERTY',
     ReceiveActivity: 'RECEIVE_ACTIVITY',
     DeleteActivity: 'DELETE_ACTIVITY',
+    RequestActivitats: 'REQUEST_ACTIVITATS'
 
 }
 
